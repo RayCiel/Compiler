@@ -60,17 +60,7 @@ public class Compiler {
         System.err.println("MxParser Done..");
         ParseTree tree = parser.compilationUnit();
         System.err.println("CompilationUnit Done..");
-        /*ParseTreeWalker walker = new ParseTreeWalker();
-        out.println("ParseTreeWalker Done..");
-        ASTBuilder listener = new ASTBuilder();
-        out.println("ASTBuilder Done..");
-        walker.walk(listener, tree);//这里开始re了
-        out.println("walk Done..");
-        ASTree astree  = listener.getAsTree();
-        out.println("getAsTree Done..");
-        astree.TypeChecker();
-        out.println("TypeChecker Done..");*/
-    }
+ 
 
 
 }
