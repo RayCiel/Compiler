@@ -250,7 +250,7 @@ public class ASTBuilder extends MxBaseListener {
             case "--": op = UnaryNode.Op.LeftSubSub; break;
             case "!": op = UnaryNode.Op.Not; break;
             case "~": op = UnaryNode.Op.Tilde; break;
-            default: throw new SemanticError(new Location(ctx), "exitPrefixOperation： Invalid PreOperation");
+            default: throw new SemanticError(new Location(ctx), "exitPrefixOperation: Invalid PreOperation");
         }
         map.put(ctx, new PrefixUnaryNode(op, makeExpression(ctx.expression())));
     }
@@ -278,7 +278,7 @@ public class ASTBuilder extends MxBaseListener {
 
             case "++": op = UnaryNode.Op.RightAddAdd; break;
             case "--": op = UnaryNode.Op.LeftSubSub; break;
-            default: throw new SemanticError(new Location(ctx), "exitSuffixOperation： Invalid SufOperation");
+            default: throw new SemanticError(new Location(ctx), "exitSuffixOperation: Invalid SufOperation");
         }
         map.put(ctx, new SuffixUnaryNode(op, makeExpression(ctx.expression())));
     }
@@ -303,7 +303,7 @@ public class ASTBuilder extends MxBaseListener {
             case ">=": op = BinaryExprNode.Op.GreaterEqual; break;
             case "=": op = BinaryExprNode.Op.Equal; break;
             case "!=": op = BinaryExprNode.Op.NotEqual; break;
-            default: throw new SemanticError(new Location(ctx),"exitBinaryOperation： Invalid BinaryOperation");
+            default: throw new SemanticError(new Location(ctx),"exitBinaryOperation: Invalid BinaryOperation");
         }
         map.put(ctx, new BinaryExprNode(makeExpression(ctx.expression(0)), op, makeExpression(ctx.expression(1))));
     }
