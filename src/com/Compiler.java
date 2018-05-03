@@ -69,7 +69,7 @@ public class Compiler {
         System.err.println("ParseTreeWalker Done..");
         ASTBuilder listener = new ASTBuilder();
         System.err.println("ASTBuilder Done..");
-        walker.walk(listener, tree);//这里开始re了
+        walker.walk(listener, tree);
         System.err.println("walk Done..");
         ASTree astree  = listener.getAsTree();
         System.err.println("getAsTree Done..");
