@@ -4,6 +4,7 @@ import com.AST.BlockNode;
 import com.AST.Location;
 import com.AST.VarDefNode;
 import com.Type.*;
+import org.omg.CORBA.PUBLIC_MEMBER;
 
 import java.util.List;
 
@@ -13,15 +14,27 @@ public class FuncEntity extends Entity{
     protected Scope scope;
     protected List<ParamEntity> param;
     protected boolean isConstruct = false;
+    protected boolean isLibFunction;
+    protected String asmName;
 
     public FuncEntity(String _name, Location _location, Type result, BlockNode body, List<ParamEntity> _param) {
         super(_name, _location, result);
         this.result = result;
         this.body = body;
         this.param = _param;
+        this.asmName = null;
         //((FuncType)this.getType()).setFuncEntity(this);
     }
 
+    public String getAsmName()
+    {
+        return asmName == null ? name : asmName;
+    }
+
+    public void setAsmName(String name)
+    {
+        this.asmName = name;
+    }
 
     public Type getResult() {
         return result;
@@ -56,18 +69,16 @@ public class FuncEntity extends Entity{
         param.add(_param);
     }
 
-    @Override
-    public String toString() {
-        return "FuncEntity{" +
-                "result=" + result +
-                ", body=" + body +
-                ", scope=" + scope +
-                ", param=" + param +
-                ", isConstruct=" + isConstruct +
-                ", name='" + name + '\'' +
-                ", location=" + location +
-                ", type=" + type +
-                ", dependence=" + dependence +
-                '}';
+    public void setLibFunction(boolean libFunction) {
+        isLibFunction = libFunction;
     }
+
+    public ParamEntity addThisPointer(Location _location, ClassEntity entity)
+    {
+        ParamEntity thisPointer = new ParamEntity("this", _location, entity.getType());
+        param.add(0, thisPointer);
+        return thisPointer;
+    }
+
+
 }

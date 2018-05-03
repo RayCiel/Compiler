@@ -43,6 +43,14 @@ public class VarLHSNode extends LHSNode{
         return pram != null;
     }
 
+    public void setEntity(Entity entity) {
+        this.entity = entity;
+    }
+
+    public void setPram(ParamEntity entity) {
+        this.pram = entity;
+    }
+
     @Override
     public Location location()
     {

@@ -9,8 +9,8 @@ public class StringEntity extends Entity {
     protected String str;
     public static final String constString = "_STR_CONST_";
 
-    public StringEntity(String _name, Location _location, Type _type, ExpressionNode expression, String str) {
-        super(_name, _location, _type);
+    public StringEntity(Location _location, Type _type, ExpressionNode expression, String str) {
+        super("__str_constant_" + str, _location, _type);
         this.expression = expression;
         this.str = str;
     }

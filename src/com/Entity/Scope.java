@@ -40,6 +40,19 @@ public class Scope {
 
     }
 
+    public Entity SearchLevel(String name) {
+        return entityMap.get(name);
+    }
+
+    public Scope(List<Entity> entities, boolean _isTop)
+    {
+        for (Entity entity : entities)
+        {
+            insertEntity(entity);
+        }
+        this.isTop = _isTop;
+    }
+
     public boolean isTop() {
         return isTop;
     }
@@ -74,4 +87,6 @@ public class Scope {
         else
             return searchEntity;
     }
+
+
 }

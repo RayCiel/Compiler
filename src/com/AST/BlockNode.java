@@ -28,6 +28,10 @@ public class BlockNode extends StatementNode {
         }
     }
 
+    public void setScope(Scope scope) {
+        this.scope = scope;
+    }
+
     public List<StatementNode> getStmts()
     {
         return stmts;

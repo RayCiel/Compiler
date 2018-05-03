@@ -2,10 +2,7 @@ package com.FrontEnd;
 
 import com.AST.DefinitionNode;
 import com.AST.Location;
-import com.Entity.ClassEntity;
-import com.Entity.FuncEntity;
-import com.Entity.Scope;
-import com.Entity.VarEntity;
+import com.Entity.*;
 import com.ThrowError.SemanticError;
 
 import java.util.List;
@@ -24,7 +21,16 @@ public class ASTree {
         this.varEntity = varEntity;
         this.funcEntity = funcEntity;
         this.definitionNode = definitionNode;
+
         this.scope = new Scope(true);
+    }
+
+    public void loadLibrary(List<Entity> entities)
+    {
+        for (Entity entity : entities)
+        {
+            scope.insertEntity(entity);
+        }
     }
 
     public List<ClassEntity> getClassEntity() {
@@ -49,16 +55,31 @@ public class ASTree {
 
     public void TypeChecker()
     {
-
+        //out.println(scope.toString());
         TypeCheck typeCheck = new TypeCheck(scope);
+        out.println(definitionNode.size());
+        for (DefinitionNode node : definitionNode)
+            out.println(node.getName());
         typeCheck.visitDefNodes(definitionNode);
-        out.println(scope.isTop());
+        //out.println(scope.isTop());
 
         FuncEntity main = (FuncEntity)scope.Search("main");
         if (main == null)
             throw new SemanticError(new Location(0,0), "ASTree: TypeChecker: Expected main;");
         if (!main.getResult().isInt())
             throw new SemanticError(new Location(0,0), "ASTree: TypeChecker: Expected a int main;");
+    }
+
+    public void SymbolResolver() {
+        for (ClassEntity entity : classEntity) {
+            scope.insertEntity(entity);
+        }
+        for (FuncEntity entity : funcEntity) {
+            scope.insertEntity(entity);
+        }
+        SymbolResolver resolver = new SymbolResolver(scope);
+        //out.println(definitionNode.size());
+        resolver.visitDefNodes(definitionNode);
     }
 
 

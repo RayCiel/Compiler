@@ -6,9 +6,10 @@ import com.AST.Location;
 import com.Entity.*;
 import com.ThrowError.SemanticError;
 import com.Type.*;
-import com.sun.xml.internal.ws.client.SenderException;
 
 import java.util.List;
+
+import static java.lang.System.out;
 
 public class TypeCheck extends Visit{
     static final Type boolType = new BoolType();
@@ -197,6 +198,7 @@ public class TypeCheck extends Visit{
         {
             visitExpressionNode(node.getRight());
         }
+        out.println("***" + node.getOperator().toString());
         switch (node.getOperator())
         {
             case Sub:   CheckCompatible(node.getLeft().type(), intType, node.location());

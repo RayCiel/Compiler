@@ -8,16 +8,16 @@ import com.Entity.VarEntity;
 import com.Paraser.MxBaseListener;
 import com.Paraser.MxParser;
 import com.ThrowError.SemanticError;
-import com.sun.org.apache.xpath.internal.Expression;
-import jdk.nashorn.internal.ir.BinaryNode;
+//import com.sun.org.apache.xpath.internal.Expression;
+//import jdk.nashorn.internal.ir.BinaryNode;
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.tree.ErrorNode;
+//import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTreeProperty;
 import com.Type.*;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-import javax.sql.StatementEvent;
-import java.util.ArrayList;
+//import javax.sql.StatementEvent;
+//import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -47,10 +47,12 @@ public class ASTBuilder extends MxBaseListener {
         List<VarEntity> varEntities = new LinkedList<>();
         List<ClassEntity> classEntities = new LinkedList<>();
         List<FuncEntity> funcEntities = new LinkedList<>();
-        out.println(ctx.getRuleContexts(ParserRuleContext.class).get(0).getText());
+        //out.println(ctx.getRuleContexts(ParserRuleContext.class).get(0).getText());
         for (ParserRuleContext parserRuleContext : ctx.getRuleContexts(ParserRuleContext.class)) {
+            //out.println(parserRuleContext.getText());
             DefinitionNode node = (DefinitionNode) map.get(parserRuleContext);
             //out.println(node.getName());
+            definitionNodes.add(node);
             if (node instanceof VarDefNode) {
                 varEntities.add(((VarDefNode) node).getEntity());
             } else if (node instanceof FuncDefNode) {
@@ -62,7 +64,7 @@ public class ASTBuilder extends MxBaseListener {
         //out.println("exitCompilationUnit Def Done..");
         //out.println(classEntities.size());
         //out.println(varEntities.size());
-        out.println(funcEntities.get(0).toString());
+        //out.println(funcEntities.get(0).toString());
         //out.println(definitionNodes);
 
         asTree = new ASTree(classEntities, varEntities, funcEntities, definitionNodes);
@@ -380,7 +382,7 @@ public class ASTBuilder extends MxBaseListener {
     }
 
     @Override public void exitConstInt(MxParser.ConstIntContext ctx) {
-        out.println(ctx.ConstInt());
+        //out.println(ctx.ConstInt());
         map.put(ctx, new IntLitNode(Long.parseLong(ctx.ConstInt().getText()), new Location(ctx)));
     }
 

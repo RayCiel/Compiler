@@ -5,6 +5,8 @@ import com.Type.VoidType;
 
 import java.util.List;
 
+import static java.lang.System.out;
+
 abstract public class Visit implements ASTVisitor<Void, Void>{
     public void visitExpressionNode(ExpressionNode node)
     {
@@ -29,6 +31,7 @@ abstract public class Visit implements ASTVisitor<Void, Void>{
     {
         for (StatementNode node: nodes)
         {
+            //out.println(nodes.size());
             visitStatementNode(node);
         }
     }
@@ -328,7 +331,9 @@ abstract public class Visit implements ASTVisitor<Void, Void>{
     }
 
     public void visitDefNodes(List<? extends DefinitionNode> definitionNodes) {
+        //out.println("Start visit defnodes...");
         for (DefinitionNode node : definitionNodes) {
+            //out.println(definitionNodes.size());
             visitDefNode(node);
         }
     }

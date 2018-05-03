@@ -11,6 +11,7 @@ public class FuncType extends Type{
         this.name = _name;
     }
 
+
     public String getName() {
         return name;
     }

@@ -3,6 +3,8 @@ package com.AST;
 import com.FrontEnd.ASTVisitor;
 import com.Entity.*;
 
+import static java.lang.System.out;
+
 public class FuncDefNode extends DefinitionNode{
         protected FuncEntity entity;
 

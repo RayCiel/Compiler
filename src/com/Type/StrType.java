@@ -4,8 +4,8 @@ import com.Entity.Scope;
 import com.Entity.StringEntity;
 
 public class StrType extends Type{
-    public static final String constString = "_STR_CONST_";
     Scope scope;
+    static final public String STRING_CONSTANT_PREFIX = "__str_constant_";
 
     public StrType() {
         super();
