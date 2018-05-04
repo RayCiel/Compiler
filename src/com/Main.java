@@ -15,8 +15,8 @@ public class Main
     public static void main(String[] args) throws Exception{
 
         com.Compiler MxCompiler = new com.Compiler();
-
-        MxCompiler.Compile("./testcase/program.txt");
+        MxCompiler.Compile();
+        //MxCompiler.Compile("./testcase/program.txt");
 
         /*try
         {
