@@ -52,7 +52,6 @@ Id=51
 LineComment=52
 WhiteSpace=53
 BlockComment=54
-Oror=55
 'class'=1
 '{'=2
 '}'=3

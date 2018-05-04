@@ -49,7 +49,7 @@ public class ASTBuilder extends MxBaseListener {
         List<FuncEntity> funcEntities = new LinkedList<>();
         //out.println(ctx.getRuleContexts(ParserRuleContext.class).get(0).getText());
         for (ParserRuleContext parserRuleContext : ctx.getRuleContexts(ParserRuleContext.class)) {
-            out.println(parserRuleContext.getText());
+            //out.println(parserRuleContext.getText());
 
             if (map.get(parserRuleContext) instanceof List)
             {

@@ -113,7 +113,7 @@ expression:       primaryExpression                                             
                   | expression operation = (Less | Greater | LessEqual | GreaterEqual) expression      #BinaryOperation
                   | expression operation = (Equal | NotEqual) expression                               #BinaryOperation
                   | expression operation = AndAnd expression                                           #AndandOpration
-                  | expression operation = Oror expression                                             #OrorOpration
+                  | expression operation = OrOr expression                                             #OrorOpration
                   | operation = (PlusPlus | MinusMinus) expression                                     #PrefixOpration
                   | expression operation = (PlusPlus | MinusMinus)                                     #SuffixOperation
                   | Not expression                                                                     #PrefixOperation

@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/ASTBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/ASTBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/Visit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/Visit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/com/Paraser/Mx.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/gen/com/Paraser/Mx.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/com/Paraser/MxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/com/Paraser/MxParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/Visit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/Paraser/Mx.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Paraser/Mx.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Paraser/Mx.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Paraser/Mx.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Paraser/MxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Paraser/MxParser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +25,8 @@
           <file leaf-file-name="ASTBuilder.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-991">
-                  <caret line="133" column="10" selection-start-line="133" selection-start-column="10" selection-end-line="133" selection-end-column="10" />
+                <state relative-caret-position="414">
+                  <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#15114#15115#0" expanded="true" />
@@ -96,8 +96,20 @@
           <file leaf-file-name="Mx.g4" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/Paraser/Mx.g4">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="399">
-                  <caret line="135" column="53" lean-forward="true" selection-start-line="135" selection-start-column="53" selection-end-line="135" selection-end-column="53" />
+                <state relative-caret-position="465">
+                  <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="C.g4" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/C.g4">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="420">
+                  <caret line="28" column="45" lean-forward="true" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+                  <folding>
+                    <element signature="e#0#19936#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -197,7 +209,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Binary</find>
       <find>exitExpressionPrimary</find>
       <find>primaryExpression</find>
       <find>exitPrimaryExpression</find>
@@ -227,6 +238,7 @@
       <find>instanceof</find>
       <find>variable</find>
       <find>expressionList</find>
+      <find>Oror</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -284,8 +296,8 @@
         <option value="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/ASTree.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/Visit.java" />
-        <option value="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" />
         <option value="$PROJECT_DIR$/src/com/Paraser/Mx.g4" />
+        <option value="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" />
       </list>
     </option>
   </component>
@@ -453,12 +465,12 @@
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.52135414" side_tool="true" weight="0.22317597" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.47864583" weight="0.23497854" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.47864583" visible="true" weight="0.23497854" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.116145834" />
-      <window_info active="true" anchor="bottom" id="ANTLR Preview" order="11" sideWeight="0.8453125" visible="true" weight="0.33261803" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="11" sideWeight="0.8453125" weight="0.2886266" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -846,20 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-991">
-          <caret line="133" column="10" selection-start-line="133" selection-start-column="10" selection-end-line="133" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#15114#15115#0" expanded="true" />
-            <element signature="e#15161#15162#0" expanded="true" />
-            <element signature="e#16182#16183#0" expanded="true" />
-            <element signature="e#16234#16235#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Type/ArrayType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -869,7 +867,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/C.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="420">
+          <caret line="28" column="45" lean-forward="true" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
           <folding>
             <element signature="e#0#19936#0" expanded="true" />
           </folding>
@@ -878,8 +877,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Paraser/Mx.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="135" column="53" lean-forward="true" selection-start-line="135" selection-start-column="53" selection-end-line="135" selection-end-column="53" />
+        <state relative-caret-position="465">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#15114#15115#0" expanded="true" />
+            <element signature="e#15161#15162#0" expanded="true" />
+            <element signature="e#16182#16183#0" expanded="true" />
+            <element signature="e#16234#16235#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -24,7 +24,7 @@ public class MxParser extends Parser {
 		Not=32, And=33, Or=34, Tilde=35, Xor=36, LeftShift=37, RightShift=38, 
 		If=39, Else=40, Elseif=41, While=42, For=43, Break=44, Continue=45, Return=46, 
 		ConstNull=47, ConstString=48, ConstBool=49, ConstInt=50, Id=51, LineComment=52, 
-		WhiteSpace=53, BlockComment=54, Oror=55;
+		WhiteSpace=53, BlockComment=54;
 	public static final int
 		RULE_compilationUnit = 0, RULE_classDefinition = 1, RULE_functionDefinition = 2, 
 		RULE_parameter = 3, RULE_statement = 4, RULE_primaryExpression = 5, RULE_block = 6, 
@@ -53,7 +53,7 @@ public class MxParser extends Parser {
 		"MinusMinus", "Dot", "AndAnd", "OrOr", "Not", "And", "Or", "Tilde", "Xor", 
 		"LeftShift", "RightShift", "If", "Else", "Elseif", "While", "For", "Break", 
 		"Continue", "Return", "ConstNull", "ConstString", "ConstBool", "ConstInt", 
-		"Id", "LineComment", "WhiteSpace", "BlockComment", "Oror"
+		"Id", "LineComment", "WhiteSpace", "BlockComment"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -1452,7 +1452,7 @@ public class MxParser extends Parser {
 		public ExpressionContext expression(int i) {
 			return getRuleContext(ExpressionContext.class,i);
 		}
-		public TerminalNode Oror() { return getToken(MxParser.Oror, 0); }
+		public TerminalNode OrOr() { return getToken(MxParser.OrOr, 0); }
 		public OrorOprationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -1904,7 +1904,7 @@ public class MxParser extends Parser {
 						setState(206);
 						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
 						setState(207);
-						((OrorOprationContext)_localctx).operation = match(Oror);
+						((OrorOprationContext)_localctx).operation = match(OrOr);
 						setState(208);
 						expression(7);
 						}
@@ -2530,7 +2530,7 @@ public class MxParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\39\u012c\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\38\u012c\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\3\2\3\2\3\2\7\2(\n\2\f\2\16\2+\13\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\7\3\64"+
@@ -2603,7 +2603,7 @@ public class MxParser extends Parser {
 		"\5\34\17\r\u00c7\u00c8\f\13\2\2\u00c8\u00c9\t\b\2\2\u00c9\u00e7\5\34\17"+
 		"\f\u00ca\u00cb\f\n\2\2\u00cb\u00cc\t\t\2\2\u00cc\u00e7\5\34\17\13\u00cd"+
 		"\u00ce\f\t\2\2\u00ce\u00cf\7 \2\2\u00cf\u00e7\5\34\17\n\u00d0\u00d1\f"+
-		"\b\2\2\u00d1\u00d2\79\2\2\u00d2\u00e7\5\34\17\t\u00d3\u00d4\f\3\2\2\u00d4"+
+		"\b\2\2\u00d1\u00d2\7!\2\2\u00d2\u00e7\5\34\17\t\u00d3\u00d4\f\3\2\2\u00d4"+
 		"\u00d5\7\n\2\2\u00d5\u00e7\5\34\17\3\u00d6\u00d7\f\24\2\2\u00d7\u00d9"+
 		"\7\6\2\2\u00d8\u00da\5\"\22\2\u00d9\u00d8\3\2\2\2\u00d9\u00da\3\2\2\2"+
 		"\u00da\u00db\3\2\2\2\u00db\u00e7\7\b\2\2\u00dc\u00dd\f\23\2\2\u00dd\u00de"+
