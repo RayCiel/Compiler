@@ -49,16 +49,36 @@ public class ASTBuilder extends MxBaseListener {
         List<FuncEntity> funcEntities = new LinkedList<>();
         //out.println(ctx.getRuleContexts(ParserRuleContext.class).get(0).getText());
         for (ParserRuleContext parserRuleContext : ctx.getRuleContexts(ParserRuleContext.class)) {
-            //out.println(parserRuleContext.getText());
-            DefinitionNode node = (DefinitionNode) map.get(parserRuleContext);
-            //out.println(node.getName());
-            definitionNodes.add(node);
-            if (node instanceof VarDefNode) {
-                varEntities.add(((VarDefNode) node).getEntity());
-            } else if (node instanceof FuncDefNode) {
-                funcEntities.add(((FuncDefNode) node).getEntity());
-            } else if (node instanceof ClassDefNode) {
-                classEntities.add(((ClassDefNode) node).getEntity());
+            //out.println(map.get(parserRuleContext));
+
+            if (map.get(parserRuleContext) instanceof List)
+            {
+                List<Object> list = (List<Object>)map.get(parserRuleContext);
+                for (Object i : list)
+                {
+                    DefinitionNode node = (DefinitionNode) i;
+                    //out.println(node.getName());
+                    definitionNodes.add(node);
+                    if (node instanceof VarDefNode) {
+                        varEntities.add(((VarDefNode) node).getEntity());
+                    } else if (node instanceof FuncDefNode) {
+                        funcEntities.add(((FuncDefNode) node).getEntity());
+                    } else if (node instanceof ClassDefNode) {
+                        classEntities.add(((ClassDefNode) node).getEntity());
+                    }
+                }
+            }
+            else {
+                DefinitionNode node = (DefinitionNode) map.get(parserRuleContext);
+                //out.println(node.getName());
+                definitionNodes.add(node);
+                if (node instanceof VarDefNode) {
+                    varEntities.add(((VarDefNode) node).getEntity());
+                } else if (node instanceof FuncDefNode) {
+                    funcEntities.add(((FuncDefNode) node).getEntity());
+                } else if (node instanceof ClassDefNode) {
+                    classEntities.add(((ClassDefNode) node).getEntity());
+                }
             }
         }
         //out.println("exitCompilationUnit Def Done..");
@@ -109,7 +129,7 @@ public class ASTBuilder extends MxBaseListener {
     @Override
     public void exitVariableDefinition(MxParser.VariableDefinitionContext ctx) {
         List<TerminalNode> nodeList = ctx.Id();
-        //out.println(ctx.Id().get(0).getText());
+        //out.println("***" + ctx.Id().size());
         List<MxParser.ExpressionContext> expressionList= ctx.expression();
         //for (int i = 0; i < nodeList.size(); i++)
         //out.println(ctx.expression().size());
