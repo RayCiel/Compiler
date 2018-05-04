@@ -57,9 +57,9 @@ public class ASTree {
     {
         //out.println(scope.toString());
         TypeCheck typeCheck = new TypeCheck(scope);
-        out.println(definitionNode.size());
-        for (DefinitionNode node : definitionNode)
-            out.println(node.getName());
+        //out.println(definitionNode.size());
+       // for (DefinitionNode node : definitionNode)
+       //     out.println(node.getName());
         typeCheck.visitDefNodes(definitionNode);
         //out.println(scope.isTop());
 

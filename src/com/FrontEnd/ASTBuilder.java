@@ -65,7 +65,7 @@ public class ASTBuilder extends MxBaseListener {
         //out.println(classEntities.size());
         //out.println(varEntities.size());
         //out.println(funcEntities.get(0).toString());
-        //out.println(definitionNodes);
+        //out.println(definitionNodes.size());
 
         asTree = new ASTree(classEntities, varEntities, funcEntities, definitionNodes);
     }
@@ -109,13 +109,27 @@ public class ASTBuilder extends MxBaseListener {
     @Override
     public void exitVariableDefinition(MxParser.VariableDefinitionContext ctx) {
         List<TerminalNode> nodeList = ctx.Id();
+        //out.println(ctx.Id().get(0).getText());
         List<MxParser.ExpressionContext> expressionList= ctx.expression();
         //for (int i = 0; i < nodeList.size(); i++)
-        for (MxParser.ExpressionContext node : expressionList)
+        //out.println(ctx.expression().size());
+        List<VarDefNode> varDefNodes = new LinkedList<>();
+
+        /*for (MxParser.ExpressionContext node : expressionList)
         {
+            out.println(node.getText());
             VarEntity entity = new VarEntity(node.getText(), new Location(node), (Type) map.get(ctx.typeType()),(ExpressionNode) map.get(node));
-            map.put(ctx, new VarDefNode(entity));
+            varDefNodes.add(new VarDefNode(entity));
+
+        }*/
+        for (int i = 0; i < nodeList.size(); i++)
+        {
+            //out.println("***" + nodeList.get(i).getText());
+            VarEntity entity = new VarEntity(nodeList.get(i).getText(), new Location(nodeList.get(i)), (Type) map.get(ctx.typeType()), (ExpressionNode)map.get(ctx.expression(i)));
+            varDefNodes.add(new VarDefNode(entity));
+
         }
+        map.put(ctx, varDefNodes);
 
 
     }
@@ -191,8 +205,32 @@ public class ASTBuilder extends MxBaseListener {
 
     @Override public void exitBlock(MxParser.BlockContext ctx) {
         List<StatementNode> stmt = new LinkedList<>();
-        for (MxParser.StatementContext node : ctx.statement())
-            stmt.add((StatementNode)map.get(node));
+        //out.println("***" + ctx.statement().get(0));
+        for (MxParser.StatementContext node : ctx.statement()) {
+           // out.println("node: " + node.getText());
+           // out.println("map.get(node): " + map.get(node).toString());
+
+            if (map.get(node) instanceof List)
+            {
+                //int j = 0;
+                List<Object> list = (List<Object>)map.get(node);
+                //out.println("I've coming;");
+                for (Object i : list)
+                {
+
+                    stmt.add((StatementNode) i);
+                    //j++;
+                    //out.println(j);
+
+                }
+            }
+            else
+            {
+                stmt.add((StatementNode) map.get(node));
+            }
+        }
+        //out.println(stmt.size());
+        //out.println("&&&" + stmt.get(0));
         map.put(ctx, new BlockNode(new Location(ctx), stmt));
     }
 
@@ -285,6 +323,8 @@ public class ASTBuilder extends MxBaseListener {
 
     @Override public void exitBinaryOperation(MxParser.BinaryOperationContext ctx) {
         BinaryExprNode.Op op;
+        //out.println(ctx.operation.getText());
+
         switch (ctx.operation.getText())
         {
             case "*": op = BinaryExprNode.Op.Mul; break;

@@ -119,9 +119,10 @@ public class SymbolResolver extends Visit {
         //out.println(entity.getBody());
         //out.println(scopeStack.empty());
         //out.println(scope.getEntityMap().isEmpty());
+        //out.println(entity.getBody().getStmts().get(0));
         visit(entity.getBody());
         popScope();
-        out.println(scopeStack.empty());
+        //out.println(scopeStack.empty());
         return null;
     }
 
@@ -170,7 +171,11 @@ public class SymbolResolver extends Visit {
             firstBlockInFunction = false;
             //out.println(scope.getEntityMap().isEmpty());
             node.setScope(scope);
-            //out.println(node.getStmts().get(2));
+            //out.println("*****" + node.getStmts().get(2));
+            //for (int i = 0; i < node.getStmts().size(); i++)
+            //{
+              //  out.println("****" + node.getStmts().get(i));
+            //}
             visitStatementNodes(node.getStmts());
         } else {
             pushScope();

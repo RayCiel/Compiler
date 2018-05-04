@@ -7,7 +7,7 @@ public interface ASTVisitor<S, E> {
     S visit(BlockNode node);
     S visit(BreakNode node);
     S visit(ContinueNode node);
-    S visit(DefinitionNode node);
+    //S visit(DefinitionNode node);
     S visit(ExprStmtNode node);
     S visit(ForNode node);
     S visit(IfNode node);

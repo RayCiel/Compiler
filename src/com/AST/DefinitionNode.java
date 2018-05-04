@@ -17,8 +17,8 @@ abstract public class DefinitionNode extends StatementNode{
     }
 
     @Override
-    public <S, E> S accept(ASTVisitor<S, E> visitor)
-    {
-        return visitor.visit(this);
-    }
+    abstract public <S, E> S accept(ASTVisitor<S, E> visitor);
+   // {
+    //    return visitor.visit(this);
+    //}
 }

@@ -10,6 +10,7 @@ import static java.lang.System.out;
 abstract public class Visit implements ASTVisitor<Void, Void>{
     public void visitExpressionNode(ExpressionNode node)
     {
+        //out.println("&&&" + this.toString());
         node.accept(this);
     }
 
@@ -29,11 +30,24 @@ abstract public class Visit implements ASTVisitor<Void, Void>{
 
     public void visitStatementNodes(List<? extends StatementNode> nodes)
     {
+        //int j = 0;
+        //out.println("***" + nodes.get(4));
         for (StatementNode node: nodes)
+
+        //for (int i = 0; i < nodes.size(); i++)
         {
+            //j++;
+            //out.println(i);
             //out.println(nodes.size());
+         //   out.println("***" + node);
             visitStatementNode(node);
+            //visitStatementNode(nodes.get(i));
         }
+        //visitStatementNode(nodes.get(0));
+        //visitStatementNode(nodes.get(1));
+        //visitStatementNode(nodes.get(2));
+        //visitStatementNode(nodes.get(3));
+        //visitStatementNode(nodes.get(4));
     }
 
     @Override
@@ -55,16 +69,11 @@ abstract public class Visit implements ASTVisitor<Void, Void>{
         return null;
     }
 
-    @Override
-    public Void visit(DefinitionNode node)
-    {
-        node.accept(this);
-        return null;
-    }
 
     @Override
     public Void visit(ExprStmtNode node)
     {
+        //out.println("****"+node.getExpression());
         visitExpressionNode(node.getExpression());
         return null;
     }
