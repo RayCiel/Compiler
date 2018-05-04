@@ -49,7 +49,7 @@ public class ASTBuilder extends MxBaseListener {
         List<FuncEntity> funcEntities = new LinkedList<>();
         //out.println(ctx.getRuleContexts(ParserRuleContext.class).get(0).getText());
         for (ParserRuleContext parserRuleContext : ctx.getRuleContexts(ParserRuleContext.class)) {
-            //out.println(map.get(parserRuleContext));
+            out.println(parserRuleContext.getText());
 
             if (map.get(parserRuleContext) instanceof List)
             {
@@ -129,8 +129,9 @@ public class ASTBuilder extends MxBaseListener {
     @Override
     public void exitVariableDefinition(MxParser.VariableDefinitionContext ctx) {
         List<TerminalNode> nodeList = ctx.Id();
-        //out.println("***" + ctx.Id().size());
+        //out.println("***" + ctx.Id().get(0).getText());
         List<MxParser.ExpressionContext> expressionList= ctx.expression();
+        //out.println(ctx.expression(0).getText());
         //for (int i = 0; i < nodeList.size(); i++)
         //out.println(ctx.expression().size());
         List<VarDefNode> varDefNodes = new LinkedList<>();

@@ -11,6 +11,7 @@ abstract public class Visit implements ASTVisitor<Void, Void>{
     public void visitExpressionNode(ExpressionNode node)
     {
         //out.println("&&&" + this.toString());
+        //out.println("***" + node.type());
         node.accept(this);
     }
 

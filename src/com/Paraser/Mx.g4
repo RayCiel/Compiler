@@ -99,7 +99,7 @@ primitiveType:      type = ('bool' | 'int' | 'string' | 'void');
 expression:       primaryExpression                                                                    #ExpressionPrimary
                   | constant                                                                           #Const
                   | Id                                                                                 #ID
-                  | expression '(' expressionList? ')'                                                 #FunctionCall
+                  | expression '(' expressionList? ')'                                                #FunctionCall
                   | expression Dot Id                                                                  #Member
                   | expression '[' expression ']'                                                      #ArrayIndex
                   //| 'new' (Id | primitiveType) ('[' expression ']'('[' expression']')*('[' ']')*)?     #New
@@ -133,7 +133,7 @@ constant:     ConstNull     #ConstNull
             | ConstBool     #ConstBool
             ;
 
-expressionList:   '(' expression? ( ',' expression )* ')' ;
+expressionList:    expression? ( ',' expression )*  ;
 
 
 
