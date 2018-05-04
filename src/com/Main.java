@@ -18,16 +18,16 @@ public class Main
         MxCompiler.Compile();
         //MxCompiler.Compile("./testcase/program.txt");
 
-        /*try
+        try
         {
             MxCompiler.Compile("main");
 
         }catch (RuntimeException error){
             System.exit(1);
         }
-        catch (SemanticError error)
-        {
-            System.exit(2);
-        }*/
+        //catch (Error error)
+        //{
+        //    System.exit(1);
+        //}
     }
 }
