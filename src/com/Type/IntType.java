@@ -16,4 +16,10 @@ public class IntType extends Type {
     {
         return true;
     }
+
+    @Override
+    public String getTypeName()
+    {
+        return "Int";
+    }
 }

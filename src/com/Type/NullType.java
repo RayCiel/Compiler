@@ -16,4 +16,10 @@ public class NullType extends ClassType {
     {
         return true;
     }
+
+    @Override
+    public String getTypeName()
+    {
+        return "Null";
+    }
 }

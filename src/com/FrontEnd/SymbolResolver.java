@@ -20,8 +20,10 @@ public class SymbolResolver extends Visit {
 
     public SymbolResolver(Scope topScope) {
         scope = topScope;
+        scope.idx = "top";
+        topScope.idx = "top";
         this.topScope = topScope;
-        scopeStack.push(topScope);
+        scopeStack.push(scope);
     }
 
     public boolean TypeResolver(Type type)
@@ -33,8 +35,14 @@ public class SymbolResolver extends Visit {
         }
         else if (type instanceof ClassType)
         {
+            //out.println("Yes, I am!!!!");
+            //out.println(((ClassType) type).getName());
             ClassType classType = (ClassType)type;
+            //out.println(classType.getName());
+            //out.println(scope.getParentScope().Search(classType.getName()).getName());
             Entity entity = scope.Search(classType.getName());
+            //out.println(scope.Search(classType.getName()));
+            //out.println(scope.getEntityMap().size());
             if (!(entity instanceof ClassEntity) || entity == null)
             {
                 return false;
@@ -57,6 +65,8 @@ public class SymbolResolver extends Visit {
     public void pushScope()
     {
         scope = new Scope(scope);
+        scope.idx = scope.getParentScope().idx + "-son:";
+        //out.println(scope.getEntityMap().size());
         scopeStack.push(scope);
     }
 
@@ -71,6 +81,7 @@ public class SymbolResolver extends Visit {
         Class = classEntity;
         pushScope();
         classEntity.setScope(scope);
+        //out.println(Class.getName());
     }
 
     public void popClass()
@@ -82,15 +93,21 @@ public class SymbolResolver extends Visit {
     @Override
     public Void visit(ClassDefNode node) {
         ClassEntity entity = node.getEntity();
+        //scope.insertEntity(entity);
+        //out.println(scope.Search("A"));
         pushClass(entity);
+        //out.println(node.getEntity().getName());
+        scope.idx += entity.getName();
         for (VarDefNode memberVar : entity.getVariables()) {
+
             scope.insertEntity(new MemEntity(memberVar.getEntity()));
         }
         for (FuncDefNode memberFunc : entity.getFunctions()) {
             scope.insertEntity(memberFunc.getEntity());
         }
+
         visitStatementNodes(entity.getVariables());
-        visitStatementNodes(entity.getVariables());
+        visitStatementNodes(entity.getFunctions());
         popClass();
         return null;
     }
@@ -99,6 +116,7 @@ public class SymbolResolver extends Visit {
     public Void visit(FuncDefNode node) {
         FuncEntity entity = node.getEntity();
         pushScope();
+        scope.idx += entity.getName();
         entity.setScope(scope);
         if (!TypeResolver(entity.getResult())) {
             throw new SemanticError(node.location(), "Cannot resolve symbol : " + entity.getResult());
@@ -112,7 +130,7 @@ public class SymbolResolver extends Visit {
             scope.insertEntity(param);
             if (!TypeResolver(param.getType()))
             {
-                throw new SemanticError(node.location(), "Cannot resolve symbol : " + param.getType());
+                throw new SemanticError(node.location(), "Cannot resolve symbol : " + param.getType().getTypeName());
             }
         }
         firstBlockInFunction = true;
@@ -127,11 +145,33 @@ public class SymbolResolver extends Visit {
     }
 
     @Override
+    public Void visit(VarDefNode node) {
+        VarEntity entity = node.getEntity();
+        //out.println(scope.idx + " " + node.getName());
+        //out.println(scope.idx);
+        //out.println(entity.getType().getTypeName());
+        if (!TypeResolver(entity.getType()))
+        {
+            throw new SemanticError(node.location(), "Cannot resolve symbol : " + entity.getType().getTypeName());
+        }
+        if (Class == null || Class.getScope() != scope)
+        {
+            if (entity.getExpression() != null)
+                visitExpressionNode(entity.getExpression());
+            scope.insertEntity(entity);
+        }
+        return null;
+    }
+
+    @Override
     public Void visit(VarLHSNode node) {
         Entity entity = scope.Search(node.getName());
+        //out.println("***" + entity.getType().getTypeName());
         if (entity == null)
             throw new SemanticError(node.location(), "cannot resolve symbol : " + node.getName());
         node.setEntity(entity);
+        node.setType(entity.getType());
+
 
         if (Class != null && Class.getScope().SearchLevel(node.getName()) != null) {
             node.setPram(paramEntity);
@@ -155,9 +195,11 @@ public class SymbolResolver extends Visit {
     @Override
     public Void visit(CreatorNode node)
     {
+
+        //out.println("***" + node.type().getTypeName());
         if (!TypeResolver(node.type()))
         {
-            throw new SemanticError(node.location(), "Cannot resolve symbol : " + node.type());
+            throw new SemanticError(node.location(), "Cannot resolve symbol : " + node.type().getTypeName());
         }
         if (node.getArgs() != null)
             visitExpressionNodes(node.getArgs());

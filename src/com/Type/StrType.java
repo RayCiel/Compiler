@@ -28,4 +28,10 @@ public class StrType extends Type{
     {
         return true;
     }
+
+    @Override
+    public String getTypeName()
+    {
+        return "String";
+    }
 }

@@ -16,6 +16,8 @@ public class VarEntity extends Entity {
         return expression;
     }
 
+
+
     public void setExpression(ExpressionNode expression) {
         this.expression = expression;
     }

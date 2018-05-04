@@ -37,11 +37,18 @@ public class ArrayType extends Type{
     {
         if (!obj.isArray())
             return false;
-        if (!obj.isNull())
+        if (obj.isNull())
             return true;
         boolean check = type.isCompatible(((ArrayType)obj).getType());
         return check;
     }
+
+    @Override
+    public String getTypeName()
+    {
+        return type.getTypeName();
+    }
+
 
 
 

@@ -5,8 +5,8 @@ import com.Entity.LibFunction;
 import com.FrontEnd.ASTBuilder;
 import com.FrontEnd.ASTree;
 //import com.FrontEnd.TypeCheck;
-import com.Paraser.MxLexer;
-import com.Paraser.MxParser;
+import com.Parser.MxLexer;
+import com.Parser.MxParser;
 //import com.Option;
 import com.Entity.*;
 

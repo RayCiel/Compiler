@@ -41,9 +41,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return "Location{" +
-                "line=" + line +
-                ", column=" + column +
-                '}';
+        return "line " + line +
+                ":" + column;
     }
 }

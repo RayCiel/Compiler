@@ -88,7 +88,7 @@ public class MxParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "com/Paraser/Mx.g4"; }
+	public String getGrammarFileName() { return "com/Parser/Mx.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

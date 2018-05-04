@@ -26,6 +26,11 @@ public class VarLHSNode extends LHSNode{
         return entity;
     }
 
+    public void setType(Type _type)
+    {
+        type = _type;
+    }
+
     public Location getLocation() {
         return location;
     }

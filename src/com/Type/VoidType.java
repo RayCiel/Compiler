@@ -17,4 +17,10 @@ public class VoidType extends Type{
     {
         return true;
     }
+
+    @Override
+    public String getTypeName()
+    {
+        return "Void";
+    }
 }

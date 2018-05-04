@@ -71,6 +71,8 @@ public class ASTree {
     }
 
     public void SymbolResolver() {
+        //out.println(classEntity.get(0).getName());
+        //out.println(funcEntity.get(0).getName());
         for (ClassEntity entity : classEntity) {
             scope.insertEntity(entity);
         }

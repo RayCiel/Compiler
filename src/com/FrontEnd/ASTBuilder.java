@@ -5,8 +5,8 @@ import com.Entity.ClassEntity;
 import com.Entity.FuncEntity;
 import com.Entity.ParamEntity;
 import com.Entity.VarEntity;
-import com.Paraser.MxBaseListener;
-import com.Paraser.MxParser;
+import com.Parser.MxBaseListener;
+import com.Parser.MxParser;
 import com.ThrowError.SemanticError;
 //import com.sun.org.apache.xpath.internal.Expression;
 //import jdk.nashorn.internal.ir.BinaryNode;
@@ -60,10 +60,13 @@ public class ASTBuilder extends MxBaseListener {
                     //out.println(node.getName());
                     definitionNodes.add(node);
                     if (node instanceof VarDefNode) {
+
                         varEntities.add(((VarDefNode) node).getEntity());
                     } else if (node instanceof FuncDefNode) {
+
                         funcEntities.add(((FuncDefNode) node).getEntity());
                     } else if (node instanceof ClassDefNode) {
+
                         classEntities.add(((ClassDefNode) node).getEntity());
                     }
                 }
@@ -73,10 +76,13 @@ public class ASTBuilder extends MxBaseListener {
                 //out.println(node.getName());
                 definitionNodes.add(node);
                 if (node instanceof VarDefNode) {
+                    //out.println("It's var me!!" + parserRuleContext.getText());
                     varEntities.add(((VarDefNode) node).getEntity());
                 } else if (node instanceof FuncDefNode) {
+                   // out.println("It's func me!!" + parserRuleContext.getText());
                     funcEntities.add(((FuncDefNode) node).getEntity());
                 } else if (node instanceof ClassDefNode) {
+                    //out.println("It's class me!!" + parserRuleContext.getText());
                     classEntities.add(((ClassDefNode) node).getEntity());
                 }
             }
@@ -92,9 +98,11 @@ public class ASTBuilder extends MxBaseListener {
 
     @Override
     public void exitClassDefinition(MxParser.ClassDefinitionContext ctx) {
+        //out.println(ctx.getText());
         List<VarDefNode> varDefNodes = new LinkedList<>();
         List<FuncDefNode> funcDefNodes = new LinkedList<>();
         String className = ctx.name.getText();
+        //out.println(className);
         for (MxParser.VariableDefinitionContext node : ctx.variableDefinition()) {
 
             if (map.get(node) instanceof List)
@@ -168,7 +176,10 @@ public class ASTBuilder extends MxBaseListener {
         map.put(ctx, new ParamEntity(ctx.Id().getText(), new Location(ctx), (Type)map.get(ctx.typeType())));
     }
 
-    @Override public void enterExpressionStatement(MxParser.ExpressionStatementContext ctx) {
+    @Override public void exitExpressionStatement(MxParser.ExpressionStatementContext ctx) {
+        //out.println(ctx.expression().getText());
+        //out.println(map.get(ctx.expression()));
+        //out.println(ctx);
         map.put(ctx, new ExprStmtNode(new Location(ctx),(ExpressionNode) map.get(ctx.expression())));
     }
 
@@ -256,6 +267,8 @@ public class ASTBuilder extends MxBaseListener {
             }
             else
             {
+                //out.println(node.getClass());
+                //out.println(node);
                 stmt.add((StatementNode) map.get(node));
             }
         }
@@ -323,13 +336,13 @@ public class ASTBuilder extends MxBaseListener {
         map.put(ctx, new PrefixUnaryNode(op, makeExpression(ctx.expression())));
     }
 
-    @Override public void exitOrorOpration(MxParser.OrorOprationContext ctx) {
+    @Override public void exitOrorOperation(MxParser.OrorOperationContext ctx) {
         OrNode.Op op;
         op = BinaryExprNode.Op.OrOr;
         map.put(ctx, new OrNode(makeExpression(ctx.expression(0)), makeExpression(ctx.expression(1))));
     }
 
-    @Override public void exitAndandOpration(MxParser.AndandOprationContext ctx) {
+    @Override public void exitAndandOperation(MxParser.AndandOperationContext ctx) {
         AndNode.Op op;
         op = BinaryExprNode.Op.AndAnd;
         map.put(ctx, new AndNode(makeExpression(ctx.expression(0)), makeExpression(ctx.expression(1))));
@@ -375,6 +388,7 @@ public class ASTBuilder extends MxBaseListener {
             case "!=": op = BinaryExprNode.Op.NotEqual; break;
             default: throw new SemanticError(new Location(ctx),"exitBinaryOperation: Invalid BinaryOperation: " + ctx.operation.getText());
         }
+        //out.println(ctx.expression(1).getText());
         map.put(ctx, new BinaryExprNode(makeExpression(ctx.expression(0)), op, makeExpression(ctx.expression(1))));
     }
 
@@ -389,11 +403,14 @@ public class ASTBuilder extends MxBaseListener {
     }*/
 
     @Override public void exitAssign(MxParser.AssignContext ctx) {
+        //out.println(ctx.expression(0).getText());
+        //out.println(ctx.expression(1).getText());
+
         map.put(ctx, new AssignNode(makeExpression(ctx.expression(0)), makeExpression(ctx.expression(1))));
     }
 
     @Override public void exitID(MxParser.IDContext ctx) {
-        map.put(ctx, map.get(ctx.Id()));
+        map.put(ctx, new VarLHSNode(new Location(ctx), ctx.Id().getText()));
     }
 
     @Override public void exitFunctionCall(MxParser.FunctionCallContext ctx) {
@@ -503,6 +520,15 @@ public class ASTBuilder extends MxBaseListener {
         }
         map.put(ctx, expressionList);
     }
+
+
+
+    @Override
+    public void exitConst(MxParser.ConstContext ctx)
+    {
+       map.put(ctx, map.get(ctx.constant()));
+    }
+
 
 
 }

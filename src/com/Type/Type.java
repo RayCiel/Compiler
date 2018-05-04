@@ -7,6 +7,12 @@ abstract public class Type {
     static public NullType nullType = new NullType();
     static public VoidType voidType = new VoidType();
 
+    String TypeName = null;
+
+    public String getTypeName() {
+        return TypeName;
+    }
+
     public boolean isInt()
     {
         return false;

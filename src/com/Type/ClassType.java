@@ -35,6 +35,14 @@ public class ClassType extends Type{
     }
 
     @Override
+    public String getTypeName()
+    {
+        return getName();
+    }
+
+
+
+    @Override
     public boolean isClass()
     {
         return true;

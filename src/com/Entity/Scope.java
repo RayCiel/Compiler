@@ -14,6 +14,7 @@ public class Scope {
     protected List<Scope> childScope = new ArrayList<>();
     protected Scope parentScope;
     protected boolean isTop;
+    public String idx = null;
 
     public Scope(Scope _parentScope) {
         this.parentScope = _parentScope;
@@ -74,14 +75,20 @@ public class Scope {
     public Entity Search(String _name)
     {
         //out.println("00" + _name);
+        //out.println(_name);
         Entity searchEntity = entityMap.get(_name);
+        //out.println(searchEntity);
+        //out.println(isTop());
         //out.println(entityMap.isEmpty());
         //out.println("0" + isTop());
         //out.println("1" + searchEntity);
         if (isTop() && searchEntity == null)
             return null;
-        else if (!isTop() && searchEntity != null)
+        else if (!isTop() && searchEntity == null)
         {
+            //out.println("I'm in!!");
+            //out.println(SearchLevel());
+
             return parentScope.Search(_name);
         }
         else

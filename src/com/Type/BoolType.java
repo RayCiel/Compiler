@@ -16,4 +16,10 @@ public class BoolType extends Type {
     {
         return true;
     }
+
+    @Override
+    public String getTypeName()
+    {
+        return "Bool";
+    }
 }

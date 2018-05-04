@@ -16,7 +16,7 @@ public class Main
 
         com.Compiler MxCompiler = new com.Compiler();
 
-        MxCompiler.Compile();
+        MxCompiler.Compile("./testcase/program.txt");
 
         /*try
         {

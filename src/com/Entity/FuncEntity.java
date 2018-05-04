@@ -18,13 +18,15 @@ public class FuncEntity extends Entity{
     protected String asmName;
 
     public FuncEntity(String _name, Location _location, Type result, BlockNode body, List<ParamEntity> _param) {
-        super(_name, _location, result);
+        super(_name, _location, new FuncType(_name));
         this.result = result;
         this.body = body;
         this.param = _param;
         this.asmName = null;
-        //((FuncType)this.getType()).setFuncEntity(this);
+        ((FuncType)this.getType()).setFuncEntity(this);
     }
+
+
 
     public String getAsmName()
     {
@@ -80,5 +82,7 @@ public class FuncEntity extends Entity{
         return thisPointer;
     }
 
-
+    public void setResult(Type result) {
+        this.result = result;
+    }
 }

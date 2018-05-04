@@ -12,6 +12,7 @@ public class FuncType extends Type{
     }
 
 
+
     public String getName() {
         return name;
     }
@@ -33,6 +34,12 @@ public class FuncType extends Type{
             return false;
         boolean check = funcEntity.equals(((FuncType)obj).getFuncEntity());
         return check;
+    }
+
+    @Override
+    public String getTypeName()
+    {
+        return getName();
     }
 
     @Override

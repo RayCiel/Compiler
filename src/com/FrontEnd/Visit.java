@@ -12,11 +12,17 @@ abstract public class Visit implements ASTVisitor<Void, Void>{
     {
         //out.println("&&&" + this.toString());
         //out.println("***" + node.type());
+        //out.println(node);
+        System.err.print("VisitExpressionNode: " + node );
+        System.err.println(" " + node.location().toString() );
+        //out.println(node);
         node.accept(this);
     }
 
     public void visitStatementNode (StatementNode node)
     {
+        System.err.print("visitStatementNode: " + node );
+        System.err.println(" " + node.location().toString() );
         node.accept(this);
     }
 
@@ -75,6 +81,7 @@ abstract public class Visit implements ASTVisitor<Void, Void>{
     public Void visit(ExprStmtNode node)
     {
         //out.println("****"+node.getExpression());
+
         visitExpressionNode(node.getExpression());
         return null;
     }
@@ -342,6 +349,7 @@ abstract public class Visit implements ASTVisitor<Void, Void>{
 
     public void visitDefNodes(List<? extends DefinitionNode> definitionNodes) {
         //out.println("Start visit defnodes...");
+        //out.println(definitionNodes.size());
         for (DefinitionNode node : definitionNodes) {
             //out.println(definitionNodes.size());
             visitDefNode(node);

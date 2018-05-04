@@ -26,6 +26,7 @@ public class TypeCheck extends Visit{
 
     public void CheckCompatible (Type left, Type right, Location _location)
     {
+        //out.println(left);
         if (!left.isCompatible(right))
         {
             String error = "Incompatible: " + left + " and " + right;
@@ -198,7 +199,7 @@ public class TypeCheck extends Visit{
         {
             visitExpressionNode(node.getRight());
         }
-        out.println("***" + node.getOperator().toString());
+        //out.println("***" + node.getOperator().toString());
         switch (node.getOperator())
         {
             case Sub:   CheckCompatible(node.getLeft().type(), intType, node.location());
@@ -242,12 +243,13 @@ public class TypeCheck extends Visit{
                         node.setType(node.getLeft().type());
                         break;
             case NotEqual: case Equal:
-                        CheckCompatible(node.getLeft().type(), node.getRight().type(), node.location()); break;
+                        CheckCompatible(node.getLeft().type(), node.getRight().type(), node.location()); node.setType(boolType); break;
             case Greater: case LessEqual: case GreaterEqual: case Less:
-                        CheckCompatible(node.getLeft().type(), node.getRight().type(), node.location()); break;
+                        CheckCompatible(node.getLeft().type(), node.getRight().type(), node.location()); node.setType(boolType);break;
             case Add:
+                        out.println(node.getLeft().type());
                         CheckCompatible(node.getLeft().type(), node.getRight().type(), node.location());
-                        if (!(node.getLeft().type() == intType || node.getLeft().type() == strType))
+                        if (!(node.getLeft().type() instanceof IntType || node.getLeft().type() instanceof StrType))
                             throw new SemanticError(node.location(), "Invalid add Type;");
                         node.setType(node.getLeft().type());
                         break;
@@ -307,16 +309,22 @@ public class TypeCheck extends Visit{
     @Override
     public Void visit(FuncDefNode node)
     {
+        function = node.getEntity();
+        //out.println(function.getName());
         if (node.getEntity().getBody() != null)
         {
             visitStatementNode(node.getEntity().getBody());
         }
-        function = node.getEntity();
-        if (!function.isConstruct() || function.getResult() != null)
-            throw new SemanticError(node.location(), "Expect a return type;");
+
+        //out.println("***");
+        //out.println(function.getName());
+        //if (!function.isConstruct() || function.getResult() != null || function.getName() == "main")
+        //    throw new SemanticError(node.location(), "Expect a return type;");
         function = null;
         return null;
     }
+
+
 
     @Override
     public Void visit(VarDefNode node)
@@ -324,6 +332,7 @@ public class TypeCheck extends Visit{
         if (node.getEntity().getExpression() != null)
         {
             visitExpressionNode(node.getEntity().getExpression());
+            CheckCompatible( node.getEntity().getExpression().type(), node.getEntity().getType(), node.location());
         }
         if (node.getEntity().getType().isVoid())
             throw new SemanticError(node.location(), "The variable can't be void-type;");
@@ -338,14 +347,14 @@ public class TypeCheck extends Visit{
             throw new SemanticError(node.location(), "Can't return outside function;");
         }
         else {
-            if (node.getExpression() != null)
+            if (node.getExpression() != null && !function.getType().isVoid())
             {
                 visitExpressionNode(node.getExpression());
                 CheckCompatible(node.getExpression().type(), function.getResult(), node.location());
             }
-            else if (!node.getExpression().type().isVoid())
+            else if (function.getType().isVoid() && node.getExpression() != null)
             {
-                throw new SemanticError(node.location(), "Expect a return;");
+                throw new SemanticError(node.location(), "Expect a return expression;");
             }
         }
         return null;
