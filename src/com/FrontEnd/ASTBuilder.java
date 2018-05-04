@@ -96,7 +96,16 @@ public class ASTBuilder extends MxBaseListener {
         List<FuncDefNode> funcDefNodes = new LinkedList<>();
         String className = ctx.name.getText();
         for (MxParser.VariableDefinitionContext node : ctx.variableDefinition()) {
-            varDefNodes.add((VarDefNode) map.get(node));
+
+            if (map.get(node) instanceof List)
+            {
+                List<Object> list = (List<Object>)map.get(node);
+                for (Object i : list)
+                    varDefNodes.add((VarDefNode) i);
+
+            }
+            else
+                varDefNodes.add((VarDefNode) map.get(node));
         }
         for (MxParser.FunctionDefinitionContext node : ctx.functionDefinition()) {
             funcDefNodes.add((FuncDefNode) map.get(node));
@@ -362,9 +371,9 @@ public class ASTBuilder extends MxBaseListener {
             case ">": op = BinaryExprNode.Op.Greater; break;
             case "<=": op = BinaryExprNode.Op.LessEqual; break;
             case ">=": op = BinaryExprNode.Op.GreaterEqual; break;
-            case "=": op = BinaryExprNode.Op.Equal; break;
+            case "==": op = BinaryExprNode.Op.Equal; break;
             case "!=": op = BinaryExprNode.Op.NotEqual; break;
-            default: throw new SemanticError(new Location(ctx),"exitBinaryOperation: Invalid BinaryOperation");
+            default: throw new SemanticError(new Location(ctx),"exitBinaryOperation: Invalid BinaryOperation: " + ctx.operation.getText());
         }
         map.put(ctx, new BinaryExprNode(makeExpression(ctx.expression(0)), op, makeExpression(ctx.expression(1))));
     }

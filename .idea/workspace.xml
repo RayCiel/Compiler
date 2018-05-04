@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/com/Paraser/Mx.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/gen/com/Paraser/Mx.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/com/Paraser/MxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/com/Paraser/MxParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Paraser/Mx.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Paraser/Mx.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Paraser/Mx.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Paraser/Mx.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Paraser/MxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Paraser/MxParser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +19,8 @@
           <file leaf-file-name="ASTBuilder.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+                <state relative-caret-position="209">
+                  <caret line="375" column="137" selection-start-line="375" selection-start-column="137" selection-end-line="375" selection-end-column="137" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#15114#15115#0" expanded="true" />
@@ -884,8 +878,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+        <state relative-caret-position="209">
+          <caret line="375" column="137" selection-start-line="375" selection-start-column="137" selection-end-line="375" selection-end-column="137" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#15114#15115#0" expanded="true" />
