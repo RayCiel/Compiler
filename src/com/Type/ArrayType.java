@@ -13,6 +13,8 @@ public class ArrayType extends Type{
     }
 
     public ArrayType(Type _type, int _dimension) {
+        if (_type instanceof VoidType)
+            throw new RuntimeException("VoidType can't be ArrayType");
         if (_dimension == 1) {
             this.type = _type;
         } else {

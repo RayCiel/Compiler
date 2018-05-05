@@ -4,6 +4,7 @@ import com.AST.*;
 import com.Entity.*;
 import com.ThrowError.SemanticError;
 import com.Type.*;
+import com.sun.xml.internal.ws.client.SenderException;
 
 import java.util.Stack;
 import static java.lang.System.out;
@@ -29,7 +30,10 @@ public class SymbolResolver extends Visit {
         if (type instanceof ArrayType)
         {
             ArrayType arrayType = (ArrayType)type;
-            return TypeResolver(((ArrayType) type).getType());
+            //out.println(arrayType.getType().getTypeName());
+            //if (arrayType.getType() instanceof VoidType)
+            //    throw new RuntimeException("ArrayType cannot be void;");
+            return TypeResolver(arrayType.getType());
         }
         else if (type instanceof ClassType)
         {

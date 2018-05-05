@@ -296,6 +296,7 @@ public class ASTBuilder extends MxBaseListener {
         int dimemsion = (ctx.getChildCount() - 1) / 2;
         if (dimemsion != 0)
         {
+            //out.println(ctx.primitiveType().getText());
             map.put(ctx, new ArrayType(type, dimemsion));
         }
         else
