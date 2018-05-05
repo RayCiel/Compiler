@@ -20,8 +20,8 @@ public class Main
 
         try
         {
-            //MxCompiler.Compile();
-            MxCompiler.Compile("./testcase/program.txt");
+            MxCompiler.Compile();
+            //MxCompiler.Compile("./testcase/program.txt");
 
         }catch (RuntimeException error){
             System.exit(1);
