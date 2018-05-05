@@ -1,9 +1,4 @@
-class Array{
-    int size(){
-    }
-}
-
-int main(){
-    Array a = null;
-    a.size();
+int main() {
+    continue;
+    return 0;
 }
