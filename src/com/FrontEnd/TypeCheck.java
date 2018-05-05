@@ -401,7 +401,7 @@ public class TypeCheck extends Visit{
         return null;
     }
 
-    @Override public Void visit(FuncallNode node)
+    /*@Override public Void visit(FuncallNode node)
     {
         if (node.getExpression() != null)
         {
@@ -435,6 +435,43 @@ public class TypeCheck extends Visit{
         }
 
         return null;
+    }*/
+
+    @Override
+    public Void visit(FuncallNode node)
+    {
+        super.visit(node);
+        node.type();
+        ExpressionNode function = node.getExpression();
+        Entity entity;
+        //out.println(node.type());
+        //out.println(function.getClass());
+        if(function instanceof VarLHSNode)
+        {
+            entity = ((VarLHSNode)function).getEntity();
+            if(!(entity instanceof FuncEntity))
+                throw new SemanticError(node.location(), entity.getName() + "is not a function.");
+        }
+        else
+        {
+            throw new RuntimeException(function.getClass() + " found, but variable() excepted.");
+        }
+        int n = node.getArgs().size();
+        List<ExpressionNode> params = node.getArgs();
+        List<ParamEntity> paramEntities = ((FuncEntity)entity).getParam();
+
+
+        if(n != paramEntities.size())
+            throw new SemanticError(node.location(), "  n: " + n + " params found, but "+ paramEntities.size()+" excepted.");
+
+        for(int i = 0;i < n; ++i)
+        {
+            Type lType = paramEntities.get(i).getType(), rType = params.get(i).type();
+            CheckCompatible(lType, rType, node.location());
+        }
+
+        return null;
     }
+
 
 }

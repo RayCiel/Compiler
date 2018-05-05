@@ -4,6 +4,8 @@ import com.AST.*;
 import com.Entity.*;
 import com.ThrowError.SemanticError;
 import com.Type.*;
+import com.sun.xml.internal.ws.client.SenderException;
+import jdk.nashorn.internal.runtime.options.Options;
 
 import java.util.Stack;
 import java.util.concurrent.Callable;
@@ -57,6 +59,7 @@ public class SymbolResolver extends Visit {
             {
                 return false;
             }
+            out.println(entity.getName() +"+++"+ ((FuncEntity) entity).getParam().size());
             funcType.setFuncEntity((FuncEntity)entity);
         }
         return true;
@@ -115,6 +118,7 @@ public class SymbolResolver extends Visit {
     @Override
     public Void visit(FuncDefNode node) {
         FuncEntity entity = node.getEntity();
+        //out.println(node.getEntity().getName() + node.getEntity().getParam().size());
         pushScope();
         scope.idx += entity.getName();
         entity.setScope(scope);
@@ -124,7 +128,7 @@ public class SymbolResolver extends Visit {
         if (Class != null) {
             paramEntity = entity.addThisPointer(node.location(), Class);
         }
-        //out.println(entity.getParam().size());
+        //out.println(entity.getName() + " " + entity.getParam().size());
         for (ParamEntity param : entity.getParam())
         {
             scope.insertEntity(param);
@@ -227,4 +231,71 @@ public class SymbolResolver extends Visit {
         }
         return null;
     }
+
+    @Override
+    public Void visit(MemLHSNode node)
+    {
+        if (node.getExpression() != null)
+        {
+            visitExpressionNode(node.getExpression());
+        }
+        if (node.getExpression().type() instanceof NullType || node.getExpression().type() instanceof VoidType)
+            throw new SemanticError(node.location(), "SymbolResolver: Visit MemLHSNode: Error Type;");
+        if (node.getExpression().type() instanceof ArrayType)
+        {
+            if (node.getEntity().getName() != "size")
+            {
+                throw new SemanticError(node.location(), "No member " + node.getEntity().getName());
+            }
+            Entity entity = topScope.SearchArray("size");
+            if (entity.getType() instanceof ArrayType)
+                node.setEntity(topScope.Search("size"));
+            return null;
+
+        }
+
+        ExpressionNode exprNode = node.getExpression();
+        Entity preEntity;
+        if (exprNode instanceof VarLHSNode || exprNode instanceof  FuncallNode || exprNode instanceof ArefLHSNode || exprNode instanceof  CreatorNode)
+        {
+            if (exprNode instanceof VarLHSNode)
+            {
+                VarEntity varEntity = (VarEntity) (((VarLHSNode) exprNode).getEntity());
+                preEntity = scope.Search(varEntity.getType().getTypeName());
+
+            }
+            else
+            {
+                preEntity = scope.Search(((ExpressionNode) exprNode).type().getTypeName());
+            }
+            if (preEntity == null)
+            {
+                throw new SemanticError(node.location(), "SymbolResolver: Visit MemLHSNode: Type not find;");
+
+            }
+            if (!(preEntity instanceof ClassEntity))
+                throw new SemanticError(node.location(), "SymbolResolver: Visit MemLHSNode: " + preEntity.getName() + " has found, but type is not ClassEntity;");
+            preEntity = ((ClassEntity) preEntity).getScope().SearchLevel(node.getMember());
+            if (preEntity == null)
+                throw new SemanticError(node.location(), "SymbolResolver: Visit MemLHSNode: " + preEntity.getName() + "is not existed.");
+            node.setEntity(preEntity);
+        }
+        else if (exprNode instanceof  StrLitNode)
+        {
+            preEntity = scope.Search("string");
+            preEntity = ((ClassEntity)preEntity).getScope().Search(node.getMember());
+            if (preEntity == null)
+                throw new SemanticError(node.location(), "SymbolResolver: Visit MemLHSNode: " + node.getMember() + " is not existed;");
+            node.setEntity(preEntity);
+
+        }
+        else
+        {
+            throw new SemanticError(node.location(), "SymbolResolver: Visit MemLHSNode: " + "type not find");
+        }
+
+        return null;
+    }
+
+
 }

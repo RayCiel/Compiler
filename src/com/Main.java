@@ -15,16 +15,16 @@ public class Main
     public static void main(String[] args) throws Exception{
 
         com.Compiler MxCompiler = new com.Compiler();
-        MxCompiler.Compile();
-        //MxCompiler.Compile("./testcase/program.txt");
+        //MxCompiler.Compile();
+        MxCompiler.Compile("./testcase/program.txt");
 
-        try
-        {
-            MxCompiler.Compile("main");
+        //try
+        //{
+        //    MxCompiler.Compile("main");
 
-        }catch (RuntimeException error){
-            System.exit(1);
-        }
+        //}catch (RuntimeException error){
+        //    System.exit(1);
+        //}
         //catch (Error error)
         //{
         //    System.exit(1);

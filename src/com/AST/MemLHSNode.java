@@ -3,14 +3,14 @@ package com.AST;
 import com.FrontEnd.ASTVisitor;
 import com.Entity.*;
 
-public class MemLHSNode extends LHSNode{
+public class MemLHSNode extends VarLHSNode{
     protected ExpressionNode expression;
     protected Entity entity;
     protected String member;
 
-    public MemLHSNode(ExpressionNode _expression, String _member)
+    public MemLHSNode(ExpressionNode _expression, String _member, Location _location)
     {
-        super();
+        super(_location, _member);
         this.expression = _expression;
         this.member = _member;
     }

@@ -128,19 +128,25 @@ public class ASTBuilder extends MxBaseListener {
     public void exitFunctionDefinition(MxParser.FunctionDefinitionContext ctx) {
         List<ParamEntity> param = new LinkedList<>();
         String funcName = ctx.getText();
+        //out.println(ctx.name + " " + ctx.parameter().size());
         for (MxParser.ParameterContext node : ctx.parameter())
         {
+            //out.println("I'm in!!!");
             param.add((ParamEntity)map.get(node));
         }
         FuncEntity funcEntity;
+        //out.println(ctx.ret.getText());
         if (ctx.ret == null)
         {
+            //out.println("I'm in!!");
             funcEntity = new FuncEntity(ctx.name.getText(), new Location(ctx.name), new ClassType(ctx.name.getText()), (BlockNode) map.get(ctx.block()), param);
         } else {
             //out.println(ctx.ret.getText());
+            //out.println(param.size());
             funcEntity = new FuncEntity(ctx.name.getText(), new Location(ctx.name),(Type) map.get(ctx.ret), (BlockNode) map.get(ctx.block()), param);
         }
         map.put(ctx, new FuncDefNode(funcEntity));
+
     }
 
     @Override
@@ -447,7 +453,7 @@ public class ASTBuilder extends MxBaseListener {
     }
 
     @Override public void exitMember(MxParser.MemberContext ctx) {
-        map.put(ctx, new MemLHSNode(makeExpression(ctx.expression()), ctx.Id().getText()));
+        map.put(ctx, new MemLHSNode(makeExpression(ctx.expression()), ctx.Id().getText(), new Location(ctx)));
     }
 
     /*@Override public void exitConstant(MxParser.ConstantContext ctx) {
