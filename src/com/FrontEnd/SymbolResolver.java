@@ -4,12 +4,8 @@ import com.AST.*;
 import com.Entity.*;
 import com.ThrowError.SemanticError;
 import com.Type.*;
-import com.sun.xml.internal.ws.client.SenderException;
-import jdk.nashorn.internal.runtime.options.Options;
 
 import java.util.Stack;
-import java.util.concurrent.Callable;
-
 import static java.lang.System.out;
 
 public class SymbolResolver extends Visit {
