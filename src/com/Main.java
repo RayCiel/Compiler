@@ -18,7 +18,7 @@ public class Main
         //MxCompiler.Compile();
         //MxCompiler.Compile("./testcase/program.txt");
 
-        try
+      try
         {
             MxCompiler.Compile();
             //MxCompiler.Compile("./testcase/program.txt");

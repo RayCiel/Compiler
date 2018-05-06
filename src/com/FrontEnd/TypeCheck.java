@@ -131,17 +131,17 @@ public class TypeCheck extends Visit{
             throw new SemanticError(node.location(), "Left-value is not assignable;");
         //out.println(node.getLeft().type());
         //out.println(node.getRight());
-        Type ltype, rtype;
-        if (node.getLeft().type() instanceof FuncType)
-            ltype = ((FuncType) node.getLeft().type()).getFuncEntity().getResult();
-        else
-            ltype = node.getLeft().type();
-        if (node.getRight().type() instanceof FuncType)
-            rtype = ((FuncType) node.getRight().type()).getFuncEntity().getResult();
-        else
-            rtype = node.getLeft().type();
-        //CheckCompatible(node.getLeft().type(), node.getRight().type(), node.location());
-        CheckCompatible(ltype, rtype, node.location());
+        //Type ltype, rtype;
+        //if (node.getLeft().type() instanceof FuncType)
+        //    ltype = ((FuncType) node.getLeft().type()).getFuncEntity().getResult();
+        //else
+        //    ltype = node.getLeft().type();
+        //if (node.getRight().type() instanceof FuncType)
+        //    rtype = ((FuncType) node.getRight().type()).getFuncEntity().getResult();
+        //else
+         //   rtype = node.getLeft().type();
+        CheckCompatible(node.getLeft().type(), node.getRight().type(), node.location());
+        //CheckCompatible(ltype, rtype, node.location());
         return null;
     }
 
