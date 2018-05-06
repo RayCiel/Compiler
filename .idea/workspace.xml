@@ -5,65 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/AST/MemLHSNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/AST/MemLHSNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Entity/ClassEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Entity/ClassEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Entity/Scope.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Entity/Scope.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/ASTBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/ASTBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/SymbolResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/SymbolResolver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/TypeCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/TypeCheck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/Mx.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/Mx.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxBaseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxBaseListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$AndandOperationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$AndandOperationContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ArrayCreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ArrayCreatorContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ArrayIndexContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ArrayIndexContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$AssignContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$AssignContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$BinaryOperationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$BinaryOperationContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$BlockContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$BlockContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstBoolContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstBoolContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstIntContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstIntContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstNullContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstNullContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstStringContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstStringContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstantContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstantContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$CreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$CreatorContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ErrorCreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ErrorCreatorContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ExpressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ExpressionListContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ExpressionListContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ExpressionPrimaryContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ExpressionPrimaryContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ForStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ForStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$FunctionCallContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$FunctionCallContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$IDContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$IDContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$IfStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$IfStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$MemberContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$MemberContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$NewContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$NewContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$NonarrayCreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$NonarrayCreatorContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$OrorOperationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$OrorOperationContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$PrefixOperationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$PrefixOperationContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$PrimaryExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$PrimaryExpressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$PrimitiveTypeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$PrimitiveTypeContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$SuffixOperationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$SuffixOperationContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$TypeTypeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$TypeTypeContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$VariableDefinitionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$VariableDefinitionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$WhileStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$WhileStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Type/ClassType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Type/ClassType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/MemLHSNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/MemLHSNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Entity/ClassEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Entity/ClassEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Entity/Scope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Entity/Scope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/Visit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Parser/Mx.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Parser/Mx.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Parser/MxBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Parser/MxBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Parser/MxListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Parser/MxListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Parser/MxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Parser/MxParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/ClassType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/ClassType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,11 +37,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SymbolResolver.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="SymbolResolver.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="172">
-                  <caret line="286" column="113" selection-start-line="286" selection-start-column="109" selection-end-line="286" selection-end-column="113" />
+                <state relative-caret-position="180">
+                  <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -134,7 +76,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/Main.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="405">
@@ -288,10 +230,10 @@
         <option value="$PROJECT_DIR$/src/com/FrontEnd/Visit.java" />
         <option value="$PROJECT_DIR$/src/com/AST/MemLHSNode.java" />
         <option value="$PROJECT_DIR$/src/com/Parser/Mx.g4" />
-        <option value="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" />
         <option value="$PROJECT_DIR$/src/com/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" />
       </list>
     </option>
   </component>
@@ -472,11 +414,11 @@
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.32083333" side_tool="true" visible="true" weight="0.3530043" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6791667" visible="true" weight="0.3530043" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6791667" visible="true" weight="0.3530043" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14635417" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14635417" />
       <window_info anchor="bottom" id="ANTLR Preview" order="11" sideWeight="0.8432292" weight="0.2886266" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -831,16 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="286" column="113" selection-start-line="286" selection-start-column="109" selection-end-line="286" selection-end-column="113" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -892,6 +824,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

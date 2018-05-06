@@ -10,7 +10,7 @@ import static java.lang.System.out;
 
 public class SymbolResolver extends Visit {
     public Stack<Scope> scopeStack = new Stack<>();
-    public Scope scope;   //符号表
+    public Scope scope;   //fu hao biao
     public Scope topScope;
     public ClassEntity Class = null;
     public ParamEntity paramEntity = null;
