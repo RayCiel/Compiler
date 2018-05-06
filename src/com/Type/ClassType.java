@@ -2,6 +2,8 @@ package com.Type;
 
 import com.Entity.ClassEntity;
 
+import static java.lang.System.out;
+
 public class ClassType extends Type{
     String name;
     ClassEntity classEntity;
@@ -32,6 +34,7 @@ public class ClassType extends Type{
         if (!obj.isClass())
             return false;
         boolean check = classEntity.equals(((ClassType)obj).getClassEntity());
+        //out.println(check);
         return check;
     }
 

@@ -39,7 +39,7 @@ public class FuncType extends Type{
     @Override
     public String getTypeName()
     {
-        return getName();
+        return funcEntity.getResult().getTypeName();
     }
 
     @Override

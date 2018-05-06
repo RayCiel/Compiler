@@ -85,4 +85,10 @@ public class FuncEntity extends Entity{
     public void setResult(Type result) {
         this.result = result;
     }
+
+    //@Override
+    //public String getName()
+    //{
+    //    return result.getTypeName();
+    //}
 }

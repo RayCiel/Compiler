@@ -3,6 +3,8 @@ package com.AST;
 import com.FrontEnd.ASTVisitor;
 import com.Type.*;
 
+import static com.Type.Type.intType;
+
 public class IntLitNode extends LiteralNode{
     protected long integer;
 
@@ -15,6 +17,12 @@ public class IntLitNode extends LiteralNode{
     public long getInteger()
     {
         return integer;
+    }
+
+    @Override
+    public Type type()
+    {
+        return intType;
     }
 
     @Override

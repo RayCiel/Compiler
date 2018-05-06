@@ -42,7 +42,7 @@ public class Scope {
 
     }
 
-    public Entity SearchLevel(String name) {
+    public Entity SearchCurrentLevel(String name) {
         return entityMap.get(name);
     }
 
@@ -61,6 +61,7 @@ public class Scope {
 
     public void insertEntity(Entity _entity)
     {
+        //out.println(_entity.getName());
         if (entityMap.containsKey(_entity.getName())) {
             throw new SemanticError(_entity.location, "Scope: insertEntity: " + _entity.getName() + "has been in;");
         }

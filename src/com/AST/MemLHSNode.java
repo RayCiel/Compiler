@@ -47,6 +47,8 @@ public class MemLHSNode extends VarLHSNode{
         //return expression.location();
     //}
 
+
+
     @Override
     public boolean isAssignable()
     {
