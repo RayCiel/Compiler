@@ -115,11 +115,27 @@ public class ASTBuilder extends MxBaseListener {
             else
                 varDefNodes.add((VarDefNode) map.get(node));
         }
+        FuncEntity construct = null;
         for (MxParser.FunctionDefinitionContext node : ctx.functionDefinition()) {
-            funcDefNodes.add((FuncDefNode) map.get(node));
+            //out.println(node.getText());
+            FuncDefNode getNode = (FuncDefNode)map.get(node);
+            funcDefNodes.add(getNode);
+            FuncEntity entity = getNode.getEntity();
+
+            //out.println(entity.isConstruct());
+            if (entity.isConstruct()) {
+                construct = entity;
+                //out.println(entity.getName());
+                if (!entity.getName().equals(ClassType.CONSTRUCTOR_NAME + ctx.name.getText())) {
+                    throw new SemanticError(new Location(ctx.name), "wrong name of constructor : " + entity.getName()
+                            + " and " + ClassType.CONSTRUCTOR_NAME + ctx.name.getText());
+                }
+
+            }
         }
 
         ClassEntity entity = new ClassEntity(className, new Location(ctx.name), varDefNodes, funcDefNodes);
+        entity.setConstruct(construct);
         map.put(ctx, new ClassDefNode(entity));
 
     }
@@ -139,7 +155,8 @@ public class ASTBuilder extends MxBaseListener {
         if (ctx.ret == null)
         {
             //out.println("I'm in!!");
-            funcEntity = new FuncEntity(ctx.name.getText(), new Location(ctx.name), new ClassType(ctx.name.getText()), (BlockNode) map.get(ctx.block()), param);
+            funcEntity = new FuncEntity(ClassType.CONSTRUCTOR_NAME + ctx.name.getText(), new Location(ctx.name), new ClassType(ctx.name.getText()), (BlockNode) map.get(ctx.block()), param);
+            funcEntity.setConstruct(true);
         } else {
             //out.println(ctx.ret.getText());
             //out.println(param.size());
@@ -246,9 +263,14 @@ public class ASTBuilder extends MxBaseListener {
         map.put(ctx, map.get(ctx.variableDefinition()));
     }
 
-    @Override public void exitPrimaryExpression(MxParser.PrimaryExpressionContext ctx) {
+    /*@Override public void exitPrimaryExpression(MxParser.PrimaryExpressionContext ctx) {
+        //out.println("***" + ctx.expression());
+        //if (ctx.expression() == null)
+        //    map.put(ctx, map.get());
         map.put(ctx, map.get(ctx.expression()));
-    }
+    }*/
+
+
 
     @Override public void exitBlock(MxParser.BlockContext ctx) {
         List<StatementNode> stmt = new LinkedList<>();
@@ -400,9 +422,21 @@ public class ASTBuilder extends MxBaseListener {
     }
 
     @Override public void exitExpressionPrimary(MxParser.ExpressionPrimaryContext ctx) {
-        exitPrimaryExpression(ctx.primaryExpression());
-
+        //exitPrimaryExpression(ctx.primaryExpression());
+        map.put(ctx, map.get(ctx.primaryExpression()));
     }
+
+    @Override
+    public void exitPrimaryExpr(MxParser.PrimaryExprContext ctx)
+    {
+        map.put(ctx, map.get(ctx.expression()));
+    }
+
+    //@Override
+    //public void exitThisExpr(MxParser.ThisExprContext ctx)
+    //{
+    //    map.put(ctx, new VarLHSNode(new Location(ctx), "this"));
+    //}
 
     /*@Override public void exitConst(MxParser.ConstContext ctx) {
         MxParser.ConstantContext con = (MxParser.ConstantContext) map.get(ctx);

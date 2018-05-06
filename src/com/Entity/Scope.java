@@ -78,6 +78,7 @@ public class Scope {
         //out.println("00" + _name);
         //out.println(_name);
         Entity searchEntity = entityMap.get(_name);
+
         //out.println(searchEntity);
         //out.println(isTop());
         //out.println(entityMap.isEmpty());

@@ -5,6 +5,7 @@ import com.Entity.ClassEntity;
 public class ClassType extends Type{
     String name;
     ClassEntity classEntity;
+    static public final String CONSTRUCTOR_NAME = "__constructor_";
 
     public ClassType(String _name) {
         super();

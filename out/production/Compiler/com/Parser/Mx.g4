@@ -76,7 +76,11 @@ statement:  expression? ';'                                  #ExpressionStatemen
             | variableDefinition                             #VariableDef
             ;
 
-primaryExpression:    '(' expression ')';
+primaryExpression:    '(' expression ')'                     #primaryExpr
+                      //| 'this'                               #thisExpr
+                      ;
+
+//this : 'this';
 
 block:      '{' statement* '}';
 
@@ -97,14 +101,15 @@ typeType:       (Id | primitiveType) ('[' ']')*;
 primitiveType:      type = ('bool' | 'int' | 'string' | 'void');
 
 expression:       primaryExpression                                                                    #ExpressionPrimary
+                  //|'this'                                                                              #ConstructorThis
                   | constant                                                                           #Const
                   | Id                                                                                 #ID
-                  | expression '(' expressionList? ')'                                                #FunctionCall
+                  | 'new' creator                                                                      #New
+                  | expression '(' expressionList? ')'                                                 #FunctionCall
                   | expression Dot Id                                                                  #Member
                   | expression '[' expression ']'                                                      #ArrayIndex
-                  //| 'new' (Id | primitiveType) ('[' expression ']'('[' expression']')*('[' ']')*)?     #New
+                  //| 'new' (Id | primitiveType) ('[' expression ']'('[' expression']')*('[' ']')*)?
                   //| 'new' Id '(' (parameter (',' parameter)*)? ')'                                     #NewClass
-                  | 'new' creator                                                                      #New
                   | operation = (Plus | Minus) expression                                              #PrefixOperation
                   | expression operation = (Mul | Div | Mod) expression                                #BinaryOperation
                   | expression operation = (Plus | Minus) expression                                   #BinaryOperation
@@ -124,7 +129,7 @@ expression:       primaryExpression                                             
 creator
     : (Id | primitiveType) ('[' expression ']')+ ('[' ']')+ ('[' expression ']')+       # ErrorCreator
     | (Id | primitiveType) ('[' expression ']')+ ('[' ']')*                             #ArrayCreator
-    | Id                                                                                #NonarrayCreator
+    | Id  ('(' ')')?                                                                              #NonarrayCreator
     ;
 
 constant:     ConstNull     #ConstNull

@@ -3,6 +3,8 @@ package com.AST;
 import com.FrontEnd.ASTVisitor;
 import com.Entity.*;
 
+import static java.lang.System.out;
+
 public class MemLHSNode extends VarLHSNode{
     protected ExpressionNode expression;
     protected Entity entity;
@@ -11,6 +13,8 @@ public class MemLHSNode extends VarLHSNode{
     public MemLHSNode(ExpressionNode _expression, String _member, Location _location)
     {
         super(_location, _member);
+        this.location = _location;
+
         this.expression = _expression;
         this.member = _member;
     }
@@ -35,11 +39,13 @@ public class MemLHSNode extends VarLHSNode{
         this.entity = _entity;
     }
 
-    @Override
-    public Location location()
-    {
-        return expression.location();
-    }
+    //@Override
+    //public Location location()
+    //{
+    //    return location;
+        //out.println(expression);
+        //return expression.location();
+    //}
 
     @Override
     public boolean isAssignable()

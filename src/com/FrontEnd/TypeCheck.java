@@ -27,9 +27,10 @@ public class TypeCheck extends Visit{
     public void CheckCompatible (Type left, Type right, Location _location)
     {
         //out.println(left);
+
         if (!left.isCompatible(right))
         {
-            String error = "Incompatible: " + left + " and " + right;
+            String error = "Incompatible: " + left.getTypeName() + " and " + right.getTypeName();
             throw new SemanticError(_location, error);
         }
     }
@@ -247,7 +248,7 @@ public class TypeCheck extends Visit{
             case Greater: case LessEqual: case GreaterEqual: case Less:
                         CheckCompatible(node.getLeft().type(), node.getRight().type(), node.location()); node.setType(boolType);break;
             case Add:
-                        out.println(node.getLeft().type());
+                        //out.println(node.getLeft().type());
                         CheckCompatible(node.getLeft().type(), node.getRight().type(), node.location());
                         if (!(node.getLeft().type() instanceof IntType || node.getLeft().type() instanceof StrType))
                             throw new SemanticError(node.location(), "Invalid add Type;");
@@ -311,6 +312,8 @@ public class TypeCheck extends Visit{
     {
         function = node.getEntity();
         //out.println(function.getName());
+        if (!function.isConstruct() && function.getResult() == null)
+            throw new SemanticError(node.location(), "expect a return type");
         if (node.getEntity().getBody() != null)
         {
             visitStatementNode(node.getEntity().getBody());

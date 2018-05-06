@@ -1,6 +1,7 @@
 package com.Entity;
 
 import com.AST.FuncDefNode;
+import com.AST.FuncallNode;
 import com.AST.Location;
 import com.AST.VarDefNode;
 import com.Type.*;
@@ -13,6 +14,7 @@ public class ClassEntity extends Entity{
     protected List<VarDefNode> variables;
     protected List<FuncDefNode> Functions;
     protected Scope scope;
+    protected FuncEntity construct;
     protected ClassType classType;
 
 
@@ -21,7 +23,18 @@ public class ClassEntity extends Entity{
         this.variables = _variables;
         Functions = _functions;
         this.scope = null;
+        this.construct = null;
         ((ClassType)this.type).setClassEntity(this);
+    }
+
+    public FuncEntity getConstruct()
+    {
+        return construct;
+    }
+
+    public void setConstruct(FuncEntity construct)
+    {
+        this.construct = construct;
     }
 
     public List<VarDefNode> getVariables() {

@@ -172,13 +172,13 @@ public class MxBaseListener implements MxListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrimaryExpression(MxParser.PrimaryExpressionContext ctx) { }
+	@Override public void enterPrimaryExpr(MxParser.PrimaryExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrimaryExpression(MxParser.PrimaryExpressionContext ctx) { }
+	@Override public void exitPrimaryExpr(MxParser.PrimaryExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

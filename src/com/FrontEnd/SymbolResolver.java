@@ -10,7 +10,7 @@ import static java.lang.System.out;
 
 public class SymbolResolver extends Visit {
     public Stack<Scope> scopeStack = new Stack<>();
-    public Scope scope;
+    public Scope scope;   //符号表
     public Scope topScope;
     public ClassEntity Class = null;
     public ParamEntity paramEntity = null;
@@ -42,7 +42,8 @@ public class SymbolResolver extends Visit {
             //out.println(classType.getName());
             //out.println(scope.getParentScope().Search(classType.getName()).getName());
             Entity entity = scope.Search(classType.getName());
-            //out.println(scope.Search(classType.getName()));
+            //out.println(entity.getClass());
+            //out.println(((FuncEntity)entity).isConstruct());
             //out.println(scope.getEntityMap().size());
             if (!(entity instanceof ClassEntity) || entity == null)
             {
@@ -54,11 +55,12 @@ public class SymbolResolver extends Visit {
         {
             FuncType funcType = (FuncType)type;
             Entity entity = scope.Search(funcType.getName());
+
             if (!(entity instanceof FuncEntity) || entity == null)
             {
                 return false;
             }
-            out.println(entity.getName() +"+++"+ ((FuncEntity) entity).getParam().size());
+            //out.println(entity.getName() +"+++"+ ((FuncEntity) entity).getParam().size());
             funcType.setFuncEntity((FuncEntity)entity);
         }
         return true;
@@ -82,6 +84,7 @@ public class SymbolResolver extends Visit {
     {
         Class = classEntity;
         pushScope();
+        //out.println(scope.idx);
         classEntity.setScope(scope);
         //out.println(Class.getName());
     }
@@ -100,6 +103,8 @@ public class SymbolResolver extends Visit {
         pushClass(entity);
         //out.println(node.getEntity().getName());
         scope.idx += entity.getName();
+        //out.println(scope.idx);
+        scope.insertEntity(new VarEntity("this",  node.getEntity().getLocation(), node.getEntity().getType(), null));
         for (VarDefNode memberVar : entity.getVariables()) {
 
             scope.insertEntity(new MemEntity(memberVar.getEntity()));
@@ -120,7 +125,10 @@ public class SymbolResolver extends Visit {
         //out.println(node.getEntity().getName() + node.getEntity().getParam().size());
         pushScope();
         scope.idx += entity.getName();
+        //out.println(scope.idx);
+        //out.println(scope.getEntityMap().size());
         entity.setScope(scope);
+        //out.println(entity.getResult().getTypeName());
         if (!TypeResolver(entity.getResult())) {
             throw new SemanticError(node.location(), "Cannot resolve symbol : " + entity.getResult());
         }

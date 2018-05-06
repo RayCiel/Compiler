@@ -12,7 +12,7 @@ abstract public class Visit implements ASTVisitor<Void, Void>{
     {
         //out.println("&&&" + this.toString());
         //out.println("***" + node.type());
-        //out.println(node);
+
         System.err.print("VisitExpressionNode: " + node );
         System.err.println(" " + node.location().toString() );
         //out.println(node);
