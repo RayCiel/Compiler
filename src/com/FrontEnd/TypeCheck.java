@@ -26,8 +26,8 @@ public class TypeCheck extends Visit{
 
     public void CheckCompatible (Type left, Type right, Location _location)
     {
-        //out.println(right);
-        //out.println(left);
+        //out.println(right + " " + _location);
+        //out.println(left.isInt() + " " + _location);
         //out.println(right.isStr());
         //out.println(((FuncType)right).getFuncEntity().getResult().getTypeName());
         if (!left.isCompatible(right))
@@ -264,8 +264,16 @@ public class TypeCheck extends Visit{
                         CheckCompatible(node.getLeft().type(), node.getRight().type(), node.location()); node.setType(boolType);break;
             case Add:
                         //out.println(node.getLeft().type());
-                        CheckCompatible(node.getLeft().type(), node.getRight().type(), node.location());
-                        if (!(node.getLeft().type() instanceof IntType || node.getLeft().type() instanceof StrType))
+                        Type ltype, rtype;
+                        if (node.getLeft().type() instanceof FuncType)
+                            ltype = ((FuncType) node.getLeft().type()).getFuncEntity().getResult();
+                        else
+                            ltype = node.getLeft().type();
+                        if (node.getRight().type() instanceof FuncType)
+                            rtype = ((FuncType) node.getRight().type()).getFuncEntity().getResult();
+                        else rtype = node.getRight().type();
+                        CheckCompatible(ltype, rtype, node.location());
+                        if (!(ltype instanceof IntType || ltype instanceof StrType))
                             throw new SemanticError(node.location(), "Invalid add Type;");
                         node.setType(node.getLeft().type());
                         break;
@@ -350,6 +358,7 @@ public class TypeCheck extends Visit{
         if (node.getEntity().getExpression() != null)
         {
             visitExpressionNode(node.getEntity().getExpression());
+            //out.println(node.getEntity().getName() + " " + node.location());
             CheckCompatible( node.getEntity().getExpression().type(), node.getEntity().getType(), node.location());
         }
         if (node.getEntity().getType().isVoid())
@@ -384,17 +393,17 @@ public class TypeCheck extends Visit{
         {
             visitExpressionNode(node.getExpression());
         }
-        //out.println(node.getExpression().getClass());
+        //out.println(node.getExpression().type().getClass());
         //if ((!(node.getEntity() instanceof VarEntity)) && (!(node.getEntity() instanceof  FuncEntity)))
-        if (!(node.getExpression().type().isFunc() || node.getExpression().type().isClass() || node.getExpression().type().isArray()))
+        if (!(node.getExpression().type().isFunc() || node.getExpression().type().isClass() || node.getExpression().type().isArray() || node.getExpression().type().isStr()))
         {
             throw new SemanticError(node.location(), "TypeCheck: visit MemLHSNode: Type error;");
         }
 
-        //out.println(node.getExpression().type().getTypeName() + " " + node.getExpression().type().isClass());
+        //out.println(node.getExpression().type() + " " + node.getExpression().type().isClass());
         //out.println(node.getExpression().type().isFunc());
-        /*
-        else if (node.getExpression().type().isClass())
+
+        if (node.getExpression().type().isClass())
         {
             ClassEntity classEntity = ((ClassType) node.getExpression().type()).getClassEntity();
             Entity mem = classEntity.getScope().getEntityMap().get(node.getMember());
@@ -405,7 +414,9 @@ public class TypeCheck extends Visit{
         }
         else if (node.getExpression().type().isArray())
         {
+            //out.println(((ArrayType) node.getExpression().type()).getScope() + " " + node.location());
             Scope arrayScope = ((ArrayType) node.getExpression().type()).getScope();
+            //out.println(arrayScope);
             Entity mem = arrayScope.getEntityMap().get(node.getMember());
             if (mem == null)
                 throw new SemanticError(node.location(), "Can't find " + node.getMember());
@@ -415,6 +426,7 @@ public class TypeCheck extends Visit{
         else if (node.getExpression().type().isStr())
         {
             Scope strScope = ((StrType) node.getExpression().type()).getScope();
+            //out.println(strScope);
             Entity mem = strScope.getEntityMap().get(node.getMember());
             if (mem == null)
                 throw new SemanticError(node.location(), "Can't find " + node.getMember());
@@ -424,7 +436,7 @@ public class TypeCheck extends Visit{
         else
         {
             throw new SemanticError(node.location(), "Invalid member type;");
-        }*/
+        }
 
         return null;
     }
@@ -471,12 +483,14 @@ public class TypeCheck extends Visit{
         super.visit(node);
         node.type();
         ExpressionNode function = node.getExpression();
+        //out.println(function + " " + node.location());
         Entity entity;
         //out.println(node.type());
         //out.println(function.getClass());
         if(function instanceof VarLHSNode)
         {
             entity = ((VarLHSNode)function).getEntity();
+            //out.println(entity.getType());
             if(!(entity instanceof FuncEntity))
                 throw new SemanticError(node.location(), entity.getName() + "is not a function.");
         }
@@ -494,7 +508,8 @@ public class TypeCheck extends Visit{
 
         for(int i = 0;i < n; ++i)
         {
-            Type lType = paramEntities.get(i).getType(), rType = params.get(i).type();
+            Type lType = paramEntities.get(i).getType();
+            Type rType = params.get(i).type();
             CheckCompatible(lType, rType, node.location());
         }
 

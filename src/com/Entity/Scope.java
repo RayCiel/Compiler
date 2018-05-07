@@ -98,28 +98,7 @@ public class Scope {
             return searchEntity;
     }
 
-    public Entity SearchArray(String _name)
-    {
-        //out.println("00" + _name);
-        //out.println(_name);
-        Entity searchEntity = entityMap.get(_name);
-        //out.println(searchEntity);
-        //out.println(isTop());
-        //out.println(entityMap.isEmpty());
-        //out.println("0" + isTop());
-        //out.println("1" + searchEntity);
-        if (isTop() && searchEntity == null)
-            return null;
-        else if (!isTop() && (searchEntity == null || (searchEntity != null && !(searchEntity.getType() instanceof ArrayType))))
-        {
-            //out.println("I'm in!!");
-            //out.println(SearchLevel());
 
-            return parentScope.Search(_name);
-        }
-        else
-            return searchEntity;
-    }
 
 
 }

@@ -15,7 +15,7 @@ public class ClassEntity extends Entity{
     protected List<FuncDefNode> Functions;
     protected Scope scope;
     protected FuncEntity construct;
-    protected ClassType classType;
+    protected Type classType;
 
 
     public ClassEntity(String _name, Location _location, List<VarDefNode> _variables, List<FuncDefNode> _functions) {
@@ -25,6 +25,28 @@ public class ClassEntity extends Entity{
         this.scope = null;
         this.construct = null;
         ((ClassType)this.type).setClassEntity(this);
+    }
+
+    public ClassEntity(String _name, Location _location, Type _type, List<VarDefNode> _variables, List<FuncDefNode> _functions) {
+        super(_name, _location, new ClassType(_name));
+        this.variables = _variables;
+        Functions = _functions;
+        this.scope = null;
+        this.construct = null;
+        //this.classType = _type;
+        //((ClassType)this.type).setClassEntity(this);
+        this.type = _type;
+    }
+
+    public ClassEntity(String _name, Location _location, Type _type, List<VarDefNode> _variables, List<FuncDefNode> _functions, Scope _scope) {
+        super(_name, _location, new ClassType(_name));
+        this.variables = _variables;
+        Functions = _functions;
+        this.scope = _scope;
+        this.construct = null;
+        //this.classType = _type;
+        //((ClassType)this.type).setClassEntity(this);
+        this.type = _type;
     }
 
     public FuncEntity getConstruct()

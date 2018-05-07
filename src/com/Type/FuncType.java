@@ -32,9 +32,19 @@ public class FuncType extends Type{
     {
         if (obj.isNull())
             return true;
-        if (!obj.isClass())
-            return false;
-        boolean check = funcEntity.getResult().getTypeName().equals(((FuncType)obj).getFuncEntity().getResult().getTypeName());
+        //if (!obj.isClass())
+        //    return false;
+        boolean check = false;
+        if (obj.isFunc())
+            check = funcEntity.getResult().getTypeName().equals(((FuncType)obj).getFuncEntity().getResult().getTypeName());
+        else if (obj.isInt())
+            check = isInt();
+        else if (obj.isBool())
+            check = isBool();
+        else if (obj.isStr())
+            check = isStr();
+        else if (obj.isVoid())
+            check = false;
         return check;
     }
 

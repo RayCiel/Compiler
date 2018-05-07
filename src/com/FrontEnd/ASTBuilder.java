@@ -185,8 +185,10 @@ public class ASTBuilder extends MxBaseListener {
         }*/
         for (int i = 0; i < nodeList.size(); i++)
         {
-            //out.println("***" + nodeList.get(i).getText());
+            //out.println(nodeList.get(i).getText());
+            //out.println(map.get(ctx.typeType()));
             VarEntity entity = new VarEntity(nodeList.get(i).getText(), new Location(nodeList.get(i)), (Type) map.get(ctx.typeType()), (ExpressionNode)map.get(ctx.expression(i)));
+            //out.println(map.get(ctx.expression(i)));
             varDefNodes.add(new VarDefNode(entity));
 
         }
@@ -377,7 +379,10 @@ public class ASTBuilder extends MxBaseListener {
         map.put(ctx, new AndNode(makeExpression(ctx.expression(0)), makeExpression(ctx.expression(1))));
     }
 
-    @Override public void exitArrayIndex(MxParser.ArrayIndexContext ctx) { }
+    @Override public void exitArrayIndex(MxParser.ArrayIndexContext ctx) {
+        map.put(ctx, new ArefLHSNode(makeExpression(ctx.expression(0)),
+                makeExpression(ctx.expression(1))));
+    }
 
 
     @Override public void exitSuffixOperation(MxParser.SuffixOperationContext ctx) {
@@ -460,6 +465,7 @@ public class ASTBuilder extends MxBaseListener {
             args = (List<ExpressionNode>)map.get(ctx.expressionList());
         else
             args = new LinkedList<>();
+        //out.println(makeExpression(ctx.expression()).getClass() + " " + new Location(ctx));
         map.put(ctx, new FuncallNode(makeExpression(ctx.expression()), args));
     }
 
@@ -488,6 +494,7 @@ public class ASTBuilder extends MxBaseListener {
     }
 
     @Override public void exitMember(MxParser.MemberContext ctx) {
+        //out.println("IN");
         map.put(ctx, new MemLHSNode(makeExpression(ctx.expression()), ctx.Id().getText(), new Location(ctx)));
     }
 
@@ -525,6 +532,7 @@ public class ASTBuilder extends MxBaseListener {
 
     @Override public void exitArrayCreator(MxParser.ArrayCreatorContext ctx) {
         Type type;
+        //62out.println("IN!!!");
         if (ctx.Id() != null)
         {
             type = new ClassType(ctx.Id().getText());

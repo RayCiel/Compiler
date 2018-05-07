@@ -73,8 +73,8 @@ public class Compiler {
         System.err.println("walk Done..");
         ASTree astree  = listener.getAsTree();
         System.err.println("getAsTree Done..");
-        astree.loadLibrary(getLibrary());
-        System.err.println("getLibrary Done..");
+        //astree.loadLibrary(getLibrary());
+        //System.err.println("getLibrary Done..");
         astree.SymbolResolver();
         System.err.println("SymbolResolver Done..");
         astree.TypeChecker();

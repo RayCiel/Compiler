@@ -4,23 +4,66 @@ import com.AST.*;
 import com.Entity.*;
 import com.ThrowError.SemanticError;
 import com.Type.*;
+import sun.rmi.log.LogInputStream;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Stack;
+
+import static com.FrontEnd.TypeCheck.*;
+import static com.Type.Type.nullType;
 import static java.lang.System.out;
 
 public class SymbolResolver extends Visit {
     public Stack<Scope> scopeStack = new Stack<>();
     public Scope scope;   //fu hao biao
     public Scope topScope;
+    public Scope arrayScope;
+    public Scope strScope;
     public ClassEntity Class = null;
     public ParamEntity paramEntity = null;
     public boolean firstBlockInFunction = false;
 
     public SymbolResolver(Scope topScope) {
-        scope = topScope;
-        scope.idx = "top";
+        //scope.idx = "top";
         topScope.idx = "top";
+        List<ParamEntity> list;
+        topScope.insertEntity(new VarEntity("null", new Location(0, 0), nullType, null));
+        list = (new LinkedList<>());
+        list.add(new ParamEntity("str", new Location(0, 0), strType));
+        topScope.insertEntity(new FuncEntity("print", new Location(0,0), voidType, null, list));
+        topScope.insertEntity(new FuncEntity("println", new Location(0, 0), voidType, null, list));
+        list = (new LinkedList<>());
+        topScope.insertEntity(new FuncEntity("getString", new Location(0, 0), strType, null, list));
+        topScope.insertEntity(new FuncEntity("length", new Location(0, 0), intType, null, list));
+        topScope.insertEntity(new FuncEntity("getInt", new Location(0, 0), intType, null, list));
+        list = (new LinkedList<>());
+        list.add(new ParamEntity("i", new Location(0, 0), intType));
+        topScope.insertEntity(new FuncEntity("toString", new Location(0, 0), strType, null, list));
+        strScope = new Scope(topScope);
+        list = (new LinkedList<>());
+        strScope.insertEntity(new FuncEntity("length", new Location(0, 0), intType, null, list));
+        strScope.insertEntity(new FuncEntity("parseInt", new Location(0, 0), intType, null, list));
+        list = (new LinkedList<>());
+        list.add(new ParamEntity("left", new Location(0, 0), intType));
+        list.add(new ParamEntity("right", new Location(0, 0), intType));
+        strScope.insertEntity(new FuncEntity("substring", new Location(0, 0), strType, null, list));
+        list = (new LinkedList<>());
+        list.add(new ParamEntity("pos", new Location(0, 0), intType));
+        strScope.insertEntity(new FuncEntity("ord", new Location(0, 0), intType, null, list));
+        List<FuncDefNode> listF = new LinkedList<FuncDefNode>();
+        List<VarDefNode> listV = new LinkedList<VarDefNode>();
+        topScope.insertEntity(new ClassEntity("void", new Location(0, 0), voidType, listV, listF));
+        topScope.insertEntity(new ClassEntity("bool", new Location(0, 0), boolType, listV, listF));
+        topScope.insertEntity(new ClassEntity("int", new Location(0, 0), intType, listV, listF));
+        topScope.insertEntity(new ClassEntity("string", new Location(0, 0), strType, listV, listF, strScope));
+        arrayScope = new Scope(topScope);
+        list = (new LinkedList<>());
+        arrayScope.insertEntity(new FuncEntity("size", new Location(0, 0), intType, null, list));
+        scope = topScope;
+        //scope.insertEntity(new FuncEntity("size", new Location(0, 0), intType, null, null));
         this.topScope = topScope;
+
         scopeStack.push(scope);
     }
 
@@ -158,6 +201,7 @@ public class SymbolResolver extends Visit {
     @Override
     public Void visit(VarDefNode node) {
         VarEntity entity = node.getEntity();
+        //out.println(entity.getExpression().type());
         //out.println(scope.idx + " " + node.getName());
         //out.println(scope.idx);
         //out.println(entity.getType().getTypeName());
@@ -167,6 +211,7 @@ public class SymbolResolver extends Visit {
         }
         if (Class == null || Class.getScope() != scope)
         {
+            //out.println("In!!" + node.location());
             if (entity.getExpression() != null)
                 visitExpressionNode(entity.getExpression());
             scope.insertEntity(entity);
@@ -251,20 +296,23 @@ public class SymbolResolver extends Visit {
             throw new SemanticError(node.location(), "SymbolResolver: Visit MemLHSNode: Error Type;");
         if (node.getExpression().type() instanceof ArrayType)
         {
-            if (node.getEntity().getName() != "size")
+            //out.println(node.getExpression().type().isInt());
+            //out.println(node.getMember());
+            if (!node.getMember().equals("size"))
             {
-                throw new SemanticError(node.location(), "No member " + node.getEntity().getName());
+                throw new SemanticError(node.location(), "No member " + node.getMember());
             }
-            Entity entity = topScope.SearchArray("size");
-            if (entity.getType() instanceof ArrayType)
-                node.setEntity(topScope.Search("size"));
+            Entity entity = arrayScope.Search("size");
+            //out.println(entity);
+           // if (entity.getType() instanceof ArrayType)
+            node.setEntity(entity);
             return null;
 
         }
-
+        //out.println("IN" + node.location());
         ExpressionNode exprNode = node.getExpression();
         Entity preEntity;
-        //out.println(exprNode.getClass());
+        //out.println(exprNode.getClass() + " " + node.location());
         if (exprNode instanceof VarLHSNode || exprNode instanceof  FuncallNode || exprNode instanceof ArefLHSNode || exprNode instanceof  CreatorNode)
         {
             if (exprNode instanceof VarLHSNode)
@@ -300,6 +348,8 @@ public class SymbolResolver extends Visit {
         else if (exprNode instanceof  StrLitNode)
         {
             preEntity = scope.Search("string");
+            //out.println(preEntity + " " +preEntity.getLocation());
+            //out.println(node.getMember());
             preEntity = ((ClassEntity)preEntity).getScope().SearchCurrentLevel(node.getMember());
             if (preEntity == null)
                 throw new SemanticError(node.location(), "SymbolResolver: Visit MemLHSNode: " + node.getMember() + " is not existed;");
