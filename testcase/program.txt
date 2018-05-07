@@ -1,3 +1,13 @@
+/*class Array{
+    int size(){
+    }
+}
+
+int main(){
+    Array a = null;
+    a.size();
+}*/
+
 /*class A{int a;}
 A foo(){
    return new A();

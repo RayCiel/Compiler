@@ -28,10 +28,10 @@ public class TypeCheck extends Visit{
     {
         //out.println(right);
         //out.println(left);
-        //out.println(right.getTypeName());
-        //out.println(left);
-        //if (!left.isCompatible(right))
-        if (!left.getTypeName().equals(right.getTypeName()))
+        //out.println(right.isStr());
+        //out.println(((FuncType)right).getFuncEntity().getResult().getTypeName());
+        if (!left.isCompatible(right))
+        //if (!left.getTypeName().equals(right.getTypeName()))
         {
             String error = "Incompatible: " + left.getTypeName() + " and " + right.getTypeName();
             throw new SemanticError(_location, error);
