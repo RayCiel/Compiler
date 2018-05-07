@@ -27,9 +27,11 @@ public class TypeCheck extends Visit{
     public void CheckCompatible (Type left, Type right, Location _location)
     {
         //out.println(right);
+        //out.println(left);
         //out.println(right.getTypeName());
         //out.println(left);
-        if (!left.isCompatible(right))
+        //if (!left.isCompatible(right))
+        if (!left.getTypeName().equals(right.getTypeName()))
         {
             String error = "Incompatible: " + left.getTypeName() + " and " + right.getTypeName();
             throw new SemanticError(_location, error);

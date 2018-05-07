@@ -19,6 +19,7 @@ public class StrType extends Type{
     @Override
     public boolean isCompatible(Type obj)
     {
+        //boolean check = classEntity.equals(((ClassType)obj).getClassEntity());
         return obj.isStr();
     }
 
