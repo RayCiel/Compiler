@@ -225,6 +225,13 @@ public class SymbolResolver extends Visit {
         //out.println("***" + entity.getType().getTypeName());
         if (entity == null)
             throw new SemanticError(node.location(), "cannot resolve symbol : " + node.getName());
+        //out.println(node.getName());
+        if (node.getName().equals("this"))
+        {
+            node.setAssignable(false);
+            out.println(node.isAssignable());
+            //out.println("In!!");
+        }
         node.setEntity(entity);
         node.setType(entity.getType());
 
