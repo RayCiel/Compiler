@@ -53,10 +53,10 @@ public class SymbolResolver extends Visit {
         strScope.insertEntity(new FuncEntity("ord", new Location(0, 0), intType, null, list));
         List<FuncDefNode> listF = new LinkedList<FuncDefNode>();
         List<VarDefNode> listV = new LinkedList<VarDefNode>();
-        topScope.insertEntity(new ClassEntity("void", new Location(0, 0), voidType, listV, listF));
-        topScope.insertEntity(new ClassEntity("bool", new Location(0, 0), boolType, listV, listF));
-        topScope.insertEntity(new ClassEntity("int", new Location(0, 0), intType, listV, listF));
-        topScope.insertEntity(new ClassEntity("string", new Location(0, 0), strType, listV, listF, strScope));
+        topScope.insertEntity(new ClassEntity("Void", new Location(0, 0), voidType, listV, listF));
+        topScope.insertEntity(new ClassEntity("Bool", new Location(0, 0), boolType, listV, listF));
+        topScope.insertEntity(new ClassEntity("Int", new Location(0, 0), intType, listV, listF));
+        topScope.insertEntity(new ClassEntity("String", new Location(0, 0), strType, listV, listF, strScope));
         arrayScope = new Scope(topScope);
         list = (new LinkedList<>());
         arrayScope.insertEntity(new FuncEntity("size", new Location(0, 0), intType, null, list));
@@ -201,7 +201,7 @@ public class SymbolResolver extends Visit {
     @Override
     public Void visit(VarDefNode node) {
         VarEntity entity = node.getEntity();
-        //out.println(entity.getExpression().type());
+        //out.println(entity.getExpression() + " " + node.location());
         //out.println(scope.idx + " " + node.getName());
         //out.println(scope.idx);
         //out.println(entity.getType().getTypeName());
@@ -213,7 +213,12 @@ public class SymbolResolver extends Visit {
         {
             //out.println("In!!" + node.location());
             if (entity.getExpression() != null)
+            {
                 visitExpressionNode(entity.getExpression());
+            }
+            //if (entity.getExpression() instanceof VarLHSNode)
+              //  out.println(((VarLHSNode)entity.getExpression()).getName() + " " + node.location());
+
             scope.insertEntity(entity);
         }
         return null;
@@ -232,9 +237,17 @@ public class SymbolResolver extends Visit {
             //out.println(node.isAssignable());
             //out.println("In!!");
         }
-        node.setEntity(entity);
-        node.setType(entity.getType());
-
+        //if (node.getName().equals("null"))
+        //{
+            //out.println(((VarEntity)entity).getExpression());
+        //    node.setEntity(entity);
+        //    node.setType(nullType);
+        //}
+        //else
+        //{
+            node.setEntity(entity);
+            node.setType(entity.getType());
+        //}
 
         if (Class != null && Class.getScope().SearchCurrentLevel(node.getName()) != null) {
             node.setPram(paramEntity);
@@ -275,12 +288,13 @@ public class SymbolResolver extends Visit {
         if (firstBlockInFunction) {
             firstBlockInFunction = false;
             //out.println(scope.getEntityMap().isEmpty());
-            node.setScope(scope);
-            //out.println("*****" + node.getStmts().get(2));
+            //node.setScope(scope);
+            //out.println(node.getStmts().get(0) + " " + node.getStmts().get(0).location());
             //for (int i = 0; i < node.getStmts().size(); i++)
             //{
               //  out.println("****" + node.getStmts().get(i));
             //}
+            //out.println(node.getStmts().get(1));
             visitStatementNodes(node.getStmts());
         } else {
             pushScope();
@@ -298,6 +312,7 @@ public class SymbolResolver extends Visit {
         {
             visitExpressionNode(node.getExpression());
         }
+        //out.println(node.getMember());
         //out.println(node.getExpression().type().getClass());
         if (node.getExpression().type() instanceof NullType || node.getExpression().type() instanceof VoidType)
             throw new SemanticError(node.location(), "SymbolResolver: Visit MemLHSNode: Error Type;");
@@ -319,14 +334,16 @@ public class SymbolResolver extends Visit {
         //out.println("IN" + node.location());
         ExpressionNode exprNode = node.getExpression();
         Entity preEntity;
-        //out.println(exprNode.getClass() + " " + node.location());
+        //out.println((exprNode);
         if (exprNode instanceof VarLHSNode || exprNode instanceof  FuncallNode || exprNode instanceof ArefLHSNode || exprNode instanceof  CreatorNode)
         {
             if (exprNode instanceof VarLHSNode)
             {
+                //out.println(((VarLHSNode)exprNode).getName());
                 VarEntity varEntity = (VarEntity) (((VarLHSNode) exprNode).getEntity());
                 preEntity = scope.Search(varEntity.getType().getTypeName());
                 //out.println(varEntity.getType().getTypeName());
+                //out.println(scope.Search("String"));
 
             }
             else

@@ -20,6 +20,7 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 //import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 import static java.lang.System.out;
 
@@ -171,7 +172,8 @@ public class ASTBuilder extends MxBaseListener {
         List<TerminalNode> nodeList = ctx.Id();
         //out.println("***" + ctx.Id().get(0).getText());
         List<MxParser.ExpressionContext> expressionList= ctx.expression();
-        //out.println(ctx.expression(0).getText());
+        //if (ctx.expression(0) != null)
+        //    out.println(new Location(ctx) + " " + ctx.expression(0).getText());
         //for (int i = 0; i < nodeList.size(); i++)
         //out.println(ctx.expression().size());
         List<VarDefNode> varDefNodes = new LinkedList<>();
@@ -216,19 +218,24 @@ public class ASTBuilder extends MxBaseListener {
 
 
     @Override public void exitIfStatement(MxParser.IfStatementContext ctx) {
-        MxParser.IfStmtContext ifstmt = ctx.ifStmt();
+        //MxParser.IfStmtContext ifstmt = ctx.ifStmt();
+        map.put(ctx, map.get(ctx.ifStmt()));
         //map.put(ctx,new IfNode(new Location(ctx), (ExpressionNode) map.get(ifstmt.primaryExpression()), (StatementNode) map.get(ifstmt.statement(10)), (StatementNode) map.get(ifstmt.statement(1))));
-        exitIfStmt(ifstmt);
+        //exitIfStmt(ifstmt);
     }
 
     @Override public void exitIfStmt(MxParser.IfStmtContext ctx) {
-        map.put(ctx,new IfNode(new Location(ctx), (ExpressionNode) map.get(ctx.primaryExpression()), (StatementNode) map.get(ctx.statement(10)), (StatementNode) map.get(ctx.statement(1))));
+        //out.println("if"+map.get(ctx.statement(0)));
+        //out.println(map.get(ctx.statement(1)));
+        map.put(ctx,new IfNode(new Location(ctx), (ExpressionNode) map.get(ctx.primaryExpression()),
+                (StatementNode) map.get(ctx.statement(0)), (StatementNode) map.get(ctx.statement(1))));
     }
 
     @Override public void exitForStatement(MxParser.ForStatementContext ctx) {
-        MxParser.ForStmtContext forstmt = ctx.forStmt();
+        //MxParser.ForStmtContext forstmt = ctx.forStmt();
         //map.put(ctx,new ForNode(new Location(ctx), makeExpression(forstmt.first), makeExpression(forstmt.second), makeExpression(forstmt.thirld), makeStatement(forstmt.statement())));
-        exitForStmt(forstmt);
+        //exitForStmt(forstmt);
+        map.put(ctx, map.get(ctx.forStmt()));
     }
 
     @Override public void exitForStmt(MxParser.ForStmtContext ctx) {
@@ -237,9 +244,10 @@ public class ASTBuilder extends MxBaseListener {
 
     @Override
     public void exitWhileStatement(MxParser.WhileStatementContext ctx) {
-        MxParser.WhileStmtContext whilestmt = ctx.whileStmt();
+        //MxParser.WhileStmtContext whilestmt = ctx.whileStmt();
         //map.put(ctx,new WhileNode(new Location(ctx),(ExpressionNode) map.get(whilestmt.primaryExpression()), makeStatement(whilestmt.statement())));
-        exitWhileStmt(whilestmt);
+        //exitWhileStmt(whilestmt);
+        map.put(ctx, map.get(ctx.whileStmt()));
     }
 
     @Override public void exitWhileStmt(MxParser.WhileStmtContext ctx) {
@@ -286,9 +294,10 @@ public class ASTBuilder extends MxBaseListener {
                 //int j = 0;
                 List<Object> list = (List<Object>)map.get(node);
                 //out.println("I've coming;");
+               // out.println(list.size());
                 for (Object i : list)
                 {
-
+             //       out.println(i);
                     stmt.add((StatementNode) i);
                     //j++;
                     //out.println(j);
@@ -298,12 +307,13 @@ public class ASTBuilder extends MxBaseListener {
             else
             {
                 //out.println(node.getClass());
-                //out.println(node);
+                //out.println(map.get(node));
                 stmt.add((StatementNode) map.get(node));
             }
         }
+        //out.println();
         //out.println(stmt.size());
-        //out.println("&&&" + stmt.get(0));
+        //out.println("&&&" + stmt.get(1));
         map.put(ctx, new BlockNode(new Location(ctx), stmt));
     }
 
@@ -449,7 +459,7 @@ public class ASTBuilder extends MxBaseListener {
     }*/
 
     @Override public void exitAssign(MxParser.AssignContext ctx) {
-        //out.println(ctx.expression(0).getText());
+        //out.print(new Location(ctx) + " " + ctx.expression(0).getText() + " ");
         //out.println(ctx.expression(1).getText());
 
         map.put(ctx, new AssignNode(makeExpression(ctx.expression(0)), makeExpression(ctx.expression(1))));
