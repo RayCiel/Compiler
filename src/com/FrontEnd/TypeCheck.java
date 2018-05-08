@@ -26,10 +26,12 @@ public class TypeCheck extends Visit{
 
     public void CheckCompatible (Type left, Type right, Location _location)
     {
+        //out.println(left);
+        //out.println(right);
         //out.println(right + " " + _location);
         //out.println(left.isInt() + " " + _location);
         //out.println(right.isStr());
-        //out.println(((FuncType)right).getFuncEntity().getResult().getTypeName());
+        //out.println(((FuncType)left).getFuncEntity().getResult());
         if (!left.isCompatible(right))
         //if (!left.getTypeName().equals(right.getTypeName()))
         {

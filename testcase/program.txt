@@ -1,27 +1,4 @@
-int Wallace = 1<<10;
-class sometimes {
-    int naive;
-    string haha;
-}
-class ArrayWrapper {
-    sometimes[][] arr;
-}
-int get(int n) {
-    if (n == 0) return 0;
-    return 1 + get(n-1);
-}
-int main() {
-    sometimes keep = new sometimes;
-    int n = 3;
-    keep.naive = 2 + get(n) * 4 / 5;
-    bool fun = (keep.naive - 5 * 3) != (666 ^ 7);
-    while (getInt() < Wallace) {
-        keep.naive++;
-        ++n;
-    }
-    return 0;
-}
-/*int main()
+int main()
 {
 	int[][] array = new int[3][3];
 	array[0] = null;
@@ -38,50 +15,8 @@ int main() {
 	}
 
 	return 0;
-}*//*
-class A {
-    int a;
 }
-int main() {
-	int x = 1;
-	{
-	    //string x = "gzotpa";
-	    //{
-	        //bool x = true;
-	        {
-                A x = null;
-	        }
-	        //if (x) print("gzotpa");
-	    //}
-	    //int y = x.length();
-	}
-	x = x + 1;
-	return x;
-}*/
-/*class A{int a;}
-A foo(){
-   return new A();
-}
-int main(){
-  foo().a=1;
-  return 0;
-}*/
-/*class A{
-A a;
-void f(A t)
-{this=t;}
-}
-int main(){
-  return 0;
-}*/
 
-/*int main()
-{
-	int a = 1;
-	string b;
-	b = toString(a);
-	return 0;
-}*/
 
 /*bool a;
 bool b;
@@ -105,18 +40,63 @@ int main() {
 	println("too young too simple.");
 	return 0;
 }*/
-/*int main() {
-	A tmp;
-    return tmp.a.b.s.substring(0,1).length();
-}
-class A{
-	B a;
-}
-class B{
-	C b;
-}
-class C{
-	string s;
-}*/
 
+/*string a = "\n\n\n\"\\\"";
+
+class A {
+    bool b;
+}
+
+int main() {
+    println(a + " " + a);
+    // what a mess
+    int [] [] [] a;
+    a = new int [2] [] [];
+    if (true) {
+        int[] b = a [1] [1];
+        int [][] c = a [1];
+        A[][] a = new A[2][];
+        if (a[1][1].b) {}
+    }
+}*/
+/*int main()
+{
+    int[][] a = new int[100][];
+    int i;
+	int j;
+    for (i = 0; i < 100; i++)
+        a[i] = new int[100];
+    int sum = 0;
+
+    for (i = 0;i < 100;i++)
+        for (j = 0;j < 100;j++)
+            a[i][j] = 0;
+    for (i = 0;i < 100;i++)
+    	if (i > 20 && i < 80) {
+        	for (j = 0;j < 100;j++)
+            	if (j > 5 || i < 90)
+                	a[i][j] = j + (100 - 1 + 1 - 1 + 1) / 2;
+    	}
+
+    for (i = 0;i < 100;i++)
+        for (j = 0;j < 100;j++)
+            sum = sum + a[i][j];
+    println(toString(sum));
+}
+*/
+/*class experience {
+    int naive;
+}
+int main() {
+    if (true)
+      if (true)
+         print("hello");
+       else
+         print("bye");
+
+    experience[][] exp = new experience[5][6];
+    string[] vec;
+    int[][] mat = new int[5][6];
+    vec = new string[10];
+}*/
 

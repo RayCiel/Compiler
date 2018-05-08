@@ -3,6 +3,7 @@ package com.Type;
 public class BoolType extends Type {
     public BoolType() {
         super();
+        TypeName = "Bool";
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.Type;
 public class IntType extends Type {
     public IntType() {
         super();
+        TypeName = "Int";
     }
 
     @Override

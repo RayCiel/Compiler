@@ -27,7 +27,7 @@ public class SymbolResolver extends Visit {
     public SymbolResolver(Scope topScope) {
         //scope.idx = "top";
         topScope.idx = "top";
-        List<ParamEntity> list;
+        /*List<ParamEntity> list;
         topScope.insertEntity(new VarEntity("null", new Location(0, 0), nullType, null));
         list = (new LinkedList<>());
         list.add(new ParamEntity("str", new Location(0, 0), strType));
@@ -59,13 +59,15 @@ public class SymbolResolver extends Visit {
         topScope.insertEntity(new ClassEntity("String", new Location(0, 0), strType, listV, listF, strScope));
         arrayScope = new Scope(topScope);
         list = (new LinkedList<>());
-        arrayScope.insertEntity(new FuncEntity("size", new Location(0, 0), intType, null, list));
+        arrayScope.insertEntity(new FuncEntity("size", new Location(0, 0), intType, null, list));*/
         scope = topScope;
         //scope.insertEntity(new FuncEntity("size", new Location(0, 0), intType, null, null));
         this.topScope = topScope;
 
         scopeStack.push(scope);
     }
+
+
 
     public boolean TypeResolver(Type type)
     {
@@ -129,6 +131,7 @@ public class SymbolResolver extends Visit {
         pushScope();
         //out.println(scope.idx);
         classEntity.setScope(scope);
+        //out.println(scope.idx);
         //out.println(Class.getName());
     }
 
@@ -138,9 +141,43 @@ public class SymbolResolver extends Visit {
         Class = null;
     }
 
+    public void preVisit(FuncDefNode node)
+    {
+        scope.insertEntity(node.getEntity());
+    }
+    public void preVisit(ClassDefNode node)
+    {
+        Entity entity;
+        //out.println(scope.getEntityMap());
+        scope.insertEntity(node.getEntity());
+        pushScope();
+        node.getEntity().setScope(scope);
+        scope.insertEntity(new VarEntity("this", node.getEntity().getLocation(), node.getEntity().getType(), null));
+
+
+        for(VarDefNode i : node.getEntity().getVariables())
+        {
+                scope.insertEntity(i.getEntity());
+        }
+
+        for(FuncDefNode i : node.getEntity().getFunctions())
+        {
+            scope.insertEntity(i.getEntity());
+            pushScope();
+            for(ParamEntity j : i.getEntity().getParam())
+            {
+                scope.insertEntity(j);
+            }
+            i.getEntity().getBody().setScope(scope);
+            popScope();
+        }
+        popScope();
+    }
+
     @Override
     public Void visit(ClassDefNode node) {
         ClassEntity entity = node.getEntity();
+        //out.println("IN!!");
         //scope.insertEntity(entity);
         //out.println(scope.Search("A"));
         pushClass(entity);
@@ -155,6 +192,7 @@ public class SymbolResolver extends Visit {
         for (FuncDefNode memberFunc : entity.getFunctions()) {
             scope.insertEntity(memberFunc.getEntity());
         }
+        //out.println(entity.getScope().Search());
 
         visitStatementNodes(entity.getVariables());
         visitStatementNodes(entity.getFunctions());
@@ -257,6 +295,34 @@ public class SymbolResolver extends Visit {
     }
 
     @Override
+    public Void visit(FuncallNode node)
+    {
+       super.visit(node);
+       //out.println(node.getExpression().getClass() + " " + node.location());
+        if (node.getExpression() instanceof MemLHSNode)
+        {
+            //out.println("In!!!S");
+            node.getExpression().setType(((MemLHSNode) node.getExpression()).getEntity().getType());
+         //   out.println(((MemLHSNode) node.getExpression()).getEntity().getType());
+        }
+       else if (node.getExpression() instanceof VarLHSNode)
+       {
+           //out.println("IN!!!");
+           node.getExpression().setType(((VarLHSNode) node.getExpression()).getEntity().getType());
+           //out.println(((VarLHSNode) node.getExpression()).getEntity().getType());
+       }
+
+       else
+       {
+           throw new RuntimeException("SymbolResolver: visit: FuncallNode: Unknown expression type;");
+       }
+       //out.println(node.type());
+       //out.println(node.getExpression().type());
+       //node.setType(node.getExpression().type());
+       return null;
+    }
+
+    @Override
     public Void visit(StrLitNode node) {
         Entity entity = topScope.SearchCurrentLevel(StrType.STRING_CONSTANT_PREFIX + node.getStr());
         if (entity == null) {
@@ -312,6 +378,7 @@ public class SymbolResolver extends Visit {
         {
             visitExpressionNode(node.getExpression());
         }
+        //out.println(node.getName());
         //out.println(node.getMember());
         //out.println(node.getExpression().type().getClass());
         if (node.getExpression().type() instanceof NullType || node.getExpression().type() instanceof VoidType)
@@ -334,7 +401,7 @@ public class SymbolResolver extends Visit {
         //out.println("IN" + node.location());
         ExpressionNode exprNode = node.getExpression();
         Entity preEntity;
-        //out.println((exprNode);
+        //out.println(exprNode);
         if (exprNode instanceof VarLHSNode || exprNode instanceof  FuncallNode || exprNode instanceof ArefLHSNode || exprNode instanceof  CreatorNode)
         {
             if (exprNode instanceof VarLHSNode)
@@ -342,12 +409,21 @@ public class SymbolResolver extends Visit {
                 //out.println(((VarLHSNode)exprNode).getName());
                 VarEntity varEntity = (VarEntity) (((VarLHSNode) exprNode).getEntity());
                 preEntity = scope.Search(varEntity.getType().getTypeName());
+                //out.println(scope.idx);
+                //out.println(preEntity.getName());
+                //out.println(preEntity);
                 //out.println(varEntity.getType().getTypeName());
                 //out.println(scope.Search("String"));
 
             }
+            //if (exprNode instanceof FuncallNode)
+            //{
+            //    preEntity = scope.Search((node).type().getTypeName());
+            //}
             else
             {
+                //out.println(exprNode);
+                //out.println(((ExpressionNode) exprNode).type());
                 preEntity = scope.Search(((ExpressionNode) exprNode).type().getTypeName());
                 //out.println(((ExpressionNode) exprNode).getClass());
             }
@@ -359,6 +435,7 @@ public class SymbolResolver extends Visit {
             if (!(preEntity instanceof ClassEntity))
                 throw new SemanticError(node.location(), "SymbolResolver: Visit MemLHSNode: " + preEntity.getName() + " has found, but " +  preEntity.getType().getTypeName() + " is not ClassEntity;");
             //out.println(node.getMember());
+            //out.println(((ClassEntity) preEntity).getScope().getEntityMap());
             preEntity = ((ClassEntity) preEntity).getScope().SearchCurrentLevel(node.getMember());
             //preEntity = ((ClassEntity) preEntity).getScope().Search(node.getMember());
             //out.println(preEntity.getType().getTypeName());

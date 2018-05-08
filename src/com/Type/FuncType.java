@@ -45,6 +45,12 @@ public class FuncType extends Type{
             check = isStr();
         else if (obj.isVoid())
             check = false;
+        else if (obj.isClass())
+        {
+            //out.println(((ClassType)obj).getTypeName());
+            //out.println(funcEntity.getResult().TypeName);
+            check = funcEntity.getResult().getTypeName().equals(((ClassType)obj).getTypeName());
+        }
         return check;
     }
 

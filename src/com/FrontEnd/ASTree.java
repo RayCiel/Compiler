@@ -1,12 +1,16 @@
 package com.FrontEnd;
 
-import com.AST.DefinitionNode;
-import com.AST.Location;
+import com.AST.*;
 import com.Entity.*;
 import com.ThrowError.SemanticError;
 
+import java.util.LinkedList;
 import java.util.List;
 
+import static com.FrontEnd.TypeCheck.*;
+import static com.FrontEnd.TypeCheck.intType;
+import static com.FrontEnd.TypeCheck.strType;
+import static com.Type.Type.nullType;
 import static java.lang.System.out;
 
 public class ASTree {
@@ -60,6 +64,7 @@ public class ASTree {
         //out.println(definitionNode.size());
        // for (DefinitionNode node : definitionNode)
        //     out.println(node.getName());
+
         typeCheck.visitDefNodes(definitionNode);
         //out.println(scope.isTop());
 
@@ -73,13 +78,56 @@ public class ASTree {
     public void SymbolResolver() {
         //out.println(classEntity.get(0).getName());
         //out.println(funcEntity.get(0).getName());
-        for (ClassEntity entity : classEntity) {
+        List<ParamEntity> list;
+        scope.insertEntity(new VarEntity("null", new Location(0, 0), nullType, null));
+        list = (new LinkedList<>());
+        list.add(new ParamEntity("str", new Location(0, 0), strType));
+        scope.insertEntity(new FuncEntity("print", new Location(0,0), voidType, null, list));
+        scope.insertEntity(new FuncEntity("println", new Location(0, 0), voidType, null, list));
+        list = (new LinkedList<>());
+        scope.insertEntity(new FuncEntity("getString", new Location(0, 0), strType, null, list));
+        scope.insertEntity(new FuncEntity("length", new Location(0, 0), intType, null, list));
+        scope.insertEntity(new FuncEntity("getInt", new Location(0, 0), intType, null, list));
+        list = (new LinkedList<>());
+        list.add(new ParamEntity("i", new Location(0, 0), intType));
+        scope.insertEntity(new FuncEntity("toString", new Location(0, 0), strType, null, list));
+        Scope strScope = new Scope(scope);
+        list = (new LinkedList<>());
+        strScope.insertEntity(new FuncEntity("length", new Location(0, 0), intType, null, list));
+        strScope.insertEntity(new FuncEntity("parseInt", new Location(0, 0), intType, null, list));
+        list = (new LinkedList<>());
+        list.add(new ParamEntity("left", new Location(0, 0), intType));
+        list.add(new ParamEntity("right", new Location(0, 0), intType));
+        strScope.insertEntity(new FuncEntity("substring", new Location(0, 0), strType, null, list));
+        list = (new LinkedList<>());
+        list.add(new ParamEntity("pos", new Location(0, 0), intType));
+        strScope.insertEntity(new FuncEntity("ord", new Location(0, 0), intType, null, list));
+        List<FuncDefNode> listF = new LinkedList<FuncDefNode>();
+        List<VarDefNode> listV = new LinkedList<VarDefNode>();
+        scope.insertEntity(new ClassEntity("Void", new Location(0, 0), voidType, listV, listF));
+        scope.insertEntity(new ClassEntity("Bool", new Location(0, 0), boolType, listV, listF));
+        scope.insertEntity(new ClassEntity("Int", new Location(0, 0), intType, listV, listF));
+        scope.insertEntity(new ClassEntity("String", new Location(0, 0), strType, listV, listF, strScope));
+        Scope arrayScope = new Scope(scope);
+        list = (new LinkedList<>());
+        arrayScope.insertEntity(new FuncEntity("size", new Location(0, 0), intType, null, list));
+
+        /*for (ClassEntity entity : classEntity) {
             scope.insertEntity(entity);
         }
         for (FuncEntity entity : funcEntity) {
             scope.insertEntity(entity);
-        }
+        }*/
+        //out.println(scope.Search("C"));
         SymbolResolver resolver = new SymbolResolver(scope);
+        for(DefinitionNode i : definitionNode)
+        {
+            if(i instanceof FuncDefNode)
+                resolver.preVisit((FuncDefNode) i);
+            else if(i instanceof ClassDefNode)
+                resolver.preVisit((ClassDefNode) i);
+        }
+
         //out.println(definitionNode.size());
         resolver.visitDefNodes(definitionNode);
     }

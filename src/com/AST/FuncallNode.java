@@ -27,7 +27,10 @@ public class FuncallNode extends ExpressionNode {
         args.add(0, _exprNode);
     }
 
-
+    public void setType(Type _type)
+    {
+        type = _type;
+    }
 
     @Override
     public Type type() {

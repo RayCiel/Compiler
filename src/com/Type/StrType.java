@@ -17,6 +17,7 @@ public class StrType extends Type{
 
     public StrType() {
         super();
+        TypeName = "String";
     }
 
     public void initializeBuiltinFunction()

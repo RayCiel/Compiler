@@ -137,6 +137,7 @@ public class ASTBuilder extends MxBaseListener {
 
         ClassEntity entity = new ClassEntity(className, new Location(ctx.name), varDefNodes, funcDefNodes);
         entity.setConstruct(construct);
+        //out.println(entity.getVariables());
         map.put(ctx, new ClassDefNode(entity));
 
     }

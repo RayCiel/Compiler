@@ -5,6 +5,7 @@ import com.Type.*;
 
 abstract public class ExpressionNode extends ASTNode{
     protected boolean isAss = false;
+    public Type type;
     public ExpressionNode()
     {
         super();
@@ -30,7 +31,14 @@ abstract public class ExpressionNode extends ASTNode{
     public boolean isValue() {
         return false;
     }
-    abstract public Type type();
+    public Type type()
+    {
+        return type;
+    }
+    public void setType(Type _type)
+        {
+            type = _type;
+        }
 
     abstract public <S, E> E accept(ASTVisitor<S, E> visitor);
 }
