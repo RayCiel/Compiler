@@ -6,11 +6,12 @@ import com.Type.*;
 abstract public class LHSNode extends ExpressionNode{
     protected Type type;
     protected Location location;
-    protected boolean isAss = true;
 
     public LHSNode()
     {
         super();
+        isAss = true;
+
     }
 
     @Override

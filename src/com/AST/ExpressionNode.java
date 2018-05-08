@@ -4,7 +4,7 @@ import com.FrontEnd.ASTVisitor;
 import com.Type.*;
 
 abstract public class ExpressionNode extends ASTNode{
-    private boolean isAss = false;
+    protected boolean isAss = false;
     public ExpressionNode()
     {
         super();
