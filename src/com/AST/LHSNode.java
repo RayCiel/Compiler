@@ -6,6 +6,7 @@ import com.Type.*;
 abstract public class LHSNode extends ExpressionNode{
     protected Type type;
     protected Location location;
+    protected boolean isAss = true;
 
     public LHSNode()
     {
@@ -31,7 +32,13 @@ abstract public class LHSNode extends ExpressionNode{
     @Override
     public boolean isAssignable()
     {
-        return true;
+        return isAss;
+    }
+
+    @Override
+    public void setAssignable(boolean _isAss)
+    {
+        this.isAss = _isAss;
     }
 
     @Override

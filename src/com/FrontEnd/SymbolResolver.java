@@ -229,7 +229,7 @@ public class SymbolResolver extends Visit {
         if (node.getName().equals("this"))
         {
             node.setAssignable(false);
-            out.println(node.isAssignable());
+            //out.println(node.isAssignable());
             //out.println("In!!");
         }
         node.setEntity(entity);
