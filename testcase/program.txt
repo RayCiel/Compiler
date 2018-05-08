@@ -1,12 +1,18 @@
-int main(){
-	int[] a = new int[3];
-	print("I have done " + toString(a.size()) + " little things");
-	println("too young!");
-	print(getString() + toString("\"hahaha\"".length()));
-	println("four scores and seven years".substring(0, getInt()));
-	println(toString("45 best songs in the world".parseInt()));
-	return "45 best songs".ord(5);
-}/*int main()
+class A { int a;}
+class B { A b;  }
+class C { B c;  }
+class D { C d;  }
+class E { D e;  }
+class F { E f;  }
+class G { F g;  }
+G world = new G;
+void hello(int world) {
+}
+int main() {
+    hello(world.g.f.e.d.c.b.a);
+    return 0;
+}
+/*int main()
 {
 	int[][] array = new int[3][3];
 	array[0] = null;
