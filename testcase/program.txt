@@ -1,21 +1,29 @@
-class A {
-    int a;}
-int main() {
-	int x = 1;
+int main(){
+	int[] a = new int[3];
+	print("I have done " + toString(a.size()) + " little things");
+	println("too young!");
+	print(getString() + toString("\"hahaha\"".length()));
+	println("four scores and seven years".substring(0, getInt()));
+	println(toString("45 best songs in the world".parseInt()));
+	return "45 best songs".ord(5);
+}/*int main()
+{
+	int[][] array = new int[3][3];
+	array[0] = null;
+	println(toString(array[0].size()));
+	array[0] = new int[10];
+    int i;
+	for(i = 0; i < 10; ++i)
+		array[0][i] = i * i; //
+	println(toString(array[0][9]));
+	while(true)
 	{
-	    string x = "gzotpa";
-	    {
-	        bool x = true;
-	        {
-                A x = null;
-	        }
-	        if (x) print("gzotpa");
-	    }
-	    int y = x.length();
+		break;
+		continue;
 	}
-	x = x + 1;
-	return x;
-}/*
+
+	return 0;
+}*//*
 class A {
     int a;
 }

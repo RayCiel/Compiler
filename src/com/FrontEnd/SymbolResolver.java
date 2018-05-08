@@ -371,7 +371,7 @@ public class SymbolResolver extends Visit {
         }
         else if (exprNode instanceof  StrLitNode)
         {
-            preEntity = scope.Search("string");
+            preEntity = scope.Search("String");
             //out.println(preEntity + " " +preEntity.getLocation());
             //out.println(node.getMember());
             preEntity = ((ClassEntity)preEntity).getScope().SearchCurrentLevel(node.getMember());
