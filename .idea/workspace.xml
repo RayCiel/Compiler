@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/Entity/MemEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Entity/MemEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/AST/WhileNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/WhileNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testcase/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,8 +40,8 @@
           <file leaf-file-name="MemEntity.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/Entity/MemEntity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="7" column="74" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
+                <state relative-caret-position="105">
+                  <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
                 </state>
               </provider>
             </entry>
@@ -111,6 +112,19 @@
                   <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="WhileNode.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/AST/WhileNode.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="285">
+                  <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+                  <folding>
+                    <element signature="e#514#515#0" expanded="true" />
+                    <element signature="e#548#549#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -206,7 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/AST/UnaryNode.java" />
         <option value="$PROJECT_DIR$/src/com/AST/OrNode.java" />
         <option value="$PROJECT_DIR$/src/com/AST/CreatorNode.java" />
         <option value="$PROJECT_DIR$/src/com/AST/IfNode.java" />
@@ -256,6 +269,7 @@
         <option value="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" />
         <option value="$PROJECT_DIR$/src/com/Entity/MemEntity.java" />
+        <option value="$PROJECT_DIR$/src/com/AST/WhileNode.java" />
         <option value="$PROJECT_DIR$/src/com/Main.java" />
       </list>
     </option>
@@ -465,13 +479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-113">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/AST/WhileNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -859,8 +866,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Entity/MemEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="74" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
+        <state relative-caret-position="105">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/AST/WhileNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <folding>
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#548#549#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

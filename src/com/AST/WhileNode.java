@@ -20,7 +20,7 @@ public class WhileNode extends StatementNode{
 
     public StatementNode getDoBody()
     {
-        return getDoBody();
+        return doBody;
     }
 
     @Override

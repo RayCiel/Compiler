@@ -1,15 +1,24 @@
-class A { int a;}
-class B { A b;  }
-class C { B c;  }
-class D { C d;  }
-class E { D e;  }
-class F { E f;  }
-class G { F g;  }
-G world = new G;
-void hello(int world) {
+int Wallace = 1<<10;
+class sometimes {
+    int naive;
+    string haha;
+}
+class ArrayWrapper {
+    sometimes[][] arr;
+}
+int get(int n) {
+    if (n == 0) return 0;
+    return 1 + get(n-1);
 }
 int main() {
-    hello(world.g.f.e.d.c.b.a);
+    sometimes keep = new sometimes;
+    int n = 3;
+    keep.naive = 2 + get(n) * 4 / 5;
+    bool fun = (keep.naive - 5 * 3) != (666 ^ 7);
+    while (getInt() < Wallace) {
+        keep.naive++;
+        ++n;
+    }
     return 0;
 }
 /*int main()
@@ -65,41 +74,6 @@ void f(A t)
 int main(){
   return 0;
 }*/
-
-/*int Wallace = 1<<10;
-class sometimes {
-    int naive;
-    string haha;
-}
-class ArrayWrapper {
-    sometimes[][] arr;
-}
-int get(int n) {
-    if (n == 0) return 0;
-    return 1 + get(n-1);
-}
-int main() {
-    sometimes keep = new sometimes;
-    int n = 3;
-    keep.naive = 2 + get(n) * 4 / 5;
-    bool fun = (keep.naive - 5 * 3) != (666 ^ 7);
-    while (getInt() < Wallace) {
-        keep.naive++;
-        ++n;
-    }
-    return 0;
-}*/
-/*int main(){
-	int[] a = new int[3];
-	int b = a.size();
-	print("I have done " + toString(a.size()) + " little things");
-	println("too young!");
-	print(getString() + toString("\"hahaha\"".length()));
-	println("four scores and seven years".substring(0, getInt()));
-	println(toString("45 best songs in the world".parseInt()));
-	return "45 best songs".ord(5);
-}*/
-
 
 /*int main()
 {
