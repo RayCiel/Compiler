@@ -7,8 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/AST/ExpressionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/ExpressionNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/LHSNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/LHSNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,8 +67,8 @@
           <file leaf-file-name="LHSNode.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/AST/LHSNode.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+                <state relative-caret-position="225">
+                  <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
                   <folding>
                     <element signature="e#342#343#0" expanded="true" />
                     <element signature="e#369#370#0" expanded="true" />
@@ -164,11 +164,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+                <state relative-caret-position="405">
+                  <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -176,7 +176,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Visit.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Visit.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/Visit.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="300">
@@ -238,9 +238,9 @@
       <find>Vardef</find>
       <find>vardefNode</find>
       <find>Funcall</find>
-      <find>this</find>
       <find>Assi</find>
       <find>LHS</find>
+      <find>this</find>
     </findStrings>
     <replaceStrings>
       <replace>Operation</replace>
@@ -298,11 +298,11 @@
         <option value="$PROJECT_DIR$/src/com/Type/ArrayType.java" />
         <option value="$PROJECT_DIR$/src/com/Type/FuncType.java" />
         <option value="$PROJECT_DIR$/src/com/Type/StrType.java" />
-        <option value="$PROJECT_DIR$/src/com/Main.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" />
         <option value="$PROJECT_DIR$/src/com/AST/ExpressionNode.java" />
         <option value="$PROJECT_DIR$/src/com/AST/LHSNode.java" />
+        <option value="$PROJECT_DIR$/src/com/Main.java" />
       </list>
     </option>
   </component>
@@ -482,7 +482,7 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.3234375" side_tool="true" weight="0.20064378" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6765625" visible="true" weight="0.16740088" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6765625" visible="true" weight="0.16740088" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
@@ -812,16 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/Visit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -915,8 +905,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/AST/LHSNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        <state relative-caret-position="225">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
             <element signature="e#342#343#0" expanded="true" />
             <element signature="e#369#370#0" expanded="true" />
@@ -932,6 +922,16 @@
             <element signature="e#765#766#0" expanded="true" />
             <element signature="e#799#800#0" expanded="true" />
             <element signature="e#830#831#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
