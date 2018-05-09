@@ -95,9 +95,9 @@ public class ArrayType extends Type{
         //out.println(getParentType());
         //out.println(dimension);
         if (getParentType() instanceof ArrayType)
-            return "Array";
+            return "#Array";
         else if (getParentType() == null)
-            return "Array";
+            return "#Array";
         return getParentType().getTypeName();
     }
 
