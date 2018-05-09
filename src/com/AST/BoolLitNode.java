@@ -12,7 +12,7 @@ public class BoolLitNode extends LiteralNode{
         this.bool = _bool;
     }
 
-    public boolean getBool()
+    public boolean getVal()
     {
         return bool;
     }

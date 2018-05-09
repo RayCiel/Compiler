@@ -13,7 +13,7 @@ public class BlockNode extends StatementNode {
     public BlockNode(Location _location, List<StatementNode> _stmts)
     {
         super(_location);
-        this.stmts= _stmts;
+        this.stmts = _stmts;
     }
 
     public static BlockNode wrapBlock(StatementNode _stmtNode) {
@@ -24,7 +24,7 @@ public class BlockNode extends StatementNode {
             return (BlockNode) _stmtNode;
         }
         else {
-            return new BlockNode(_stmtNode.location(), new LinkedList<StatementNode>() {{add(_stmtNode);}});
+            return new BlockNode(_stmtNode.getLocation(), new LinkedList<StatementNode>() {{add(_stmtNode);}});
         }
     }
 

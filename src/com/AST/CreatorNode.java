@@ -8,16 +8,15 @@ import java.util.List;
 public class CreatorNode extends ExpressionNode{
     protected Location location;
     protected List<ExpressionNode> args;
-    protected Type type;
-    private int dimension;
+
 
     public CreatorNode(Location _location, List<ExpressionNode> _args, Type _type, int _dimension)
     {
+        //???
         super();
         this.location = _location;
         this.args = _args;
-        this.type = _type;
-        this.dimension = _dimension;
+        this.type = new ArrayType(_dimension, _type);
     }
 
     public List<ExpressionNode> getArgs()
@@ -25,27 +24,9 @@ public class CreatorNode extends ExpressionNode{
         return args;
     }
 
-    public void setArgs(List<ExpressionNode> _args)
-    {
-        this.args =_args;
-    }
-
-
-    public Type getType() {
-        return type();
-    }
-
-
 
     @Override
-    public Type type()
-    {
-        return type;
-    }
-
-
-    @Override
-    public Location location()
+    public Location getLocation()
     {
         return location;
     }

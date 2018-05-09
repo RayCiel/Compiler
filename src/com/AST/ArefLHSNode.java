@@ -28,9 +28,9 @@ public class ArefLHSNode extends LHSNode {
     @Override
     public Type getType()
     {
-        Type t = expression.type();
+        Type t = expression.getType();
         if(!(t instanceof ArrayType))
-            throw new SemanticError(location(), "Not Array");
+            throw new SemanticError(getLocation(), "Not Array");
         return ((ArrayType) t).getParentType();
     }
 
@@ -45,9 +45,9 @@ public class ArefLHSNode extends LHSNode {
         return index;
     }
 
-    public Location location()
+    public Location getLocation()
     {
-        return expression.location();
+        return expression.getLocation();
     }
 
     public <S, E> E accept(ASTVisitor<S,E> visitor)

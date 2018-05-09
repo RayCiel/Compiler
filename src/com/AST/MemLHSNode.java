@@ -13,10 +13,7 @@ public class MemLHSNode extends VarLHSNode{
     public MemLHSNode(ExpressionNode _expression, String _member, Location _location)
     {
         super(_location, _member);
-        this.location = _location;
-
         this.expression = _expression;
-        this.member = _member;
     }
 
     public ExpressionNode getExpression()
@@ -31,7 +28,7 @@ public class MemLHSNode extends VarLHSNode{
 
     public String getMember()
     {
-        return member;
+        return name;
     }
 
     public void setEntity(Entity _entity)
@@ -39,12 +36,18 @@ public class MemLHSNode extends VarLHSNode{
         this.entity = _entity;
     }
 
+    @Override
+    public boolean isMember()
+    {
+        return true;
+    }
+
     //@Override
-    //public Location location()
+    //public Location getLocation()
     //{
     //    return location;
         //out.println(expression);
-        //return expression.location();
+        //return expression.getLocation();
     //}
 
 

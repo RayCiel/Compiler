@@ -26,26 +26,20 @@ public class FuncallNode extends ExpressionNode {
         args.add(0, _exprNode);
     }
 
+
     public void setType(Type _type)
     {
         type = _type;
     }
 
-    @Override
-    public Type type()
+    public Type getReturnType()
     {
-        return expression.type();
+        return expression.getType();
     }
 
     @Override
-    public Type getType()
-    {
-        return expression.type();
-    }
-
-    @Override
-    public Location location() {
-        return expression.location();
+    public Location getLocation() {
+        return expression.getLocation();
     }
 
     @Override

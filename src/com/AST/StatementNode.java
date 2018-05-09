@@ -12,7 +12,7 @@ abstract public class StatementNode extends ASTNode{
     }
 
     @Override
-    public Location location()
+    public Location getLocation()
     {
         return location;
     }

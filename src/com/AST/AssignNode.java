@@ -34,20 +34,18 @@ public class AssignNode extends ExpressionNode{
     }
 
     @Override
-    public Type type()
-    {
-        return left.type();
-    }
-
     public Type getType()
     {
-        return type();
+        if(type == null)
+            type = left.getType();
+        return super.getType();
     }
 
+
     @Override
-    public Location location()
+    public Location getLocation()
     {
-        return left.location();
+        return left.getLocation();
     }
 
     @Override
