@@ -1,6 +1,8 @@
 package com.AST;
 
 import com.FrontEnd.ASTVisitor;
+import com.ThrowError.SemanticError;
+import com.Type.ArrayType;
 import com.Type.Type;
 
 public class ArefLHSNode extends LHSNode {
@@ -26,7 +28,10 @@ public class ArefLHSNode extends LHSNode {
     @Override
     public Type getType()
     {
-        return expression.type();
+        Type t = expression.type();
+        if(!(t instanceof ArrayType))
+            throw new SemanticError(location(), "Not Array");
+        return ((ArrayType) t).getParentType();
     }
 
     //@Override

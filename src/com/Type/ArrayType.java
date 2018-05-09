@@ -94,29 +94,25 @@ public class ArrayType extends Type{
         //out.println(parentType);
         //out.println(getParentType());
         //out.println(dimension);
-        if (getParentType() instanceof ArrayType)
-            return "#Array";
-        else if (getParentType() == null)
-            return "#Array";
-        return getParentType().getTypeName();
+        return "#Array";
     }
 
     @Override
     public boolean isInt()
     {
-        return baseType.getTypeName().equals("Int");
+        return false;
     }
 
     @Override
     public boolean isBool()
     {
-        return baseType.getTypeName().equals("Bool");
+        return false;
     }
 
     @Override
     public boolean isStr()
     {
-        return baseType.getTypeName().equals("String");
+        return false;
     }
 
     @Override
