@@ -7,7 +7,6 @@ import java.util.List;
 public class FuncallNode extends ExpressionNode {
     protected ExpressionNode expression;
     protected List<ExpressionNode> args;
-    //protected FuncType type;
 
     public FuncallNode(ExpressionNode _expression, List<ExpressionNode> _args) {
         super();
@@ -33,7 +32,14 @@ public class FuncallNode extends ExpressionNode {
     }
 
     @Override
-    public Type type() {
+    public Type type()
+    {
+        return expression.type();
+    }
+
+    @Override
+    public Type getType()
+    {
         return expression.type();
     }
 
