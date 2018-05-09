@@ -449,7 +449,7 @@ public class SymbolResolver extends Visit {
             {
                 throw new SemanticError(node.location(), "No member " + node.getMember());
             }
-            Entity entity = arrayScope.Search("size");
+            Entity entity = scope.Search("size");
             //out.println(entity);
            // if (entity.getType() instanceof ArrayType)
             node.setEntity(entity);
@@ -488,6 +488,7 @@ public class SymbolResolver extends Visit {
                 {
 
                     //out.println(((ArrayType)((ArefLHSNode) exprNode).getType()).getTypeName());
+                    out.println(((ArefLHSNode) exprNode).getType());
                     preEntity = scope.Search(((ArrayType)((ArefLHSNode) exprNode).getType()).getTypeName());
                     //out.println(((ArrayType)((ArefLHSNode) exprNode).getType()));
                     //out.println(((ArrayType)((ArefLHSNode) exprNode).getType()).getTypeName());
