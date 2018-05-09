@@ -4,9 +4,7 @@ import com.FrontEnd.ASTVisitor;
 import com.Type.*;
 
 abstract public class LHSNode extends ExpressionNode{
-    protected Type type;
     protected Location location;
-
     public LHSNode()
     {
         super();
@@ -14,16 +12,6 @@ abstract public class LHSNode extends ExpressionNode{
 
     }
 
-    @Override
-    public Type type()
-    {
-        return type;
-    }
-
-    public Type getType()
-    {
-        return type();
-    }
 
     public void setType(Type _type)
     {
@@ -43,11 +31,13 @@ abstract public class LHSNode extends ExpressionNode{
     }
 
     @Override
-    public boolean isValue() {
+    public boolean isValue()
+    {
         return true;
     }
 
-    public Location location() {
+    public Location getLocation()
+    {
         return location;
     }
 

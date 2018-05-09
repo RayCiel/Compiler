@@ -8,13 +8,6 @@ public class VarLHSNode extends LHSNode{
     protected Entity entity;
     protected Location location;
     protected String name;
-    protected ParamEntity pram;
-
-    public VarLHSNode(Entity _entity)
-    {
-        super();
-        this.entity = _entity;
-    }
 
     public VarLHSNode(Location location, String name) {
         this.location = location;
@@ -31,13 +24,6 @@ public class VarLHSNode extends LHSNode{
         type = _type;
     }
 
-    public Location getLocation() {
-        return location;
-    }
-
-    public ParamEntity getPram() {
-        return pram;
-    }
 
     public String getName() {
         return name;
@@ -45,19 +31,16 @@ public class VarLHSNode extends LHSNode{
 
     public boolean isMember()
     {
-        return pram != null;
+        return false;
     }
 
     public void setEntity(Entity entity) {
         this.entity = entity;
     }
 
-    public void setPram(ParamEntity entity) {
-        this.pram = entity;
-    }
 
     @Override
-    public Location location()
+    public Location getLocation()
     {
         return location;
     }

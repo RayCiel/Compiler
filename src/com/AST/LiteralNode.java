@@ -4,7 +4,6 @@ import com.FrontEnd.ASTVisitor;
 import com.Type.*;
 
 abstract public class LiteralNode extends ExpressionNode{
-    protected Type type;
     protected Location location;
 
     public LiteralNode(Type _type, Location _location)
@@ -15,13 +14,8 @@ abstract public class LiteralNode extends ExpressionNode{
     }
 
     @Override
-    public Location location() {
+    public Location getLocation() {
         return location;
-    }
-
-    @Override
-    public Type type() {
-        return type;
     }
 
     @Override

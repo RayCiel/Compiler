@@ -37,20 +37,15 @@ abstract public class UnaryNode extends ExpressionNode {
     }
 
     @Override
-    public Type type()
-    {
-        return expression.type();
-    }
-
     public Type getType()
     {
-        return type();
+        return expression.getType();
     }
 
     @Override
-    public Location location()
+    public Location getLocation()
     {
-        return expression.location();
+        return expression.getLocation();
     }
 
     @Override

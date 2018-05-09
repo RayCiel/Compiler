@@ -5,14 +5,14 @@ import com.Type.*;
 
 abstract public class ExpressionNode extends ASTNode{
     protected boolean isAss = false;
-    public Type type;
+    protected Type type;
     public ExpressionNode()
     {
         super();
     }
 
     @Override
-    public Location location() {
+    public Location getLocation() {
         return null;
     }
 
@@ -30,10 +30,6 @@ abstract public class ExpressionNode extends ASTNode{
     }
     public boolean isValue() {
         return false;
-    }
-    public Type type()
-    {
-        return type;
     }
     public Type getType()
     {

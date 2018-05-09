@@ -30,7 +30,6 @@ public class BinaryExprNode extends ExpressionNode{
     }
     protected ExpressionNode left, right;
     protected Op operator;
-    protected Type type;
 
     public BinaryExprNode (ExpressionNode left, Op op, ExpressionNode right)
     {
@@ -40,29 +39,18 @@ public class BinaryExprNode extends ExpressionNode{
         this.right = right;
     }
 
-    public BinaryExprNode (Type t, ExpressionNode left, Op op, ExpressionNode right) //qiang zhi lei xing zhuan huan
-    {
-        super();
-        this.operator = op;
-        this.right = right;
-        this.left = left;
-        this.type = t;
-    }
-
-    @Override
-    public Type type()
-    {
-        return (type != null) ? type : left.type();
-    }
 
     public Type getType()
     {
-        return type();
+        if(type == null)
+            type = left.getType();
+        return super.getType();
     }
 
     public void setType(Type _type) {
+        //??? can be deleted
         if(this.type != null)
-            throw new SemanticError(location(), "BinaryExprNode: setType: called twice");
+            throw new SemanticError(getLocation(), "BinaryExprNode: setType: called twice");
         this.type = _type;
     }
 
@@ -80,20 +68,10 @@ public class BinaryExprNode extends ExpressionNode{
         return right;
     }
 
-    public void setLeft(ExpressionNode _left)
-    {
-        this.left = _left;
-    }
-
-    public void setRight(ExpressionNode _right)
-    {
-        this.right = _right;
-    }
-
     @Override
-    public Location location()
+    public Location getLocation()
     {
-        return left.location();
+        return left.getLocation();
     }
 
     @Override
