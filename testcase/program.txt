@@ -2,7 +2,8 @@ int main()
 {
 	int[][] array = new int[3][3];
 	array[0] = null;
-	println(toString(array[0].size()));
+	int a = array[0].size();
+println(toString(array[0].size()));
 	array[0] = new int[10];
     int i;
 	for(i = 0; i < 10; ++i)

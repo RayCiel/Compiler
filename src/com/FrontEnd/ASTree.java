@@ -111,7 +111,7 @@ public class ASTree {
         Scope arrayScope = new Scope(scope);
         list = (new LinkedList<>());
         arrayScope.insertEntity(new FuncEntity("size", new Location(0, 0), intType, null, list));
-
+        scope.insertEntity(new ClassEntity("Array", new Location(0, 0), null, listV, listF, arrayScope));
         /*for (ClassEntity entity : classEntity) {
             scope.insertEntity(entity);
         }

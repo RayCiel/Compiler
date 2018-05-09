@@ -18,6 +18,23 @@ public class ArefLHSNode extends LHSNode {
         return expression;
     }
 
+    public void setType(Type _type)
+    {
+        type = _type;
+    }
+
+    @Override
+    public Type getType()
+    {
+        return expression.type();
+    }
+
+    //@Override
+    //public Type type()
+    //{
+    //    return getType();
+    //}
+
     public ExpressionNode getIndex()
     {
         return index;

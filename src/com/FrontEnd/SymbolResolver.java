@@ -77,7 +77,7 @@ public class SymbolResolver extends Visit {
             //out.println(arrayType.getType().getTypeName());
             //if (arrayType.getType() instanceof VoidType)
             //    throw new RuntimeException("ArrayType cannot be void;");
-            return TypeResolver(arrayType.getType());
+            return TypeResolver(arrayType.getParentType());
         }
         else if (type instanceof ClassType)
         {
@@ -242,7 +242,7 @@ public class SymbolResolver extends Visit {
         //out.println(entity.getExpression() + " " + node.location());
         //out.println(scope.idx + " " + node.getName());
         //out.println(scope.idx);
-        //out.println(entity.getType().getTypeName());
+        //out.println(entity.getType().getTypeName() + " " + node.location());
         if (!TypeResolver(entity.getType()))
         {
             throw new SemanticError(node.location(), "Cannot resolve symbol : " + entity.getType().getTypeName());
@@ -323,6 +323,63 @@ public class SymbolResolver extends Visit {
     }
 
     @Override
+    public Void visit(ArefLHSNode node)
+    {
+        super.visit(node);
+        //out.println(node.getExpression());
+        //out.println(node.getExpression().getClass() + " " + node.location());
+        if (node.getExpression() instanceof FuncallNode)
+        {
+            //out.println("In!!!S");
+            node.getExpression().setType((((FuncallNode) node.getExpression()).type()));
+            //   out.println(((MemLHSNode) node.getExpression()).getEntity().getType());
+        }
+        else if (node.getExpression() instanceof VarLHSNode)
+        {
+            //out.println("IN!!!");
+            VarLHSNode tmpNode = ((VarLHSNode) node.getExpression());
+            ArrayType arrayType;
+            if (tmpNode.getEntity().getType() instanceof ArrayType)
+            {
+                //out.println("IN");
+                arrayType = (ArrayType) tmpNode.getEntity().getType();
+                node.getExpression().setType(arrayType.getType());
+                //out.println(node.getType());
+                //out.println(arrayType.getBaseType());
+            }
+                //out.println(tmpNode.getEntity().getType());
+            //out.println(((ArrayType)tmpNode.getEntity().getType()).getTypeName());
+            else
+            {
+                //out.println("IN");
+                node.getExpression().setType(((VarLHSNode) node.getExpression()).getEntity().getType());
+            }
+                //out.println(((VarLHSNode) node.getExpression()).getEntity().getType());
+        }
+        else if (node.getExpression() instanceof CreatorNode)
+        {
+            node.getExpression().setType(((CreatorNode)node.getExpression()).getType());
+        }
+        else if (node.getExpression() instanceof ArefLHSNode)
+        {
+            out.println(((ArefLHSNode)node.getExpression()).getType());
+            out.println(node.getExpression().type());
+            node.getExpression().setType(((ArefLHSNode)node.getExpression()).getType());
+            //out.println(node.getExpression().type());
+            //out.println(node.getType() + " " + node.location());
+        }
+        else
+        {
+
+            throw new RuntimeException("SymbolResolver: visit: ArefLHSNode: Unknown expression type;");
+        }
+        //out.println(node.type());
+        //out.println(node.getExpression().type());
+        //node.setType(node.getExpression().type());
+        return null;
+    }
+
+    @Override
     public Void visit(StrLitNode node) {
         Entity entity = topScope.SearchCurrentLevel(StrType.STRING_CONSTANT_PREFIX + node.getStr());
         if (entity == null) {
@@ -337,8 +394,9 @@ public class SymbolResolver extends Visit {
     @Override
     public Void visit(CreatorNode node)
     {
-
-        //out.println("***" + node.type().getTypeName());
+        //out.println("IN");
+        //out.println(node.type());
+        //out.println(node.type().getTypeName());
         if (!TypeResolver(node.type()))
         {
             throw new SemanticError(node.location(), "Cannot resolve symbol : " + node.type().getTypeName());
@@ -401,7 +459,7 @@ public class SymbolResolver extends Visit {
         //out.println("IN" + node.location());
         ExpressionNode exprNode = node.getExpression();
         Entity preEntity;
-        //out.println(exprNode);
+        //out.println(exprNode.type());
         if (exprNode instanceof VarLHSNode || exprNode instanceof  FuncallNode || exprNode instanceof ArefLHSNode || exprNode instanceof  CreatorNode)
         {
             if (exprNode instanceof VarLHSNode)
@@ -422,11 +480,26 @@ public class SymbolResolver extends Visit {
             //}
             else
             {
-                //out.println(exprNode);
-                //out.println(((ExpressionNode) exprNode).type());
-                preEntity = scope.Search(((ExpressionNode) exprNode).type().getTypeName());
+                //out.println("IN!!");
+                //out.println(exprNode instanceof ArefLHSNode);
+                //out.println(((ExpressionNode) exprNode));
+                //out.println(((ArefLHSNode)exprNode).getType());
+                if (exprNode instanceof ArefLHSNode)
+                {
+
+                    //out.println(((ArrayType)((ArefLHSNode) exprNode).getType()).getTypeName());
+                    preEntity = scope.Search(((ArrayType)((ArefLHSNode) exprNode).getType()).getTypeName());
+                    //out.println(((ArrayType)((ArefLHSNode) exprNode).getType()));
+                    //out.println(((ArrayType)((ArefLHSNode) exprNode).getType()).getTypeName());
+                    //preEntity = scope.Search((((ArefLHSNode) exprNode).getType()).getTypeName());
+
+                }
+                else
+                    preEntity = scope.Search(((ExpressionNode) exprNode).type().getTypeName());
                 //out.println(((ExpressionNode) exprNode).getClass());
+                //out.println(preEntity.getName());
             }
+
             if (preEntity == null)
             {
                 throw new SemanticError(node.location(), "SymbolResolver: Visit MemLHSNode: Type not find;");

@@ -332,7 +332,7 @@ public class ASTBuilder extends MxBaseListener {
         if (dimemsion != 0)
         {
             //out.println(ctx.primitiveType().getText());
-            map.put(ctx, new ArrayType(type, dimemsion));
+            map.put(ctx, new ArrayType( dimemsion, type.getType()));
         }
         else
         {
@@ -543,17 +543,31 @@ public class ASTBuilder extends MxBaseListener {
 
     @Override public void exitArrayCreator(MxParser.ArrayCreatorContext ctx) {
         Type type;
-        //62out.println("IN!!!");
+        //out.println("IN!!!");
+        //out.println(ctx.Id());
         if (ctx.Id() != null)
         {
             type = new ClassType(ctx.Id().getText());
+            //out.println(type);
         }
         else {
+            //out.println(ctx.primitiveType().getText());
             type = (Type)map.get(ctx.primitiveType());
+            //out.println(type);
         }
         List<MxParser.ExpressionContext> expr = ctx.expression();
+        //out.println(ctx.getChildCount());
+        //out.println(expr.size());
         int dimension = (ctx.getChildCount() - 1 - expr.size()) / 2;
-        Type arrType = new ArrayType(type, dimension);
+        //out.println(type.getTypeName());
+        //out.println(type.getType());
+        //out.println(type);
+        Type arrType = new ArrayType(dimension, type.getType());
+        //out.println(arrType.getTypeName());
+        //out.println(arrType.getType());
+        //out.println((arrType.getType()).getTypeName());
+        //out.println(arrType.getTypeName());
+        //out.println(((ArrayType) arrType).getBaseType());
         List<ExpressionNode> exprNodes = new LinkedList<>();
         for (MxParser.ExpressionContext node : expr)
         {

@@ -145,7 +145,18 @@ public class TypeCheck extends Visit{
         //    rtype = ((FuncType) node.getRight().type()).getFuncEntity().getResult();
         //else
          //   rtype = node.getLeft().type();
-        CheckCompatible(node.getLeft().type(), node.getRight().type(), node.location());
+        //out.println("IN!!");
+        //out.println(((ArefLHSNode)node.getLeft()).type());
+        Type ltype, rtype;
+        if (node.getLeft() instanceof ArefLHSNode)
+            ltype = ((ArefLHSNode)node.getLeft()).getType();
+        else
+            ltype = node.getLeft().type();
+        if (node.getRight() instanceof ArefLHSNode)
+            rtype = ((ArefLHSNode)node.getRight()).getType();
+        else
+            rtype = node.getRight().type();
+        CheckCompatible(ltype, rtype, node.location());
         //CheckCompatible(ltype, rtype, node.location());
         return null;
     }
@@ -161,7 +172,10 @@ public class TypeCheck extends Visit{
         {
             visitExpressionNode(node.getIndex());
         }
-        if (!node.getIndex().type().isArray())
+        //out.println(node + " " + node.getType() + " " + node.location());
+        //out.println(node.getExpression().type());
+        //out.println(node.getExpression() + " " + node.location());
+        if (!node.getType().isArray())
             throw new SemanticError(node.location(), "Expect an array;");
         node.setType(((ArrayType)(node.getExpression().type())).getType());
         return null;
@@ -398,7 +412,11 @@ public class TypeCheck extends Visit{
         }
         //out.println(node.getExpression().type().getClass());
         //if ((!(node.getEntity() instanceof VarEntity)) && (!(node.getEntity() instanceof  FuncEntity)))
-        if (!(node.getExpression().type().isFunc() || node.getExpression().type().isClass() || node.getExpression().type().isArray() || node.getExpression().type().isStr()))
+        Type tmpType;
+        if (node.getExpression() instanceof ArefLHSNode)
+            tmpType = ((ArefLHSNode)node.getExpression()).getType();
+        else tmpType = node.getExpression().type();
+        if (!(tmpType.isFunc() || tmpType.isClass() || tmpType.isArray() || tmpType.isStr()))
         {
             throw new SemanticError(node.location(), "TypeCheck: visit MemLHSNode: Type error;");
         }
@@ -416,33 +434,33 @@ public class TypeCheck extends Visit{
             //node.setType(mem.getType());
             node.setType(((FuncType)node.getExpression().type()).getFuncEntity().getResult());
         }*/
-        else if (node.getExpression().type().isClass())
+        else if (tmpType.isClass())
         {
             ClassEntity classEntity;
-            if (node.getExpression().type().isFunc())
+            if (tmpType.isFunc())
             {
-                Type retType = ((FuncType) node.getExpression().type()).getFuncEntity().getResult();
+                Type retType = ((FuncType) tmpType).getFuncEntity().getResult();
                 classEntity = ((ClassType) retType).getClassEntity();
             }
             else
-                classEntity = ((ClassType) node.getExpression().type()).getClassEntity();
+                classEntity = ((ClassType)tmpType).getClassEntity();
             Entity mem = classEntity.getScope().getEntityMap().get(node.getMember());
             if (mem == null)
                 throw new SemanticError(node.location(), "Can't find " + node.getMember());
             node.setEntity(mem);
             node.setType(mem.getType());
         }
-        else if (node.getExpression().type().isArray())
+        else if (tmpType.isArray())
         {
             Scope arrayScope;
-            if (node.getExpression().type().isFunc())
+            if (tmpType.isFunc())
             {
-                Type retType = ((FuncType) node.getExpression().type()).getFuncEntity().getResult();
+                Type retType = ((FuncType)tmpType).getFuncEntity().getResult();
                 arrayScope = ((ArrayType) retType).getScope();
             }
             else
             //out.println(((ArrayType) node.getExpression().type()).getScope() + " " + node.location());
-                arrayScope = ((ArrayType) node.getExpression().type()).getScope();
+                arrayScope = ((ArrayType) tmpType).getScope();
             //out.println(arrayScope);
             Entity mem = arrayScope.getEntityMap().get(node.getMember());
             if (mem == null)
@@ -450,16 +468,16 @@ public class TypeCheck extends Visit{
             node.setEntity(mem);
             node.setType(mem.getType());
         }
-        else if (node.getExpression().type().isStr())
+        else if (tmpType.isStr())
         {
             Scope strScope;
-            if (node.getExpression().type().isFunc())
+            if (tmpType.isFunc())
             {
-                Type retType = ((FuncType) node.getExpression().type()).getFuncEntity().getResult();
+                Type retType = ((FuncType) tmpType).getFuncEntity().getResult();
                 strScope = ((StrType) retType).getScope();
             }
             else
-                strScope = ((StrType) node.getExpression().type()).getScope();
+                strScope = ((StrType) tmpType).getScope();
             //out.println(strScope);
             Entity mem = strScope.getEntityMap().get(node.getMember());
             if (mem == null)

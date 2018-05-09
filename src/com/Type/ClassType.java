@@ -14,6 +14,7 @@ public class ClassType extends Type{
         this.name = _name;
     }
 
+
     public String getName() {
         return name;
     }

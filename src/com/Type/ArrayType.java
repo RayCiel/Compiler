@@ -3,21 +3,19 @@ package com.Type;
 import com.AST.Location;
 import com.Entity.FuncEntity;
 import com.Entity.Scope;
+import com.ThrowError.SemanticError;
 
 import java.util.LinkedList;
+
+import static java.lang.System.out;
 
 
 public class ArrayType extends Type{
     protected int dimension;
     static protected Scope scope;
-    protected Type type;
+    protected Type parentType;
     static protected boolean init;
-
-    public ArrayType(Type type) {
-        super();
-        this.type = type;
-        //initializeBuiltinFunction();
-    }
+    protected Type baseType;
 
     static public void initializeBuiltinFunction() {
         scope = new Scope(true);
@@ -25,15 +23,34 @@ public class ArrayType extends Type{
         init = true;
     }
 
-    public ArrayType(Type _type, int _dimension) {
-        if (_type instanceof VoidType)
-            throw new RuntimeException("VoidType can't be ArrayType");
-        if (_dimension == 1) {
-            this.type = _type;
-        } else {
-            this.type = new ArrayType(type, _dimension - 1);
-        }
+    public ArrayType(int _dimension, Type _baseType) {
+        if (_baseType instanceof VoidType)
+            //...
+            throw new SemanticError(new Location(0, 0),"VoidType can't be ArrayType");
+        baseType = _baseType;
+        if(dimension == 1)
+            parentType = _baseType;
+        else
+            parentType = null;
+        dimension = _dimension;
     }
+
+    public Type getParentType()
+    {
+
+        if(parentType == null && dimension > 1)
+        {
+
+            parentType = new ArrayType(dimension-1, baseType);
+        }
+        return parentType;
+    }
+
+    public Type getBaseType()
+    {
+        return baseType;
+    }
+
 
     public int getDimension() {
         return dimension;
@@ -45,43 +62,61 @@ public class ArrayType extends Type{
         return scope;
     }
 
-    public Type getType() {
-        return type;
+    @Override
+    public Type getType()
+    {
+        //if (dimension > 1)
+        return getParentType();
+        //else return baseType;
     }
 
     @Override
     public boolean isCompatible(Type obj)
     {
+        //out.println(obj);
+        if (obj.isNull())
+        return true;
         if (!obj.isArray())
             return false;
-        if (obj.isNull())
+        ArrayType at = (ArrayType)obj;
+        if( at.getDimension() == dimension && at.getBaseType().isCompatible(baseType) )
             return true;
-        boolean check = type.isCompatible(((ArrayType)obj).getType());
-        return check;
+        return false;
     }
+
+
 
     @Override
     public String getTypeName()
     {
-        return type.getTypeName();
+        //out.println("***" + getType().getTypeName());
+        //out.println(type);
+        //out.println(parentType);
+        //out.println(getParentType());
+        //out.println(dimension);
+        if (getParentType() instanceof ArrayType)
+            return "Array";
+        else if (getParentType() == null)
+            return "Array";
+        return getParentType().getTypeName();
     }
 
     @Override
     public boolean isInt()
     {
-        return type.getTypeName().equals("Int");
+        return baseType.getTypeName().equals("Int");
     }
 
     @Override
     public boolean isBool()
     {
-        return type.getTypeName().equals("Bool");
+        return baseType.getTypeName().equals("Bool");
     }
 
     @Override
     public boolean isStr()
     {
-        return type.getTypeName().equals("String");
+        return baseType.getTypeName().equals("String");
     }
 
     @Override

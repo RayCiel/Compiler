@@ -35,6 +35,10 @@ abstract public class ExpressionNode extends ASTNode{
     {
         return type;
     }
+    public Type getType()
+    {
+        return type;
+    }
     public void setType(Type _type)
         {
             type = _type;
