@@ -211,10 +211,10 @@ public class SymbolResolver extends Visit {
         entity.setScope(scope);
         //out.println(entity.getResult().getTypeName());
         if (!TypeResolver(entity.getResult())) {
-            throw new SemanticError(node.location(), "Cannot resolve symbol : " + entity.getResult());
+            throw new SemanticError(node.getLocation(), "Cannot resolve symbol : " + entity.getResult());
         }
         if (Class != null) {
-            paramEntity = entity.addThisPointer(node.location(), Class);
+            paramEntity = entity.addThisPointer(node.getLocation(), Class);
         }
         //out.println(entity.getName() + " " + entity.getParam().size());
         for (ParamEntity param : entity.getParam())
