@@ -37,11 +37,11 @@ public class FuncallNode extends ExpressionNode {
         return expression.type();
     }
 
-    @Override
-    public Type getType()
-    {
-        return expression.type();
-    }
+   // @Override
+   // public Type getType()
+   // {
+   //     return expression.type();
+   // }
 
     @Override
     public Location location() {

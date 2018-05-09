@@ -16,16 +16,16 @@ public class Main
 
         com.Compiler MxCompiler = new com.Compiler();
         //MxCompiler.Compile();
-       MxCompiler.Compile("./testcase/program.txt");
+       //MxCompiler.Compile("./testcase/program.txt");
 
-      /*try
+      try
         {
             MxCompiler.Compile();
             //MxCompiler.Compile("./testcase/program.txt");
 
         }catch (RuntimeException error){
             System.exit(1);
-        }*/
+        }
         //catch (Error error)
         //{
         //    System.exit(1);
