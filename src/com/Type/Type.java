@@ -13,11 +13,6 @@ abstract public class Type {
         return TypeName;
     }
 
-    public Type getType()
-    {
-        return this;
-    }
-
     public boolean isInt()
     {
         return false;

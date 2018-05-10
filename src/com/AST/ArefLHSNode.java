@@ -5,6 +5,8 @@ import com.ThrowError.SemanticError;
 import com.Type.ArrayType;
 import com.Type.Type;
 
+import static java.lang.System.out;
+
 public class ArefLHSNode extends LHSNode {
     protected ExpressionNode expression;
     protected ExpressionNode index;

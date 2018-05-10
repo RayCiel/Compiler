@@ -153,10 +153,11 @@ public class TypeCheck extends Visit{
         {
             visitExpressionNode(node.getIndex());
         }
-        if (!node.getType().isArray())
-            throw new SemanticError(node.getLocation(), "Expect an array;");
-        //node.setType(((ArrayType)(node.getExpression().getType())).getType());
         node.getType();
+        //out.print(node.getExpression());
+        //out.println(node.getType() + " " + node.getLocation());
+        //node.setType(((ArrayType)(node.getExpression().getType())).getType());
+
         return null;
     }
 

@@ -30,7 +30,7 @@ public class ArrayType extends Type{
             //...
             throw new SemanticError(new Location(0, 0),"VoidType can't be ArrayType");
         baseType = _baseType;
-        if(dimension == 1)
+        if(_dimension == 1)
             parentType = _baseType;
         else
             parentType = null;
@@ -45,6 +45,7 @@ public class ArrayType extends Type{
 
             parentType = new ArrayType(dimension-1, baseType);
         }
+        //out.println(parentType + " " + dimension);
         return parentType;
     }
 
@@ -64,13 +65,6 @@ public class ArrayType extends Type{
         return scope;
     }
 
-    @Override
-    public Type getType()
-    {
-        //if (dimension > 1)
-        return getParentType();
-        //else return baseType;
-    }
 
     @Override
     public boolean isCompatible(Type obj)

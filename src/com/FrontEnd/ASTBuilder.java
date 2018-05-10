@@ -328,7 +328,7 @@ public class ASTBuilder extends MxBaseListener {
         {
             //out.println(ctx.primitiveType().getText());
             //System.err.println("     " + type.getType() + " " + new Location(ctx));
-            map.put(ctx, new ArrayType( dimemsion, type.getType()));
+            map.put(ctx, new ArrayType( dimemsion, type));
         }
         else
         {
@@ -569,7 +569,7 @@ public class ASTBuilder extends MxBaseListener {
         {
             exprNodes.add(makeExpression(node));
         }
-        map.put(ctx, new CreatorNode(new Location(ctx), exprNodes, type.getType(), dimension));
+        map.put(ctx, new CreatorNode(new Location(ctx), exprNodes, type, dimension));
     }
 
     @Override public void exitErrorCreator(MxParser.ErrorCreatorContext ctx) {
@@ -578,7 +578,7 @@ public class ASTBuilder extends MxBaseListener {
 
     @Override public void exitNonarrayCreator(MxParser.NonarrayCreatorContext ctx) {
         Type type  = new ClassType(ctx.Id().getText());
-        map.put(ctx, new CreatorNode(new Location(ctx), null, type.getType(), 0));
+        map.put(ctx, new CreatorNode(new Location(ctx), null, type, 0));
     }
 
 

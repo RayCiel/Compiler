@@ -248,6 +248,8 @@ public class SymbolResolver extends Visit {
     {
         super.visit(node);
         node.getType();
+        //out.print(node.getType() + " ");
+        //out.println(node.getExpression());
         /*ExpressionNode exprNode = node.getExpression();
         if (exprNode instanceof FuncallNode)
         {
