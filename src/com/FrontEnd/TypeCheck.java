@@ -6,10 +6,8 @@ import com.AST.Location;
 import com.Entity.*;
 import com.ThrowError.SemanticError;
 import com.Type.*;
-
 import java.util.List;
 
-import static java.lang.System.out;
 
 public class TypeCheck extends Visit{
     static final Type boolType = new BoolType();
@@ -26,14 +24,7 @@ public class TypeCheck extends Visit{
 
     public void CheckCompatible (Type left, Type right, Location _location)
     {
-        //out.println(left);
-        //out.println(right);
-        //out.println(right + " " + _location);
-        //out.println(left.isInt() + " " + _location);
-        //out.println(right.isStr());
-        //out.println(((FuncType)left).getFuncEntity().getResult());
         if (!left.isCompatible(right))
-        //if (!left.getTypeName().equals(right.getTypeName()))
         {
             String error = "Incompatible: " + left.getTypeName() + " and " + right.getTypeName();
             throw new SemanticError(_location, error);
@@ -44,7 +35,7 @@ public class TypeCheck extends Visit{
     public Void visit(BreakNode node)
     {
         if (loopDepth <= 0)
-            throw new SemanticError(node.getLocation(), "Unexpectef break;");
+            throw new SemanticError(node.getLocation(), "Unexpected break;");
         return null;
     }
 
@@ -66,7 +57,7 @@ public class TypeCheck extends Visit{
         if (node.getSecondExpr() != null)
         {
             visitExpressionNode(node.getSecondExpr());
-            CheckCompatible(node.getSecondExpr().type(), boolType, node.getLocation());
+            CheckCompatible(node.getSecondExpr().getType(), boolType, node.getLocation());
         }
         if (node.getThirdExpr() != null)
         {
@@ -88,7 +79,7 @@ public class TypeCheck extends Visit{
         if (node.getIfExpr() != null)
         {
             visitExpressionNode(node.getIfExpr());
-            CheckCompatible(node.getIfExpr().type(), boolType, node.getLocation());
+            CheckCompatible(node.getIfExpr().getType(), boolType, node.getLocation());
         }
         if (node.getThenBody() != null)
         {
@@ -108,7 +99,7 @@ public class TypeCheck extends Visit{
         if (node.getWhileExpr() != null)
         {
             visitExpressionNode(node.getWhileExpr());
-            CheckCompatible(node.getWhileExpr().type(), boolType, node.getLocation());
+            CheckCompatible(node.getWhileExpr().getType(), boolType, node.getLocation());
 
         }
         if (node.getDoBody() != null)
@@ -131,31 +122,17 @@ public class TypeCheck extends Visit{
         {
             visitExpressionNode(node.getRight());
         }
-        //out.println(((VarLHSNode)node.getLeft()).isAssignable());
         if (!node.getLeft().isAssignable())
             throw new SemanticError(node.getLocation(), "Left-value is not assignable;");
-        //out.println(node.getLeft().type());
-        //out.println(node.getRight());
-        //Type ltype, rtype;
-        //if (node.getLeft().type() instanceof FuncType)
-        //    ltype = ((FuncType) node.getLeft().type()).getFuncEntity().getResult();
-        //else
-        //    ltype = node.getLeft().type();
-        //if (node.getRight().type() instanceof FuncType)
-        //    rtype = ((FuncType) node.getRight().type()).getFuncEntity().getResult();
-        //else
-         //   rtype = node.getLeft().type();
-        //out.println("IN!!");
-        //out.println(((ArefLHSNode)node.getLeft()).type());
         Type ltype, rtype;
-        if (node.getLeft() instanceof ArefLHSNode)
-            ltype = ((ArefLHSNode)node.getLeft()).getType();
-        else
-            ltype = node.getLeft().type();
-        if (node.getRight() instanceof ArefLHSNode)
-            rtype = ((ArefLHSNode)node.getRight()).getType();
-        else
-            rtype = node.getRight().type();
+        //if (node.getLeft() instanceof ArefLHSNode)
+        //    ltype = ((ArefLHSNode)node.getLeft()).getType();
+        //else
+        ltype = node.getLeft().getType();
+        //if (node.getRight() instanceof ArefLHSNode)
+        //    rtype = ((ArefLHSNode)node.getRight()).getType();
+        //else
+        rtype = node.getRight().getType();
         CheckCompatible(ltype, rtype, node.getLocation());
         //CheckCompatible(ltype, rtype, node.getLocation());
         return null;
@@ -172,12 +149,10 @@ public class TypeCheck extends Visit{
         {
             visitExpressionNode(node.getIndex());
         }
-        //out.println(node + " " + node.getType() + " " + node.getLocation());
-        //out.println(node.getExpression().type());
-        //out.println(node.getExpression() + " " + node.getLocation());
         if (!node.getType().isArray())
             throw new SemanticError(node.getLocation(), "Expect an array;");
-        node.setType(((ArrayType)(node.getExpression().type())).getType());
+        //node.setType(((ArrayType)(node.getExpression().getType())).getType());
+        node.getType();
         return null;
     }
 
@@ -189,10 +164,9 @@ public class TypeCheck extends Visit{
             for (ExpressionNode i : node.getArgs())
             {
                 visitExpressionNode(i);
-                CheckCompatible(i.type(), intType, i.getLocation());
+                CheckCompatible(i.getType(), intType, i.getLocation());
             }
         }
-
         return null;
     }
 
@@ -217,7 +191,7 @@ public class TypeCheck extends Visit{
             case Tilde: right = boolType; break;
             default: throw new SemanticError(node.getLocation(), "Invalid operator" + node.getOperator());
         }
-        CheckCompatible(node.getExpression().type(), right, node.getLocation());
+        CheckCompatible(node.getExpression().getType(), right, node.getLocation());
         return null;
     }
 
@@ -232,76 +206,43 @@ public class TypeCheck extends Visit{
         {
             visitExpressionNode(node.getRight());
         }
-        //out.println("***" + node.getOperator().toString());
         switch (node.getOperator())
         {
-            case Sub:   CheckCompatible(node.getLeft().type(), intType, node.getLocation());
-                        CheckCompatible(node.getRight().type(), intType, node.getLocation());
-                        node.setType(node.getLeft().type());
-                        break;
-            case Mul:   CheckCompatible(node.getLeft().type(), intType, node.getLocation());
-                        CheckCompatible(node.getRight().type(), intType, node.getLocation());
-                        node.setType(node.getLeft().type());
-                        break;
-            case Div:   CheckCompatible(node.getLeft().type(), intType, node.getLocation());
-                        CheckCompatible(node.getRight().type(), intType, node.getLocation());
-                        node.setType(node.getLeft().type());
-                        break;
-            case Mod:   CheckCompatible(node.getLeft().type(), intType, node.getLocation());
-                        CheckCompatible(node.getRight().type(), intType, node.getLocation());
-                        node.setType(node.getLeft().type());
-                        break;
-            case LeftShift:
-                        CheckCompatible(node.getLeft().type(), intType, node.getLocation());
-                        CheckCompatible(node.getRight().type(), intType, node.getLocation());
-                        node.setType(node.getLeft().type());
-                        break;
-            case RightShift:
-                        CheckCompatible(node.getLeft().type(), intType, node.getLocation());
-                        CheckCompatible(node.getRight().type(), intType, node.getLocation());
-                        node.setType(node.getLeft().type());
-                        break;
-            case Xor:
-                        CheckCompatible(node.getLeft().type(), intType, node.getLocation());
-                        CheckCompatible(node.getRight().type(), intType, node.getLocation());
-                        node.setType(node.getLeft().type());
-                        break;
-            case Or:    CheckCompatible(node.getLeft().type(), intType, node.getLocation());
-                        CheckCompatible(node.getRight().type(), intType, node.getLocation());
-                        node.setType(node.getLeft().type());
-                        break;
-            case And:
-                        CheckCompatible(node.getLeft().type(), intType, node.getLocation());
-                        CheckCompatible(node.getRight().type(), intType, node.getLocation());
-                        node.setType(node.getLeft().type());
-                        break;
-            case NotEqual: case Equal:
-                        CheckCompatible(node.getLeft().type(), node.getRight().type(), node.getLocation()); node.setType(boolType); break;
-            case Greater: case LessEqual: case GreaterEqual: case Less:
-                        CheckCompatible(node.getLeft().type(), node.getRight().type(), node.getLocation()); node.setType(boolType);break;
             case Add:
-                        //out.println(node.getLeft().type());
-                        Type ltype, rtype;
-                        if (node.getLeft().type() instanceof FuncType)
-                            ltype = ((FuncType) node.getLeft().type()).getFuncEntity().getResult();
-                        else
-                            ltype = node.getLeft().type();
-                        if (node.getRight().type() instanceof FuncType)
-                            rtype = ((FuncType) node.getRight().type()).getFuncEntity().getResult();
-                        else rtype = node.getRight().type();
-                        CheckCompatible(ltype, rtype, node.getLocation());
-                        if (!(ltype instanceof IntType || ltype instanceof StrType))
-                            throw new SemanticError(node.getLocation(), "Invalid add Type;");
-                        node.setType(node.getLeft().type());
-                        break;
-            case OrOr: case AndAnd:
-                        CheckCompatible(node.getLeft().type(), boolType, node.getLocation());
-                        CheckCompatible(node.getRight().type(), boolType, node.getLocation());
-                        node.setType(node.getLeft().type());
-                        break;
-                        default:
-                            throw new SemanticError(node.getLocation(), "Invalid operator;");
+                Type ltype, rtype;
+                if (node.getLeft().getType() instanceof FuncType)
+                    ltype = ((FuncType) node.getLeft().getType()).getFuncEntity().getResult();
+                else
+                    ltype = node.getLeft().getType();
+                if (node.getRight().getType() instanceof FuncType)
+                    rtype = ((FuncType) node.getRight().getType()).getFuncEntity().getResult();
+                else rtype = node.getRight().getType();
+                CheckCompatible(ltype, rtype, node.getLocation());
+                if (!(ltype instanceof IntType || ltype instanceof StrType))
+                    throw new SemanticError(node.getLocation(), "Invalid add Type;");
+                node.setType(node.getLeft().getType());
+                break;
 
+            case Sub:   case Mul:   case Div:   case Mod:   case LeftShift: case RightShift:    case Xor:   case Or:    case And:
+                CheckCompatible(node.getLeft().getType(), intType, node.getLocation());
+                CheckCompatible(node.getRight().getType(), intType, node.getLocation());
+                node.setType(node.getLeft().getType());
+                break;
+
+            case NotEqual: case Equal:
+                CheckCompatible(node.getLeft().getType(), node.getRight().getType(), node.getLocation()); node.setType(boolType); break;
+
+            case Greater: case LessEqual: case GreaterEqual: case Less:
+                CheckCompatible(node.getLeft().getType(), node.getRight().getType(), node.getLocation()); node.setType(boolType);break;
+
+            case OrOr: case AndAnd:
+                CheckCompatible(node.getLeft().getType(), boolType, node.getLocation());
+                CheckCompatible(node.getRight().getType(), boolType, node.getLocation());
+                node.setType(node.getLeft().getType());
+                break;
+
+            default:
+                throw new SemanticError(node.getLocation(), "Invalid operator;");
         }
         return null;
     }
@@ -329,7 +270,6 @@ public class TypeCheck extends Visit{
         }
         if (node.getOperator() == UnaryNode.Op.LeftAddAdd || node.getOperator() == UnaryNode.Op.LeftSubSub)
             node.setAssignable(true);
-
         return null;
     }
 
@@ -351,18 +291,12 @@ public class TypeCheck extends Visit{
     public Void visit(FuncDefNode node)
     {
         function = node.getEntity();
-        //out.println(function.getName());
         if (!function.isConstruct() && function.getResult() == null)
             throw new SemanticError(node.getLocation(), "expect a return type");
         if (node.getEntity().getBody() != null)
         {
             visitStatementNode(node.getEntity().getBody());
         }
-
-        //out.println("***");
-        //out.println(function.getName());
-        //if (!function.isConstruct() || function.getResult() != null || function.getName() == "main")
-        //    throw new SemanticError(node.getLocation(), "Expect a return type;");
         function = null;
         return null;
     }
@@ -375,8 +309,7 @@ public class TypeCheck extends Visit{
         if (node.getEntity().getExpression() != null)
         {
             visitExpressionNode(node.getEntity().getExpression());
-            //out.println(node.getEntity().getName() + " " + node.getLocation());
-            CheckCompatible( node.getEntity().getExpression().type(), node.getEntity().getType(), node.getLocation());
+            CheckCompatible( node.getEntity().getExpression().getType(), node.getEntity().getType(), node.getLocation());
         }
         if (node.getEntity().getType().isVoid())
             throw new SemanticError(node.getLocation(), "The variable can't be void-type;");
@@ -394,7 +327,7 @@ public class TypeCheck extends Visit{
             if (node.getExpression() != null && !function.getType().isVoid())
             {
                 visitExpressionNode(node.getExpression());
-                CheckCompatible(node.getExpression().type(), function.getResult(), node.getLocation());
+                CheckCompatible(node.getExpression().getType(), function.getResult(), node.getLocation());
             }
             else if (function.getType().isVoid() && node.getExpression() != null)
             {
@@ -404,7 +337,39 @@ public class TypeCheck extends Visit{
         return null;
     }
 
-    @Override public Void visit(MemLHSNode node)
+    @Override
+    public Void visit(FuncallNode node)
+    {
+        super.visit(node);
+        node.getType();
+        ExpressionNode func = node.getExpression();
+        Entity entity;
+        if (func instanceof VarLHSNode)
+        {
+            entity = ((VarLHSNode)func).getEntity();
+            if(!(entity instanceof FuncEntity))
+                throw new SemanticError(node.getLocation(), entity.getName() + "is not a function.");
+        }
+        else
+        {
+            throw new RuntimeException(func.getClass() + " found, but variable() excepted.");
+        }
+        int n = node.getArgs().size();
+        List<ExpressionNode> params = node.getArgs();
+        List<ParamEntity> paramEntities = ((FuncEntity)entity).getParam();
+        if (n != paramEntities.size())
+            throw new SemanticError(node.getLocation(), "  n: " + n + " params found, but "+ paramEntities.size()+" excepted.");
+        for (int i = 0; i < n; ++i)
+        {
+            Type lType = paramEntities.get(i).getType();
+            Type rType = params.get(i).getType();
+            CheckCompatible(lType, rType, node.getLocation());
+        }
+
+        return null;
+    }
+
+    /*@Override public Void visit(MemLHSNode node)
     {
         if (node.getExpression() != null)
         {
@@ -415,7 +380,7 @@ public class TypeCheck extends Visit{
         Type tmpType;
         if (node.getExpression() instanceof ArefLHSNode)
             tmpType = ((ArefLHSNode)node.getExpression()).getType();
-        else tmpType = node.getExpression().type();
+        else tmpType = node.getExpression().getType();
         if (!(tmpType.isFunc() || tmpType.isClass() || tmpType.isArray() || tmpType.isStr()))
         {
             throw new SemanticError(node.getLocation(), "TypeCheck: visit MemLHSNode: Type error;");
@@ -434,7 +399,7 @@ public class TypeCheck extends Visit{
             //node.setType(mem.getType());
             node.setType(((FuncType)node.getExpression().type()).getFuncEntity().getResult());
         }*/
-        else if (tmpType.isClass())
+        /*else if (tmpType.isClass())
         {
             ClassEntity classEntity;
             if (tmpType.isFunc())
@@ -491,7 +456,7 @@ public class TypeCheck extends Visit{
         }
 
         return null;
-    }
+    }*/
 
     /*@Override public Void visit(FuncallNode node)
     {
@@ -529,44 +494,7 @@ public class TypeCheck extends Visit{
         return null;
     }*/
 
-    @Override
-    public Void visit(FuncallNode node)
-    {
-        super.visit(node);
-        node.type();
-        ExpressionNode function = node.getExpression();
-        //out.println(function + " " + node.getLocation());
-        Entity entity;
-        //out.println(node.type());
-        //out.println(function.getClass());
-        if(function instanceof VarLHSNode)
-        {
-            entity = ((VarLHSNode)function).getEntity();
-            //out.println(entity.getType());
-            if(!(entity instanceof FuncEntity))
-                throw new SemanticError(node.getLocation(), entity.getName() + "is not a function.");
-        }
-        else
-        {
-            throw new RuntimeException(function.getClass() + " found, but variable() excepted.");
-        }
-        int n = node.getArgs().size();
-        List<ExpressionNode> params = node.getArgs();
-        List<ParamEntity> paramEntities = ((FuncEntity)entity).getParam();
 
-
-        if(n != paramEntities.size())
-            throw new SemanticError(node.getLocation(), "  n: " + n + " params found, but "+ paramEntities.size()+" excepted.");
-
-        for(int i = 0;i < n; ++i)
-        {
-            Type lType = paramEntities.get(i).getType();
-            Type rType = params.get(i).type();
-            CheckCompatible(lType, rType, node.getLocation());
-        }
-
-        return null;
-    }
 
 
 }

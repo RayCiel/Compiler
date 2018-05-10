@@ -3,7 +3,7 @@ package com.Type;
 public class BoolType extends Type {
     public BoolType() {
         super();
-        TypeName = "Bool";
+        TypeName = "bool";
     }
 
     @Override
@@ -21,6 +21,6 @@ public class BoolType extends Type {
     @Override
     public String getTypeName()
     {
-        return "Bool";
+        return "bool";
     }
 }

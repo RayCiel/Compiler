@@ -1,5 +1,12 @@
 int main()
 {
+int a, b, c;
+c = a + b;
+return 0;
+}
+
+/*int main()
+{
 	int[][] array = new int[3][3];
 	array[0] = null;
 	int a = array[0].size();
@@ -16,7 +23,7 @@ println(toString(array[0].size()));
 	}
 
 	return 0;
-}
+}*/
 /*int main(){
 	int[] a = new int[3];
 	print("I have done " + toString(a.size()) + " little things");

@@ -8,21 +8,13 @@ import com.Entity.VarEntity;
 import com.Parser.MxBaseListener;
 import com.Parser.MxParser;
 import com.ThrowError.SemanticError;
-//import com.sun.org.apache.xpath.internal.Expression;
-//import jdk.nashorn.internal.ir.BinaryNode;
 import org.antlr.v4.runtime.ParserRuleContext;
-//import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTreeProperty;
 import com.Type.*;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-//import javax.sql.StatementEvent;
-//import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Locale;
-
-import static java.lang.System.out;
 
 public class ASTBuilder extends MxBaseListener {
     ASTree asTree;
@@ -127,9 +119,9 @@ public class ASTBuilder extends MxBaseListener {
             if (entity.isConstruct()) {
                 construct = entity;
                 //out.println(entity.getName());
-                if (!entity.getName().equals(ClassType.CONSTRUCTOR_NAME + ctx.name.getText())) {
+                if (!entity.getName().equals(ctx.name.getText())) {
                     throw new SemanticError(new Location(ctx.name), "wrong name of constructor : " + entity.getName()
-                            + " and " + ClassType.CONSTRUCTOR_NAME + ctx.name.getText());
+                            + " and " + ctx.name.getText());
                 }
 
             }
@@ -157,7 +149,7 @@ public class ASTBuilder extends MxBaseListener {
         if (ctx.ret == null)
         {
             //out.println("I'm in!!");
-            funcEntity = new FuncEntity(ClassType.CONSTRUCTOR_NAME + ctx.name.getText(), new Location(ctx.name), new ClassType(ctx.name.getText()), (BlockNode) map.get(ctx.block()), param);
+            funcEntity = new FuncEntity(ctx.name.getText(), new Location(ctx.name), new ClassType(ctx.name.getText()), (BlockNode) map.get(ctx.block()), param);
             funcEntity.setConstruct(true);
         } else {
             //out.println(ctx.ret.getText());

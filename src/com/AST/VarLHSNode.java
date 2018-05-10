@@ -33,6 +33,26 @@ public class VarLHSNode extends LHSNode{
     {
         return false;
     }
+    public boolean isFunction()
+    {
+        if(entity == null)
+            throw new RuntimeException("Entity not exist.");
+        return (entity instanceof FuncEntity);
+    }
+    public Type getReturnType()
+    {
+        if(!(entity instanceof FuncEntity))
+            throw new RuntimeException("Not a function");
+        return ((FuncEntity) entity).getResult();
+    }
+
+    @Override
+    public Type getType()
+    {
+        if(type == null)
+            type = entity.getType();
+        return super.getType();
+    }
 
     public void setEntity(Entity entity) {
         this.entity = entity;

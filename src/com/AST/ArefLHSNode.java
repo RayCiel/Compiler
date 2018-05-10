@@ -28,10 +28,14 @@ public class ArefLHSNode extends LHSNode {
     @Override
     public Type getType()
     {
-        Type t = expression.getType();
-        if(!(t instanceof ArrayType))
-            throw new SemanticError(getLocation(), "Not Array");
-        return ((ArrayType) t).getParentType();
+        if(type == null)
+        {
+            Type t = expression.getType();
+            if(!(t instanceof ArrayType))
+                throw new SemanticError(getLocation(), "Not Array");
+            type = ((ArrayType) t).getParentType();
+        }
+        return super.getType();
     }
 
     //@Override

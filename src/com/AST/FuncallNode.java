@@ -1,6 +1,7 @@
 package com.AST;
 
 import com.FrontEnd.ASTVisitor;
+import com.ThrowError.SemanticError;
 import com.Type.*;
 import java.util.List;
 
@@ -26,16 +27,25 @@ public class FuncallNode extends ExpressionNode {
         args.add(0, _exprNode);
     }
 
-
-    public void setType(Type _type)
+    @Override
+    public Type getType()
     {
-        type = _type;
+        if(type == null)
+        {
+            if(     (!(expression instanceof VarLHSNode)) ||
+                    (!((VarLHSNode)expression).isFunction()) )
+                throw new SemanticError(getLocation(), "Function excepted.");
+            type = ((VarLHSNode)expression).getReturnType();
+        }
+        return super.getType();
     }
 
+    /*
     public Type getReturnType()
     {
         return expression.getType();
     }
+    */
 
     @Override
     public Location getLocation() {

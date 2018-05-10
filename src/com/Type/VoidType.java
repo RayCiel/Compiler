@@ -3,7 +3,7 @@ package com.Type;
 public class VoidType extends Type{
     public VoidType() {
         super();
-        TypeName = "Void";
+        TypeName = "void";
     }
 
     @Override
@@ -22,6 +22,6 @@ public class VoidType extends Type{
     @Override
     public String getTypeName()
     {
-        return "Void";
+        return "void";
     }
 }

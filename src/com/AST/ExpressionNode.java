@@ -9,6 +9,7 @@ abstract public class ExpressionNode extends ASTNode{
     public ExpressionNode()
     {
         super();
+        type = null;
     }
 
     @Override

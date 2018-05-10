@@ -20,6 +20,6 @@ public class NullType extends ClassType {
     @Override
     public String getTypeName()
     {
-        return "Null";
+        return "null";
     }
 }

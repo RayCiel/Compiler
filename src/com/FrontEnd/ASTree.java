@@ -104,10 +104,10 @@ public class ASTree {
         strScope.insertEntity(new FuncEntity("ord", new Location(0, 0), intType, null, list));
         List<FuncDefNode> listF = new LinkedList<FuncDefNode>();
         List<VarDefNode> listV = new LinkedList<VarDefNode>();
-        scope.insertEntity(new ClassEntity("Void", new Location(0, 0), voidType, listV, listF));
-        scope.insertEntity(new ClassEntity("Bool", new Location(0, 0), boolType, listV, listF));
-        scope.insertEntity(new ClassEntity("Int", new Location(0, 0), intType, listV, listF));
-        scope.insertEntity(new ClassEntity("String", new Location(0, 0), strType, listV, listF, strScope));
+        scope.insertEntity(new ClassEntity("void", new Location(0, 0), voidType, listV, listF));
+        scope.insertEntity(new ClassEntity("bool", new Location(0, 0), boolType, listV, listF));
+        scope.insertEntity(new ClassEntity("int", new Location(0, 0), intType, listV, listF));
+        scope.insertEntity(new ClassEntity("string", new Location(0, 0), strType, listV, listF, strScope));
         Scope arrayScope = new Scope(scope);
         list = (new LinkedList<>());
         arrayScope.insertEntity(new FuncEntity("size", new Location(0, 0), intType, null, list));

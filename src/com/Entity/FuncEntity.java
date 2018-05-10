@@ -46,6 +46,7 @@ public class FuncEntity extends Entity{
         return body;
     }
 
+
     public Scope getScope() {
         return scope;
     }
