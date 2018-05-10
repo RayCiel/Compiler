@@ -26,7 +26,8 @@ public class TypeCheck extends Visit{
 
     public void CheckCompatible (Type left, Type right, Location _location)
     {
-        //out.println(left);
+        //out.print(left + " ");
+        //out.println(right);
         if (!left.isCompatible(right))
         {
             String error = "Incompatible: " + left.getTypeName() + " and " + right.getTypeName();

@@ -24,6 +24,8 @@ public class ArrayType extends Type{
     }
 
     public ArrayType(int _dimension, Type _baseType) {
+        //out.println(_baseType);
+        //System.err.println("   " + _baseType);
         if (_baseType instanceof VoidType)
             //...
             throw new SemanticError(new Location(0, 0),"VoidType can't be ArrayType");
@@ -73,12 +75,14 @@ public class ArrayType extends Type{
     @Override
     public boolean isCompatible(Type obj)
     {
-        //out.println(obj);
+
         if (obj.isNull())
         return true;
         if (!obj.isArray())
             return false;
         ArrayType at = (ArrayType)obj;
+        //out.print(getBaseType() + " ");
+        //out.println(at.getBaseType());
         if( at.getDimension() == dimension && at.getBaseType().isCompatible(baseType) )
             return true;
         return false;

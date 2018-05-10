@@ -5,6 +5,8 @@ import com.Type.*;
 
 import java.util.List;
 
+import static java.lang.System.out;
+
 public class CreatorNode extends ExpressionNode{
     protected Location location;
     protected List<ExpressionNode> args;
@@ -16,6 +18,7 @@ public class CreatorNode extends ExpressionNode{
         super();
         this.location = _location;
         this.args = _args;
+        //out.println(_type);
         if(_dimension > 0)
            this.type = new ArrayType(_dimension, _type);
         else

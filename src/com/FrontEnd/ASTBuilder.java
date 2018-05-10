@@ -15,6 +15,9 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
+
+import static java.lang.System.out;
 
 public class ASTBuilder extends MxBaseListener {
     ASTree asTree;
@@ -324,6 +327,7 @@ public class ASTBuilder extends MxBaseListener {
         if (dimemsion != 0)
         {
             //out.println(ctx.primitiveType().getText());
+            //System.err.println("     " + type.getType() + " " + new Location(ctx));
             map.put(ctx, new ArrayType( dimemsion, type.getType()));
         }
         else
@@ -385,6 +389,7 @@ public class ASTBuilder extends MxBaseListener {
     @Override public void exitArrayIndex(MxParser.ArrayIndexContext ctx) {
         map.put(ctx, new ArefLHSNode(makeExpression(ctx.expression(0)),
                 makeExpression(ctx.expression(1))));
+
     }
 
 
@@ -552,9 +557,8 @@ public class ASTBuilder extends MxBaseListener {
         //out.println(expr.size());
         int dimension = (ctx.getChildCount() - 1 - expr.size()) / 2;
         //out.println(type.getTypeName());
-        //out.println(type.getType());
+        //System.err.println("       " + type.getType() + " " + new Location(ctx));
         //out.println(type);
-        Type arrType = new ArrayType(dimension, type.getType());
         //out.println(arrType.getTypeName());
         //out.println(arrType.getType());
         //out.println((arrType.getType()).getTypeName());
@@ -565,7 +569,7 @@ public class ASTBuilder extends MxBaseListener {
         {
             exprNodes.add(makeExpression(node));
         }
-        map.put(ctx, new CreatorNode(new Location(ctx), exprNodes, arrType, dimension));
+        map.put(ctx, new CreatorNode(new Location(ctx), exprNodes, type.getType(), dimension));
     }
 
     @Override public void exitErrorCreator(MxParser.ErrorCreatorContext ctx) {
@@ -574,7 +578,7 @@ public class ASTBuilder extends MxBaseListener {
 
     @Override public void exitNonarrayCreator(MxParser.NonarrayCreatorContext ctx) {
         Type type  = new ClassType(ctx.Id().getText());
-        map.put(ctx, new CreatorNode(new Location(ctx), null, type, 0));
+        map.put(ctx, new CreatorNode(new Location(ctx), null, type.getType(), 0));
     }
 
 
