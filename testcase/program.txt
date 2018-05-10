@@ -1,12 +1,4 @@
-int __print() {
-
-}
-int main() {
-int a = (new int[123])[31];
-__print();
-}
-
-/*bool a;
+bool a;
 bool b;
 class A {
     int a;
@@ -27,7 +19,7 @@ int main() {
     A a = new A();
 	println("too young too simple.");
 	return 0;
-}*/
+}
 /*int __print() {
 
 }

@@ -38,6 +38,8 @@ Return      : 'return';
 
 fragment
 Letter:   [a-zA-Z];
+
+fragment
 LetterPlus: [a-zA-Z_];
 
 fragment
