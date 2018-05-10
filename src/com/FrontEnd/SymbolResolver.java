@@ -35,7 +35,9 @@ public class SymbolResolver extends Visit {
         else if (type instanceof ClassType)
         {
             ClassType classType = (ClassType)type;
+            //out.println(classType.getName());
             Entity entity = scope.Search(classType.getName());
+            //out.println(entity);
             if (!(entity instanceof ClassEntity) || entity == null)
             {
                 return false;
@@ -136,6 +138,7 @@ public class SymbolResolver extends Visit {
         pushScope();
         scope.idx += entity.getName();
         entity.setScope(scope);
+        //out.println(entity.getResult());
         if (!TypeResolver(entity.getResult())) {
             throw new SemanticError(node.getLocation(), "Cannot resolve symbol : " + entity.getResult());
         }

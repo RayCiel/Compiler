@@ -37,7 +37,8 @@ Continue    : 'continue';
 Return      : 'return';
 
 fragment
-Letter:   [a-zA-Z_];
+Letter:   [a-zA-Z];
+LetterPlus: [a-zA-Z_];
 
 fragment
 Digit:   [1-9][0-9]*
@@ -51,7 +52,7 @@ ConstInt:        [1-9][0-9]*
                  | '0'
                  ;
 
-Id:         Letter (Letter | Digit)*;
+Id:         Letter (LetterPlus | Digit)*;
 LineComment:       '//' ~[\r\n]* -> skip;
 WhiteSpace:     [ \n\r\t]+ ->skip;
 BlockComment:       '/*' .*? '*/' -> skip;
