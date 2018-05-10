@@ -7,8 +7,6 @@ import static java.lang.System.out;
 
 public class MemLHSNode extends VarLHSNode{
     protected ExpressionNode expression;
-    protected Entity entity;
-    protected String member;
 
     public MemLHSNode(ExpressionNode _expression, String _member, Location _location)
     {

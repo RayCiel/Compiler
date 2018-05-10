@@ -8,6 +8,8 @@ import com.ThrowError.SemanticError;
 import com.Type.*;
 import java.util.List;
 
+import static java.lang.System.out;
+
 
 public class TypeCheck extends Visit{
     static final Type boolType = new BoolType();
@@ -24,6 +26,7 @@ public class TypeCheck extends Visit{
 
     public void CheckCompatible (Type left, Type right, Location _location)
     {
+        //out.println(left);
         if (!left.isCompatible(right))
         {
             String error = "Incompatible: " + left.getTypeName() + " and " + right.getTypeName();
@@ -327,6 +330,7 @@ public class TypeCheck extends Visit{
             if (node.getExpression() != null && !function.getType().isVoid())
             {
                 visitExpressionNode(node.getExpression());
+                //out.println(node.getExpression().getType());
                 CheckCompatible(node.getExpression().getType(), function.getResult(), node.getLocation());
             }
             else if (function.getType().isVoid() && node.getExpression() != null)

@@ -16,7 +16,10 @@ public class CreatorNode extends ExpressionNode{
         super();
         this.location = _location;
         this.args = _args;
-        this.type = new ArrayType(_dimension, _type);
+        if(_dimension > 0)
+           this.type = new ArrayType(_dimension, _type);
+        else
+            this.type = _type;
     }
 
     public List<ExpressionNode> getArgs()

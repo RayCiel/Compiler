@@ -4,6 +4,8 @@ import com.FrontEnd.ASTVisitor;
 import com.Type.*;
 import com.Entity.*;
 
+import static java.lang.System.out;
+
 public class VarLHSNode extends LHSNode{
     protected Entity entity;
     protected Location location;
@@ -49,6 +51,7 @@ public class VarLHSNode extends LHSNode{
     @Override
     public Type getType()
     {
+        //out.println(entity + "+" + getLocation());
         if(type == null)
             type = entity.getType();
         return super.getType();

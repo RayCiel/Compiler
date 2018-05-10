@@ -6,6 +6,8 @@ import com.ThrowError.SemanticError;
 import com.Type.*;
 import java.util.Stack;
 
+import static java.lang.System.out;
+
 public class SymbolResolver extends Visit {
     public Stack<Scope> scopeStack = new Stack<>();
     public Scope scope;   //fu hao biao
@@ -210,6 +212,7 @@ public class SymbolResolver extends Visit {
     @Override
     public Void visit(CreatorNode node)
     {
+        //out.println(node.getType());
         if (!TypeResolver(node.getType()))
         {
             throw new SemanticError(node.getLocation(), "Cannot resolve symbol : " + node.getType().getTypeName());
@@ -326,6 +329,7 @@ public class SymbolResolver extends Visit {
             preEntity = ((ClassEntity) preEntity).getScope().SearchCurrentLevel(node.getMember());
             if (preEntity == null)
                 throw new SemanticError(node.getLocation(), "SymbolResolver: Visit MemLHSNode: " + preEntity.getName() + "is not existed.");
+            //out.println(preEntity + " " + node.getLocation());
             node.setEntity(preEntity);
             node.getType();
             //if (exprNode instanceof FuncallNode)

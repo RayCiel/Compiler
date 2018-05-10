@@ -7,21 +7,13 @@
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/ArefLHSNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/ArefLHSNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/ExpressionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/ExpressionNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/FuncallNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/FuncallNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/SymbolResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/SymbolResolver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/AST/CreatorNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/CreatorNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/AST/MemLHSNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/MemLHSNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/AST/VarLHSNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/VarLHSNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Entity/FuncEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Entity/FuncEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/ASTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/ASTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/BoolType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/BoolType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/ClassType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/ClassType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/IntType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/IntType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/NullType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/NullType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/StrType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/StrType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/VoidType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/VoidType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,14 +27,41 @@
     <splitter split-orientation="horizontal" split-proportion="0.49125">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="SymbolResolver.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="SymbolResolver.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2601">
-                  <caret line="293" column="49" selection-start-line="293" selection-start-column="49" selection-end-line="293" selection-end-column="49" />
+                <state relative-caret-position="273">
+                  <caret line="214" column="10" selection-start-line="214" selection-start-column="10" selection-end-line="214" selection-end-column="10" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CreatorNode.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/AST/CreatorNode.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                  <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="VarEntity.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/Entity/VarEntity.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/Entity/Entity.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -60,11 +79,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TypeCheck.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="TypeCheck.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="500">
-                  <caret line="356" column="28" selection-start-line="356" selection-start-column="28" selection-end-line="356" selection-end-column="28" />
+                <state relative-caret-position="209">
+                  <caret line="332" column="18" selection-start-line="332" selection-start-column="18" selection-end-line="332" selection-end-column="18" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -110,11 +129,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="VarLHSNode.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="VarLHSNode.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/AST/VarLHSNode.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
-                  <caret line="52" column="36" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="36" />
+                <state relative-caret-position="299">
+                  <caret line="56" column="31" lean-forward="true" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
                   <folding>
                     <element signature="e#575#576#0" expanded="true" />
                     <element signature="e#603#604#0" expanded="true" />
@@ -123,10 +142,37 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ASTBuilder.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="MemEntity.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/Entity/MemEntity.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="LHSNode.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/AST/LHSNode.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ExpressionNode.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/AST/ExpressionNode.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ASTBuilder.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="276">
+                <state relative-caret-position="546">
                   <caret line="123" column="40" selection-start-line="123" selection-start-column="40" selection-end-line="123" selection-end-column="40" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -161,7 +207,7 @@
             <entry file="file://$PROJECT_DIR$/src/com/AST/MemLHSNode.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="60">
-                  <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+                  <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
                 </state>
               </provider>
             </entry>
@@ -222,7 +268,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/Entity/LibFunction.java" />
         <option value="$PROJECT_DIR$/src/com/AST/VarDefNode.java" />
         <option value="$PROJECT_DIR$/src/com/Entity/StringEntity.java" />
         <option value="$PROJECT_DIR$/src/com/AST/FuncDefNode.java" />
@@ -250,17 +295,14 @@
         <option value="$PROJECT_DIR$/src/com/AST/BinaryExprNode.java" />
         <option value="$PROJECT_DIR$/src/com/AST/AssignNode.java" />
         <option value="$PROJECT_DIR$/src/com/AST/LHSNode.java" />
-        <option value="$PROJECT_DIR$/src/com/AST/CreatorNode.java" />
         <option value="$PROJECT_DIR$/src/com/AST/UnaryNode.java" />
         <option value="$PROJECT_DIR$/src/com/Main.java" />
         <option value="$PROJECT_DIR$/src/com/Type/ArrayType.java" />
         <option value="$PROJECT_DIR$/src/com/AST/AssignNode.java" />
         <option value="$PROJECT_DIR$/src/com/AST/BlockNode.java" />
-        <option value="$PROJECT_DIR$/src/com/AST/CreatorNode.java" />
         <option value="$PROJECT_DIR$/src/com/AST/ExpressionNode.java" />
         <option value="$PROJECT_DIR$/src/com/AST/ExpressionNode.java" />
         <option value="$PROJECT_DIR$/src/com/Entity/FuncEntity.java" />
-        <option value="$PROJECT_DIR$/src/com/AST/VarLHSNode.java" />
         <option value="$PROJECT_DIR$/src/com/AST/FuncallNode.java" />
         <option value="$PROJECT_DIR$/src/com/AST/ArefLHSNode.java" />
         <option value="$PROJECT_DIR$/src/com/Type/StrType.java" />
@@ -269,10 +311,14 @@
         <option value="$PROJECT_DIR$/src/com/Type/BoolType.java" />
         <option value="$PROJECT_DIR$/src/com/Type/VoidType.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/ASTree.java" />
-        <option value="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" />
-        <option value="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" />
         <option value="$PROJECT_DIR$/src/com/Type/ClassType.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" />
+        <option value="$PROJECT_DIR$/src/com/AST/MemLHSNode.java" />
+        <option value="$PROJECT_DIR$/src/com/AST/VarLHSNode.java" />
+        <option value="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" />
+        <option value="$PROJECT_DIR$/src/com/AST/CreatorNode.java" />
+        <option value="$PROJECT_DIR$/src/com/AST/CreatorNode.java" />
+        <option value="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" />
       </list>
     </option>
   </component>
@@ -442,17 +488,18 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" auto_hide="true" id="Tool Output" order="7" sideWeight="0.675" weight="0.22317597" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.48072916" weight="0.4549356" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.3234375" side_tool="true" weight="0.20064378" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6765625" weight="0.1555794" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6765625" visible="true" weight="0.3026316" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32939914" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14529915" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14529915" />
       <window_info anchor="bottom" id="ANTLR Preview" order="11" sideWeight="0.8432292" weight="0.2886266" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -466,23 +513,12 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4984375" weight="0.24339207" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.48072916" weight="0.4549356" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/Type/ArrayType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/AST/OrNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -619,24 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/AST/LHSNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/AST/ExpressionNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding>
-            <element signature="e#702#703#0" expanded="true" />
-            <element signature="e#738#739#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/AST/FuncallNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -647,13 +665,6 @@
             <element signature="e#971#972#0" expanded="true" />
             <element signature="e#1013#1014#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/AST/CreatorNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -703,20 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Entity/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Entity/VarEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -783,13 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/AST/MemLHSNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Type/FuncType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -840,37 +830,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2601">
-          <caret line="293" column="49" selection-start-line="293" selection-start-column="49" selection-end-line="293" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/AST/VarLHSNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="52" column="36" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="36" />
-          <folding>
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="356" column="28" selection-start-line="356" selection-start-column="28" selection-end-line="356" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Type/ClassType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -880,8 +839,88 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
+        <state relative-caret-position="546">
           <caret line="123" column="40" selection-start-line="123" selection-start-column="40" selection-end-line="123" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Entity/VarEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Entity/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/AST/ExpressionNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/AST/LHSNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Entity/MemEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/AST/MemLHSNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/AST/VarLHSNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="56" column="31" lean-forward="true" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
+          <folding>
+            <element signature="e#575#576#0" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="332" column="18" selection-start-line="332" selection-start-column="18" selection-end-line="332" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/AST/CreatorNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="214" column="10" selection-start-line="214" selection-start-column="10" selection-end-line="214" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
