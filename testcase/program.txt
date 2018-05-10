@@ -20,13 +20,7 @@ int main() {
 	println("too young too simple.");
 	return 0;
 }
-/*int __print() {
 
-}
-int main() {
-int a = (new int[123])[31];
-__print();
-}*/
 /*string a = "\n\n\n\"\\\"";
 
 class A {

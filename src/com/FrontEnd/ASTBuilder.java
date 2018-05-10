@@ -122,9 +122,9 @@ public class ASTBuilder extends MxBaseListener {
             if (entity.isConstruct()) {
                 construct = entity;
                 //out.println(entity.getName());
-                if (!entity.getName().equals(ctx.name.getText())) {
+                if (!entity.getName().equals(ClassType.CONSTRUCTOR_NAME + ctx.name.getText())) {
                     throw new SemanticError(new Location(ctx.name), "wrong name of constructor : " + entity.getName()
-                            + " and " + ctx.name.getText());
+                            + " and " + ClassType.CONSTRUCTOR_NAME + ctx.name.getText());
                 }
 
             }
@@ -152,7 +152,7 @@ public class ASTBuilder extends MxBaseListener {
         if (ctx.ret == null)
         {
             //out.println("I'm in!!");
-            funcEntity = new FuncEntity(ctx.name.getText(), new Location(ctx.name), new ClassType(ctx.name.getText()), (BlockNode) map.get(ctx.block()), param);
+            funcEntity = new FuncEntity(ClassType.CONSTRUCTOR_NAME + ctx.name.getText(), new Location(ctx.name), new ClassType(ctx.name.getText()), (BlockNode) map.get(ctx.block()), param);
             funcEntity.setConstruct(true);
         } else {
             //out.println(ctx.ret.getText());
