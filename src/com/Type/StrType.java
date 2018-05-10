@@ -60,6 +60,6 @@ public class StrType extends Type{
     @Override
     public String getTypeName()
     {
-        return "String";
+        return "string";
     }
 }

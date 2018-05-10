@@ -312,12 +312,15 @@ public class SymbolResolver extends Visit {
             return null;
         }
         Entity preEntity;
+        //out.println(exprNode);
         if (exprNode instanceof VarLHSNode || exprNode instanceof  FuncallNode
                 || exprNode instanceof ArefLHSNode || exprNode instanceof  CreatorNode)
         {
             if (exprNode instanceof VarLHSNode)
             {
+                //out.println(((VarLHSNode) exprNode).getEntity());
                 VarEntity varEntity = (VarEntity) (((VarLHSNode) exprNode).getEntity());
+                //out.println(varEntity.getType().getTypeName());
                 preEntity = scope.Search(varEntity.getType().getTypeName());
             }
             //if (exprNode instanceof FuncallNode)

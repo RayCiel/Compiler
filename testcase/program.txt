@@ -1,82 +1,100 @@
-bool a;
-bool b;
-class A {
+int main() {
+A tmp;
+    return tmp.a.b.s.substring(0,1).length();
+}
+class A{
+	B a;
+}
+class B{
+	C b;
+}
+class C{
+	string s;
+}
+/*class A {
     int a;
-    int b;
-    A () {
-
-        a = 1;
-        b = a + 1;
-        this.a = b;
-        this.b = this.a + 1;
-        {
-            string a = toString(this.b);
-            string b = a;
-        }
-    }
 }
 int main() {
-    A a = new A();
-	println("too young too simple.");
-	return 0;
-}
-
-/*string a = "\n\n\n\"\\\"";
-
-class A {
-    bool b;
-}
-
-int main() {
-    println(a + " " + a);
-    // what a mess
-    int [] [] [] a;
-    a = new int [2] [] [];
-    if (true) {
-        int[] b = a [1] [1];
-        int [][] c = a [1];
-        A[][] a = new A[2][];
-        if (a[1][1].b) {}
-    }
+	int x = 1;
+	{
+	    string x = "gzotpa";
+	    {
+	        bool x = true;
+	        {
+                A x = null;
+	        }
+	        if (x) print("gzotpa");
+	    }
+	    int y = x.length();
+	}
+	x = x + 1;
+	return x;
 }*/
-/*int main()
+/*string miracle = "\"orange________\"";
+
+class moment_ring
 {
-    int[][] a = new int[100][];
-    int i;
-	int j;
-    for (i = 0; i < 100; i++)
-        a[i] = new int[100];
-    int sum = 0;
-
-    for (i = 0;i < 100;i++)
-        for (j = 0;j < 100;j++)
-            a[i][j] = 0;
-    for (i = 0;i < 100;i++)
-    	if (i > 20 && i < 80) {
-        	for (j = 0;j < 100;j++)
-            	if (j > 5 || i < 90)
-                	a[i][j] = j + (100 - 1 + 1 - 1 + 1) / 2;
-    	}
-
-    for (i = 0;i < 100;i++)
-        for (j = 0;j < 100;j++)
-            sum = sum + a[i][j];
-    println(toString(sum));
+	string[] singers;
+	string lryics;
+	void init()
+	{
+		this.singers = new string[9];
+		lryics = "kii te yo ima no kimochi wa\nsouda na souda na katari kirenai\n...";
+	}
 }
-*/
-/*class experience {
-    int naive;
-}
-int main() {
-    if (true)
-      if (true)
-         print("hello");
-       else
-         print("bye");
 
-    experience[][] exp = new experience[5][6];
-    string[] vec;
-    int[][] mat = new int[5][6];
-    vec = new string[10];
+int depth;
+
+void another_fun()
+{
+	moment_ring song;
+	song.init();
+	depth--;
+	if(depth > 0)
+		another_fun();
+	else
+		//fun();
+		fun(2017);
+}
+
+class test
+{
+	string txt;
+	test init()
+	{
+		txt = "you should pass this one";
+		return this;
+	}
+	test init2(test t)
+	{
+		t.txt = "TAT";
+		this.txt = t.txt;
+		return t;
+	}
+}
+
+int main()
+{
+	int a;
+	{
+		int a = 0;
+		println(toString(a));
+	}
+	a = 1;
+	test nico;
+	println(nico.init().txt);
+	println(toString(nico.init().txt.ord(0)));
+	depth = 3;
+	another_fun();
+	;
+	return toString(fun(10).ord(0)).ord(0);
+}
+
+string fun(int pos)
+{
+	if(pos < 0)
+		return "";
+	return fun(pos - 1) + toString(miracle.ord(pos));
 }*/
+
 
