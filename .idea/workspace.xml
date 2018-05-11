@@ -8,13 +8,37 @@
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/ASTBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/ASTBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/SymbolResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/SymbolResolver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/TypeCheck$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/TypeCheck$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/TypeCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/TypeCheck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/Mx.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/Mx.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/Mx.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/Mx.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxLexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxLexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ArrayCreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ArrayCreatorContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$BreakStatementContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$BreakStatementContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ClassDefinitionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ClassDefinitionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstBoolContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstBoolContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstIntContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstIntContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstNullContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstNullContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstStringContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ConstStringContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ContinueStatementContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ContinueStatementContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ErrorCreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ErrorCreatorContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ForStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ForStmtContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$FunctionDefinitionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$FunctionDefinitionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$IDContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$IDContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$MemberContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$MemberContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$NonarrayCreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$NonarrayCreatorContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ParameterContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ParameterContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ReturnStatementContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$ReturnStatementContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$TypeTypeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$TypeTypeContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$VariableDefinitionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$VariableDefinitionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$WhileStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$WhileStmtContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/Parser/Mx.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Parser/Mx.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Parser/Mx.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Parser/Mx.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Parser/MxLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Parser/MxLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Parser/MxLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Parser/MxLexer.tokens" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/Parser/MxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Parser/MxParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testcase/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.txt" afterDir="false" />
     </list>
@@ -27,14 +51,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.24921729">
+    <splitter split-orientation="horizontal" split-proportion="0.43644333">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="SymbolResolver.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="219">
-                  <caret line="226" column="20" lean-forward="true" selection-start-line="226" selection-start-column="20" selection-end-line="226" selection-end-column="20" />
+                <state relative-caret-position="360">
+                  <caret line="382" selection-start-line="382" selection-end-line="382" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -107,8 +131,8 @@
           <file leaf-file-name="ASTBuilder.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="124">
-                  <caret line="362" column="45" selection-start-line="362" selection-start-column="26" selection-end-line="362" selection-end-column="45" />
+                <state relative-caret-position="138">
+                  <caret line="226" column="96" selection-start-line="226" selection-start-column="96" selection-end-line="226" selection-end-column="96" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -145,8 +169,8 @@
           <file leaf-file-name="Mx.g4" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/Parser/Mx.g4">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="125" column="95" selection-start-line="125" selection-start-column="95" selection-end-line="125" selection-end-column="95" />
+                <state relative-caret-position="180">
+                  <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -154,8 +178,8 @@
           <file leaf-file-name="TypeCheck.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="284">
-                  <caret line="192" column="45" lean-forward="true" selection-start-line="192" selection-start-column="45" selection-end-line="192" selection-end-column="45" />
+                <state relative-caret-position="419">
+                  <caret line="198" column="10" selection-start-line="198" selection-start-column="10" selection-end-line="198" selection-end-column="10" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -166,7 +190,7 @@
           <file leaf-file-name="MxParser.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/Parser/MxParser.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="203">
+                <state relative-caret-position="1703">
                   <caret line="1226" selection-start-line="1226" selection-end-line="1226" />
                 </state>
               </provider>
@@ -215,7 +239,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Assi</find>
       <find>LHS</find>
       <find>this</find>
       <find>VarDefNode</find>
@@ -245,6 +268,7 @@
       <find>Creat</find>
       <find>Expr</find>
       <find>ExpressionS</find>
+      <find>Elseif</find>
     </findStrings>
     <replaceStrings>
       <replace>Operation</replace>
@@ -478,7 +502,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" auto_hide="true" id="Tool Output" order="7" sideWeight="0.675" weight="0.22258772" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.48072916" weight="0.45394737" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.48072916" weight="0.2609649" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -490,7 +514,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14690171" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="11" sideWeight="0.8432292" weight="0.2883772" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="11" sideWeight="0.8432292" weight="0.29495615" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -861,17 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/AST/UnaryNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-          <folding>
-            <element signature="e#578#579#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/C.g4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-540">
@@ -883,18 +896,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Parser/MxParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
+        <state relative-caret-position="1703">
           <caret line="1226" selection-start-line="1226" selection-end-line="1226" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="226" column="20" lean-forward="true" selection-start-line="226" selection-start-column="20" selection-end-line="226" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -908,10 +911,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="382" selection-start-line="382" selection-end-line="382" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/AST/UnaryNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <folding>
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="362" column="45" selection-start-line="362" selection-start-column="26" selection-end-line="362" selection-end-column="45" />
+        <state relative-caret-position="138">
+          <caret line="226" column="96" selection-start-line="226" selection-start-column="96" selection-end-line="226" selection-end-column="96" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -920,15 +944,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Parser/Mx.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="125" column="95" selection-start-line="125" selection-start-column="95" selection-end-line="125" selection-end-column="95" />
+        <state relative-caret-position="180">
+          <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="192" column="45" lean-forward="true" selection-start-line="192" selection-start-column="45" selection-end-line="192" selection-end-column="45" />
+        <state relative-caret-position="419">
+          <caret line="198" column="10" selection-start-line="198" selection-start-column="10" selection-end-line="198" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

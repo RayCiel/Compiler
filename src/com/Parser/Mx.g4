@@ -29,7 +29,6 @@ RightShift      : '>>';
 
 If          : 'if';
 Else        : 'else';
-Elseif      : 'else if';
 While       : 'while';
 For         : 'for';
 Break       : 'break';
