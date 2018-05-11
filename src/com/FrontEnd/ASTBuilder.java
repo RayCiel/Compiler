@@ -203,7 +203,8 @@ public class ASTBuilder extends MxBaseListener {
         //out.println(ctx.expression().getText());
         //out.println(map.get(ctx.expression()));
         //out.println(ctx);
-        map.put(ctx, new ExprStmtNode(new Location(ctx),(ExpressionNode) map.get(ctx.expression())));
+        //if (ctx.expression() != null)
+            map.put(ctx, new ExprStmtNode(new Location(ctx),(ExpressionNode) map.get(ctx.expression())));
     }
 
     @Override

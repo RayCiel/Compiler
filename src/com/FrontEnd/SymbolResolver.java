@@ -147,6 +147,12 @@ public class SymbolResolver extends Visit {
         }
         for (ParamEntity param : entity.getParam())
         {
+            /*Entity preentity = scope.Search(param.getType().getTypeName());
+            if(preentity == null)
+                throw new SemanticError(param.getLocation(), "type not find.");
+            if(!(preentity instanceof ClassEntity))
+                throw new SemanticError(node.getLocation(), "Type excepted.");
+            scope.insertEntity(param);*/
             scope.insertEntity(param);
             if (!TypeResolver(param.getType()))
             {
@@ -173,6 +179,7 @@ public class SymbolResolver extends Visit {
             {
                 visitExpressionNode(entity.getExpression());
             }
+            //out.println(node.getEntity().getExpression());
             scope.insertEntity(entity);
         }
         return null;
@@ -238,8 +245,13 @@ public class SymbolResolver extends Visit {
             visitStatementNodes(node.getStmts());
         }
         else {
+            //out.println("IN!!");
+            //out.println(scope.idx);
+            //out.println(scope.getEntityMap());
             pushScope();
-            node.setScope(scope);
+            //out.println(node.getStmts());
+            //out.println(scope.idx);
+            //node.setScope(scope);
             visitStatementNodes(node.getStmts());
             popScope();
         }
@@ -318,10 +330,12 @@ public class SymbolResolver extends Visit {
         {
             if (exprNode instanceof VarLHSNode)
             {
-                //out.println(((VarLHSNode) exprNode).getEntity());
-                VarEntity varEntity = (VarEntity) (((VarLHSNode) exprNode).getEntity());
+                //out.println(((VarLHSNode) exprNode).getEntity().getName());\
+                //out.println(scope.Search(((VarLHSNode) exprNode).getEntity().getType().getTypeName()));
+                //VarEntity varEntity = (VarEntity) (((VarLHSNode) exprNode).getEntity());
                 //out.println(varEntity.getType().getTypeName());
-                preEntity = scope.Search(varEntity.getType().getTypeName());
+                preEntity = scope.Search(((VarLHSNode) exprNode).getEntity().getType().getTypeName());
+                //preEntity = scope.Search(varEntity.getType().getTypeName());
             }
             //if (exprNode instanceof FuncallNode)
             //{
@@ -342,6 +356,8 @@ public class SymbolResolver extends Visit {
             }
             if (!(preEntity instanceof ClassEntity))
                 throw new SemanticError(node.getLocation(), "SymbolResolver: Visit MemLHSNode: " + preEntity.getName() + " has found, but " +  preEntity.getType().getTypeName() + " is not ClassEntity;");
+            //out.println(preEntity.getName());
+            //out.println(node.getMember());
             preEntity = ((ClassEntity) preEntity).getScope().SearchCurrentLevel(node.getMember());
             if (preEntity == null)
                 throw new SemanticError(node.getLocation(), "SymbolResolver: Visit MemLHSNode: " + preEntity.getName() + "is not existed.");

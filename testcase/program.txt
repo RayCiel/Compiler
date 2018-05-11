@@ -1,36 +1,4 @@
-int main() {
-A tmp;
-    return tmp.a.b.s.substring(0,1).length();
-}
-class A{
-	B a;
-}
-class B{
-	C b;
-}
-class C{
-	string s;
-}
-/*class A {
-    int a;
-}
-int main() {
-	int x = 1;
-	{
-	    string x = "gzotpa";
-	    {
-	        bool x = true;
-	        {
-                A x = null;
-	        }
-	        if (x) print("gzotpa");
-	    }
-	    int y = x.length();
-	}
-	x = x + 1;
-	return x;
-}*/
-/*string miracle = "\"orange________\"";
+string miracle = "\"orange________\"";
 
 class moment_ring
 {
@@ -95,6 +63,24 @@ string fun(int pos)
 	if(pos < 0)
 		return "";
 	return fun(pos - 1) + toString(miracle.ord(pos));
+}
+/*class A {
+    int a;
+}
+int main() {
+	int x = 1;
+	{
+	    string x = "gzotpa";
+	    {
+	        bool x = true;
+	        {
+                A x = null;
+	        }
+	        if (x) print("gzotpa");
+	    }
+	    int y = x.length();
+	}
+	x = x + 1;
+	return x;
 }*/
-
 
