@@ -6,6 +6,7 @@ import com.ThrowError.SemanticError;
 import com.Type.*;
 import java.util.Stack;
 
+import static com.Type.Type.strType;
 import static java.lang.System.out;
 
 public class SymbolResolver extends Visit {
@@ -215,12 +216,13 @@ public class SymbolResolver extends Visit {
     }
     @Override
     public Void visit(StrLitNode node) {
-        //Entity entity = topScope.SearchCurrentLevel(node.getStr());
-        //if (entity == null) {
-        //    entity = new StringEntity(node.getLocation(), new StrType(), node, node.getStr());
-        //    topScope.insertEntity(entity);
-        //}
-        //node.setEntity((StringEntity) entity);
+        //out.println(node.getStr());
+        Entity entity = topScope.SearchCurrentLevel(strType.STRING_CONSTANT_PREFIX + node.getStr());
+        if (entity == null) {
+            entity = new StringEntity(node.getLocation(), new StrType(), node, node.getStr());
+            topScope.insertEntity(entity);
+        }
+        node.setEntity((StringEntity) entity);
         super.visit(node);
         return null;
     }
