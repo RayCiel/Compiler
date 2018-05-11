@@ -334,6 +334,18 @@ public interface MxListener extends ParseTreeListener {
 	 */
 	void exitSuffixOperation(MxParser.SuffixOperationContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code ConstructorThis}
+	 * labeled alternative in {@link MxParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterConstructorThis(MxParser.ConstructorThisContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ConstructorThis}
+	 * labeled alternative in {@link MxParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitConstructorThis(MxParser.ConstructorThisContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code OrorOperation}
 	 * labeled alternative in {@link MxParser#expression}.
 	 * @param ctx the parse tree

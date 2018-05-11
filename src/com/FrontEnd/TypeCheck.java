@@ -324,9 +324,14 @@ public class TypeCheck extends Visit{
     @Override
     public Void visit(ReturnNode node)
     {
+        //out.println(function.isConstruct() + " " + node.getExpression());
         if (function == null)
         {
             throw new SemanticError(node.getLocation(), "Can't return outside function;");
+        }
+        else if (function.isConstruct() && node.getExpression() != null)
+        {
+            throw new SemanticError(node.getLocation(), "Cannot return in constructor;");
         }
         else {
             if (node.getExpression() != null && !function.getType().isVoid())
@@ -339,6 +344,7 @@ public class TypeCheck extends Visit{
             {
                 throw new SemanticError(node.getLocation(), "Expect a return expression;");
             }
+
         }
         return null;
     }

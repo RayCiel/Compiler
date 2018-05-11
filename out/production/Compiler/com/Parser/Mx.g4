@@ -27,6 +27,7 @@ Xor        : '^';
 LeftShift      : '<<';
 RightShift      : '>>';
 
+This        : 'this';
 If          : 'if';
 Else        : 'else';
 While       : 'while';
@@ -103,7 +104,7 @@ typeType:       (Id | primitiveType) ('[' ']')*;
 primitiveType:      type = ('bool' | 'int' | 'string' | 'void');
 
 expression:       primaryExpression                                                                    #ExpressionPrimary
-                  //|'this'                                                                              #ConstructorThis
+                  |'this'                                                                              #ConstructorThis
                   | constant                                                                           #Const
                   | Id                                                                                 #ID
                   | 'new' creator                                                                      #New
