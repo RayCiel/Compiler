@@ -196,7 +196,6 @@ public class TypeCheck extends Visit{
             case Tilde: right = intType; break;
             default: throw new SemanticError(node.getLocation(), "Invalid operator" + node.getOperator());
         }
-        //out.println(node.getOperator());
         CheckCompatible(node.getExpression().getType(), right, node.getLocation());
         return null;
     }

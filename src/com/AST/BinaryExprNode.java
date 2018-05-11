@@ -49,8 +49,6 @@ public class BinaryExprNode extends ExpressionNode{
 
     public void setType(Type _type) {
         //??? can be deleted
-        if(this.type != null)
-            throw new SemanticError(getLocation(), "BinaryExprNode: setType: called twice");
         this.type = _type;
     }
 

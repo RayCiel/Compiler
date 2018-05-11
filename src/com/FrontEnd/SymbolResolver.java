@@ -4,6 +4,8 @@ import com.AST.*;
 import com.Entity.*;
 import com.ThrowError.SemanticError;
 import com.Type.*;
+import jdk.nashorn.internal.ir.BinaryNode;
+
 import java.util.Stack;
 
 import static com.Type.Type.strType;
@@ -313,7 +315,7 @@ public class SymbolResolver extends Visit {
         ExpressionNode exprNode = node.getExpression();
         if (exprNode.getType() instanceof NullType || exprNode.getType() instanceof VoidType)
             throw new SemanticError(node.getLocation(), "SymbolResolver: Visit MemLHSNode: Error Type;");
-
+        //out.println(exprNode);
         if (exprNode.getType() instanceof ArrayType)
         {
             if (!node.getMember().equals("size"))
@@ -329,7 +331,7 @@ public class SymbolResolver extends Visit {
         Entity preEntity;
         //out.println(exprNode);
         if (exprNode instanceof VarLHSNode || exprNode instanceof  FuncallNode
-                || exprNode instanceof ArefLHSNode || exprNode instanceof  CreatorNode)
+                || exprNode instanceof ArefLHSNode || exprNode instanceof  CreatorNode || exprNode instanceof BinaryExprNode)
         {
             if (exprNode instanceof VarLHSNode)
             {
