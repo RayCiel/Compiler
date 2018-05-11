@@ -127,7 +127,7 @@ public class TypeCheck extends Visit{
             visitExpressionNode(node.getRight());
         }
         if (!node.getLeft().isAssignable())
-            throw new SemanticError(node.getLocation(), "Left-value is not assignable;");
+            throw new SemanticError(node.getLocation(), "Left-value excepted.");
         Type ltype, rtype;
         //if (node.getLeft() instanceof ArefLHSNode)
         //    ltype = ((ArefLHSNode)node.getLeft()).getType();

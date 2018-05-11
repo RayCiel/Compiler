@@ -468,6 +468,12 @@ public class ASTBuilder extends MxBaseListener {
         map.put(ctx, new VarLHSNode(new Location(ctx), ctx.Id().getText()));
     }
 
+    @Override
+    public void exitConstructorThis(MxParser.ConstructorThisContext ctx)
+    {
+        map.put(ctx, new VarLHSNode(new Location(ctx), "this"));
+    }
+
     @Override public void exitFunctionCall(MxParser.FunctionCallContext ctx) {
         List<ExpressionNode> args;
         if (ctx.expressionList() != null)
