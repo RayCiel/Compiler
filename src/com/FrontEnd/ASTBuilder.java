@@ -579,6 +579,7 @@ public class ASTBuilder extends MxBaseListener {
 
     @Override public void exitNonarrayCreator(MxParser.NonarrayCreatorContext ctx) {
         Type type  = new ClassType(ctx.Id().getText());
+        //out.println(type);
         map.put(ctx, new CreatorNode(new Location(ctx), null, type, 0));
     }
 

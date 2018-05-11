@@ -5,6 +5,7 @@ import com.Entity.LibFunction;
 import com.FrontEnd.ASTBuilder;
 import com.FrontEnd.ASTree;
 //import com.FrontEnd.TypeCheck;
+import com.FrontEnd.ParseErrorListener;
 import com.Parser.MxLexer;
 import com.Parser.MxParser;
 //import com.Option;
@@ -62,6 +63,8 @@ public class Compiler {
         System.err.println("CommonTokenStream Done..");
         MxParser parser = new MxParser(tokens);
         System.err.println("MxParser Done..");
+        parser.removeErrorListeners();
+        parser.addErrorListener(new ParseErrorListener());
         ParseTree tree = parser.compilationUnit();
         System.err.println("CompilationUnit Done..");
 
