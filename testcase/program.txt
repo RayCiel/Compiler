@@ -1,6 +1,3 @@
-int main() {
-    new void;
-}
 /*class A {
     int a;
 }
@@ -20,7 +17,7 @@ int main() {
 	x = x + 1;
 	return x;
 }*/
-/*int maxr = 25;
+int maxr = 25;
 int maxc = 20005;
 int INF = -1 >> 1;
 
@@ -270,4 +267,4 @@ string fun(int pos)
 	if(pos < 0)
 		return "";
 	return fun(pos - 1) + toString(miracle.ord(pos));
-}*/
+}

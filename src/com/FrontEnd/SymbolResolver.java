@@ -215,12 +215,13 @@ public class SymbolResolver extends Visit {
     }
     @Override
     public Void visit(StrLitNode node) {
-        Entity entity = topScope.SearchCurrentLevel(node.getStr());
-        if (entity == null) {
-            entity = new StringEntity(node.getLocation(), new StrType(), node, node.getStr());
-            topScope.insertEntity(entity);
-        }
-        node.setEntity((StringEntity) entity);
+        //Entity entity = topScope.SearchCurrentLevel(node.getStr());
+        //if (entity == null) {
+        //    entity = new StringEntity(node.getLocation(), new StrType(), node, node.getStr());
+        //    topScope.insertEntity(entity);
+        //}
+        //node.setEntity((StringEntity) entity);
+        super.visit(node);
         return null;
     }
 
