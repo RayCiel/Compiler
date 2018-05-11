@@ -362,6 +362,9 @@ public class ASTBuilder extends MxBaseListener {
 
     @Override public void exitPrefixOperation(MxParser.PrefixOperationContext ctx) {
         UnaryNode.Op op;
+        out.print(ctx + " ");
+        out.print(ctx.getText() + " ");
+        out.println(ctx.operation.getText());
         switch (ctx.operation.getText())
         {
             case "+": op = UnaryNode.Op.Plus; break;

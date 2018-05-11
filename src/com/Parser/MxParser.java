@@ -1547,7 +1547,7 @@ public class MxParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(179);
-				match(Not);
+				((PrefixOperationContext)_localctx).operation = match(Not);
 				setState(180);
 				expression(3);
 				}
@@ -1558,7 +1558,7 @@ public class MxParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(181);
-				match(Tilde);
+				((PrefixOperationContext)_localctx).operation = match(Tilde);
 				setState(182);
 				expression(2);
 				}

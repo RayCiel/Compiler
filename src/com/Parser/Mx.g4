@@ -124,8 +124,8 @@ expression:       primaryExpression                                             
                   | expression operation = OrOr expression                                             #OrorOperation
                   | operation = (PlusPlus | MinusMinus) expression                                     #PrefixOperation
                   | expression operation = (PlusPlus | MinusMinus)                                     #SuffixOperation
-                  | Not expression                                                                     #PrefixOperation
-                  | Tilde expression                                                                   #PrefixOperation
+                  | operation = Not expression                                                                     #PrefixOperation
+                  | operation = Tilde expression                                                                   #PrefixOperation
                   | <assoc = right> expression '=' expression                                          #Assign
                   ;
 
