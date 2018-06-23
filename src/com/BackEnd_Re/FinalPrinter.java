@@ -106,19 +106,19 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
         switch (node.getOperator())
         {
             case Less:
-                op="l";  break;
+                op="setl";  break;
             case Greater:
-                op="g";   break;
+                op="setg";   break;
             case LessEqual:
-                op="le";    break;
+                op="setle";    break;
             case GreatEqual:
-                op="ge";   break;
+                op="setge";   break;
             case Equal:
-                op="e";    break;
+                op="sete";    break;
             case NotEqual:
-                op="ne";    break;
+                op="setne";    break;
         }
-        list.add("\t\t" + "set"+ op + "\t" + node.getDest().toCodeStr1());
+        list.add("\t\t" + op + "\t" + node.getDest().toCodeStr1());
         map.put(node, list);
     }
 

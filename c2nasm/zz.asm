@@ -6,6 +6,7 @@
 
 default rel
 
+global c
 global main
 
 
@@ -19,7 +20,7 @@ main:
         mov     ecx, eax
         shl     edx, cl
         mov     eax, edx
-        mov     dword [rbp-4H], eax
+        mov     dword [rel c], eax
         mov     eax, 0
         pop     rbp
         ret

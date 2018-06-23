@@ -11,11 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/c2nasm/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/c2nasm/a.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/c2nasm/zz.asm" beforeDir="false" afterPath="$PROJECT_DIR$/c2nasm/zz.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/c2nasm/zz.c" beforeDir="false" afterPath="$PROJECT_DIR$/c2nasm/zz.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/c2nasm/zz.o" beforeDir="false" afterPath="$PROJECT_DIR$/c2nasm/zz.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c2nasm/zz.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Compiler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -101,22 +101,37 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FuncallNode.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/AST/FuncallNode.java">
+          <file leaf-file-name="FinalPrinter.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+                <state relative-caret-position="1332">
+                  <caret line="120" column="67" lean-forward="true" selection-start-line="120" selection-start-column="67" selection-end-line="120" selection-end-column="67" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FinalPrinter.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java">
+          <file leaf-file-name="Compiler.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="620">
-                  <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+                <state relative-caret-position="396">
+                  <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="GlobalVar.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/IR_Re/GlobalVar.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
                   <folding>
-                    <element signature="imports" expanded="true" />
+                    <element signature="e#113#114#0" expanded="true" />
+                    <element signature="e#147#148#0" expanded="true" />
+                    <element signature="e#184#185#0" expanded="true" />
+                    <element signature="e#226#227#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -145,19 +160,6 @@
                     <element signature="e#503#504#0" expanded="true" />
                     <element signature="e#540#541#0" expanded="true" />
                     <element signature="e#567#568#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Move.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/IR_Re/Move.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="24" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="24" />
-                  <folding>
-                    <element signature="e#490#491#0" expanded="true" />
-                    <element signature="e#518#519#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -254,7 +256,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_IR.java" />
         <option value="$PROJECT_DIR$/src/com/Global.java" />
         <option value="$PROJECT_DIR$/src/com/note" />
         <option value="$PROJECT_DIR$/src/com/IR_Re/Align.java" />
@@ -305,6 +306,7 @@
         <option value="$PROJECT_DIR$/src/com/IR_Re/Special.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" />
+        <option value="$PROJECT_DIR$/src/com/Compiler.java" />
       </list>
     </option>
   </component>
@@ -526,20 +528,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/IR_Re/GlobalVar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/IR/Pop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/IR/Function.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -988,13 +976,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/IR_Re/GlobalVar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <element signature="e#113#114#0" expanded="true" />
+            <element signature="e#147#148#0" expanded="true" />
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+        <state relative-caret-position="1332">
+          <caret line="120" column="67" lean-forward="true" selection-start-line="120" selection-start-column="67" selection-end-line="120" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
         </state>
       </provider>
     </entry>

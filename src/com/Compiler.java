@@ -3,6 +3,7 @@ package com;
 import com.BackEnd.IRBuilder;
 import com.BackEnd.IRBuiltinFunctionInserter;
 import com.BackEnd.IRPrinter;
+import com.BackEnd_Re.IRBuilder_Re;
 import com.Entity.Entity;
 import com.Entity.LibFunction;
 import com.FrontEnd.ASTBuilder;
@@ -89,18 +90,10 @@ public class Compiler {
         astree.TypeChecker();
         System.err.println("TypeChecker Done..");
 
-        IRBuilder irBuilder = new IRBuilder(astree);
+        IRBuilder_Re irBuilder_re = new IRBuilder_Re(astree);
+
         System.err.println("IRBuilder Done..");
-        irBuilder.run();
-        System.err.println("IRBuilder.Run Done..");
-        IRRoot irRoot = irBuilder.getIrRoot();
-        System.err.println("IRRoot Get Done..");
-
-        new IRBuiltinFunctionInserter(irBuilder).run();
-        System.err.println("IRBuiltinFunctionInserter Done..");
-        irRoot.accept(new IRPrinter(output));
-        System.err.println("IRPrint Done..");
-
+        
     }
 
     public static List<Entity> getLibrary() {
