@@ -1,5 +1,7 @@
 package com.Type;
 
+import com.CompilerOptions;
+
 public class BoolType extends Type {
     public BoolType() {
         super();
@@ -22,5 +24,10 @@ public class BoolType extends Type {
     public String getTypeName()
     {
         return "bool";
+    }
+
+    @Override
+    public int getRegisterSize() {
+        return CompilerOptions.getSizeBool();
     }
 }

@@ -1,5 +1,7 @@
 package com.Type;
 
+import com.CompilerOptions;
+
 public class VoidType extends Type{
     public VoidType() {
         super();
@@ -23,5 +25,10 @@ public class VoidType extends Type{
     public String getTypeName()
     {
         return "void";
+    }
+
+    @Override
+    public int getRegisterSize() {
+        return CompilerOptions.getSizePointer();
     }
 }

@@ -1,5 +1,7 @@
 package com.Type;
 
+import com.CompilerOptions;
+
 public class IntType extends Type {
     public IntType() {
         super();
@@ -22,5 +24,11 @@ public class IntType extends Type {
     public String getTypeName()
     {
         return "int";
+    }
+
+    @Override
+    public int getRegisterSize()
+    {
+        return CompilerOptions.getSizeInt();
     }
 }

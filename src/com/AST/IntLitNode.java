@@ -4,15 +4,15 @@ import com.FrontEnd.ASTVisitor;
 import com.Type.*;
 
 public class IntLitNode extends LiteralNode{
-    protected long integer;
+    protected int integer;
 
-    public IntLitNode(long _integer, Location _location)
+    public IntLitNode(int _integer, Location _location)
     {
         super(new IntType(), _location);
         this.integer = _integer;
     }
 
-    public long getInteger()
+    public int getInteger()
     {
         return integer;
     }

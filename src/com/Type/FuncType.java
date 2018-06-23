@@ -1,5 +1,6 @@
 package com.Type;
 
+import com.CompilerOptions;
 import com.Entity.FuncEntity;
 
 import static java.lang.System.out;
@@ -108,5 +109,10 @@ public class FuncType extends Type{
     public boolean isFunc()
     {
         return true;
+    }
+
+    @Override
+    public int getRegisterSize() {
+        return CompilerOptions.getSizePointer();
     }
 }

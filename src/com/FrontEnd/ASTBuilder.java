@@ -112,6 +112,7 @@ public class ASTBuilder extends MxBaseListener {
                 varDefNodes.add((VarDefNode) map.get(node));
         }
         FuncEntity construct = null;
+        FuncDefNode constructNode = null;
         for (MxParser.FunctionDefinitionContext node : ctx.functionDefinition()) {
             //out.println(node.getText());
             FuncDefNode getNode = (FuncDefNode)map.get(node);
@@ -121,6 +122,7 @@ public class ASTBuilder extends MxBaseListener {
             //out.println(entity.isConstruct());
             if (entity.isConstruct()) {
                 construct = entity;
+                constructNode = getNode;
                 //out.println(entity.getName());
                 if (!entity.getName().equals(ClassType.CONSTRUCTOR_NAME + ctx.name.getText())) {
                     throw new SemanticError(new Location(ctx.name), "wrong name of constructor : " + entity.getName()
@@ -132,6 +134,7 @@ public class ASTBuilder extends MxBaseListener {
 
         ClassEntity entity = new ClassEntity(className, new Location(ctx.name), varDefNodes, funcDefNodes);
         entity.setConstruct(construct);
+        entity.setConstructNode(constructNode);
         //out.println(entity.getVariables());
         map.put(ctx, new ClassDefNode(entity));
 
@@ -533,7 +536,7 @@ public class ASTBuilder extends MxBaseListener {
 
     @Override public void exitConstInt(MxParser.ConstIntContext ctx) {
         //out.println(ctx.ConstInt());
-        map.put(ctx, new IntLitNode(Long.parseLong(ctx.ConstInt().getText()), new Location(ctx)));
+        map.put(ctx, new IntLitNode((int)Long.parseLong(ctx.ConstInt().getText()), new Location(ctx)));
     }
 
     @Override public void exitConstString(MxParser.ConstStringContext ctx) {

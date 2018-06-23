@@ -2,7 +2,7 @@ class XZZ
 {
     void fuck()
     {
-        this = null;
+        //this = null;
     }
 }
 int main() {}

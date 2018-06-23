@@ -1,9 +1,11 @@
 package com.AST;
 
+import com.Entity.FuncEntity;
 import com.FrontEnd.ASTVisitor;
 
 public class ReturnNode extends StatementNode{
     protected ExpressionNode expression;
+    protected FuncEntity function;
 
     public ReturnNode(Location _location, ExpressionNode _expression)
     {
@@ -18,6 +20,16 @@ public class ReturnNode extends StatementNode{
     public void setExpression(ExpressionNode _expression)
     {
         this.expression = _expression;
+    }
+
+    public FuncEntity getFunction()
+    {
+        return function;
+    }
+
+    public void setFunction(FuncEntity function)
+    {
+        this.function = function;
     }
 
     @Override

@@ -15,6 +15,12 @@ public class StringEntity extends Entity {
         this.str = str;
     }
 
+    @Override
+    public int getMemorySize()
+    {
+        return getType().getRegisterSize();
+    }
+
     public ExpressionNode getExpression() {
         return expression;
     }

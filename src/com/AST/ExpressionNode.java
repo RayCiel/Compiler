@@ -1,11 +1,22 @@
 package com.AST;
 
 import com.FrontEnd.ASTVisitor;
+import com.IR.BasicBlock;
+import com.IR.IntValue;
 import com.Type.*;
 
 abstract public class ExpressionNode extends ASTNode{
     protected boolean isAss = false;
     protected Type type;
+    // for IR: condition check
+    public BasicBlock ifTrue;
+    public BasicBlock ifFalse;
+
+    // for IR: expr value
+    public IntValue intValue;
+    public IntValue addressValue;
+    public int addressOffset;
+
     public ExpressionNode()
     {
         super();

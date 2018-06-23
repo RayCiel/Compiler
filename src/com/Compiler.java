@@ -1,11 +1,15 @@
 package com;
 
+import com.BackEnd.IRBuilder;
+import com.BackEnd.IRBuiltinFunctionInserter;
+import com.BackEnd.IRPrinter;
 import com.Entity.Entity;
 import com.Entity.LibFunction;
 import com.FrontEnd.ASTBuilder;
 import com.FrontEnd.ASTree;
 //import com.FrontEnd.TypeCheck;
 import com.FrontEnd.ParseErrorListener;
+import com.IR.IRRoot;
 import com.Parser.MxLexer;
 import com.Parser.MxParser;
 //import com.Option;
@@ -29,6 +33,7 @@ import static com.Type.Type.*;
 //import static java.lang.System.*;
 
 public class Compiler {
+    public PrintStream output;
     public Compiler() {
     }
 
@@ -49,6 +54,7 @@ public class Compiler {
         //System.err.println("fout done..");
         // ANTLRInputStream input = new ANTLRInputStream(fin);
         //out.println("ANTLRInputStream Done..");
+
         InputStream fin;
         if (filein == "") {
             fin = System.in;
@@ -82,6 +88,18 @@ public class Compiler {
         System.err.println("SymbolResolver Done..");
         astree.TypeChecker();
         System.err.println("TypeChecker Done..");
+
+        IRBuilder irBuilder = new IRBuilder(astree);
+        System.err.println("IRBuilder Done..");
+        irBuilder.run();
+        System.err.println("IRBuilder.Run Done..");
+        IRRoot irRoot = irBuilder.getIrRoot();
+        System.err.println("IRRoot Get Done..");
+
+        new IRBuiltinFunctionInserter(irBuilder).run();
+        System.err.println("IRBuiltinFunctionInserter Done..");
+        irRoot.accept(new IRPrinter(output));
+        System.err.println("IRPrint Done..");
 
     }
 

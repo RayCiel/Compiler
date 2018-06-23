@@ -7,6 +7,7 @@ import com.Entity.*;
 import com.ThrowError.SemanticError;
 import com.Type.*;
 import java.util.List;
+import java.util.Stack;
 
 import static java.lang.System.out;
 
@@ -19,6 +20,7 @@ public class TypeCheck extends Visit{
     protected Scope scope;
     protected int loopDepth = 0;
     protected FuncEntity function;
+    private Stack<LoopNode> loops = new Stack<>();
 
     public TypeCheck(Scope scope) {
         this.scope = scope;
@@ -35,11 +37,21 @@ public class TypeCheck extends Visit{
         }
     }
 
+    public void enterLoop(LoopNode node)
+    {
+        loops.push(node);
+    }
+    public void exitLoop()
+    {
+        loops.pop();
+    }
+
     @Override
     public Void visit(BreakNode node)
     {
         if (loopDepth <= 0)
             throw new SemanticError(node.getLocation(), "Unexpected break;");
+        node.loop = loops.peek();
         return null;
     }
 
@@ -47,13 +59,14 @@ public class TypeCheck extends Visit{
     public Void visit(ContinueNode node) {
         if (loopDepth <= 0)
             throw new SemanticError(node.getLocation(), "unexpected continue");
+        node.loop = loops.peek();
         return null;
     }
 
     @Override
     public Void visit(ForNode node)
     {
-
+        enterLoop(node);
         if (node.getFirstExpr() != null)
         {
             visitExpressionNode(node.getFirstExpr());
@@ -73,7 +86,7 @@ public class TypeCheck extends Visit{
             visitStatementNode(node.getBody());
             loopDepth -= 1;
         }
-
+        exitLoop();
         return null;
     }
 
@@ -100,18 +113,20 @@ public class TypeCheck extends Visit{
     @Override
     public Void visit(WhileNode node)
     {
+        enterLoop(node);
         if (node.getWhileExpr() != null)
         {
             visitExpressionNode(node.getWhileExpr());
             CheckCompatible(node.getWhileExpr().getType(), boolType, node.getLocation());
 
         }
-        if (node.getDoBody() != null)
+        if (node.getBody() != null)
         {
             loopDepth += 1;
-            visitStatementNode(node.getDoBody());
+            visitStatementNode(node.getBody());
             loopDepth -= 1;
         }
+        exitLoop();
         return null;
     }
 
@@ -346,6 +361,7 @@ public class TypeCheck extends Visit{
             }
 
         }
+        node.setFunction(function);
         return null;
     }
 

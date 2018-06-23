@@ -147,9 +147,9 @@ abstract public class Visit implements ASTVisitor<Void, Void>{
         {
             visitExpressionNode(node.getWhileExpr());
         }
-        if (node.getDoBody() != null)
+        if (node.getBody() != null)
         {
-            visitStatementNode(node.getDoBody());
+            visitStatementNode(node.getBody());
         }
         return null;
     }

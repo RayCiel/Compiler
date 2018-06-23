@@ -15,6 +15,7 @@ public class Scope {
     protected List<Scope> childScope = new ArrayList<>();
     protected Scope parentScope;
     protected boolean isTop;
+    protected int varNumber = 0;
     public String idx = null;
 
     public Scope(Scope _parentScope) {
@@ -55,6 +56,11 @@ public class Scope {
         this.isTop = _isTop;
     }
 
+    public int getVarNumber()
+    {
+        return varNumber;
+    }
+
     public boolean isTop() {
         return isTop;
     }
@@ -67,7 +73,11 @@ public class Scope {
             throw new SemanticError(_entity.location, "Scope: insertEntity: " + _entity.getName() + "has been in;");
         }
         else
+        {
+            if (_entity instanceof ParamEntity)
+                ((ParamEntity) _entity).setRank(varNumber++);
             entityMap.put(_entity.getName(), _entity);
+        }
     }
 
     public void insertChild(Scope _child)

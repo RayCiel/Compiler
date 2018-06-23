@@ -1,5 +1,6 @@
 package com.Type;
 
+import com.CompilerOptions;
 import com.Entity.ClassEntity;
 
 import static java.lang.System.out;
@@ -46,7 +47,10 @@ public class ClassType extends Type{
         return getName();
     }
 
-
+    @Override
+    public int getRegisterSize() {
+        return CompilerOptions.getSizePointer();
+    }
 
     @Override
     public boolean isClass()

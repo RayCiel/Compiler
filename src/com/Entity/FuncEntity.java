@@ -3,9 +3,12 @@ package com.Entity;
 import com.AST.BlockNode;
 import com.AST.Location;
 import com.AST.VarDefNode;
+import com.IR.BasicBlock;
+import com.IR_Re.VarLabel;
 import com.Type.*;
 import org.omg.CORBA.PUBLIC_MEMBER;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FuncEntity extends Entity{
@@ -13,9 +16,17 @@ public class FuncEntity extends Entity{
     protected BlockNode body;
     protected Scope scope;
     protected List<ParamEntity> param;
+    protected List<String> paramNames;
     protected boolean isConstruct = false;
     protected boolean isLibFunction;
     protected String asmName;
+    protected VarLabel exitLabel;
+    public boolean isMember = false;
+    public ClassEntity classEntity = null;
+
+    protected BasicBlock startBB;
+    public BasicBlock exitBB;
+    protected int retSize;
 
     public FuncEntity(String _name, Location _location, Type result, BlockNode body, List<ParamEntity> _param) {
         super(_name, _location, new FuncType(_name));
@@ -26,7 +37,28 @@ public class FuncEntity extends Entity{
         ((FuncType)this.getType()).setFuncEntity(this);
     }
 
+    public List<String> getParamNames()
+    {
+        if (paramNames.size() == 0)
+        {
+            for (ParamEntity entity: param)
+                paramNames.add(entity.name);
+        }
+        return paramNames;
+    }
 
+    @Override
+    public int getMemorySize()
+    {
+        if (memorySize == 0 && param.size() != 0)
+        {
+            for (ParamEntity entity : param)
+            {
+                memorySize += entity.getType().getRegisterSize();
+            }
+        }
+        return memorySize;
+    }
 
     public String getAsmName()
     {
@@ -72,6 +104,16 @@ public class FuncEntity extends Entity{
         param.add(_param);
     }
 
+    public VarLabel getExitLabel()
+    {
+        return exitLabel;
+    }
+
+    public void setExitLabel(VarLabel exitLabel)
+    {
+        this.exitLabel = exitLabel;
+    }
+
     public void setLibFunction(boolean libFunction) {
         isLibFunction = libFunction;
     }
@@ -80,12 +122,14 @@ public class FuncEntity extends Entity{
     {
         ParamEntity thisPointer = new ParamEntity("this", _location, entity.getType());
         //param.add(0, thisPointer);
+        isMember = true;
         return thisPointer;
     }
 
     public void setResult(Type result) {
         this.result = result;
     }
+
 
     //@Override
     //public String getName()

@@ -17,8 +17,12 @@ public class Main
     public static void main(String[] args) throws Exception{
 
         com.Compiler MxCompiler = new com.Compiler();
+        //MxCompiler.Compile();
         if(args.length > 0)
+        {
+            //out.println(args[0]);
             MxCompiler.Compile(args[0]);
+        }
         else
             MxCompiler.Compile();
 

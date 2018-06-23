@@ -1,6 +1,7 @@
 package com.Type;
 
 import com.AST.Location;
+import com.CompilerOptions;
 import com.Entity.FuncEntity;
 import com.Entity.ParamEntity;
 import com.Entity.Scope;
@@ -61,5 +62,10 @@ public class StrType extends Type{
     public String getTypeName()
     {
         return "string";
+    }
+
+    @Override
+    public int getRegisterSize() {
+        return CompilerOptions.getSizePointer();
     }
 }

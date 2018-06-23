@@ -28,7 +28,7 @@ public class BinaryExprNode extends ExpressionNode{
         LeftShift,
         RightShift
     }
-    protected ExpressionNode left, right;
+    public ExpressionNode left, right;
     protected Op operator;
 
     public BinaryExprNode (ExpressionNode left, Op op, ExpressionNode right)

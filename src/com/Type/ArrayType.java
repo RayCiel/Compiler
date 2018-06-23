@@ -1,6 +1,7 @@
 package com.Type;
 
 import com.AST.Location;
+import com.CompilerOptions;
 import com.Entity.FuncEntity;
 import com.Entity.Scope;
 import com.ThrowError.SemanticError;
@@ -131,7 +132,11 @@ public class ArrayType extends Type{
         return false;
     }
 
-
+    @Override
+    public int getRegisterSize()
+    {
+        return CompilerOptions.getSizePointer();
+    }
 
     @Override
     public boolean isArray()

@@ -1,0 +1,88 @@
+RAX RCX RDX RBX RSP RBP RSI RDI  R8  R9  R10  R11  R12  R13  R14  R15
+0   1   2   3   4   5   6   7    8   9   10   11   12   13   14   15
+
+(Note that 8 of the registers have alternate names.) You can treat the lowest 32-bits of each register as a register itself but using these names:
+
+R0D R1D R2D R3D R4D R5D R6D R7D R8D R9D R10D R11D R12D R13D R14D R15D
+EAX ECX EDX EBX ESP EBP ESI EDI
+
+You can treat the lowest 8-bits of each register as a register itself but using these names:
+
+R0B R1B R2B R3B R4B R5B R6B R7B R8B R9B R10B R11B R12B R13B R14B R15B
+AL  CL  DL  BL  SPL BPL SIL DIL
+
+AL CL 左移右移特殊寄存器
+
+Function callee: rbp, rbx, r12, r13, r14, r15. (5, 3, 12, 13, 14, 15)
+The only registers that the called function is required to preserve (the calle-save registers) are: rbp, rbx, r12, r13, r14, r15. All others are free to be changed by the called function.
+
+Function caller: rdi, rsi, rdx, rcx, r8, r9. (7, 6, 2, 1, 8, 9)
+From left to right, pass as many parameters as will fit in registers. The order in which registers are allocated, are:
+For integers and pointers, rdi, rsi, rdx, rcx, r8, r9.
+Additional parameters are pushed on the stack, right to left, and are to be removed by the caller after the call.
+After the parameters are pushed, the call instruction is made, so when the called function gets control, the return address is at [rsp], the first memory parameter is at [rsp+8], etc.
+
+rax: return function result in rax
+
+rsp: 栈顶指针
+
+mov x, y    x ← y
+and x, y	x ← x and y
+or x, y	    x ← x or y
+xor x, y	x ← x xor y
+add x, y	x ← x + y
+sub x, y	x ← x – y
+inc x	x ← x + 1
+dec x	x ← x – 1
+syscall	Invoke an operating system routine
+db	A pseudo-instruction that declares bytes that will be in memory when the program runs
+
+push x	    Decrement rsp by the size of the operand, then store x in [rsp]
+pop x	    Move [rsp] into x, then increment rsp by the size of the operand
+jnz label      	If the processor’s Z (zero) flag, is set, jump to the given label
+call label	    Push the address of the next instruction, then jump to the label
+ret	    Pop into the instruction pointer
+syscall	    Invoke an operating system routine
+db	    A pseudo-instruction that declares bytes that will be in memory when the program runs
+
+Memory Operands
+[ number ]
+[ reg ]
+[ reg + reg*scale ]      scale is 1, 2, 4, or 8 only
+[ reg + number ]
+[ reg + reg*scale + number ]
+ex:
+[750]                  ; displacement only
+[rbp]                  ; base register only
+[rcx + rsi*4]          ; base + index * scale
+[rbp + rdx]            ; scale is 1
+[rbx - 8]              ; displacement is -8
+[rax + rdi*8 + 500]    ; all four components
+[rbx + counter]        ; uses the address of the variable 'counter' as the displacement
+
+je jumps to a label if the previous comparison was equal.
+jne (jump if not equal),
+jl (jump if less),
+jnl (jump if not less),
+jg (jump if greater),
+jng (jump if not greater),
+jle (jump if less or equal),
+jnle (jump if not less or equal),
+jge (jump if greater or equal),
+jnge (jump if not greater or equal),
+and many more.
+equ is actually not a real instruction. It simply defines an abbreviation for the assembler itself to use. (This is a profound idea.)
+The .bss section is for writable data.
+
+    AlignIR
+	BinaryIR
+	CJumpIR
+	JumpIR
+	CallIR
+	LabelIR
+	ReturnIR
+	PushIR
+	PopIR
+	LoadIR
+	StoreIR
+	MoveIR

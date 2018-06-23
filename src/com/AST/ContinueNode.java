@@ -3,6 +3,8 @@ package com.AST;
 import com.FrontEnd.ASTVisitor;
 
 public class ContinueNode extends StatementNode{
+    public LoopNode loop = null;
+
     public ContinueNode(Location _location)
     {
         super(_location);

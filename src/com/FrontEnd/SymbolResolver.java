@@ -103,6 +103,7 @@ public class SymbolResolver extends Visit {
         }
         for(FuncDefNode i : node.getEntity().getFunctions())
         {
+            i.getEntity().classEntity = node.getEntity();
             scope.insertEntity(i.getEntity());
             pushScope();
             for(ParamEntity j : i.getEntity().getParam())

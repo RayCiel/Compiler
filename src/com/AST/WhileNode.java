@@ -2,15 +2,13 @@ package com.AST;
 
 import com.FrontEnd.ASTVisitor;
 
-public class WhileNode extends StatementNode{
+public class WhileNode extends LoopNode{
     protected ExpressionNode whileExpr;
-    protected StatementNode doBody;
 
     public WhileNode(Location _location, ExpressionNode _whileExpr, StatementNode _doBody)
     {
-        super(_location);
+        super(_location, BlockNode.wrapBlock(_doBody));
         this.whileExpr = _whileExpr;
-        this.doBody = BlockNode.wrapBlock(_doBody);
     }
 
     public ExpressionNode getWhileExpr()
@@ -18,10 +16,6 @@ public class WhileNode extends StatementNode{
         return whileExpr;
     }
 
-    public StatementNode getDoBody()
-    {
-        return doBody;
-    }
 
     @Override
     public <S, E> S accept(ASTVisitor<S, E> visitor)

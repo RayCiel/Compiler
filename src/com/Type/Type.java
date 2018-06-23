@@ -54,5 +54,7 @@ abstract public class Type {
     }
 
     abstract public boolean isCompatible(Type obj);
+
+    abstract public int getRegisterSize();
 }
 

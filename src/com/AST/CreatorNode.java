@@ -10,6 +10,7 @@ import static java.lang.System.out;
 public class CreatorNode extends ExpressionNode{
     protected Location location;
     protected List<ExpressionNode> args;
+    protected int dimension;
 
 
     public CreatorNode(Location _location, List<ExpressionNode> _args, Type _type, int _dimension)
@@ -23,6 +24,7 @@ public class CreatorNode extends ExpressionNode{
            this.type = new ArrayType(_dimension, _type);
         else
             this.type = _type;
+        this.dimension = _dimension;
     }
 
     public List<ExpressionNode> getArgs()
@@ -30,6 +32,10 @@ public class CreatorNode extends ExpressionNode{
         return args;
     }
 
+    public int getDimension()
+    {
+        return dimension;
+    }
 
     @Override
     public Location getLocation()
