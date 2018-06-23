@@ -11,111 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/AST/LoopNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/BackEnd/FinalRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/BackEnd/IRBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/BackEnd/IRBuiltinFunctionInserter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/BackEnd/IRPrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/BackEnd/RegisterSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/CompilerOptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/Global.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/BasicBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Binary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Branch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/BranchInstruction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Call.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Constant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Function.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/HeapAllocate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/IRInstruction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/IRRoot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/IRVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/IntComparison.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/IntConst.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/IntValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Jump.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Load.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Move.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/PhiInstruction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/PhysicalRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Pop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Push.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Register.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Return.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Special.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/StackSlot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/StaticSpace.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Store.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/StringConst.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/SystemCall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/Unary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR/VirtualRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/Align.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/BasicBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/Binary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/CJump.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/Call.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/Compare.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/GlobalVar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/IRInst.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/IRVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/Jump.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/Label.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/Load.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/Move.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/Pop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/Push.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/Return.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/Special.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/Store.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/StringLit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/Unary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/VarInt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/VarLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/VarMem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/IR_Re/VarReg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ThrowError/InternalError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/note" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/BinaryExprNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/BinaryExprNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/BreakNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/BreakNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/ContinueNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/ContinueNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/CreatorNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/CreatorNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/ExpressionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/ExpressionNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/ForNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/ForNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/FuncDefNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/FuncDefNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/IntLitNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/IntLitNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/ReturnNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/ReturnNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AST/WhileNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AST/WhileNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Entity/ClassEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Entity/ClassEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Entity/FuncEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Entity/FuncEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Entity/MemEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Entity/MemEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Entity/ParamEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Entity/ParamEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Entity/Scope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Entity/Scope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Entity/StringEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Entity/StringEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Entity/VarEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Entity/VarEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/ASTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/ASTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/Visit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/ArrayType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/ArrayType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/BoolType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/BoolType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/ClassType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/ClassType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/FuncType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/FuncType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/IntType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/IntType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/NullType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/NullType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/StrType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/StrType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Type/VoidType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Type/VoidType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c2nasm/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/c2nasm/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c2nasm/zz.asm" beforeDir="false" afterPath="$PROJECT_DIR$/c2nasm/zz.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c2nasm/zz.c" beforeDir="false" afterPath="$PROJECT_DIR$/c2nasm/zz.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c2nasm/zz.o" beforeDir="false" afterPath="$PROJECT_DIR$/c2nasm/zz.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -129,7 +29,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.54522616">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="IRBuilder_Re.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="IRBuilder_Re.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-4605">
@@ -162,8 +62,8 @@
           <file leaf-file-name="Compare.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/IR_Re/Compare.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+                <state relative-caret-position="105">
+                  <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -210,11 +110,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FinalPrinter.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="FinalPrinter.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="395">
-                  <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+                <state relative-caret-position="620">
+                  <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -403,8 +303,8 @@
         <option value="$PROJECT_DIR$/src/com/IR_Re/CJump.java" />
         <option value="$PROJECT_DIR$/src/com/IR_Re/Compare.java" />
         <option value="$PROJECT_DIR$/src/com/IR_Re/Special.java" />
-        <option value="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" />
+        <option value="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" />
       </list>
     </option>
   </component>
@@ -1042,13 +942,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/IR_Re/Compare.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/IR_Re/Special.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1056,16 +949,6 @@
           <folding>
             <element signature="e#419#420#0" expanded="true" />
             <element signature="e#446#447#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1094,6 +977,23 @@
             <element signature="e#3996#3997#0" expanded="true" />
             <element signature="e#4048#4049#0" expanded="true" />
             <element signature="e#9283#9297#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/IR_Re/Compare.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

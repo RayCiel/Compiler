@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-	int a = 0;
-	++a;	
+	int a, b;
+	b = a<<b;	
 	return 0;
 }

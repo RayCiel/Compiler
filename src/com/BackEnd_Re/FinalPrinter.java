@@ -36,7 +36,32 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
     @Override
     public void visit(Binary node)
     {
-
+        List<String> list = new LinkedList<>();
+        String op = null;
+        switch (node.getOperator())
+        {
+            case Add:
+                op ="add";   break;
+            case Sub:
+                op ="sub";    break;
+            case And:
+                op ="and";    break;
+            case Or:
+                op ="or";   break;
+            case Xor:
+                op ="xor";    break;
+            case LeftShift:
+                op ="shl";   break;
+            case RightShift:
+                op ="shr";     break;
+        }
+        if ((node.getOperator() == Binary.Op.LeftShift || node.getOperator() == Binary.Op.RightShift) && !(node.getRight() instanceof VarInt))
+        {
+                list.add("\t\t" + op + "\t" + node.getLeft() + ",\t" + " cl");
+        }
+        else
+            list.add("\t\t" + op + "\t" + node.getLeft() + ",\t" + node.getRight());
+        map.put(node, list);
     }
 
     @Override
@@ -75,7 +100,26 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
     @Override
     public void visit(Compare node)
     {
-
+        List<String> list = new LinkedList<>();
+        list.add("\t\t" + "cmp" + "\t" + node.getSrc0() + ",\t" + node.getSrc1());
+        String op = null;
+        switch (node.getOperator())
+        {
+            case Less:
+                op="l";  break;
+            case Greater:
+                op="g";   break;
+            case LessEqual:
+                op="le";    break;
+            case GreatEqual:
+                op="ge";   break;
+            case Equal:
+                op="e";    break;
+            case NotEqual:
+                op="ne";    break;
+        }
+        list.add("\t\t" + "set"+ op + "\t" + node.getDest().toCodeStr1());
+        map.put(node, list);
     }
 
     @Override
@@ -158,6 +202,23 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
     @Override
     public void visit(Unary node)
     {
-
+        List<String> list = new LinkedList<>();
+        String op = null;
+        switch (node.getOperator())
+        {
+            case Mul:
+                op="imul"; break;
+            case Div:
+            case Mod:
+                op="idiv";
+                list.add("/t/t" + "cqo");
+                break;
+            case Neg:
+                op="neg"; break;
+            case Not:
+                op="not"; break;
+        }
+        list.add("\t\t" + op + "\t" + node.getSrc());
+        map.put(node, list);
     }
 }
