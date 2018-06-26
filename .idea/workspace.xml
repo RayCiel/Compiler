@@ -11,14 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/BlockToList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/ConflictGraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/c2nasm/zz.c" beforeDir="false" afterPath="$PROJECT_DIR$/c2nasm/zz.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/IR_Re/BasicBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/IR_Re/BasicBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/IR_Re/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/IR_Re/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,8 +58,8 @@
           <file leaf-file-name="IRResolver.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="261">
-                  <caret line="235" column="31" selection-start-line="235" selection-start-column="31" selection-end-line="235" selection-end-column="31" />
+                <state relative-caret-position="150">
+                  <caret line="10" column="131" selection-start-line="10" selection-start-column="131" selection-end-line="10" selection-end-column="131" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#1366#1367#0" expanded="true" />
@@ -256,7 +249,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="29" />
     <option name="width" value="1136" />
     <option name="height" value="1051" />
@@ -448,7 +441,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1053" extended-state="7" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -954,8 +947,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="235" column="31" selection-start-line="235" selection-start-column="31" selection-end-line="235" selection-end-column="31" />
+        <state relative-caret-position="150">
+          <caret line="10" column="131" selection-start-line="10" selection-start-column="131" selection-end-line="10" selection-end-column="131" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1366#1367#0" expanded="true" />

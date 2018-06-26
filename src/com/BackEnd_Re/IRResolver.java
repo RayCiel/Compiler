@@ -8,7 +8,7 @@ import java.util.List;
 
 public class IRResolver implements IRVisitor
 {
-    static final private VarReg[] reg = {new VarReg(10, "R10"), new VarReg(11, "R11"), new VarReg(6, "RSI")};
+    static final private VarReg[] reg = {new VarReg(10, "R10"), new VarReg(11, "R11"), new VarReg(6, "RSI"), new VarReg(14, "R14")};
     private List<List<Integer>> colors;
     private List<BasicBlock> blkLists;
 
