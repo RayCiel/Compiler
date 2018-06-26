@@ -3,7 +3,7 @@ package com.IR_Re;
 public class Move extends IRInst
 {
     private IntValue left, right;
-    private boolean isZX = false;
+    public boolean isZX = false;
 
     public Move(IntValue left, IntValue right)
     {

@@ -1,5 +1,5 @@
 #include<stdio.h>
-__attribute__ (int c);
+int c;
 int main()
 {
 	int a, b;

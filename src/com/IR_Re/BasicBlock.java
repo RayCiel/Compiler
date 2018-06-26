@@ -37,7 +37,10 @@ public class BasicBlock
 
     public BasicBlock getNext0()
     {
-        return next0;
+        if(isJump)
+            return next1;
+        else
+            return next0;
     }
 
     public void setNext0(BasicBlock next0)
@@ -47,11 +50,19 @@ public class BasicBlock
 
     public BasicBlock getNext1()
     {
-        return next1;
+        if(isJump)
+            return null;
+        else
+            return next1;
     }
 
-    public void setNext1(BasicBlock next1)
+    public void setNext1(BasicBlock next1, boolean isJump)
     {
         this.next1 = next1;
+        this.isJump = isJump;
+    }
+    public BasicBlock getNext()
+    {
+        return next0;
     }
 }
