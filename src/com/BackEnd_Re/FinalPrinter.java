@@ -27,6 +27,64 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
         this.codeStr = null;
     }
 
+    private List<String> getCodeStr()
+    {
+        List<String> list = new LinkedList<>();
+        list.add("default rel");
+        list.add("global main");
+        list.add("SECTION .text");
+        list.addAll(visitInsIR(IRInstList));
+        list.add("SECTION .bss");
+        list.addAll(visitGlobalVarIR(globalVarIRS));
+        list.add("SECTION .rodata");
+        list.addAll(visitLitIR(litIRlist));
+        return list;
+    }
+
+    public List<String> codeStr()
+    {
+        if(codeStr == null)
+        {
+            codeStr = getCodeStr();
+        }
+        return codeStr;
+    }
+
+    private List<String> visitGlobalVarIR(List<GlobalVar> list)
+    {
+        List<String> ret = new LinkedList<>();
+        for(GlobalVar i: list)
+        {
+            ret.add(i.toCodeStr());
+        }
+        return ret;
+    }
+
+    private List<String> visitInsIR(List<IRInst> list)
+    {
+        List<String> ret = new LinkedList<>();
+        for(IRInst i: list)
+        {
+            if(!i.useless)
+            {
+                i.accept(this);
+                ret.addAll((List<String>) map.get(i));
+            }
+        }
+        return ret;
+    }
+
+    private List<String> visitLitIR(List<StringLit> list)
+    {
+        List<String> ret = new LinkedList<>();
+        for(StringLit i: list)
+        {
+            ret.add(i.toCodeStr(i.getLabel()));
+        }
+        return ret;
+    }
+
+
     @Override
     public void visit(Align node)
     {
@@ -186,7 +244,7 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
     public void visit(Pop node)
     {
         List<String> list = new LinkedList<>();
-        list.add("\t\t" + "pop" + node.getDest());
+        list.add("\t\t" + "pop" +"\t" + node.getDest());
         map.put(node, list);
     }
 
@@ -194,7 +252,7 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
     public void visit(Push node)
     {
         List<String> list = new LinkedList<>();
-        list.add("\t\t" + "push" + node.getDest());
+        list.add("\t\t" + "push"+ "\t" + node.getDest());
         map.put(node, list);
 
     }

@@ -4,6 +4,8 @@ import com.Global;
 
 import java.util.List;
 
+import static java.lang.System.out;
+
 public class VarReg extends IntValue
 {
     protected int index;
@@ -37,6 +39,8 @@ public class VarReg extends IntValue
     public String toCodeStr8()
     {
         String name;
+        //out.print(index);
+        //out.print(Global.checkRegColored);
         switch (index)
         {
             case 0: name = "rax"; break;

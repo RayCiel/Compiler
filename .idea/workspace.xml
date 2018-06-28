@@ -1,17 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/com/Main.java" line="29" />
+    <bookmark url="file://$PROJECT_DIR$/src/com/Main.java" line="36" />
     <bookmark url="file://$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" line="191" />
     <bookmark url="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" line="338" />
     <bookmark url="file://$PROJECT_DIR$/src/com/IR/Unary.java" line="2" />
     <bookmark url="file://$PROJECT_DIR$/src/com/IR/Constant.java" line="2" />
     <bookmark url="file://$PROJECT_DIR$/src/com/BackEnd/IRBuilder.java" line="1249" />
     <bookmark url="file://$PROJECT_DIR$/src/com/BackEnd/IRBuiltinFunctionInserter.java" line="72" />
+    <bookmark url="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" line="32" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/CFGBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/NaiveRegAlloc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.bash" beforeDir="false" afterPath="$PROJECT_DIR$/build.bash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c2nasm/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/c2nasm/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c2nasm/run.bash" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/c2nasm/zz.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/c2nasm/zz.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/AST/BinaryExprNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/AST/BinaryExprNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/AST/BreakNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/AST/BreakNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/AST/ContinueNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/AST/ContinueNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/AST/CreatorNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/AST/CreatorNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/AST/ExpressionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/AST/ExpressionNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/AST/ForNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/AST/ForNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/AST/FuncDefNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/AST/FuncDefNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/AST/IntLitNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/AST/IntLitNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/AST/ReturnNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/AST/ReturnNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/AST/WhileNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/AST/WhileNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Compiler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Compiler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Entity/ClassEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Entity/ClassEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Entity/FuncEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Entity/FuncEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Entity/ParamEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Entity/ParamEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Entity/Scope.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Entity/Scope.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Entity/StringEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Entity/StringEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Entity/VarEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Entity/VarEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/ASTBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/ASTBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/ASTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/ASTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/SymbolResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/SymbolResolver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/TypeCheck$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/TypeCheck$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/TypeCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/TypeCheck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/Visit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/Visit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/Address.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/Assign.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/Binary$Op.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/IR/Binary$Op.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/Binary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/IR/Binary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/CJump.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/Call.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/IR/Call.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/ExprStmt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/IR.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/IntConst.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/IR/IntConst.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/Jump.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/IR/Jump.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/LabelStmt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/Mem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/Return.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/IR/Return.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/StringConst.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/IR/StringConst.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/Unary$Op.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/IR/Unary$Op.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/Unary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/IR/Unary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR/Variable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Type/ArrayType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Type/ArrayType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Type/BoolType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Type/BoolType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Type/ClassType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Type/ClassType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Type/FuncType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Type/FuncType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Type/IntType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Type/IntType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Type/NullType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Type/NullType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Type/StrType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Type/StrType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Type/Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Type/Type.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Type/VoidType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Type/VoidType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/IR_Re/VarReg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/IR_Re/VarReg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,72 +86,111 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5273757">
+    <splitter split-orientation="horizontal" split-proportion="0.7067338">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="IRResolver.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-15">
+                  <caret line="19" selection-start-line="19" selection-end-line="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Compiler.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="121">
+                  <caret line="161" column="14" lean-forward="true" selection-start-line="161" selection-start-column="14" selection-end-line="161" selection-end-column="14" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#5205#5213#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FinalPrinter.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="316">
+                  <caret line="254" column="37" selection-start-line="254" selection-start-column="37" selection-end-line="254" selection-end-column="37" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/Main.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="165">
+                  <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ParseErrorListener.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ParseErrorListener.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="14" selection-start-line="14" selection-end-line="14" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CFGBuilder.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/CFGBuilder.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-15">
+                  <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="BlockToList.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/BlockToList.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="165">
+                  <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#250#251#0" expanded="true" />
+                    <element signature="e#288#289#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="NaiveRegAlloc.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/NaiveRegAlloc.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="390">
+                  <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#154#155#0" expanded="true" />
+                    <element signature="e#192#193#0" expanded="true" />
+                    <element signature="e#473#482#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="IRBuilder_Re.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="456">
-                  <caret line="421" column="38" lean-forward="true" selection-start-line="421" selection-start-column="38" selection-end-line="421" selection-end-column="38" />
+                <state relative-caret-position="222">
+                  <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
                   <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#1118#1119#0" expanded="true" />
-                    <element signature="e#1144#1145#0" expanded="true" />
-                    <element signature="e#1263#1271#0" expanded="true" />
-                    <element signature="e#1819#1827#0" expanded="true" />
-                    <element signature="e#2287#2288#0" expanded="true" />
-                    <element signature="e#2313#2314#0" expanded="true" />
-                    <element signature="e#2412#2426#0" expanded="true" />
-                    <element signature="e#3656#3657#0" expanded="true" />
-                    <element signature="e#3689#3690#0" expanded="true" />
-                    <element signature="e#3738#3739#0" expanded="true" />
-                    <element signature="e#3770#3771#0" expanded="true" />
-                    <element signature="e#3808#3809#0" expanded="true" />
-                    <element signature="e#3839#3840#0" expanded="true" />
-                    <element signature="e#3883#3884#0" expanded="true" />
-                    <element signature="e#3956#3957#0" expanded="true" />
-                    <element signature="e#3996#3997#0" expanded="true" />
-                    <element signature="e#4048#4049#0" expanded="true" />
-                    <element signature="e#9283#9297#0" expanded="true" />
+                    <element signature="e#2522#2523#0" expanded="true" />
+                    <element signature="e#2548#2549#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="IRResolver.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="131" selection-start-line="10" selection-start-column="131" selection-end-line="10" selection-end-column="131" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#1366#1367#0" expanded="true" />
-                    <element signature="e#1424#1425#0" expanded="true" />
-                    <element signature="e#1490#1491#0" expanded="true" />
-                    <element signature="e#1547#1548#0" expanded="true" />
-                    <element signature="e#1612#1613#0" expanded="true" />
-                    <element signature="e#1668#1669#0" expanded="true" />
-                    <element signature="e#613#614#0" expanded="true" />
-                    <element signature="e#648#649#0" expanded="true" />
-                    <element signature="e#765#766#0" expanded="true" />
-                    <element signature="e#800#801#0" expanded="true" />
-                    <element signature="e#981#982#0" expanded="true" />
-                    <element signature="e#1016#1017#0" expanded="true" />
-                    <element signature="e#1072#1073#0" expanded="true" />
-                    <element signature="e#1107#1108#0" expanded="true" />
-                    <element signature="e#1077#1078#0" expanded="true" />
-                    <element signature="e#1112#1113#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="note" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/note">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
@@ -99,7 +202,7 @@
           <file leaf-file-name="IRBuilder.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/BackEnd/IRBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1251">
+                <state relative-caret-position="105">
                   <caret line="675" column="32" selection-start-line="675" selection-start-column="32" selection-end-line="675" selection-end-column="32" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -109,11 +212,6 @@
                   </folding>
                 </state>
               </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="BasicBlock.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/IR/BasicBlock.java">
-              <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
         </leaf>
@@ -129,12 +227,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>regId</find>
-      <find>g</find>
-      <find>VarLabelIR</find>
-      <find>rhs</find>
-      <find>VarIR</find>
-      <find>VarRegIR</find>
       <find>VarDefNode</find>
       <find>FuncT</find>
       <find>UnaryIR</find>
@@ -159,6 +251,12 @@
       <find>&amp; 1</find>
       <find>cot</find>
       <find>callee</find>
+      <find>ii</find>
+      <find>irList</find>
+      <find>funList</find>
+      <find>firstBlockInFunction</find>
+      <find>firstBuild</find>
+      <find>IN</find>
     </findStrings>
     <replaceStrings>
       <replace>Operation</replace>
@@ -179,8 +277,8 @@
       <replace>protected</replace>
       <replace>Move</replace>
       <replace>.getIndex</replace>
-      <replace>.setRight</replace>
       <replace>.getType</replace>
+      <replace>.setRight</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -189,10 +287,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/IR_Re/Align.java" />
-        <option value="$PROJECT_DIR$/src/com/IR_Re/IRInst.java" />
-        <option value="$PROJECT_DIR$/src/com/IR_Re/Pop.java" />
-        <option value="$PROJECT_DIR$/src/com/IR_Re/Push.java" />
         <option value="$PROJECT_DIR$/src/com/IR_Re/Return.java" />
         <option value="$PROJECT_DIR$/src/com/IR_Re/Store.java" />
         <option value="$PROJECT_DIR$/src/com/IR_Re/Load.java" />
@@ -204,7 +298,6 @@
         <option value="$PROJECT_DIR$/src/com/IR_Re/Label.java" />
         <option value="$PROJECT_DIR$/src/com/IR_Re/IRVisitor.java" />
         <option value="$PROJECT_DIR$/src/com/Entity/ClassEntity.java" />
-        <option value="$PROJECT_DIR$/src/com/IR_Re/VarReg.java" />
         <option value="$PROJECT_DIR$/src/com/Entity/VarEntity.java" />
         <option value="$PROJECT_DIR$/src/com/AST/IntLitNode.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" />
@@ -232,14 +325,19 @@
         <option value="$PROJECT_DIR$/src/com/IR_Re/CJump.java" />
         <option value="$PROJECT_DIR$/src/com/IR_Re/Compare.java" />
         <option value="$PROJECT_DIR$/src/com/IR_Re/Special.java" />
-        <option value="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" />
-        <option value="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" />
-        <option value="$PROJECT_DIR$/src/com/Compiler.java" />
         <option value="$PROJECT_DIR$/src/com/IR_Re/BasicBlock.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/BlockToList.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/ConflictGraph.java" />
         <option value="$PROJECT_DIR$/src/com/IR_Re/Move.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java" />
+        <option value="$PROJECT_DIR$/src/com/BackEnd_Re/ConflictGraphBuilder.java" />
+        <option value="$PROJECT_DIR$/src/com/BackEnd_Re/CFGBuilder.java" />
+        <option value="$PROJECT_DIR$/src/com/IR_Re/VarReg.java" />
+        <option value="$PROJECT_DIR$/src/com/BackEnd_Re/NaiveRegAlloc.java" />
+        <option value="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" />
+        <option value="$PROJECT_DIR$/src/com/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/Compiler.java" />
+        <option value="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" />
       </list>
     </option>
   </component>
@@ -260,6 +358,7 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -270,32 +369,6 @@
             <path>
               <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="Compiler" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="Compiler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="Compiler" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -303,13 +376,6 @@
               <item name="Compiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="BackEnd" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
@@ -318,46 +384,10 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="BackEnd_Re" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="IR_Re" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="Parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="Type" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -447,17 +477,18 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" auto_hide="true" id="Tool Output" order="7" sideWeight="0.675" weight="0.22258772" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.48072916" weight="0.2609649" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.3234375" side_tool="true" weight="0.20064378" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.32894737" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6765625" weight="0.17763157" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6765625" visible="true" weight="0.11951754" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32894737" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15117522" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15438034" />
       <window_info anchor="bottom" id="ANTLR Preview" order="12" sideWeight="0.8432292" weight="0.29495615" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -466,7 +497,6 @@
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49895832" weight="0.39802632" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.48072916" weight="0.2609649" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -479,7 +509,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/Compiler.java</url>
+          <line>154</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="9" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -487,107 +525,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/AST/BinaryExprNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/IR_Re/Align.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/AST/UnaryNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1181">
-          <caret line="34" column="50" lean-forward="true" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
-          <folding>
-            <element signature="e#2105#2106#0" expanded="true" />
-            <element signature="e#2136#2137#0" expanded="true" />
-            <element signature="e#2176#2177#0" expanded="true" />
-            <element signature="e#2209#2210#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/AST/PrefixUnaryNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Entity/LibFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Type/FuncType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="162" column="78" lean-forward="true" selection-start-line="162" selection-start-column="78" selection-end-line="162" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/AST/DefinitionNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Parser/Mx.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="66" column="44" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Entity/ParamEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Type/Type.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#405#406#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/AST/BreakNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -651,20 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="363" column="13" selection-start-line="363" selection-start-column="13" selection-end-line="363" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1113#1114#0" expanded="true" />
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1179#1180#0" expanded="true" />
-            <element signature="e#1206#1207#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/AST/FuncDefNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -686,26 +609,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/IR_Re/IntValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="33" column="37" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/IR_Re/Call.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#840#841#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -727,19 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="105" column="57" selection-start-line="105" selection-start-column="57" selection-end-line="105" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -747,12 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-          <folding>
-            <element signature="e#2391#2392#0" expanded="true" />
-            <element signature="e#2423#2424#0" expanded="true" />
-            <element signature="e#2479#2480#0" expanded="true" />
-            <element signature="e#2521#2522#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -760,9 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding>
-            <element signature="e#827#828#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -770,12 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding>
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -783,10 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding>
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -801,51 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="e#113#114#0" expanded="true" />
-            <element signature="e#147#148#0" expanded="true" />
-            <element signature="e#184#185#0" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="120" column="67" lean-forward="true" selection-start-line="120" selection-start-column="67" selection-end-line="120" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/BlockToList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#144#145#0" expanded="true" />
-            <element signature="e#182#183#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/ConflictGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -860,10 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding>
-            <element signature="e#490#491#0" expanded="true" />
-            <element signature="e#518#519#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -874,10 +700,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/note">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/BackEnd/IRPrinter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/IR_Re/BasicBlock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#340#341#0" expanded="true" />
@@ -886,27 +726,108 @@
             <element signature="e#429#430#0" expanded="true" />
             <element signature="e#472#473#0" expanded="true" />
             <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#768#769#0" expanded="true" />
-            <element signature="e#802#803#0" expanded="true" />
-            <element signature="e#1093#1094#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/note">
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/ArrayList.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        <state relative-caret-position="2535">
+          <caret line="191" selection-start-line="191" selection-end-line="191" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/IR/BasicBlock.java">
+    <entry file="file://$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRResolver.class">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRBuilder_Re.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="155" column="50" selection-start-line="155" selection-start-column="8" selection-end-line="155" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/IR_Re/IntValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#729#730#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/String.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="1072" selection-start-line="1072" selection-end-line="1072" />
+          <folding>
+            <element signature="e#33771#33772#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/IR_Re/VarReg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/StringBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#864#865#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Global.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5190">
+          <caret line="363" column="13" selection-start-line="363" selection-start-column="13" selection-end-line="363" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Parser/test.g4">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Parser/Mx.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ParseErrorListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/BackEnd/IRBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1251">
+        <state relative-caret-position="105">
           <caret line="675" column="32" selection-start-line="675" selection-start-column="32" selection-end-line="675" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -917,56 +838,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java">
+    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="421" column="38" lean-forward="true" selection-start-line="421" selection-start-column="38" selection-end-line="421" selection-end-column="38" />
+        <state relative-caret-position="-15">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/ConflictGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1118#1119#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-            <element signature="e#1263#1271#0" expanded="true" />
-            <element signature="e#1819#1827#0" expanded="true" />
-            <element signature="e#2287#2288#0" expanded="true" />
-            <element signature="e#2313#2314#0" expanded="true" />
-            <element signature="e#2412#2426#0" expanded="true" />
-            <element signature="e#3656#3657#0" expanded="true" />
-            <element signature="e#3689#3690#0" expanded="true" />
-            <element signature="e#3738#3739#0" expanded="true" />
-            <element signature="e#3770#3771#0" expanded="true" />
-            <element signature="e#3808#3809#0" expanded="true" />
-            <element signature="e#3839#3840#0" expanded="true" />
-            <element signature="e#3883#3884#0" expanded="true" />
-            <element signature="e#3956#3957#0" expanded="true" />
-            <element signature="e#3996#3997#0" expanded="true" />
-            <element signature="e#4048#4049#0" expanded="true" />
-            <element signature="e#9283#9297#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java">
+    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/CFGBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="131" selection-start-line="10" selection-start-column="131" selection-end-line="10" selection-end-column="131" />
+        <state relative-caret-position="-15">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1366#1367#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1490#1491#0" expanded="true" />
-            <element signature="e#1547#1548#0" expanded="true" />
-            <element signature="e#1612#1613#0" expanded="true" />
-            <element signature="e#1668#1669#0" expanded="true" />
-            <element signature="e#613#614#0" expanded="true" />
-            <element signature="e#648#649#0" expanded="true" />
-            <element signature="e#765#766#0" expanded="true" />
-            <element signature="e#800#801#0" expanded="true" />
-            <element signature="e#981#982#0" expanded="true" />
-            <element signature="e#1016#1017#0" expanded="true" />
-            <element signature="e#1072#1073#0" expanded="true" />
-            <element signature="e#1107#1108#0" expanded="true" />
-            <element signature="e#1077#1078#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
+          <folding>
+            <element signature="e#2522#2523#0" expanded="true" />
+            <element signature="e#2548#2549#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/NaiveRegAlloc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#154#155#0" expanded="true" />
+            <element signature="e#192#193#0" expanded="true" />
+            <element signature="e#473#482#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/BlockToList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+            <element signature="e#288#289#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="161" column="14" lean-forward="true" selection-start-line="161" selection-start-column="14" selection-end-line="161" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5205#5213#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="254" column="37" selection-start-line="254" selection-start-column="37" selection-end-line="254" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

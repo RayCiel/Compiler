@@ -4,4 +4,5 @@
 set -e
 cd "$(dirname "$0")"
 mkdir -p bin
-find ./src/com -name *.java | javac -d bin -classpath "lib/antlr-4.7.1-complete.jar" @/dev/stdin
+find ./src/com -regex ".*\(\.java\)$" | javac -d bin -classpath "lib/antlr-4.7.1-complete.jar" @/dev/stdin
+cp ./src/com/cLibrary.asm ./bin/MxCompiler/

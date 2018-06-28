@@ -1,8 +1,11 @@
-class XZZ
+int f(int a, int b)
 {
-    void fuck()
-    {
-        //this = null;
-    }
+return a+b;
 }
-int main() {}
+int main()
+{
+int a, b, c;
+c = f(a, b);
+return 0;
+}
+

@@ -10,6 +10,9 @@ import com.Entity.*;
 
 import java.util.*;
 
+import static java.lang.System.err;
+import static java.lang.System.out;
+
 public class IRBuilder_Re extends Visit
 {
     protected ASTree ast;
@@ -27,6 +30,7 @@ public class IRBuilder_Re extends Visit
     static public int labelNumber = 0;
     public int regNumber = 16;
     static public int blockNumber = 0;
+    static public int funcNum= 0;
 
 
     public IRBuilder_Re(ASTree astree)
@@ -34,7 +38,8 @@ public class IRBuilder_Re extends Visit
         this.ast = astree;
         this.nowScope = astree.getScope();
         this.irList = null;
-        this.mainIrList = new ArrayList<>();
+        this.mainIrList = null;
+        this.constList = new ArrayList<>();
         this.globalVars = new ArrayList<>();
     }
 
@@ -70,14 +75,17 @@ public class IRBuilder_Re extends Visit
     {
         List<IRInst> list = new ArrayList<IRInst>();
         visit(ast.getMainFunction());
+        //out.println(ast.getMainFunction().labelName());
         list.addAll((List<IRInst>) map.get(ast.getMainFunction()));
         return list;
     }
 
     public List<IRInst> getMainIrList()
     {
+        //out.print(mainIrList.size());
         if (mainIrList == null)
         {
+            //out.print("in");
             mainIrList = new LinkedList<>();
             mainIrList.add(new Label("main"));
             mainIrList.addAll(loadMainIrList());
@@ -93,6 +101,7 @@ public class IRBuilder_Re extends Visit
     public List<List<IRInst>> loadIRList()
     {
         List<List<IRInst>> list = new ArrayList<List<IRInst>>();
+        //out.println(ast.getDefinitionNode().size());
         for (ASTNode node : ast.getDefinitionNode())
         {
             if (node instanceof ClassDefNode)
@@ -108,12 +117,13 @@ public class IRBuilder_Re extends Visit
             {
                 if (!((FuncDefNode)node).getName().equals("main"))
                 {
+                    //out.print("IN");
                     visit((FuncDefNode)node);
                     list.add((List<IRInst>) map.get(node));
                 }
             }
         }
-
+        //err.println(list.size());
         return list;
     }
 
@@ -121,6 +131,7 @@ public class IRBuilder_Re extends Visit
     {
         if (irList == null)
         {
+            firstBuild = true;
             irList = new ArrayList<List<IRInst>>();
             getGlobalVarList();
             savedRegNumber = regNumber;
@@ -352,8 +363,11 @@ public class IRBuilder_Re extends Visit
     @Override
     public Void visit(FuncDefNode node)
     {
+        //out.print("in");
+        funcNum++;
         if(!firstBuild)
         {
+            //out.print("in");
             regNumber = savedRegNumber;
             List<IRInst> plist = new LinkedList<>();
             int size = node.getEntity().getParam().size();
@@ -393,6 +407,7 @@ public class IRBuilder_Re extends Visit
         }
         else
         {
+            //out.print("in");
             regNumber = savedRegNumber;
             List<IRInst> plist = new LinkedList<>();
             int[] caller_num = {7, 6, 2, 1, 8, 9};
@@ -457,6 +472,7 @@ public class IRBuilder_Re extends Visit
             list.add(new Pop(new VarReg(5, "rbp")));
             list.add(new Return());
             Global.maxRegNumber = Math.max(Global.maxRegNumber, regNumber);
+            //out.print(regNumber);
             Global.regNumber.add(regNumber);
             map.put(node, list);
             return null;
