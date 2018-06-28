@@ -12,11 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MXc2nasm/zzz.asm" beforeDir="false" afterPath="$PROJECT_DIR$/MXc2nasm/zzz.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MXc2nasm/zzz.o" beforeDir="false" afterPath="$PROJECT_DIR$/MXc2nasm/zzz.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Compiler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,11 +39,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Compiler.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Compiler.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="316">
-                  <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+                <state relative-caret-position="406">
+                  <caret line="160" column="12" selection-start-line="160" selection-start-column="12" selection-end-line="160" selection-end-column="12" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#5205#5213#0" expanded="true" />
@@ -56,11 +52,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FinalPrinter.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="FinalPrinter.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+                <state relative-caret-position="234">
+                  <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -156,7 +152,7 @@
           <file leaf-file-name="IRBuilder.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/BackEnd/IRBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="49">
+                <state relative-caret-position="3">
                   <caret line="1203" column="38" selection-start-line="1203" selection-start-column="33" selection-end-line="1203" selection-end-column="38" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -289,9 +285,9 @@
         <option value="$PROJECT_DIR$/src/com/IR_Re/VarReg.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/NaiveRegAlloc.java" />
         <option value="$PROJECT_DIR$/src/com/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/Compiler.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" />
+        <option value="$PROJECT_DIR$/src/com/Compiler.java" />
       </list>
     </option>
   </component>
@@ -451,12 +447,12 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.3234375" side_tool="true" weight="0.20064378" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.32894737" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6765625" visible="true" weight="0.118421055" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6765625" visible="true" weight="0.22697368" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32894737" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15438034" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15438034" />
       <window_info anchor="bottom" id="ANTLR Preview" order="12" sideWeight="0.8432292" weight="0.29495615" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -823,20 +819,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5205#5213#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/BackEnd/IRBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
+        <state relative-caret-position="3">
           <caret line="1203" column="38" selection-start-line="1203" selection-start-column="33" selection-end-line="1203" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -885,10 +870,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        <state relative-caret-position="234">
+          <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="160" column="12" selection-start-line="160" selection-start-column="12" selection-end-line="160" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5205#5213#0" expanded="true" />
           </folding>
         </state>
       </provider>

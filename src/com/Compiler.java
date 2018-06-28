@@ -129,7 +129,7 @@ public class Compiler {
         List<String> code = finalPrinter.codeStr();
         System.err.println("getCode Done..");
         String libraryPath = this.getClass().getResource("").getPath() + "cLibrary.asm";
-        out.println(this.getClass().getResource("").getPath());
+        //out.println(this.getClass().getResource("").getPath());
         System.err.println("get library path Done..");
         InputStream is = new FileInputStream(libraryPath);
         System.err.println("is Done..");
@@ -157,7 +157,7 @@ public class Compiler {
         if(fileout.equals(""))
         {
 
-            //os = new FileOutputStream(this.getClass().getResource("").getPath() + "output.txt");
+            //os = new FileOutputStream(this.getClass().getResource("").getPath() + "output.asm");
             os = System.out;
             //((PrintStream) os).println(libraryPath);
         }
