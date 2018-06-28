@@ -30,6 +30,7 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
     private List<String> getCodeStr()
     {
         List<String> list = new LinkedList<>();
+        list.add("\n");
         list.add("default rel");
         list.add("global main");
         list.add("SECTION .text");

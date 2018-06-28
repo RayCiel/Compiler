@@ -13,14 +13,16 @@ _main:
 		push	r14
 		push	r15
 		sub	rsp,	24
+		mov	qword [_c + 0],	123
 		push	rdi
 		push	rsi
 		push	rdx
 		push	rcx
 		push	r8
 		push	r9
-		mov	rdi,	8
-		call	malloc
+		mov	r10,	qword [_c + 0]
+		mov	rdi,	r10
+		call	_lol
 		pop	r9
 		pop	r8
 		pop	rcx
@@ -28,9 +30,10 @@ _main:
 		pop	rsi
 		pop	rdi
 		mov	qword [rbp + -56],	rax
-		mov	r10,	qword [rbp + -56]
-		mov	qword [rbp + -64],	r10
-		mov	rax,	0
+		mov	rsi,	qword [rbp + -56]
+		mov	qword [_x + 0],	rsi
+		mov	r10,	qword [_x + 0]
+		mov	rax,	r10
 		jmp	___exit_main
 ___exit_main:
 		add	rsp,	72
@@ -42,7 +45,39 @@ ___exit_main:
 		pop	rbp
 		pop	rbp
 		ret
+_lol:
+		push	rbp
+		mov	rbp,	rsp
+		add	rbp,	8
+		push	rbp
+		push	rbx
+		push	r12
+		push	r13
+		push	r14
+		push	r15
+		sub	rsp,	40
+		mov	qword [rbp + -64],	rdi
+		mov	r10,	qword [rbp + -64]
+		mov	qword [rbp + -72],	r10
+		mov	r11,	qword [rbp + -72]
+		add	r11,	1
+		mov	qword [rbp + -72],	r11
+		mov	r10,	qword [rbp + -72]
+		mov	rax,	r10
+		jmp	___exit_lol
+___exit_lol:
+		add	rsp,	88
+		pop	r15
+		pop	r14
+		pop	r13
+		pop	r12
+		pop	rbx
+		pop	rbp
+		pop	rbp
+		ret
 SECTION .bss
+_c:	resb	8
+_x:	resb	8
 SECTION .rodata
 ; ============Library============
 default rel
