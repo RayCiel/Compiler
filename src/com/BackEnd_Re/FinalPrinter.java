@@ -136,7 +136,7 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
     {
         List<String> list = new LinkedList<>();
         String op = null;
-        list.add("\t\t" + "cmp" + "\t" + node.getLeft() + "\t" + node.getRight());
+        list.add("\t\t" + "cmp" + "\t" + node.getLeft() + ",\t" + node.getRight());
         switch (node.getOperator())
         {
             case Less:

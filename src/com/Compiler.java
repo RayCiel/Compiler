@@ -157,8 +157,8 @@ public class Compiler {
         if(fileout.equals(""))
         {
 
-            //os = new FileOutputStream(this.getClass().getResource("").getPath() + "output.asm");
-            os = System.out;
+            os = new FileOutputStream(this.getClass().getResource("").getPath() + "output.asm");
+            //os = System.out;
             //((PrintStream) os).println(libraryPath);
         }
         else {
