@@ -832,7 +832,7 @@ public class IRBuilder_Re extends Visit
             plist.add((IntValue) map.get(node.getArgs().get(i)));
         }
         funName = ((VarLHSNode) node.getExpression()).getName();
-        list.addAll(makeCall(funName, plist));
+        list.addAll(makeCall("_"+funName, plist));
         r0 = getNewReg(null);
         list.add(new Move(r0, new VarReg(0, "rax")));
         map.put(node, new VarReg(list, r0.getIndex(), null));

@@ -207,9 +207,10 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
     @Override
     public void visit(Special node)
     {
-        List<String> list = new LinkedList<>();
-        list.add("\t\t" + "special" + "\t" + node.getType());
-        map.put(node, list);
+        throw new RuntimeException("Special");
+        //List<String> list = new LinkedList<>();
+        //list.add("\t\t" + "special" + "\t" + node.getType());
+        //map.put(node, list);
     }
 
     @Override
@@ -234,9 +235,9 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
     {
         List<String> list = new LinkedList<>();
         if (!node.getIsZX())
-            list.add("\t\t" + "move" + "\t" + node.getLeft() + ",\t" + node.getRight());
+            list.add("\t\t" + "mov" + "\t" + node.getLeft() + ",\t" + node.getRight());
         else
-            list.add("\t\t" + "move" + "\t" + node.getLeft() + ",\t" + node.getRight().toCodeStr1());
+            list.add("\t\t" + "movzx" + "\t" + node.getLeft() + ",\t" + node.getRight().toCodeStr1());
         map.put(node, list);
     }
 

@@ -1,11 +1,12 @@
-int f(int a, int b)
+class A
 {
-return a+b;
+	int c;
 }
+
 int main()
 {
-int a, b, c;
-c = f(a, b);
-return 0;
+	A a = new A;
+	return 0;
 }
+
 

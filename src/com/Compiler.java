@@ -108,10 +108,6 @@ public class Compiler {
         System.err.println("CFGBuilder Done..");
         List<BasicBlock> basicBlockList = cfgBuilder.getCFG();
         System.err.println("getBasicBlockList Done..");
-        BlockToList blockToList = new BlockToList(basicBlockList);
-        System.err.println("BlockToList Done..");
-        List<IRInst> irList = blockToList.toList();
-        System.err.println("getToList Done..");
         ConflictGraph conflictGraph = new ConflictGraph(irBuilder_re.regNumber);
         System.err.println("conflictGraph Done..");
         NaiveRegAlloc naiveRegAlloc = new NaiveRegAlloc(null);
@@ -120,8 +116,14 @@ public class Compiler {
         System.err.println("colors Done..");
         IRResolver irResolver = new IRResolver(colorList, basicBlockList);
         System.err.println("IRResolver Done..");
+
         irResolver.ResolveIR();
         System.err.println("ResolveIR Done..");
+        BlockToList blockToList = new BlockToList(basicBlockList);
+        System.err.println("BlockToList Done..");
+        List<IRInst> irList = blockToList.toList();
+        System.err.println("getToList Done..");
+
         FinalPrinter finalPrinter = new FinalPrinter(irList, irLitList, globalVarIRS);
         System.err.println("FinalPrinter Done..");
         List<String> code = finalPrinter.codeStr();
@@ -150,14 +152,14 @@ public class Compiler {
         finalList.addAll(code);
         finalList.add("; ============Library============");
         finalList.addAll(libraryList);
-        System.err.println("final List Done..");
+        //System.err.println("final List Done..");
         OutputStream os;
         if(fileout.equals(""))
         {
 
             //os = new FileOutputStream(this.getClass().getResource("").getPath() + "output.txt");
             os = System.out;
-            ((PrintStream) os).println(libraryPath);
+            //((PrintStream) os).println(libraryPath);
         }
         else {
             os = new FileOutputStream(fileout);
@@ -168,8 +170,10 @@ public class Compiler {
         {
             //out.println(list);
             //System.out.println(list+"\n");
+            //
             bufferedWriter.write(list +"\n");
         }
+        bufferedWriter.close();
         System.err.println("write Done..");
 
     }

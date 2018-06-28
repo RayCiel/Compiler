@@ -3,38 +3,44 @@ global main
 SECTION .text
 main:
 _main:
-		pushrbp
-		move	rbp,	rsp
+		push	rbp
+		mov	rbp,	rsp
 		add	rbp,	8
-		special	CALLEE_SAVE
-		special	CALLER_SAVE
-		move	rdi,	r10
-		move	rsi,	r10
-		call	f
-		special	CALLER_RECOVER
-		move	qword [rbp + -80],	rax
-		move	qword [rbp + -72],	r10
-		move	rax,	0
+		push	rbp
+		push	rbx
+		push	r12
+		push	r13
+		push	r14
+		push	r15
+		sub	rsp,	24
+		push	rdi
+		push	rsi
+		push	rdx
+		push	rcx
+		push	r8
+		push	r9
+		mov	rdi,	8
+		call	malloc
+		pop	r9
+		pop	r8
+		pop	rcx
+		pop	rdx
+		pop	rsi
+		pop	rdi
+		mov	qword [rbp + -56],	rax
+		mov	r10,	qword [rbp + -56]
+		mov	qword [rbp + -64],	r10
+		mov	rax,	0
 		jmp	___exit_main
 ___exit_main:
-		special	CALLEE_RECOVER
-		poprbp
-		ret
-_f:
-		pushrbp
-		move	rbp,	rsp
-		add	rbp,	8
-
-		special	CALLEE_SAVE
-		move	qword [rbp + -56],	rdi
-		move	qword [rbp + -64],	rsi
-		move	qword [rbp + -72],	r10
-		add	r11,	r10
-		move	rax,	r10
-		jmp	___exit_f
-___exit_f:
-		special	CALLEE_RECOVER
-		poprbp
+		add	rsp,	72
+		pop	r15
+		pop	r14
+		pop	r13
+		pop	r12
+		pop	rbx
+		pop	rbp
+		pop	rbp
 		ret
 SECTION .bss
 SECTION .rodata
