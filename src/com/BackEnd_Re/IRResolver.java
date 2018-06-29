@@ -6,6 +6,8 @@ import com.IR_Re.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.System.out;
+
 public class IRResolver implements IRVisitor
 {
     static final private VarReg[] reg = {new VarReg(10, "R10"), new VarReg(11, "R11"), new VarReg(6, "RSI"), new VarReg(14, "R14")};
@@ -245,12 +247,14 @@ public class IRResolver implements IRVisitor
                     offset = 8*(regNumber - 16 + 2);
                 for(int i = 0;i < 6; i++)
                 {
+                    offset += 8;
                     newIRList.add(new Push(new VarReg(calleeNum[i], callee[i])));
                 }
+                //out.println(offset);
                 newIRList.add(new Binary(Binary.Op.Sub, new VarReg(4, "rsp"), new VarInt(offset)));
                 break;
             case CALLEE_RECOVER:
-
+                //out.println("in");
                 if((regNumber & 1) == 0)
                     offset = 8*(regNumber - 16 + 1);
                 else
@@ -259,6 +263,8 @@ public class IRResolver implements IRVisitor
                 {
                     offset += 8;
                 }
+                //out.println(offset);
+
                 newIRList.add(new Binary(Binary.Op.Add, new VarReg(4, "rsp"), new VarInt(offset)));
                 for(int i = 5; i >= 0; i--)
                 {
