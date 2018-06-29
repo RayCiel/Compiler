@@ -3,6 +3,8 @@ package com.IR_Re;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.lang.System.out;
+
 public class StringLit
 {
     static private int idxNumber = 0;
@@ -65,8 +67,10 @@ public class StringLit
     }
     public String toCodeStr(String label)
     {
-        String lengthS = "\tdd " + (length) + "\n",
-                content = "\tdb "+ val + ", 0";
-        return lengthS + label +":\n" +  content;
+           String lengthS = "\tdd " + (length) + "\n",
+                    content = "\tdb " + "\""+ val + "\"" + ", 0";
+
+            //out.println("000" + val);
+            return lengthS + label + ":\n" + content;
     }
 }
