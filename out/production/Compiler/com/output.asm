@@ -25,7 +25,6 @@ ___exit_main:
 		pop	r12
 		pop	rbx
 		pop	rbp
-		pop	rbp
 		ret
 SECTION .bss
 SECTION .rodata
