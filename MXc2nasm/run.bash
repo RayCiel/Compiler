@@ -3,6 +3,6 @@
 
 
 ./c2nasm.sh zz.c
-nasm -felf64 output.asm
-gcc output.o -no-pie
+nasm -felf64 zz.asm
+gcc zz.o -no-pie
 ./a.out

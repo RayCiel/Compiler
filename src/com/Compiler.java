@@ -36,8 +36,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import static com.Type.Type.*;
-import static java.lang.System.out;
-//import static java.lang.System.*;
 
 public class Compiler {
     public PrintStream output;

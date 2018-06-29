@@ -480,5 +480,3 @@ SECTION .data
 
 
 SECTION .bss
-
-

@@ -7,8 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static java.lang.System.err;
-import static sun.misc.Version.println;
 
 public class CFGBuilder extends Object
 {

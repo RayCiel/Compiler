@@ -49,24 +49,25 @@ public class IRResolver implements IRVisitor
         }
     }
 
-    IntValue   colorDIR(IntValue oVar, VarReg r0, VarReg r1)
+    IntValue   colorDIR(IntValue originVar, VarReg r0, VarReg r1)
     {
-        return colorIR(oVar, r0, r1, false, false);
+        return colorIR(originVar, r0, r1, false, false);
     }
-    IntValue colorS0IR(IntValue oVar, VarReg r0, VarReg r1)
+    IntValue colorS0IR(IntValue originVar, VarReg r0, VarReg r1)
     {
-        return colorIR(oVar, r0, r1, true, false);
+        return colorIR(originVar, r0, r1, true, false);
     }
-    IntValue colorSIR(IntValue oVar, VarReg r0, VarReg r1)
+    IntValue colorSIR(IntValue originVar, VarReg r0, VarReg r1)
     {
-        return colorIR(oVar, r0, r1, true, true);
+        return colorIR(originVar, r0, r1, true, true);
     }
-    IntValue colorIR(IntValue oVar, VarReg r0, VarReg r1, boolean isSrc, boolean canInt)
+    IntValue colorIR(IntValue originVar, VarReg r0, VarReg r1, boolean isSrc, boolean canInt)
     {
-        if(oVar instanceof VarReg)
+        if(originVar instanceof VarReg)
         {
-            VarReg var = (VarReg)oVar;
+            VarReg var = (VarReg)originVar;
             int i = var.getIndex();
+            //out.println(i);
             if(nowColor.get(i) == -1)//wei bei ran se dao nei cun
             {
                 i = i-16;
@@ -85,20 +86,20 @@ public class IRResolver implements IRVisitor
                 return new VarReg(nowColor.get(i), null);
             }
         }
-        else if(oVar instanceof VarInt || oVar instanceof VarLabel)
+        else if(originVar instanceof VarInt || originVar instanceof VarLabel)
         {
             if(!isSrc)
                 throw new RuntimeException("dest is imm");
             if(!canInt)
             {
-                newIRList.add(new Move(r0, oVar));
+                newIRList.add(new Move(r0, originVar));
                 return r0;
             }else
-                return oVar;
+                return originVar;
 
-        }else if(oVar instanceof VarMem)
+        }else if(originVar instanceof VarMem)
         {
-            VarMem var = (VarMem)oVar;
+            VarMem var = (VarMem)originVar;
             IntValue tmp0, tmp1;
             if(isSrc)
             {
@@ -140,7 +141,7 @@ public class IRResolver implements IRVisitor
             }
 
         }else
-            return oVar;
+            return originVar;
     }
 
     @Override
@@ -153,10 +154,10 @@ public class IRResolver implements IRVisitor
     public void visit(Binary node)
     {
         node.setRight(colorSIR(node.getRight(), reg[0], reg[1]));
-        IntValue oVar = node.getLeft();
-        if(oVar instanceof VarReg)
+        IntValue originVar = node.getLeft();
+        if(originVar instanceof VarReg)
         {
-            VarReg var = (VarReg)oVar;
+            VarReg var = (VarReg)originVar;
             int i = var.getIndex();
             if(nowColor.get(i) == -1)
             {
@@ -231,20 +232,24 @@ public class IRResolver implements IRVisitor
         switch (node.getType())
         {
             case CALLER_SAVE:
-                for(int i = 0; i < 6; i++)
-                    newIRList.add(new Push(new VarReg(callerNum[i], caller[i])));
+            //    for(int i = 0; i < 6; i++)
+            //        newIRList.add(new Push(new VarReg(callerNum[i], caller[i])));
                 break;
             case CALLER_RECOVER:
-                for(int i = 5; i >= 0; i--)
-                    newIRList.add(new Pop(new VarReg(callerNum[i], caller[i])));
+            //    for(int i = 5; i >= 0; i--)
+            //        newIRList.add(new Pop(new VarReg(callerNum[i], caller[i])));
                 break;
 
             case CALLEE_SAVE:
-
-                if((regNumber & 1) == 0)
-                    offset = 8*(regNumber- 16 + 1);
-                else
+                //out.println(regNumber & 1);
+                //out.println(regNumber);
+                if((regNumber & 1) == 0)// ou shu
+                {
+                    offset = 8 * (regNumber - 16 + 1);
+                }
+                else // ji shu
                     offset = 8*(regNumber - 16 + 2);
+                //out.println(offset);
                 for(int i = 0;i < 6; i++)
                 {
                     offset += 8;
@@ -315,18 +320,21 @@ public class IRResolver implements IRVisitor
         {
             if(node.getLeft() instanceof VarMem)
             {
+
                 node.setRight(colorSIR(node.getRight(), reg[2], reg[0]));///???
                 node.setLeft(colorDIR(node.getLeft(), reg[0], reg[1]));
                 newIRList.add(node);
             }
             else if(node.getRight() instanceof VarMem)
             {
+
                 node.setRight(colorSIR(node.getRight(), reg[0], reg[1]));
                 newIRList.add(node);
                 node.setLeft(colorDIR(node.getLeft(), reg[0], reg[1]));
             }
             else
             {
+
                 node.setRight(colorSIR(node.getRight(), reg[0], reg[1]));///????
                 newIRList.add(node);
                 node.setLeft(colorDIR(node.getLeft(), reg[1], reg[2]));
@@ -359,15 +367,15 @@ public class IRResolver implements IRVisitor
         }
         else
         {
-            IntValue oVar = node.getSrc();
-            if(oVar instanceof VarMem)
+            IntValue originVar = node.getSrc();
+            if(originVar instanceof VarMem)
             {
                 node.setSrc(colorDIR(node.getSrc(), reg[0], reg[1]));
                 newIRList.add(node);
             }
-            else if(oVar instanceof VarReg)
+            else if(originVar instanceof VarReg)
             {
-                VarReg var = (VarReg)oVar;
+                VarReg var = (VarReg)originVar;
                 int i = var.getIndex();
                 if(nowColor.get(i) == -1)
                 {

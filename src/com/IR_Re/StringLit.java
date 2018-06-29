@@ -35,8 +35,9 @@ public class StringLit
     }
     private String initVal(String val)
     {
-
-        length = val.length()-2;
+        //out.println("in");
+        //out.println(val);
+        length = val.length();
         int tmp0, tmp1;
         tmp0 = val.length();
         val = val.replaceAll("\\\\" + "\\\\" , "\", 92, \"");
@@ -70,7 +71,7 @@ public class StringLit
            String lengthS = "\tdd " + (length) + "\n",
                     content = "\tdb " + "\""+ val + "\"" + ", 0";
 
-            //out.println("000" + val);
+            //out.println(val);
             return lengthS + label + ":\n" + content;
     }
 }

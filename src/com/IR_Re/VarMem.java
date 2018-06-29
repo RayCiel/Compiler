@@ -4,7 +4,7 @@ import java.util.List;
 
 public class VarMem extends IntValue
 {
-    private IntValue base, index;
+    protected IntValue base, index;
 
     public VarMem(List<IRInst> IRInstList, IntValue base, IntValue index)
     {
@@ -38,14 +38,13 @@ public class VarMem extends IntValue
     @Override
     public String toCodeStr8()
     {
-        final String MEM_PREFIX = "qword ";
         if(index == null)
-            return MEM_PREFIX + "[" + base.toCodeStr8() + "]";
+            return "qword " + "[" + base.toCodeStr8() + "]";
         else
         if(index instanceof VarInt)
-            return MEM_PREFIX + "[" + base.toCodeStr8() + " + " + ((VarInt) index).getVal() * 8 + "]";
+            return "qword " + "[" + base.toCodeStr8() + " + " + ((VarInt) index).getVal() * 8 + "]";
         else
-            return MEM_PREFIX + "[" + base.toCodeStr8() + " + " + index.toCodeStr8() + "*8"+ "]";
+            return "qword " + "[" + base.toCodeStr8() + " + " + index.toCodeStr8() + "*8"+ "]";
     }
 
     @Override

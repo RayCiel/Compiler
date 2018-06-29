@@ -5,12 +5,10 @@ import com.CompilerOptions;
 import com.Entity.Entity;
 import com.Entity.ParamEntity;
 import com.Entity.Scope;
-import com.FrontEnd.ASTVisitor;
 import com.FrontEnd.ASTree;
 import com.FrontEnd.Visit;
 import com.IR.*;
 import com.Type.*;
-import com.sun.corba.se.impl.naming.namingutil.CorbalocURL;
 
 import java.util.ArrayList;
 import java.util.HashMap;

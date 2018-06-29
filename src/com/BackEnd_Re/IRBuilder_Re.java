@@ -369,7 +369,7 @@ public class IRBuilder_Re extends Visit
         {
             //out.print("in");
             regNumber = savedRegNumber;
-            List<IRInst> plist = new LinkedList<>();
+            List<IRInst> priList = new LinkedList<>();
             int size = node.getEntity().getParam().size();
             boolean isMem = (node.getEntity().isMember);
             if (isMem)
@@ -381,7 +381,7 @@ public class IRBuilder_Re extends Visit
                     VarReg r0;
                     r0 = getNewReg(null);
                     thisReg = r0.getIndex();
-                    plist.add(new Move(new VarReg(thisReg, null), topPlist.get(0)));
+                    priList.add(new Move(new VarReg(thisReg, null), topPlist.get(0)));
                 }
                 else
                 {
@@ -392,14 +392,14 @@ public class IRBuilder_Re extends Visit
                         pi = node.getEntity().getParam().get(i);
                     VarReg r0 = getNewReg(null);
                     pi.setReg(r0);
-                    plist.add(new Move(new VarReg(r0.getIndex(), null), topPlist.get(i)));
+                    priList.add(new Move(new VarReg(r0.getIndex(), null), topPlist.get(i)));
                 }
             }
             node.getEntity().setExitLabel(new VarLabel("___exit"+"_"+node.labelName()));
             super.visit(node);
             List<IRInst> list = new LinkedList<>();
             list.add(new Label(node.labelName()));
-            list.addAll(plist);
+            list.addAll(priList);
             list.addAll((List<IRInst>) map.get(node.getEntity().getBody()));
             list.add(new Label(node.getEntity().getExitLabel().getLabel()));
             map.put(node, list);
@@ -409,7 +409,7 @@ public class IRBuilder_Re extends Visit
         {
             //out.print("in");
             regNumber = savedRegNumber;
-            List<IRInst> plist = new LinkedList<>();
+            List<IRInst> priList = new LinkedList<>();
             int[] caller_num = {7, 6, 2, 1, 8, 9};
             String[] caller = {"rdi", "rsi", "rdx", "rcx", "r8", "r9"};
             int size = node.getEntity().getParam().size();
@@ -422,7 +422,7 @@ public class IRBuilder_Re extends Visit
                 {
                     VarReg r0 = getNewReg(null);
                     thisReg = r0.getIndex();
-                    plist.add(new Move(new VarReg(r0.getIndex(), null), new VarReg(caller_num[i], caller[i])));
+                    priList.add(new Move(new VarReg(r0.getIndex(), null), new VarReg(caller_num[i], caller[i])));
                 }
                 else
                 {
@@ -435,13 +435,13 @@ public class IRBuilder_Re extends Visit
                     {
                         VarReg r0 = getNewReg(pi.getName());
                         pi.setReg(r0);
-                        plist.add(new Load(new VarReg(r0.getIndex(), pi.getName()), new VarReg(5, "rbp"), new VarInt(i - 5)));
+                        priList.add(new Load(new VarReg(r0.getIndex(), pi.getName()), new VarReg(5, "rbp"), new VarInt(i - 5)));
                     }
                     else
                     {
                       VarReg r0 = getNewReg(pi.getName());
                         pi.setReg(r0);
-                        plist.add(new Move(new VarReg(r0.getIndex(), pi.getName()), new VarReg(caller_num[i], caller[i])));
+                        priList.add(new Move(new VarReg(r0.getIndex(), pi.getName()), new VarReg(caller_num[i], caller[i])));
                     }
                 }
             }
@@ -460,7 +460,7 @@ public class IRBuilder_Re extends Visit
             else
                 offset = 8*(regNumber - 16 + 2);
             list.add(new Special(Special.Type.CALLEE_SAVE, offset));
-            list.addAll(plist);
+            list.addAll(priList);
             if(node.getName().equals("main"))
             {
                 list.addAll(globalVarList);
@@ -562,14 +562,13 @@ public class IRBuilder_Re extends Visit
     public void processStringBinaryExpr(BinaryExprNode node, List<IRInst> list)
     {
         VarReg r0;
-        //use funcall
-        List<IntValue> plist = new LinkedList();
+        List<IntValue> priList = new LinkedList();
         r0 = getNewReg(null);
         if(node.getOperator() == BinaryExprNode.Op.Equal || node.getOperator() == BinaryExprNode.Op.NotEqual)
         {
-            plist.add((IntValue)map.get(node.getLeft()));
-            plist.add((IntValue)map.get(node.getRight()));
-            list.addAll(makeCall("__.string__equal", plist));
+            priList.add((IntValue)map.get(node.getLeft()));
+            priList.add((IntValue)map.get(node.getRight()));
+            list.addAll(makeCall("__.string__equal", priList));
             list.add(new Move(r0, new VarReg(0, null)));
             if(node.getOperator() == BinaryExprNode.Op.NotEqual)
             {
@@ -577,29 +576,30 @@ public class IRBuilder_Re extends Visit
             }
         }else if(node.getOperator() == BinaryExprNode.Op.Add)
         {
-            plist.add((IntValue)map.get(node.getLeft()));
-            plist.add((IntValue)map.get(node.getRight()));
-            list.addAll(makeCall("__.string__plus", plist));
+            priList.add((IntValue)map.get(node.getLeft()));
+            priList.add((IntValue)map.get(node.getRight()));
+            //out.println(((VarLHSNode)node.getLeft()).getEntity().getName());
+            list.addAll(makeCall("__.string__plus", priList));
             list.add(new Move(r0, new VarReg(0, null)));
         }else
         {
             if(node.getOperator() == BinaryExprNode.Op.Less || node.getOperator() == BinaryExprNode.Op.LessEqual)
             {
-                plist.add((IntValue)map.get(node.getLeft()));
-                plist.add((IntValue)map.get(node.getRight()));
+                priList.add((IntValue)map.get(node.getLeft()));
+                priList.add((IntValue)map.get(node.getRight()));
             }else
             {
-                plist.add((IntValue)map.get(node.getRight()));
-                plist.add((IntValue)map.get(node.getLeft()));
+                priList.add((IntValue)map.get(node.getRight()));
+                priList.add((IntValue)map.get(node.getLeft()));
             }
             switch (node.getOperator())
             {
                 case Less:
                 case Greater:
-                    list.addAll(makeCall("__.string__less", plist));break;
+                    list.addAll(makeCall("__.string__less", priList));break;
                 case LessEqual:
                 case GreaterEqual:
-                    list.addAll(makeCall("__.string__lessEqual", plist));break;
+                    list.addAll(makeCall("__.string__lessEqual", priList));break;
             }
             list.add(new Move(r0, new VarReg(0, null)));
             if(node.getOperator() == BinaryExprNode.Op.Greater || node.getOperator() == BinaryExprNode.Op.GreaterEqual)
@@ -817,22 +817,22 @@ public class IRBuilder_Re extends Visit
     {
         super.visit(node);
         List<IRInst> list = new LinkedList<>();
-        List<IntValue> plist = new LinkedList<>();
+        List<IntValue> priList = new LinkedList<>();
         IntValue preVar = (IntValue) map.get(node.getExpression());
         VarReg r0;
         String funName;
 		if(node.getExpression() instanceof MemLHSNode)
-            plist.add(preVar);
+            priList.add(preVar);
         else if(((FuncEntity)(((VarLHSNode)node.getExpression()).getEntity())).classEntity !=null)
         {
-            plist.add(new VarReg(thisReg, null));
+            priList.add(new VarReg(thisReg, null));
         }
         for(int i = 0; i < node.getArgs().size(); i++)
         {
-            plist.add((IntValue) map.get(node.getArgs().get(i)));
+            priList.add((IntValue) map.get(node.getArgs().get(i)));
         }
         funName = ((VarLHSNode) node.getExpression()).getName();
-        list.addAll(makeCall("_"+funName, plist));
+        list.addAll(makeCall("_"+funName, priList));
         r0 = getNewReg(null);
         list.add(new Move(r0, new VarReg(0, "rax")));
         map.put(node, new VarReg(list, r0.getIndex(), null));
@@ -861,6 +861,7 @@ public class IRBuilder_Re extends Visit
     public Void visit(StrLitNode node)
     {
         StringLit str = new StringLit(node.getStr());
+        ///out.println(str.getVal());
         if(str.isNew())
             constList.add(str);
         VarLabel varLabel = new VarLabel(str.getLabel());
@@ -887,8 +888,10 @@ public class IRBuilder_Re extends Visit
             r2 = getNewReg(null);
             list.add(new Load(r2, r0, r1));
             map.put(node, new VarReg(list, r2.getIndex(), null));
-        }else
+        }
+        else
         {
+            //out.println("in");
             map.put(node, new VarMem(list, r0, r1));
         }
         return null;
@@ -933,18 +936,22 @@ public class IRBuilder_Re extends Visit
         IntValue expr = (IntValue) map.get(node.getExpression());
         VarReg r1, r2;
         list.addAll(expr.getIrList());
+        //out.println("in");
         if(!(node.getType() instanceof FuncType))
         {
             VarReg r0 = (VarReg)expr;
-            VarInt indexOfMember = new VarInt(((ParamEntity)node.getEntity()).getRank());
+            VarInt MemberIdx = new VarInt(((ParamEntity)node.getEntity()).getRank());
+            //out.println(MemberIdx.getVal());
             if(!set.contains(node))
             {
                 r1 = getNewReg(node.getName());
-                list.add(new Load(r1 ,r0, indexOfMember));
+                list.add(new Load(r1 ,r0, MemberIdx));
                 map.put(node, new VarReg(list, r1.getIndex(), node.getName()));
             }
             else
-                map.put(node, new VarMem(list, r0, indexOfMember));
+            {
+                map.put(node, new VarMem(list, r0, MemberIdx));
+            }
         }
         else
         {
@@ -958,15 +965,15 @@ public class IRBuilder_Re extends Visit
     public Void visit(CreatorNode node)
     {
         super.visit(node);
-        List<IntValue> plist = new LinkedList<>();
+        List<IntValue> priList = new LinkedList<>();
         List<IRInst> list = new LinkedList<>();
         VarReg r0, r1;
         if(node.getType() instanceof ArrayType)
         {
             Type rootType = ((ArrayType) node.getType()).getBaseType();
             r0 = getNewReg(null);
-            plist.add(new VarInt(node.getArgs().size()));
-            list.addAll(makeCall("__.array_.array",plist));
+            priList.add(new VarInt(node.getArgs().size()));
+            list.addAll(makeCall("__.array_.array",priList));
             list.add(new Move(r0, new VarReg(0, "rax")));
             for (int i = 0; i < node.getArgs().size(); i++)
             {
@@ -974,23 +981,23 @@ public class IRBuilder_Re extends Visit
                 list.addAll(arg.getIrList());
                 list.add(new Store(r0, new VarInt(i), arg));
             }
-            plist = new LinkedList<>();
-            plist.add(new VarReg(r0.getIndex(), null));
-            plist.add(new VarInt(node.getArgs().size()));
+            priList = new LinkedList<>();
+            priList.add(new VarReg(r0.getIndex(), null));
+            priList.add(new VarInt(node.getArgs().size()));
             if(node.getArgs().size() < node.getDimension())
             {
-                plist.add(new VarInt(8));
-                plist.add(new VarInt(0));
+                priList.add(new VarInt(8));
+                priList.add(new VarInt(0));
             }
             else
             {
-                plist.add(new VarInt(rootType.getRegisterSize()));
+                priList.add(new VarInt(rootType.getRegisterSize()));
                 if(rootType instanceof ClassType)
-                    plist.add(new VarInt(0));
+                    priList.add(new VarInt(0));
                 else
-                    plist.add(new VarInt(0));
+                    priList.add(new VarInt(0));
             }
-            list.addAll(makeCall("__.array_new", plist));
+            list.addAll(makeCall("__.array_new", priList));
             r1 = getNewReg(null);
             list.add(new Move(r1, new VarReg(0, "rax")));
             map.put(node, r1.clone(list));
@@ -998,13 +1005,13 @@ public class IRBuilder_Re extends Visit
         else
         {
             r0 = getNewReg(null);
-            plist.add(new VarInt(node.getType().getRegisterSize()));
-            list.addAll(makeCall("malloc", plist));
+            priList.add(new VarInt(node.getType().getRegisterSize()));
+            list.addAll(makeCall("malloc", priList));
             list.add(new Move(r0, new VarReg(0, "rax")));
             if(node.getType() instanceof ClassType && ((ClassType) node.getType()).getClassEntity().getConstructNode()!=null)
             {
-                plist.set(0, new VarReg(r0.getIndex(), null));
-                list.addAll(makeCall("__"+node.getType()+"_"+node.getType(), plist));
+                priList.set(0, new VarReg(r0.getIndex(), null));
+                list.addAll(makeCall("__"+node.getType()+"_"+node.getType(), priList));
             }
 
             map.put(node, r0.clone(list));
