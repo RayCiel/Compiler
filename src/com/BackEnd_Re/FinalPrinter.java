@@ -271,7 +271,7 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
             case Div:
             case Mod:
                 op="idiv";
-                list.add("/t/t" + "cqo");
+                list.add("\t\t" + "cqo");
                 break;
             case Neg:
                 op="neg"; break;
