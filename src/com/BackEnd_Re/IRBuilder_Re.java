@@ -469,7 +469,7 @@ public class IRBuilder_Re extends Visit
             node.comp = list.size();
             list.add(new Label(node.getEntity().getExitLabel().getLabel()));
             list.add(new Special(Special.Type.CALLEE_RECOVER, offset ));
-            //list.add(new Pop(new VarReg(5, "rbp")));
+            list.add(new Pop(new VarReg(5, "rbp")));
             list.add(new Return());
             Global.maxRegNumber = Math.max(Global.maxRegNumber, regNumber);
             //out.print(regNumber);

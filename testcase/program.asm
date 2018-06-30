@@ -8,30 +8,18 @@ _main:
 		push	rbp
 		mov	rbp,	rsp
 		add	rbp,	8
-		push	rbp
 		push	rbx
 		push	r12
 		push	r13
 		push	r14
 		push	r15
-		sub	rsp,	88
-		mov	qword [rbp + -56],	STR_0
+		sub	rsp,	64
+		mov	qword [rbp + -56],	2
 		mov	r10,	qword [rbp + -56]
-		mov	rdi,	r10
-		mov	r10,	qword [rbp + -56]
-		mov	rsi,	r10
-		call	__.string__plus
-		mov	qword [rbp + -64],	rax
-		mov	r10,	qword [rbp + -64]
-		mov	qword [rbp + -72],	r10
-		mov	r10,	qword [rbp + -72]
-		mov	rdi,	r10
-		call	_print
-		mov	qword [rbp + -80],	rax
-		mov	rax,	0
+		mov	rax,	r10
 		jmp	___exit_main
 ___exit_main:
-		add	rsp,	88
+		add	rsp,	64
 		pop	r15
 		pop	r14
 		pop	r13
@@ -41,9 +29,6 @@ ___exit_main:
 		ret
 SECTION .bss
 SECTION .rodata
-	dd 1
-STR_0:
-	db "a", 0
 ; ============Library============
 default rel
 

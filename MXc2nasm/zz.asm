@@ -14,7 +14,8 @@ SECTION .text
 main:
         push    rbp
         mov     rbp, rsp
-        mov     eax, 0
+        mov     dword [rbp-4H], 2
+        mov     eax, dword [rbp-4H]
         pop     rbp
         ret
 
