@@ -250,11 +250,12 @@ public class IRResolver implements IRVisitor
                 else // ji shu
                     offset = 8*(regNumber - 16 + 2);
                 //out.println(offset);
-                for(int i = 1;i < 6; i++)
+                offset += 8;
+                /*for(int i = 1;i < 6; i++)
                 {
                     offset += 8;
                     newIRList.add(new Push(new VarReg(calleeNum[i], callee[i])));
-                }
+                }*/
                 //out.println(offset);
                 newIRList.add(new Binary(Binary.Op.Sub, new VarReg(4, "rsp"), new VarInt(offset)));
                 break;
@@ -264,17 +265,18 @@ public class IRResolver implements IRVisitor
                     offset = 8*(regNumber - 16 + 1);
                 else
                     offset = 8*(regNumber - 16 + 2);
-                for(int i = 5; i >= 1; i--)
+                offset += 8;
+                /*for(int i = 5; i >= 1; i--)
                 {
                     offset += 8;
-                }
+                }*/
                 //out.println(offset);
 
-                newIRList.add(new Binary(Binary.Op.Add, new VarReg(4, "rsp"), new VarInt(offset)));
-                for(int i = 5; i >= 1; i--)
+                //newIRList.add(new Binary(Binary.Op.Add, new VarReg(4, "rsp"), new VarInt(offset)));
+                /*for(int i = 5; i >= 1; i--)
                 {
                     newIRList.add(new Pop(new VarReg(calleeNum[i], callee[i])));
-                }
+                }*/
                 break;
             default:
         }

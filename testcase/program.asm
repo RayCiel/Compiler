@@ -7,25 +7,13 @@ main:
 _main:
 		push	rbp
 		mov	rbp,	rsp
-		add	rbp,	8
-		push	rbx
-		push	r12
-		push	r13
-		push	r14
-		push	r15
-		sub	rsp,	64
+		sub	rsp,	32
 		mov	qword [rbp + -56],	2
 		mov	r10,	qword [rbp + -56]
 		mov	rax,	r10
 		jmp	___exit_main
 ___exit_main:
-		add	rsp,	64
-		pop	r15
-		pop	r14
-		pop	r13
-		pop	r12
-		pop	rbx
-		pop	rbp
+		leave
 		ret
 SECTION .bss
 SECTION .rodata

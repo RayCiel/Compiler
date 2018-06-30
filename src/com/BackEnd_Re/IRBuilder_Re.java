@@ -453,7 +453,7 @@ public class IRBuilder_Re extends Visit
             list.add(new Label(node.labelName()));
             list.add(new Push(new VarReg(5, "rbp")));
             list.add(new Move(new VarReg(5, "rbp"), new VarReg(4, "rsp")));
-            list.add(new Binary(Binary.Op.Add, new VarReg(5, "rbp"), new VarInt(8)));
+            //list.add(new Binary(Binary.Op.Add, new VarReg(5, "rbp"), new VarInt(8)));
 		    int offset;
             if((regNumber&1) == 0)
                 offset = 8*(regNumber - 16 + 1);
@@ -469,7 +469,8 @@ public class IRBuilder_Re extends Visit
             node.comp = list.size();
             list.add(new Label(node.getEntity().getExitLabel().getLabel()));
             list.add(new Special(Special.Type.CALLEE_RECOVER, offset ));
-            list.add(new Pop(new VarReg(5, "rbp")));
+            //list.add(new Pop(new VarReg(5, "rbp")));
+            //list.add(new Special());
             list.add(new Return());
             Global.maxRegNumber = Math.max(Global.maxRegNumber, regNumber);
             //out.print(regNumber);

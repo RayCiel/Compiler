@@ -5,8 +5,7 @@ int main() {
     int j;
     for (i = 1; i <= n; ++i)
         for (j = 1; j <= n; ++j)
-            sum = sum + i;
-//print(toString(sum));*/
+            sum = sum + i;*/
     return sum;
 }
 

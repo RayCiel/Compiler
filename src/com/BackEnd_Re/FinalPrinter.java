@@ -192,6 +192,7 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
     public void visit(Return node)
     {
         List<String> list = new LinkedList<>();
+        list.add("\t\t" + "leave");
         list.add("\t\t" + "ret");
         map.put(node, list);
     }
