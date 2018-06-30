@@ -148,8 +148,8 @@ public class Compiler {
         System.err.println("library List Done..");
         List<String> finalList = new ArrayList<>();
         finalList.addAll(code);
-        finalList.add("; ============Library============");
-        finalList.addAll(libraryList);
+        //finalList.add("; ============Library============");
+        //finalList.addAll(libraryList);
         //System.err.println("final List Done..");
         OutputStream os;
         if(fileout.equals(""))
