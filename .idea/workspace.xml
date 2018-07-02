@@ -13,60 +13,10 @@
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__codegen.bash" beforeDir="false" afterPath="$PROJECT_DIR$/__codegen.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/BackEnd_Re/FinalPrinter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/BackEnd_Re/FinalPrinter$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/BackEnd_Re/FinalPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/BackEnd_Re/FinalPrinter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRBuilder_Re$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRBuilder_Re$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRBuilder_Re.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRBuilder_Re.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRResolver$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRResolver$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRResolver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/Compiler.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/Compiler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/Entity/FuncEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/Entity/FuncEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/FrontEnd/ASTBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/FrontEnd/ASTBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/FrontEnd/ASTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/FrontEnd/ASTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/FrontEnd/SymbolResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/FrontEnd/SymbolResolver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/FrontEnd/TypeCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/FrontEnd/TypeCheck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/IR_Re/Call.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/IR_Re/Call.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/IR_Re/Load.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/IR_Re/Load.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/IR_Re/VarReg.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/IR_Re/VarReg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/Parser/MxParser$PrefixOperationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/Parser/MxParser$PrefixOperationContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/Parser/MxParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/Parser/MxParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codegen.bash" beforeDir="false" afterPath="$PROJECT_DIR$/codegen.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/FinalPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/FinalPrinter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRBuilder_Re$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRBuilder_Re$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRBuilder_Re.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRBuilder_Re.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRResolver$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRResolver$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRResolver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Compiler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Compiler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Entity/FuncEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Entity/FuncEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/ASTBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/ASTBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/ASTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/ASTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/SymbolResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/SymbolResolver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/TypeCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/FrontEnd/TypeCheck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR_Re/Call.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/IR_Re/Call.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR_Re/Load.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/IR_Re/Load.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/IR_Re/VarReg.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/IR_Re/VarReg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/Mx.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/Mx.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$PrefixOperationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser$PrefixOperationContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/Parser/MxParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.bash" beforeDir="false" afterPath="$PROJECT_DIR$/run.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Entity/FuncEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Entity/FuncEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/ASTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/ASTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/IR_Re/Call.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/IR_Re/Call.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/IR_Re/Load.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/IR_Re/Load.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/IR_Re/VarReg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/IR_Re/VarReg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Parser/Mx.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Parser/Mx.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Parser/MxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Parser/MxParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/a.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testcase/program.asm" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/program.o" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/program.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/testcase/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -111,7 +61,7 @@
             <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="502">
-                  <caret line="178" column="59" lean-forward="true" selection-start-line="178" selection-start-column="59" selection-end-line="178" selection-end-column="59" />
+                  <caret line="178" column="59" selection-start-line="178" selection-start-column="59" selection-end-line="178" selection-end-column="59" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -119,20 +69,20 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="VarReg.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="VarReg.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/IR_Re/VarReg.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="370">
-                  <caret line="78" column="20" lean-forward="true" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
+                <state relative-caret-position="361">
+                  <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Compiler.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Compiler.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="495">
-                  <caret line="165" column="34" lean-forward="true" selection-start-line="165" selection-start-column="34" selection-end-line="165" selection-end-column="34" />
+                  <caret line="165" column="10" selection-start-line="165" selection-start-column="10" selection-end-line="165" selection-end-column="10" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -171,7 +121,7 @@
             <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="514">
-                  <caret line="192" column="53" lean-forward="true" selection-start-line="192" selection-start-column="53" selection-end-line="192" selection-end-column="53" />
+                  <caret line="192" column="53" selection-start-line="192" selection-start-column="53" selection-end-line="192" selection-end-column="53" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -183,7 +133,7 @@
             <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTree.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="380">
-                  <caret line="125" column="36" lean-forward="true" selection-start-line="125" selection-start-column="36" selection-end-line="125" selection-end-column="36" />
+                  <caret line="125" column="36" selection-start-line="125" selection-start-column="36" selection-end-line="125" selection-end-column="36" />
                 </state>
               </provider>
             </entry>
@@ -324,7 +274,6 @@
         <option value="$PROJECT_DIR$/src/com/IR_Re/Call.java" />
         <option value="$PROJECT_DIR$/src/com/Entity/FuncEntity.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java" />
-        <option value="$PROJECT_DIR$/src/com/IR_Re/VarReg.java" />
         <option value="$PROJECT_DIR$/src/com/IR_Re/Load.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/ASTree.java" />
@@ -333,6 +282,7 @@
         <option value="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" />
         <option value="$PROJECT_DIR$/src/com/Parser/Mx.g4" />
+        <option value="$PROJECT_DIR$/src/com/IR_Re/VarReg.java" />
         <option value="$PROJECT_DIR$/src/com/Compiler.java" />
       </list>
     </option>
@@ -899,13 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Parser/Mx.g4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
@@ -923,7 +866,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
-          <caret line="192" column="53" lean-forward="true" selection-start-line="192" selection-start-column="53" selection-end-line="192" selection-end-column="53" />
+          <caret line="192" column="53" selection-start-line="192" selection-start-column="53" selection-end-line="192" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -933,17 +876,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/ASTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
-          <caret line="125" column="36" lean-forward="true" selection-start-line="125" selection-start-column="36" selection-end-line="125" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="165" column="34" lean-forward="true" selection-start-line="165" selection-start-column="34" selection-end-line="165" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="125" column="36" selection-start-line="125" selection-start-column="36" selection-end-line="125" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -972,7 +905,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
-          <caret line="178" column="59" lean-forward="true" selection-start-line="178" selection-start-column="59" selection-end-line="178" selection-end-column="59" />
+          <caret line="178" column="59" selection-start-line="178" selection-start-column="59" selection-end-line="178" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -981,8 +914,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/IR_Re/VarReg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="78" column="20" lean-forward="true" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
+        <state relative-caret-position="361">
+          <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="165" column="10" selection-start-line="165" selection-start-column="10" selection-end-line="165" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

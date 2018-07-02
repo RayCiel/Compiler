@@ -163,7 +163,7 @@ public class Compiler {
         }
         System.err.println("library List Done..");
         List<String> finalList = new ArrayList<>();
-        finalList.addAll(midCode);
+        //finalList.addAll(midCode);
         finalList.addAll(code);
         finalList.add("; ============Library============");
         finalList.addAll(libraryList);
