@@ -1,6 +1,7 @@
 package com.Entity;
 
 import com.AST.BlockNode;
+import com.AST.FuncDefNode;
 import com.AST.Location;
 import com.AST.VarDefNode;
 import com.IR.BasicBlock;
@@ -23,6 +24,7 @@ public class FuncEntity extends Entity{
     protected VarLabel exitLabel;
     public boolean isMember = false;
     public ClassEntity classEntity = null;
+    public FuncDefNode funcDefNode = null;
 
     protected BasicBlock startBB;
     public BasicBlock exitBB;
@@ -124,6 +126,11 @@ public class FuncEntity extends Entity{
         //param.add(0, thisPointer);
         isMember = true;
         return thisPointer;
+    }
+
+    public void setFuncDefNode(FuncDefNode funcDefNode)
+    {
+        this.funcDefNode = funcDefNode;
     }
 
     public void setResult(Type result) {

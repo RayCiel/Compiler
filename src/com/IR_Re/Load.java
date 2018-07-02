@@ -4,10 +4,10 @@ public class Load extends IRInst
 {
     private IntValue dest, src;
 
-    public Load(IntValue base, IntValue index, IntValue src)
+    public Load(IntValue dest, IntValue base, IntValue index)
     {
-        this.dest = new VarMem(base, index);
-        this.src = src;
+        this.src = new VarMem(base, index);
+        this.dest = dest;
     }
 
     public Load(IntValue dest, IntValue src)

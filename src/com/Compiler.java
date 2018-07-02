@@ -108,6 +108,22 @@ public class Compiler {
         System.err.println("getBasicBlockList Done..");
         ConflictGraph conflictGraph = new ConflictGraph(irBuilder_re.regNumber);
         System.err.println("conflictGraph Done..");
+
+        BlockToList blockToList = new BlockToList(basicBlockList);
+        System.err.println("BlockToList Done..");
+        List<IRInst> irList = blockToList.toList();
+        System.err.println("getToList Done..");
+        FinalPrinter midPrinter = new FinalPrinter(irList, irLitList, globalVarIRS);
+        System.err.println("FinalPrinter Done..");
+        List<String> midCodePrint = midPrinter.codeStr();
+        List<String> midCode = new LinkedList<>();
+        for (String str: midCodePrint)
+        {
+            str = ";" + str;
+            midCode.add(str);
+        }
+
+
         NaiveRegAlloc naiveRegAlloc = new NaiveRegAlloc(null);
         System.err.println("NaiveRegAlloc Done..");
         List<List<Integer>> colorList = naiveRegAlloc.colors(irBuilder_re.funcNum);
@@ -117,12 +133,12 @@ public class Compiler {
 
         irResolver.ResolveIR();
         System.err.println("ResolveIR Done..");
-        BlockToList blockToList = new BlockToList(basicBlockList);
+        BlockToList blockToList_final = new BlockToList(basicBlockList);
         System.err.println("BlockToList Done..");
-        List<IRInst> irList = blockToList.toList();
+        List<IRInst> irList_final = blockToList_final.toList();
         System.err.println("getToList Done..");
 
-        FinalPrinter finalPrinter = new FinalPrinter(irList, irLitList, globalVarIRS);
+        FinalPrinter finalPrinter = new FinalPrinter(irList_final, irLitList, globalVarIRS);
         System.err.println("FinalPrinter Done..");
         List<String> code = finalPrinter.codeStr();
         System.err.println("getCode Done..");
@@ -147,9 +163,10 @@ public class Compiler {
         }
         System.err.println("library List Done..");
         List<String> finalList = new ArrayList<>();
+        finalList.addAll(midCode);
         finalList.addAll(code);
-        //finalList.add("; ============Library============");
-        //finalList.addAll(libraryList);
+        finalList.add("; ============Library============");
+        finalList.addAll(libraryList);
         //System.err.println("final List Done..");
         OutputStream os;
         if(fileout.equals(""))

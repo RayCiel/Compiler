@@ -126,16 +126,16 @@ public class ASTree {
         scope.insertEntity(new FuncEntity("toString", new Location(0, 0), strType, null, list));
         strScope = new Scope(scope);
         list = (new LinkedList<>());
-        list.add(new ParamEntity("this", new Location(0, 0), strType));
+        //list.add(new ParamEntity("this", new Location(0, 0), strType));
         strScope.insertEntity(new FuncEntity("length", new Location(0, 0), intType, null, list));
         strScope.insertEntity(new FuncEntity("parseInt", new Location(0, 0), intType, null, list));
         list = (new LinkedList<>());
-        list.add(new ParamEntity("this", new Location(0, 0), strType));
+        //list.add(new ParamEntity("this", new Location(0, 0), strType));
         list.add(new ParamEntity("arg0", new Location(0, 0), intType));
         list.add(new ParamEntity("arg1", new Location(0, 0), intType));
         strScope.insertEntity(new FuncEntity("substring", new Location(0, 0), strType, null, list));
         list = (new LinkedList<>());
-        list.add(new ParamEntity("this", new Location(0, 0), strType));
+        //list.add(new ParamEntity("this", new Location(0, 0), strType));
         list.add(new ParamEntity("arg0", new Location(0, 0), intType));
         strScope.insertEntity(new FuncEntity("ord", new Location(0, 0), intType, null, list));
         List<FuncDefNode> listF = new LinkedList<FuncDefNode>();
@@ -146,7 +146,7 @@ public class ASTree {
         scope.insertEntity(new ClassEntity("string", new Location(0, 0), strType, listV, listF, strScope));
         arrayScope = new Scope(scope);
         list = (new LinkedList<>());
-        list.add(new ParamEntity("this", new Location(0, 0), nullType));
+        //list.add(new ParamEntity("this", new Location(0, 0), nullType));
         arrayScope.insertEntity(new FuncEntity("size", new Location(0, 0), intType, null, list));
         scope.insertEntity(new ClassEntity("#Array", new Location(0, 0), null, listV, listF, arrayScope));
         /*for (ClassEntity entity : classEntity) {

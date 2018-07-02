@@ -1211,10 +1211,10 @@ public class MxParser extends Parser {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode Plus() { return getToken(MxParser.Plus, 0); }
-		public TerminalNode Minus() { return getToken(MxParser.Minus, 0); }
 		public TerminalNode PlusPlus() { return getToken(MxParser.PlusPlus, 0); }
 		public TerminalNode MinusMinus() { return getToken(MxParser.MinusMinus, 0); }
+		public TerminalNode Plus() { return getToken(MxParser.Plus, 0); }
+		public TerminalNode Minus() { return getToken(MxParser.Minus, 0); }
 		public TerminalNode Not() { return getToken(MxParser.Not, 0); }
 		public TerminalNode Tilde() { return getToken(MxParser.Tilde, 0); }
 		public PrefixOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
@@ -1519,34 +1519,13 @@ public class MxParser extends Parser {
 				creator();
 				}
 				break;
-			case Plus:
-			case Minus:
-				{
-				_localctx = new PrefixOperationContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
-				setState(176);
-				((PrefixOperationContext)_localctx).operation = _input.LT(1);
-				_la = _input.LA(1);
-				if ( !(_la==Plus || _la==Minus) ) {
-					((PrefixOperationContext)_localctx).operation = (Token)_errHandler.recoverInline(this);
-				}
-				else {
-					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-					_errHandler.reportMatch(this);
-					consume();
-				}
-				setState(177);
-				expression(14);
-				}
-				break;
 			case PlusPlus:
 			case MinusMinus:
 				{
 				_localctx = new PrefixOperationContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(178);
+				setState(176);
 				((PrefixOperationContext)_localctx).operation = _input.LT(1);
 				_la = _input.LA(1);
 				if ( !(_la==PlusPlus || _la==MinusMinus) ) {
@@ -1557,8 +1536,29 @@ public class MxParser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
+				setState(177);
+				expression(13);
+				}
+				break;
+			case Plus:
+			case Minus:
+				{
+				_localctx = new PrefixOperationContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(178);
+				((PrefixOperationContext)_localctx).operation = _input.LT(1);
+				_la = _input.LA(1);
+				if ( !(_la==Plus || _la==Minus) ) {
+					((PrefixOperationContext)_localctx).operation = (Token)_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
 				setState(179);
-				expression(5);
+				expression(12);
 				}
 				break;
 			case Not:
@@ -1603,7 +1603,7 @@ public class MxParser extends Parser {
 						_localctx = new BinaryOperationContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(186);
-						if (!(precpred(_ctx, 13))) throw new FailedPredicateException(this, "precpred(_ctx, 13)");
+						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
 						setState(187);
 						((BinaryOperationContext)_localctx).operation = _input.LT(1);
 						_la = _input.LA(1);
@@ -1616,7 +1616,7 @@ public class MxParser extends Parser {
 							consume();
 						}
 						setState(188);
-						expression(14);
+						expression(12);
 						}
 						break;
 					case 2:
@@ -1624,7 +1624,7 @@ public class MxParser extends Parser {
 						_localctx = new BinaryOperationContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(189);
-						if (!(precpred(_ctx, 12))) throw new FailedPredicateException(this, "precpred(_ctx, 12)");
+						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
 						setState(190);
 						((BinaryOperationContext)_localctx).operation = _input.LT(1);
 						_la = _input.LA(1);
@@ -1637,7 +1637,7 @@ public class MxParser extends Parser {
 							consume();
 						}
 						setState(191);
-						expression(13);
+						expression(11);
 						}
 						break;
 					case 3:
@@ -1645,7 +1645,7 @@ public class MxParser extends Parser {
 						_localctx = new BinaryOperationContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(192);
-						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
+						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
 						setState(193);
 						((BinaryOperationContext)_localctx).operation = _input.LT(1);
 						_la = _input.LA(1);
@@ -1658,7 +1658,7 @@ public class MxParser extends Parser {
 							consume();
 						}
 						setState(194);
-						expression(12);
+						expression(10);
 						}
 						break;
 					case 4:
@@ -1666,7 +1666,7 @@ public class MxParser extends Parser {
 						_localctx = new BinaryOperationContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(195);
-						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
+						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
 						setState(196);
 						((BinaryOperationContext)_localctx).operation = _input.LT(1);
 						_la = _input.LA(1);
@@ -1679,7 +1679,7 @@ public class MxParser extends Parser {
 							consume();
 						}
 						setState(197);
-						expression(11);
+						expression(9);
 						}
 						break;
 					case 5:
@@ -1687,7 +1687,7 @@ public class MxParser extends Parser {
 						_localctx = new BinaryOperationContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(198);
-						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
+						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
 						setState(199);
 						((BinaryOperationContext)_localctx).operation = _input.LT(1);
 						_la = _input.LA(1);
@@ -1700,7 +1700,7 @@ public class MxParser extends Parser {
 							consume();
 						}
 						setState(200);
-						expression(10);
+						expression(8);
 						}
 						break;
 					case 6:
@@ -1708,7 +1708,7 @@ public class MxParser extends Parser {
 						_localctx = new BinaryOperationContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(201);
-						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
+						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
 						setState(202);
 						((BinaryOperationContext)_localctx).operation = _input.LT(1);
 						_la = _input.LA(1);
@@ -1721,7 +1721,7 @@ public class MxParser extends Parser {
 							consume();
 						}
 						setState(203);
-						expression(9);
+						expression(7);
 						}
 						break;
 					case 7:
@@ -1729,11 +1729,11 @@ public class MxParser extends Parser {
 						_localctx = new AndandOperationContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(204);
-						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
+						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
 						setState(205);
 						((AndandOperationContext)_localctx).operation = match(AndAnd);
 						setState(206);
-						expression(8);
+						expression(6);
 						}
 						break;
 					case 8:
@@ -1741,11 +1741,11 @@ public class MxParser extends Parser {
 						_localctx = new OrorOperationContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(207);
-						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
+						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
 						setState(208);
 						((OrorOperationContext)_localctx).operation = match(OrOr);
 						setState(209);
-						expression(7);
+						expression(5);
 						}
 						break;
 					case 9:
@@ -1813,7 +1813,7 @@ public class MxParser extends Parser {
 						_localctx = new SuffixOperationContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(227);
-						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
+						if (!(precpred(_ctx, 14))) throw new FailedPredicateException(this, "precpred(_ctx, 14)");
 						setState(228);
 						((SuffixOperationContext)_localctx).operation = _input.LT(1);
 						_la = _input.LA(1);
@@ -2311,21 +2311,21 @@ public class MxParser extends Parser {
 	private boolean expression_sempred(ExpressionContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
-			return precpred(_ctx, 13);
-		case 1:
-			return precpred(_ctx, 12);
-		case 2:
 			return precpred(_ctx, 11);
-		case 3:
+		case 1:
 			return precpred(_ctx, 10);
-		case 4:
+		case 2:
 			return precpred(_ctx, 9);
-		case 5:
+		case 3:
 			return precpred(_ctx, 8);
-		case 6:
+		case 4:
 			return precpred(_ctx, 7);
-		case 7:
+		case 5:
 			return precpred(_ctx, 6);
+		case 6:
+			return precpred(_ctx, 5);
+		case 7:
+			return precpred(_ctx, 4);
 		case 8:
 			return precpred(_ctx, 1);
 		case 9:
@@ -2335,7 +2335,7 @@ public class MxParser extends Parser {
 		case 11:
 			return precpred(_ctx, 15);
 		case 12:
-			return precpred(_ctx, 4);
+			return precpred(_ctx, 14);
 		}
 		return true;
 	}
@@ -2365,7 +2365,7 @@ public class MxParser extends Parser {
 		"\20\f\20\16\20\u0118\13\20\3\20\3\20\3\20\5\20\u011d\n\20\5\20\u011f\n"+
 		"\20\3\21\3\21\3\21\3\21\5\21\u0125\n\21\3\22\5\22\u0128\n\22\3\22\3\22"+
 		"\7\22\u012c\n\22\f\22\16\22\u012f\13\22\3\22\2\3\34\23\2\4\6\b\n\f\16"+
-		"\20\22\24\26\30\32\34\36 \"\2\n\3\2\r\20\3\2\22\23\3\2\35\36\3\2\24\26"+
+		"\20\22\24\26\30\32\34\36 \"\2\n\3\2\r\20\3\2\35\36\3\2\22\23\3\2\24\26"+
 		"\4\2#$&&\3\2\'(\4\2\27\30\33\34\3\2\31\32\2\u0160\2)\3\2\2\2\4.\3\2\2"+
 		"\2\6;\3\2\2\2\bL\3\2\2\2\na\3\2\2\2\fc\3\2\2\2\16g\3\2\2\2\20p\3\2\2\2"+
 		"\22w\3\2\2\2\24\u0087\3\2\2\2\26\u008b\3\2\2\2\30\u00a0\3\2\2\2\32\u00a9"+
@@ -2404,26 +2404,26 @@ public class MxParser extends Parser {
 		"\2\u00a9\u00aa\t\2\2\2\u00aa\33\3\2\2\2\u00ab\u00ac\b\17\1\2\u00ac\u00bb"+
 		"\5\f\7\2\u00ad\u00bb\7)\2\2\u00ae\u00bb\5 \21\2\u00af\u00bb\7\65\2\2\u00b0"+
 		"\u00b1\7\21\2\2\u00b1\u00bb\5\36\20\2\u00b2\u00b3\t\3\2\2\u00b3\u00bb"+
-		"\5\34\17\20\u00b4\u00b5\t\4\2\2\u00b5\u00bb\5\34\17\7\u00b6\u00b7\7\""+
+		"\5\34\17\17\u00b4\u00b5\t\4\2\2\u00b5\u00bb\5\34\17\16\u00b6\u00b7\7\""+
 		"\2\2\u00b7\u00bb\5\34\17\5\u00b8\u00b9\7%\2\2\u00b9\u00bb\5\34\17\4\u00ba"+
 		"\u00ab\3\2\2\2\u00ba\u00ad\3\2\2\2\u00ba\u00ae\3\2\2\2\u00ba\u00af\3\2"+
 		"\2\2\u00ba\u00b0\3\2\2\2\u00ba\u00b2\3\2\2\2\u00ba\u00b4\3\2\2\2\u00ba"+
-		"\u00b6\3\2\2\2\u00ba\u00b8\3\2\2\2\u00bb\u00e9\3\2\2\2\u00bc\u00bd\f\17"+
-		"\2\2\u00bd\u00be\t\5\2\2\u00be\u00e8\5\34\17\20\u00bf\u00c0\f\16\2\2\u00c0"+
-		"\u00c1\t\3\2\2\u00c1\u00e8\5\34\17\17\u00c2\u00c3\f\r\2\2\u00c3\u00c4"+
-		"\t\6\2\2\u00c4\u00e8\5\34\17\16\u00c5\u00c6\f\f\2\2\u00c6\u00c7\t\7\2"+
-		"\2\u00c7\u00e8\5\34\17\r\u00c8\u00c9\f\13\2\2\u00c9\u00ca\t\b\2\2\u00ca"+
-		"\u00e8\5\34\17\f\u00cb\u00cc\f\n\2\2\u00cc\u00cd\t\t\2\2\u00cd\u00e8\5"+
-		"\34\17\13\u00ce\u00cf\f\t\2\2\u00cf\u00d0\7 \2\2\u00d0\u00e8\5\34\17\n"+
-		"\u00d1\u00d2\f\b\2\2\u00d2\u00d3\7!\2\2\u00d3\u00e8\5\34\17\t\u00d4\u00d5"+
+		"\u00b6\3\2\2\2\u00ba\u00b8\3\2\2\2\u00bb\u00e9\3\2\2\2\u00bc\u00bd\f\r"+
+		"\2\2\u00bd\u00be\t\5\2\2\u00be\u00e8\5\34\17\16\u00bf\u00c0\f\f\2\2\u00c0"+
+		"\u00c1\t\4\2\2\u00c1\u00e8\5\34\17\r\u00c2\u00c3\f\13\2\2\u00c3\u00c4"+
+		"\t\6\2\2\u00c4\u00e8\5\34\17\f\u00c5\u00c6\f\n\2\2\u00c6\u00c7\t\7\2\2"+
+		"\u00c7\u00e8\5\34\17\13\u00c8\u00c9\f\t\2\2\u00c9\u00ca\t\b\2\2\u00ca"+
+		"\u00e8\5\34\17\n\u00cb\u00cc\f\b\2\2\u00cc\u00cd\t\t\2\2\u00cd\u00e8\5"+
+		"\34\17\t\u00ce\u00cf\f\7\2\2\u00cf\u00d0\7 \2\2\u00d0\u00e8\5\34\17\b"+
+		"\u00d1\u00d2\f\6\2\2\u00d2\u00d3\7!\2\2\u00d3\u00e8\5\34\17\7\u00d4\u00d5"+
 		"\f\3\2\2\u00d5\u00d6\7\n\2\2\u00d6\u00e8\5\34\17\3\u00d7\u00d8\f\23\2"+
 		"\2\u00d8\u00da\7\6\2\2\u00d9\u00db\5\"\22\2\u00da\u00d9\3\2\2\2\u00da"+
 		"\u00db\3\2\2\2\u00db\u00dc\3\2\2\2\u00dc\u00e8\7\b\2\2\u00dd\u00de\f\22"+
 		"\2\2\u00de\u00df\7\37\2\2\u00df\u00e8\7\65\2\2\u00e0\u00e1\f\21\2\2\u00e1"+
 		"\u00e2\7\13\2\2\u00e2\u00e3\5\34\17\2\u00e3\u00e4\7\f\2\2\u00e4\u00e8"+
-		"\3\2\2\2\u00e5\u00e6\f\6\2\2\u00e6\u00e8\t\4\2\2\u00e7\u00bc\3\2\2\2\u00e7"+
-		"\u00bf\3\2\2\2\u00e7\u00c2\3\2\2\2\u00e7\u00c5\3\2\2\2\u00e7\u00c8\3\2"+
-		"\2\2\u00e7\u00cb\3\2\2\2\u00e7\u00ce\3\2\2\2\u00e7\u00d1\3\2\2\2\u00e7"+
+		"\3\2\2\2\u00e5\u00e6\f\20\2\2\u00e6\u00e8\t\3\2\2\u00e7\u00bc\3\2\2\2"+
+		"\u00e7\u00bf\3\2\2\2\u00e7\u00c2\3\2\2\2\u00e7\u00c5\3\2\2\2\u00e7\u00c8"+
+		"\3\2\2\2\u00e7\u00cb\3\2\2\2\u00e7\u00ce\3\2\2\2\u00e7\u00d1\3\2\2\2\u00e7"+
 		"\u00d4\3\2\2\2\u00e7\u00d7\3\2\2\2\u00e7\u00dd\3\2\2\2\u00e7\u00e0\3\2"+
 		"\2\2\u00e7\u00e5\3\2\2\2\u00e8\u00eb\3\2\2\2\u00e9\u00e7\3\2\2\2\u00e9"+
 		"\u00ea\3\2\2\2\u00ea\35\3\2\2\2\u00eb\u00e9\3\2\2\2\u00ec\u00ef\7\65\2"+

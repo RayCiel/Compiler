@@ -29,7 +29,7 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
     private List<String> getCodeStr()
     {
         List<String> list = new LinkedList<>();
-        list.add("\n");
+        //list.add("\n");
         list.add("default rel");
         list.add("global main");
         list.add("SECTION .text");
@@ -192,7 +192,7 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
     public void visit(Return node)
     {
         List<String> list = new LinkedList<>();
-        list.add("\t\t" + "leave");
+        //list.add("\t\t" + "leave");
         list.add("\t\t" + "ret");
         map.put(node, list);
     }
@@ -208,10 +208,10 @@ public class FinalPrinter implements com.IR_Re.IRVisitor
     @Override
     public void visit(Special node)
     {
-        throw new RuntimeException("Special");
-        //List<String> list = new LinkedList<>();
-        //list.add("\t\t" + "special" + "\t" + node.getType());
-        //map.put(node, list);
+        //throw new RuntimeException("Special");
+        List<String> list = new LinkedList<>();
+        list.add("\t\t" + "special" + "\t" + node.getType());
+        map.put(node, list);
     }
 
     @Override

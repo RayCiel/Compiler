@@ -197,6 +197,7 @@ public class SymbolResolver extends Visit {
         {
             node.setAssignable(false);
         }
+        else node.setAssignable(true);
         //out.println(node.getLocation() + " " + entity);
         node.setEntity(entity);
         node.getType();

@@ -162,7 +162,9 @@ public class ASTBuilder extends MxBaseListener {
             //out.println(param.size());
             funcEntity = new FuncEntity(ctx.name.getText(), new Location(ctx.name),(Type) map.get(ctx.ret), (BlockNode) map.get(ctx.block()), param);
         }
-        map.put(ctx, new FuncDefNode(funcEntity));
+        FuncDefNode node = new FuncDefNode(funcEntity);
+        funcEntity.funcDefNode = node;
+        map.put(ctx, node);
 
     }
 
@@ -404,7 +406,7 @@ public class ASTBuilder extends MxBaseListener {
         {
 
             case "++": op = UnaryNode.Op.RightAddAdd; break;
-            case "--": op = UnaryNode.Op.LeftSubSub; break;
+            case "--": op = UnaryNode.Op.RightSubSub; break;
             default: throw new SemanticError(new Location(ctx), "exitSuffixOperation: Invalid SufOperation");
         }
         map.put(ctx, new SuffixUnaryNode(op, makeExpression(ctx.expression())));

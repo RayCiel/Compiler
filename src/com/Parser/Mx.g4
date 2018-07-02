@@ -113,7 +113,11 @@ expression:       primaryExpression                                             
                   | expression '[' expression ']'                                                      #ArrayIndex
                   //| 'new' (Id | primitiveType) ('[' expression ']'('[' expression']')*('[' ']')*)?
                   //| 'new' Id '(' (parameter (',' parameter)*)? ')'                                     #NewClass
+                  | expression operation = (PlusPlus | MinusMinus)                                     #SuffixOperation
+                  | operation = (PlusPlus | MinusMinus) expression                                     #PrefixOperation
+
                   | operation = (Plus | Minus) expression                                              #PrefixOperation
+
                   | expression operation = (Mul | Div | Mod) expression                                #BinaryOperation
                   | expression operation = (Plus | Minus) expression                                   #BinaryOperation
                   | expression operation = (And | Xor | Or) expression                                 #BinaryOperation
@@ -122,8 +126,7 @@ expression:       primaryExpression                                             
                   | expression operation = (Equal | NotEqual) expression                               #BinaryOperation
                   | expression operation = AndAnd expression                                           #AndandOperation
                   | expression operation = OrOr expression                                             #OrorOperation
-                  | operation = (PlusPlus | MinusMinus) expression                                     #PrefixOperation
-                  | expression operation = (PlusPlus | MinusMinus)                                     #SuffixOperation
+
                   | operation = Not expression                                                                     #PrefixOperation
                   | operation = Tilde expression                                                                   #PrefixOperation
                   | <assoc = right> expression '=' expression                                          #Assign

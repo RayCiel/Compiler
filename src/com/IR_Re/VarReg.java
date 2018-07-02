@@ -55,8 +55,8 @@ public class VarReg extends IntValue
                 if(index < 16 || (!Global.checkRegColored))
                     name = "r"+index;
                 else
-                    throw new RuntimeException("Register need alloc.(" + index + ")");
-
+                //    throw new RuntimeException("Register need alloc.(" + index + ")");
+                    name = "r" + index;
         }
         return name;
     }

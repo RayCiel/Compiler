@@ -147,12 +147,15 @@ public class IRResolver implements IRVisitor
     @Override
     public void visit(Align node)
     {
+        //newIRList.add(new Label("; ============Align============"));
         newIRList.add(node);
     }
 
     @Override
     public void visit(Binary node)
     {
+        //newIRList.add(new Label("; ============BinaryBegin============"));
+
         node.setRight(colorSIR(node.getRight(), reg[0], reg[1]));
         IntValue originVar = node.getLeft();
         if(originVar instanceof VarReg)
@@ -179,17 +182,23 @@ public class IRResolver implements IRVisitor
             node.setLeft(colorDIR(node.getLeft(), reg[1], reg[2]));
             newIRList.add(node);
         }
+        //newIRList.add(new Label("; ============BinaryDone============"));
+
     }
 
     @Override
     public void visit(Call node)
     {
+        //newIRList.add(new Label("; ============Call============"));
+
         newIRList.add(node);
     }
 
     @Override
     public void visit(CJump node)
     {
+        //newIRList.add(new Label("; ============CJump============"));
+
         node.setLeft(colorS0IR(node.getLeft(), reg[0], reg[1]));
         node.setRight(colorSIR(node.getRight(), reg[1], reg[2]));//???
         newIRList.add(node);
@@ -198,6 +207,8 @@ public class IRResolver implements IRVisitor
     @Override
     public void visit(Compare node)
     {
+        //newIRList.add(new Label("; ============Compare============"));
+
         node.setSrc0(colorS0IR(node.getSrc0(), reg[0], reg[1]));
         node.setSrc1(colorSIR(node.getSrc1(), reg[1], reg[2]));//???
         newIRList.add(node);
@@ -206,24 +217,32 @@ public class IRResolver implements IRVisitor
     @Override
     public void visit(Label node)
     {
+      //  newIRList.add(new Label("; ============Label============"));
+
         newIRList.add(node);
     }
 
     @Override
     public void visit(Return node)
     {
+        //newIRList.add(new Label("; ============Return============"));
+
         newIRList.add(node);
     }
 
     @Override
     public void visit(Jump node)
     {
+       // newIRList.add(new Label("; ============Jump============"));
+
         newIRList.add(node);
     }
 
     @Override
     public void visit(Special node)
     {
+        //newIRList.add(new Label("; ============SpecialBegin============"));
+
         int []callerNum = {7, 6, 2, 1, 8, 9};
         String[] caller = {"rdi", "rsi", "rdx", "rcx", "r8", "r9"};
         int []calleeNum = {5, 3, 12, 13, 14, 15};
@@ -232,12 +251,12 @@ public class IRResolver implements IRVisitor
         switch (node.getType())
         {
             case CALLER_SAVE:
-            //    for(int i = 0; i < 6; i++)
-            //        newIRList.add(new Push(new VarReg(callerNum[i], caller[i])));
+                //for(int i = 0; i < 6; i++)
+                //    newIRList.add(new Push(new VarReg(callerNum[i], caller[i])));
                 break;
             case CALLER_RECOVER:
-            //    for(int i = 5; i >= 0; i--)
-            //        newIRList.add(new Pop(new VarReg(callerNum[i], caller[i])));
+                //for(int i = 5; i >= 0; i--)
+                //    newIRList.add(new Pop(new VarReg(callerNum[i], caller[i])));
                 break;
 
             case CALLEE_SAVE:
@@ -251,11 +270,11 @@ public class IRResolver implements IRVisitor
                     offset = 8*(regNumber - 16 + 2);
                 //out.println(offset);
                 offset += 8;
-                /*for(int i = 1;i < 6; i++)
+                for(int i = 1;i < 6; i++)
                 {
                     offset += 8;
                     newIRList.add(new Push(new VarReg(calleeNum[i], callee[i])));
-                }*/
+                }
                 //out.println(offset);
                 newIRList.add(new Binary(Binary.Op.Sub, new VarReg(4, "rsp"), new VarInt(offset)));
                 break;
@@ -266,25 +285,29 @@ public class IRResolver implements IRVisitor
                 else
                     offset = 8*(regNumber - 16 + 2);
                 offset += 8;
-                /*for(int i = 5; i >= 1; i--)
+                for(int i = 5; i >= 1; i--)
                 {
                     offset += 8;
-                }*/
+                }
                 //out.println(offset);
 
-                //newIRList.add(new Binary(Binary.Op.Add, new VarReg(4, "rsp"), new VarInt(offset)));
-                /*for(int i = 5; i >= 1; i--)
+                newIRList.add(new Binary(Binary.Op.Add, new VarReg(4, "rsp"), new VarInt(offset)));
+                for(int i = 5; i >= 1; i--)
                 {
                     newIRList.add(new Pop(new VarReg(calleeNum[i], callee[i])));
-                }*/
+                }
                 break;
             default:
         }
+        //newIRList.add(new Label("; ============SpecialDone============"));
+
     }
 
     @Override
     public void visit(Load node)
     {
+        //newIRList.add(new Label("; ============Load============"));
+
         node.setSrc(colorSIR(node.getSrc(), reg[0], reg[1]));
         newIRList.add(node);
         node.setDest(colorDIR(node.getDest(), reg[0], reg[1]));
@@ -293,6 +316,8 @@ public class IRResolver implements IRVisitor
     @Override
     public void visit(Store node)
     {
+        //newIRList.add(new Label("; ============Store============"));
+
         node.setSrc(colorSIR(node.getSrc(), reg[2], reg[0]));
         node.setDest(colorDIR(node.getDest(), reg[0], reg[1]));
         newIRList.add(node);
@@ -301,6 +326,8 @@ public class IRResolver implements IRVisitor
     @Override
     public void visit(Move node)
     {
+        //newIRList.add(new Label("; ============Move============"));
+
         if(node.isZX)
         {
             if(node.getLeft() instanceof VarMem)
@@ -347,6 +374,8 @@ public class IRResolver implements IRVisitor
     @Override
     public void visit(Pop node)
     {
+        //newIRList.add(new Label("; ============Pop============"));
+
         node.setDest(node.getDest());
         newIRList.add(node);
     }
@@ -354,6 +383,8 @@ public class IRResolver implements IRVisitor
     @Override
     public void visit(Push node)
     {
+        //newIRList.add(new Label("; ============Push============"));
+
         node.setDest(colorS0IR(node.getDest(),reg[0], reg[1]));
         newIRList.add(node);
     }
@@ -361,6 +392,8 @@ public class IRResolver implements IRVisitor
     @Override
     public void visit(Unary node)
     {
+        //newIRList.add(new Label("; ============UnaryBegin============"));
+
         if(node.isHas2Dest())
         {
             node.setSrc(colorS0IR(node.getSrc(), reg[0], reg[1]));
@@ -399,5 +432,7 @@ public class IRResolver implements IRVisitor
 
 
         }
+        //newIRList.add(new Label("; ============UnaryDone============"));
+
     }
 }

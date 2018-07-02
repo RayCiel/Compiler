@@ -300,6 +300,8 @@ public class TypeCheck extends Visit{
         {
             visit((UnaryNode) node);
         }
+        //out.println(node.getLocation() + " " + node.getOperator());
+        //out.println(node.getExpression() + " " + node.getOperator());
         if (!node.getExpression().isAssignable())
         {
             throw new SemanticError(node.getLocation(), "lvalue is needed");
@@ -385,6 +387,8 @@ public class TypeCheck extends Visit{
         int n = node.getArgs().size();
         List<ExpressionNode> params = node.getArgs();
         List<ParamEntity> paramEntities = ((FuncEntity)entity).getParam();
+        //out.println("__"+n);
+        //out.println(paramEntities.size());
         if (n != paramEntities.size())
             throw new SemanticError(node.getLocation(), "  n: " + n + " params found, but "+ paramEntities.size()+" excepted.");
         for (int i = 0; i < n; ++i)

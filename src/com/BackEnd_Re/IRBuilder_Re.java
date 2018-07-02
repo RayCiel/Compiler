@@ -300,7 +300,9 @@ public class IRBuilder_Re extends Visit
     {
         super.visit(node);
         List<IRInst> list = new LinkedList<>();
+        list.add(new Label(";==========Return=========="));
         IntValue r0 = (IntValue) map.get(node.getExpression());
+        //out.println(r0.getIrList());
         if(node.getExpression() != null)
         {
             list.addAll(r0.getIrList());
@@ -453,7 +455,7 @@ public class IRBuilder_Re extends Visit
             list.add(new Label(node.labelName()));
             list.add(new Push(new VarReg(5, "rbp")));
             list.add(new Move(new VarReg(5, "rbp"), new VarReg(4, "rsp")));
-            //list.add(new Binary(Binary.Op.Add, new VarReg(5, "rbp"), new VarInt(8)));
+            list.add(new Binary(Binary.Op.Add, new VarReg(5, "rbp"), new VarInt(8)));
 		    int offset;
             if((regNumber&1) == 0)
                 offset = 8*(regNumber - 16 + 1);
@@ -469,7 +471,7 @@ public class IRBuilder_Re extends Visit
             node.comp = list.size();
             list.add(new Label(node.getEntity().getExitLabel().getLabel()));
             list.add(new Special(Special.Type.CALLEE_RECOVER, offset ));
-            //list.add(new Pop(new VarReg(5, "rbp")));
+            list.add(new Pop(new VarReg(5, "rbp")));
             //list.add(new Special());
             list.add(new Return());
             Global.maxRegNumber = Math.max(Global.maxRegNumber, regNumber);
@@ -515,13 +517,16 @@ public class IRBuilder_Re extends Visit
         super.visit(node);
         int block = blockNumber++;
         List<IRInst> list = new LinkedList<>();
+        //list.add(new Label(";========AssignB==========="));
         IntValue left, right;
         VarReg r0;
         left = (IntValue) map.get(node.getLeft());
         right = (IntValue) map.get(node.getRight());
         list.addAll(left.getIrList());
         list.addAll(right.getIrList());
+        //out.println(right.getIrList().size());
         list.add(new Move(left, right));
+        //list.add(new Label(";========AssignE==========="));
         map.put(node, right.clone(list));
         return null;
     }
@@ -820,7 +825,7 @@ public class IRBuilder_Re extends Visit
         List<IRInst> list = new LinkedList<>();
         List<IntValue> priList = new LinkedList<>();
         IntValue preVar = (IntValue) map.get(node.getExpression());
-        VarReg r0;
+        VarReg r0 = getNewReg(null);
         String funName;
 		if(node.getExpression() instanceof MemLHSNode)
             priList.add(preVar);
@@ -833,7 +838,30 @@ public class IRBuilder_Re extends Visit
             priList.add((IntValue) map.get(node.getArgs().get(i)));
         }
         funName = ((VarLHSNode) node.getExpression()).getName();
+        //Call call = new Call("_" + funName,  0,  ((FuncEntity)((VarLHSNode) node.getExpression()).getEntity()).funcDefNode, priList, funName, r0);
+        //out.println(funName);
+        if (funName.equals("length"))
+            funName = "_.string_length";
+        else if (funName.equals("ord"))
+            funName = "_.string_ord";
+        else if (funName.equals("parseInt"))
+            funName = "_.string_parseInt";
+        else if (funName.equals("substring"))
+            funName = "_.string_substring";
+        else if (funName.equals("size"))
+            funName = "_.array_size";
         list.addAll(makeCall("_"+funName, priList));
+        /*for(IntValue intValue: priList)
+        {
+            list.addAll(intValue.getIrList());
+        }
+        for(int i=0; i < priList.size(); i++)
+        {
+            priList.set(i, priList.get(i).clone(new LinkedList<>()));
+        }
+
+        list.add(call);
+        map.put(node, r0.clone(list));*/
         r0 = getNewReg(null);
         list.add(new Move(r0, new VarReg(0, "rax")));
         map.put(node, new VarReg(list, r0.getIndex(), null));
@@ -876,6 +904,7 @@ public class IRBuilder_Re extends Visit
     {
         super.visit(node);
         List<IRInst> list = new LinkedList<>();
+        list.add(new Label(";===============ArefLHSNodeBegin================"));
         IntValue expr = (IntValue) map.get(node.getExpression());
         IntValue index = (IntValue) map.get(node.getIndex());
         IntValue r0, r1;
@@ -888,11 +917,13 @@ public class IRBuilder_Re extends Visit
         {
             r2 = getNewReg(null);
             list.add(new Load(r2, r0, r1));
+            list.add(new Label(";===============ArefLHSNodeEnd1================"));
             map.put(node, new VarReg(list, r2.getIndex(), null));
         }
         else
         {
             //out.println("in");
+            list.add(new Label(";===============ArefLHSNodeEnd2================"));
             map.put(node, new VarMem(list, r0, r1));
         }
         return null;
@@ -968,6 +999,7 @@ public class IRBuilder_Re extends Visit
         super.visit(node);
         List<IntValue> priList = new LinkedList<>();
         List<IRInst> list = new LinkedList<>();
+        list.add(new Label(";==========CreatorNodeBegin============"));
         VarReg r0, r1;
         if(node.getType() instanceof ArrayType)
         {
@@ -976,15 +1008,19 @@ public class IRBuilder_Re extends Visit
             priList.add(new VarInt(node.getArgs().size()));
             list.addAll(makeCall("__.array_.array",priList));
             list.add(new Move(r0, new VarReg(0, "rax")));
+            //out.println(node.getArgs().get(0));
+            //list.add(new Label(";=========begin==========="));
             for (int i = 0; i < node.getArgs().size(); i++)
             {
                 IntValue arg = (IntValue) map.get(node.getArgs().get(i));
                 list.addAll(arg.getIrList());
                 list.add(new Store(r0, new VarInt(i), arg));
             }
+            //list.add(new Label(";=========end==========="));
             priList = new LinkedList<>();
             priList.add(new VarReg(r0.getIndex(), null));
             priList.add(new VarInt(node.getArgs().size()));
+            //out.println(node.getDimension());
             if(node.getArgs().size() < node.getDimension())
             {
                 priList.add(new VarInt(8));
@@ -993,14 +1029,12 @@ public class IRBuilder_Re extends Visit
             else
             {
                 priList.add(new VarInt(rootType.getRegisterSize()));
-                if(rootType instanceof ClassType)
-                    priList.add(new VarInt(0));
-                else
-                    priList.add(new VarInt(0));
+                priList.add(new VarInt(0));
             }
             list.addAll(makeCall("__.array_new", priList));
             r1 = getNewReg(null);
             list.add(new Move(r1, new VarReg(0, "rax")));
+            list.add(new Label(";==========CreatorNodeEnd============"));
             map.put(node, r1.clone(list));
         }
         else
@@ -1013,7 +1047,10 @@ public class IRBuilder_Re extends Visit
             {
                 priList.set(0, new VarReg(r0.getIndex(), null));
                 list.addAll(makeCall("__"+node.getType()+"_"+node.getType(), priList));
+                list.add(new Label(";==========CreatorNodeEnd============"));
             }
+            else
+                list.add(new Label(";==========CreatorNodeEnd============"));
 
             map.put(node, r0.clone(list));
         }
@@ -1092,6 +1129,7 @@ public class IRBuilder_Re extends Visit
         r1 = getNewReg(null);
         list.addAll(r0.getIrList());
         list.add(new Move(r1, r0));
+        //out.println(node.getOperator());
         switch (node.getOperator())
         {
             case RightAddAdd:
