@@ -864,6 +864,7 @@ public class IRBuilder_Re extends Visit
         map.put(node, r0.clone(list));*/
         r0 = getNewReg(null);
         list.add(new Move(r0, new VarReg(0, "rax")));
+        //list.add(new Move(new VarReg(0, "rax"), new VarInt(0)));
         map.put(node, new VarReg(list, r0.getIndex(), null));
 
         return null;
@@ -1028,7 +1029,7 @@ public class IRBuilder_Re extends Visit
             }
             else
             {
-                priList.add(new VarInt(rootType.getRegisterSize()));
+                priList.add(new VarInt(rootType.getRegisterSize()*4));
                 priList.add(new VarInt(0));
             }
             list.addAll(makeCall("__.array_new", priList));
@@ -1040,7 +1041,7 @@ public class IRBuilder_Re extends Visit
         else
         {
             r0 = getNewReg(null);
-            priList.add(new VarInt(node.getType().getRegisterSize()));
+            priList.add(new VarInt(node.getType().getRegisterSize()*4));
             list.addAll(makeCall("malloc", priList));
             list.add(new Move(r0, new VarReg(0, "rax")));
             if(node.getType() instanceof ClassType && ((ClassType) node.getType()).getClassEntity().getConstructNode()!=null)

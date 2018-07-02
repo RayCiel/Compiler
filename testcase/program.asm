@@ -11,8 +11,7 @@ _main:
 		push	r13
 		push	r14
 		push	r15
-		sub	rsp,	168
-		mov	qword [_hashsize + 0],	100
+		sub	rsp,	152
 ;==========CreatorNodeBegin============:
 		mov	rdi,	1
 		call	__.array_.array
@@ -22,7 +21,7 @@ _main:
 		mov	r10,	qword [rbp + -64]
 		mov	rdi,	r10
 		mov	rsi,	1
-		mov	rdx,	8
+		mov	rdx,	32
 		mov	rcx,	0
 		call	__.array_new
 		mov	qword [rbp + -72],	rax
@@ -32,8 +31,7 @@ _main:
 		mov	qword [rbp + -56],	0
 _L1_0:
 		mov	r10,	qword [rbp + -56]
-		mov	r11,	qword [_hashsize + 0]
-		cmp	r10,	r11
+		cmp	r10,	100
 		setl	al
 		movzx	rsi,	al
 		mov	qword [rbp + -80],	rsi
@@ -52,75 +50,77 @@ _L1_0:
 		mov	qword [rbp + -56],	r11
 		jmp	_L1_0
 _L1_1:
-		mov	qword [rbp + -56],	0
-_L5_2:
-		mov	r10,	qword [rbp + -56]
-		cmp	r10,	1000
-		setl	al
-		movzx	rsi,	al
-		mov	qword [rbp + -96],	rsi
-		mov	r10,	qword [rbp + -96]
-		cmp	r10,	0
-		je	_L5_3
-		mov	r10,	qword [rbp + -56]
-		mov	rax,	r10
-		mov	r10,	237
-		imul	r10
+		mov	rdi,	0
+		mov	rsi,	0
+		call	_put
+		mov	qword [rbp + -104],	rax
+		mov	rdi,	1
+		mov	rsi,	1
+		call	_put
 		mov	qword [rbp + -120],	rax
-		mov	r10,	qword [rbp + -120]
-		mov	rax,	r10
-		mov	r10,	qword [_hashsize + 0]
-		cqo
-		idiv	r10
-		mov	qword [rbp + -128],	rdx
-		mov	r10,	qword [rbp + -128]
-		mov	qword [rbp + -112],	r10
-;===============ArefLHSNodeBegin================:
-		mov	r10,	qword [_table + 0]
-		mov	r11,	qword [rbp + -112]
-		mov	r10,	qword [r10 + r11*8]
-		mov	qword [rbp + -136],	r10
-;===============ArefLHSNodeEnd1================:
-		mov	r10,	qword [rbp + -136]
-		cmp	r10,	0
-		sete	al
-		movzx	rsi,	al
-		mov	qword [rbp + -144],	rsi
-		mov	r10,	qword [rbp + -144]
-		cmp	r10,	0
-		je	_L14_4
-;===============ArefLHSNodeBegin================:
-;===============ArefLHSNodeEnd2================:
-;==========CreatorNodeBegin============:
-		mov	rdi,	8
-		call	malloc
-		mov	qword [rbp + -152],	rax
-;==========CreatorNodeEnd============:
-		mov	rsi,	qword [rbp + -152]
-		mov	r10,	qword [_table + 0]
-		mov	r11,	qword [rbp + -112]
-		mov	qword [r10 + r11*8],	rsi
-;===============ArefLHSNodeBegin================:
-		mov	r10,	qword [_table + 0]
-		mov	r11,	qword [rbp + -112]
-		mov	r10,	qword [r10 + r11*8]
-		mov	qword [rbp + -160],	r10
-;===============ArefLHSNodeEnd1================:
-		mov	r10,	qword [rbp + -160]
-		mov	qword [r10 + 8],	0
-_L14_4:
-		mov	r10,	qword [rbp + -56]
-		mov	qword [rbp + -104],	r10
-		mov	r11,	qword [rbp + -56]
-		add	r11,	1
-		mov	qword [rbp + -56],	r11
-		jmp	_L5_2
-_L5_3:
+		mov	rdi,	STR_0
+		call	_print
+		mov	qword [rbp + -136],	rax
 ;==========Return==========:
 		mov	rax,	0
 		jmp	___exit_main
 ___exit_main:
-		add	rsp,	168
+		add	rsp,	152
+		pop	r15
+		pop	r14
+		pop	r13
+		pop	r12
+		pop	rbx
+		pop	rbp
+		ret
+_put:
+		push	rbp
+		mov	rbp,	rsp
+		add	rbp,	8
+		push	rbx
+		push	r12
+		push	r13
+		push	r14
+		push	r15
+		sub	rsp,	120
+		mov	qword [rbp + -56],	rdi
+		mov	qword [rbp + -64],	rsi
+		mov	r10,	qword [rbp + -56]
+		mov	rax,	r10
+		mov	r10,	237
+		imul	r10
+		mov	qword [rbp + -80],	rax
+		mov	r10,	qword [rbp + -80]
+		mov	rax,	r10
+		mov	r10,	100
+		cqo
+		idiv	r10
+		mov	qword [rbp + -88],	rdx
+		mov	r10,	qword [rbp + -88]
+		mov	qword [rbp + -72],	r10
+;===============ArefLHSNodeBegin================:
+;===============ArefLHSNodeEnd2================:
+;==========CreatorNodeBegin============:
+		mov	rdi,	32
+		call	malloc
+		mov	qword [rbp + -96],	rax
+;==========CreatorNodeEnd============:
+		mov	rsi,	qword [rbp + -96]
+		mov	r10,	qword [_table + 0]
+		mov	r11,	qword [rbp + -72]
+		mov	qword [r10 + r11*8],	rsi
+;===============ArefLHSNodeBegin================:
+		mov	r10,	qword [_table + 0]
+		mov	r11,	qword [rbp + -72]
+		mov	r10,	qword [r10 + r11*8]
+		mov	qword [rbp + -104],	r10
+;===============ArefLHSNodeEnd1================:
+		mov	r10,	qword [rbp + -104]
+		mov	qword [r10 + 24],	0
+;==========Return==========:
+		jmp	___exit_put
+___exit_put:
+		add	rsp,	120
 		pop	r15
 		pop	r14
 		pop	r13
@@ -129,9 +129,11 @@ ___exit_main:
 		pop	rbp
 		ret
 SECTION .bss
-_hashsize:	resb	8
 _table:	resb	8
 SECTION .rodata
+	dd 5
+STR_0:
+	db "done2", 0
 ; ============Library============
 default rel
 

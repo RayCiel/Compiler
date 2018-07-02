@@ -1,4 +1,32 @@
-int hashsize = 100;
+class node {
+	int key;
+    int data;
+	node next;
+}
+node[] table;
+
+void put(int key, int data) {
+	int p;
+	p =(key * 237) % 100;
+    	table[p] = new node;
+        //print("done22");
+		table[p].next = null;
+        //print("done23");
+		return;
+
+}
+int main() {
+	int i;
+	table = new node[100];
+	for (i = 0;i < 100;i++)
+		table[i] = null;
+    put(0,0);
+    put(1,1);
+    print("done2");
+	return 0;
+}
+
+/*int hashsize = 100;
 class node {
 node next;
 }
@@ -9,7 +37,7 @@ int main() {
 	table = new node[100];
 	for (i = 0;i < hashsize;i++)
 		table[i] = null;
-	for (i = 0;i < 1000;i++)
+	for (i = 0;i < 2;i++)
 	{
         int p;
         p = (i * 237) % hashsize;
@@ -20,7 +48,7 @@ int main() {
         }
     }
     return 0;
-}
+}*/
 
 
 

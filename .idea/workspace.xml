@@ -13,10 +13,14 @@
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/Compiler.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/Compiler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRBuilder_Re$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRBuilder_Re$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRBuilder_Re.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRBuilder_Re.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRBuilder_Re$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRBuilder_Re$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRBuilder_Re.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRBuilder_Re.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/a.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testcase/program.asm" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/program.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/program.o" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testcase/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -48,11 +52,38 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="IRBuilder_Re.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="IRBuilder_Re.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="9228">
-                  <caret line="1131" column="10" selection-start-line="1131" selection-start-column="10" selection-end-line="1131" selection-end-column="10" />
+                <state relative-caret-position="314">
+                  <caret line="1043" column="69" selection-start-line="1043" selection-start-column="69" selection-end-line="1043" selection-end-column="69" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Type.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/Type/Type.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="459">
+                  <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ArrayType.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/Type/ArrayType.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="839">
+                  <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CompilerOptions.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/CompilerOptions.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="152">
+                  <caret line="8" column="43" lean-forward="true" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
                 </state>
               </provider>
             </entry>
@@ -78,11 +109,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Compiler.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Compiler.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="165" column="10" selection-start-line="165" selection-start-column="10" selection-end-line="165" selection-end-column="10" />
+                <state relative-caret-position="210">
+                  <caret line="150" column="55" selection-start-line="150" selection-start-column="55" selection-end-line="150" selection-end-column="55" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -95,36 +126,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="180">
                   <caret line="28" selection-start-line="28" selection-end-line="28" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Mx.g4" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/Parser/Mx.g4">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="261">
-                  <caret line="62" column="11" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ProxyErrorListener.class" pinned="false" current-in-tab="false">
-            <entry file="jar:///usr/local/lib/antlr-4.7.1-complete.jar!/org/antlr/v4/runtime/ProxyErrorListener.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="275">
-                  <caret line="29" selection-start-line="29" selection-end-line="29" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SymbolResolver.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="514">
-                  <caret line="192" column="53" selection-start-line="192" selection-start-column="53" selection-end-line="192" selection-end-column="53" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -170,7 +171,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>firstBlockInFunction</find>
       <find>firstBuild</find>
       <find>IN</find>
       <find>call</find>
@@ -200,6 +200,7 @@
       <find>Funcall</find>
       <find>makeCall</find>
       <find>Suf</find>
+      <find>rax</find>
     </findStrings>
     <replaceStrings>
       <replace>Operation</replace>
@@ -277,13 +278,13 @@
         <option value="$PROJECT_DIR$/src/com/IR_Re/Load.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/ASTree.java" />
-        <option value="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/ASTBuilder.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/SymbolResolver.java" />
         <option value="$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java" />
         <option value="$PROJECT_DIR$/src/com/Parser/Mx.g4" />
         <option value="$PROJECT_DIR$/src/com/IR_Re/VarReg.java" />
         <option value="$PROJECT_DIR$/src/com/Compiler.java" />
+        <option value="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" />
       </list>
     </option>
   </component>
@@ -372,6 +373,13 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="ThrowError" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Compiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="Type" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -459,7 +467,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1053" extended-state="7" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -471,12 +479,12 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.3234375" side_tool="true" weight="0.20064378" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.32894737" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6765625" visible="true" weight="0.25219297" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6765625" visible="true" weight="0.25219297" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32894737" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15438034" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15438034" />
       <window_info anchor="bottom" id="ANTLR Preview" order="12" sideWeight="0.8432292" weight="0.29495615" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -505,26 +513,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRResolver.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRBuilder_Re.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="155" column="50" selection-start-line="155" selection-start-column="8" selection-end-line="155" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/String.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="1072" selection-start-line="1072" selection-end-line="1072" />
-          <folding>
-            <element signature="e#33771#33772#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/StringBuilder.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
@@ -895,13 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9228">
-          <caret line="1131" column="10" selection-start-line="1131" selection-start-column="10" selection-end-line="1131" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/FinalPrinter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
@@ -928,11 +909,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="165" column="10" selection-start-line="165" selection-start-column="10" selection-end-line="165" selection-end-column="10" />
+        <state relative-caret-position="210">
+          <caret line="150" column="55" selection-start-line="150" selection-start-column="55" selection-end-line="150" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Type/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/CompilerOptions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="43" lean-forward="true" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Type/ArrayType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="839">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="1043" column="69" selection-start-line="1043" selection-start-column="69" selection-end-line="1043" selection-end-column="69" />
         </state>
       </provider>
     </entry>
