@@ -11,26 +11,351 @@ _main:
 		push	r13
 		push	r14
 		push	r15
-		sub	rsp,	88
+		sub	rsp,	504
 ;==========CreatorNodeBegin============:
 		mov	rdi,	32
 		call	malloc
 		mov	qword [rbp + -56],	rax
 		mov	r10,	qword [rbp + -56]
 		mov	rdi,	r10
-		call	__com.Type.ClassType@27f723_com.Type.ClassType@27f723
+		call	__point_point
 ;==========CreatorNodeEnd============:
 		mov	r10,	qword [rbp + -56]
 		mov	qword [rbp + -64],	r10
+;==========CreatorNodeBegin============:
+		mov	rdi,	32
+		call	malloc
+		mov	qword [rbp + -72],	rax
+		mov	r10,	qword [rbp + -72]
+		mov	rdi,	r10
+		call	__point_point
+;==========CreatorNodeEnd============:
+		mov	r10,	qword [rbp + -72]
+		mov	qword [rbp + -80],	r10
+;==========CreatorNodeBegin============:
+		mov	rdi,	32
+		call	malloc
+		mov	qword [rbp + -88],	rax
+		mov	r10,	qword [rbp + -88]
+		mov	rdi,	r10
+		call	__point_point
+;==========CreatorNodeEnd============:
+		mov	r10,	qword [rbp + -88]
+		mov	qword [rbp + -96],	r10
+;==========CreatorNodeBegin============:
+		mov	rdi,	32
+		call	malloc
+		mov	qword [rbp + -104],	rax
+		mov	r10,	qword [rbp + -104]
+		mov	rdi,	r10
+		call	__point_point
+;==========CreatorNodeEnd============:
+		mov	r10,	qword [rbp + -104]
+		mov	qword [rbp + -112],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	rdi,	r10
+		call	_printPoint
+		mov	qword [rbp + -120],	rax
+		mov	qword [rbp + -128],	463
+		mov	r10,	qword [rbp + -128]
+		neg	r10
+		mov	qword [rbp + -128],	r10
 		mov	r10,	qword [rbp + -64]
 		mov	rdi,	r10
 		mov	rsi,	849
+		mov	r10,	qword [rbp + -128]
+		mov	rdx,	r10
+		mov	rcx,	480
 		call	_set
-		mov	qword [rbp + -80],	rax
+		mov	qword [rbp + -136],	rax
+		mov	qword [rbp + -144],	208
+		mov	r10,	qword [rbp + -144]
+		neg	r10
+		mov	qword [rbp + -144],	r10
+		mov	qword [rbp + -152],	150
+		mov	r10,	qword [rbp + -152]
+		neg	r10
+		mov	qword [rbp + -152],	r10
+		mov	r10,	qword [rbp + -80]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -144]
+		mov	rsi,	r10
+		mov	rdx,	585
+		mov	r10,	qword [rbp + -152]
+		mov	rcx,	r10
+		call	_set
+		mov	qword [rbp + -160],	rax
+		mov	qword [rbp + -168],	670
+		mov	r10,	qword [rbp + -168]
+		neg	r10
+		mov	qword [rbp + -168],	r10
+		mov	qword [rbp + -176],	742
+		mov	r10,	qword [rbp + -176]
+		neg	r10
+		mov	qword [rbp + -176],	r10
+		mov	r10,	qword [rbp + -96]
+		mov	rdi,	r10
+		mov	rsi,	360
+		mov	r10,	qword [rbp + -168]
+		mov	rdx,	r10
+		mov	r10,	qword [rbp + -176]
+		mov	rcx,	r10
+		call	_set
+		mov	qword [rbp + -184],	rax
+		mov	qword [rbp + -192],	29
+		mov	r10,	qword [rbp + -192]
+		neg	r10
+		mov	qword [rbp + -192],	r10
+		mov	qword [rbp + -200],	591
+		mov	r10,	qword [rbp + -200]
+		neg	r10
+		mov	qword [rbp + -200],	r10
+		mov	qword [rbp + -208],	960
+		mov	r10,	qword [rbp + -208]
+		neg	r10
+		mov	qword [rbp + -208],	r10
+		mov	r10,	qword [rbp + -112]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -192]
+		mov	rsi,	r10
+		mov	r10,	qword [rbp + -200]
+		mov	rdx,	r10
+		mov	r10,	qword [rbp + -208]
+		mov	rcx,	r10
+		call	_set
+		mov	qword [rbp + -216],	rax
+		mov	r10,	qword [rbp + -64]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -80]
+		mov	rsi,	r10
+		call	_add
+		mov	qword [rbp + -224],	rax
+		mov	r10,	qword [rbp + -80]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -96]
+		mov	rsi,	r10
+		call	_add
+		mov	qword [rbp + -232],	rax
+		mov	r10,	qword [rbp + -112]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -96]
+		mov	rsi,	r10
+		call	_add
+		mov	qword [rbp + -240],	rax
+		mov	r10,	qword [rbp + -96]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -64]
+		mov	rsi,	r10
+		call	_sub
+		mov	qword [rbp + -248],	rax
+		mov	r10,	qword [rbp + -80]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -112]
+		mov	rsi,	r10
+		call	_sub
+		mov	qword [rbp + -256],	rax
+		mov	r10,	qword [rbp + -112]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -96]
+		mov	rsi,	r10
+		call	_sub
+		mov	qword [rbp + -264],	rax
+		mov	r10,	qword [rbp + -96]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -80]
+		mov	rsi,	r10
+		call	_add
+		mov	qword [rbp + -272],	rax
+		mov	r10,	qword [rbp + -64]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -80]
+		mov	rsi,	r10
+		call	_add
+		mov	qword [rbp + -280],	rax
+		mov	r10,	qword [rbp + -80]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -80]
+		mov	rsi,	r10
+		call	_add
+		mov	qword [rbp + -288],	rax
+		mov	r10,	qword [rbp + -96]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -96]
+		mov	rsi,	r10
+		call	_add
+		mov	qword [rbp + -296],	rax
+		mov	r10,	qword [rbp + -64]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -112]
+		mov	rsi,	r10
+		call	_sub
+		mov	qword [rbp + -304],	rax
+		mov	r10,	qword [rbp + -64]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -80]
+		mov	rsi,	r10
+		call	_add
+		mov	qword [rbp + -312],	rax
+		mov	r10,	qword [rbp + -80]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -96]
+		mov	rsi,	r10
+		call	_sub
+		mov	qword [rbp + -320],	rax
+		mov	r10,	qword [rbp + -64]
+		mov	rdi,	r10
+		call	_sqrLen
+		mov	qword [rbp + -328],	rax
+		mov	r10,	qword [rbp + -328]
+		mov	rdi,	r10
+		call	_toString
+		mov	qword [rbp + -336],	rax
+		mov	r10,	qword [rbp + -336]
+		mov	rdi,	r10
+		call	_println
+		mov	qword [rbp + -344],	rax
+		mov	r10,	qword [rbp + -80]
+		mov	rdi,	r10
+		call	_sqrLen
+		mov	qword [rbp + -352],	rax
+		mov	r10,	qword [rbp + -352]
+		mov	rdi,	r10
+		call	_toString
+		mov	qword [rbp + -360],	rax
+		mov	r10,	qword [rbp + -360]
+		mov	rdi,	r10
+		call	_println
+		mov	qword [rbp + -368],	rax
+		mov	r10,	qword [rbp + -80]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -96]
+		mov	rsi,	r10
+		call	_sqrDis
+		mov	qword [rbp + -376],	rax
+		mov	r10,	qword [rbp + -376]
+		mov	rdi,	r10
+		call	_toString
+		mov	qword [rbp + -384],	rax
+		mov	r10,	qword [rbp + -384]
+		mov	rdi,	r10
+		call	_println
+		mov	qword [rbp + -392],	rax
+		mov	r10,	qword [rbp + -112]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -64]
+		mov	rsi,	r10
+		call	_sqrDis
+		mov	qword [rbp + -400],	rax
+		mov	r10,	qword [rbp + -400]
+		mov	rdi,	r10
+		call	_toString
+		mov	qword [rbp + -408],	rax
+		mov	r10,	qword [rbp + -408]
+		mov	rdi,	r10
+		call	_println
+		mov	qword [rbp + -416],	rax
+		mov	r10,	qword [rbp + -96]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -64]
+		mov	rsi,	r10
+		call	_dot
+		mov	qword [rbp + -424],	rax
+		mov	r10,	qword [rbp + -424]
+		mov	rdi,	r10
+		call	_toString
+		mov	qword [rbp + -432],	rax
+		mov	r10,	qword [rbp + -432]
+		mov	rdi,	r10
+		call	_println
+		mov	qword [rbp + -440],	rax
+		mov	r10,	qword [rbp + -80]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -112]
+		mov	rsi,	r10
+		call	_cross
+		mov	qword [rbp + -448],	rax
+		mov	r10,	qword [rbp + -448]
+		mov	rdi,	r10
+		call	_printPoint
+		mov	qword [rbp + -456],	rax
+		mov	r10,	qword [rbp + -64]
+		mov	rdi,	r10
+		call	_printPoint
+		mov	qword [rbp + -464],	rax
+		mov	r10,	qword [rbp + -80]
+		mov	rdi,	r10
+		call	_printPoint
+		mov	qword [rbp + -472],	rax
+		mov	r10,	qword [rbp + -96]
+		mov	rdi,	r10
+		call	_printPoint
+		mov	qword [rbp + -480],	rax
+		mov	r10,	qword [rbp + -112]
+		mov	rdi,	r10
+		call	_printPoint
+		mov	qword [rbp + -488],	rax
 ;==========Return==========:
 		mov	rax,	0
 		jmp	___exit_main
 ___exit_main:
+		add	rsp,	504
+		pop	r15
+		pop	r14
+		pop	r13
+		pop	r12
+		pop	rbx
+		pop	rbp
+		ret
+___constructor_point:
+		push	rbp
+		mov	rbp,	rsp
+		add	rbp,	8
+		push	rbx
+		push	r12
+		push	r13
+		push	r14
+		push	r15
+		sub	rsp,	72
+		mov	qword [rbp + -56],	rdi
+		mov	r10,	qword [rbp + -56]
+		mov	qword [r10 + 8],	0
+		mov	r10,	qword [rbp + -56]
+		mov	qword [r10 + 16],	0
+		mov	r10,	qword [rbp + -56]
+		mov	qword [r10 + 24],	0
+___exit___constructor_point:
+		add	rsp,	72
+		pop	r15
+		pop	r14
+		pop	r13
+		pop	r12
+		pop	rbx
+		pop	rbp
+		ret
+_set:
+		push	rbp
+		mov	rbp,	rsp
+		add	rbp,	8
+		push	rbx
+		push	r12
+		push	r13
+		push	r14
+		push	r15
+		sub	rsp,	88
+		mov	qword [rbp + -56],	rdi
+		mov	qword [rbp + -64],	rsi
+		mov	qword [rbp + -72],	rdx
+		mov	qword [rbp + -80],	rcx
+		mov	rsi,	qword [rbp + -64]
+		mov	r10,	qword [rbp + -56]
+		mov	qword [r10 + 8],	rsi
+		mov	rsi,	qword [rbp + -72]
+		mov	r10,	qword [rbp + -56]
+		mov	qword [r10 + 16],	rsi
+		mov	rsi,	qword [rbp + -80]
+		mov	r10,	qword [rbp + -56]
+		mov	qword [r10 + 24],	rsi
+___exit_set:
 		add	rsp,	88
 		pop	r15
 		pop	r14
@@ -39,7 +364,7 @@ ___exit_main:
 		pop	rbx
 		pop	rbp
 		ret
-_point___constructor_point:
+_sqrLen:
 		push	rbp
 		mov	rbp,	rsp
 		add	rbp,	8
@@ -48,12 +373,59 @@ _point___constructor_point:
 		push	r13
 		push	r14
 		push	r15
-		sub	rsp,	72
+		sub	rsp,	152
 		mov	qword [rbp + -56],	rdi
+;==========Return==========:
 		mov	r10,	qword [rbp + -56]
-		mov	qword [r10 + 8],	0
-___exit_point___constructor_point:
-		add	rsp,	72
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -64],	r10
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -72],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -72]
+		imul	r10
+		mov	qword [rbp + -80],	rax
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -88],	r10
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -96],	r10
+		mov	r10,	qword [rbp + -88]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -96]
+		imul	r10
+		mov	qword [rbp + -104],	rax
+		mov	r10,	qword [rbp + -80]
+		mov	qword [rbp + -112],	r10
+		mov	r10,	qword [rbp + -104]
+		mov	r11,	qword [rbp + -112]
+		add	r11,	r10
+		mov	qword [rbp + -112],	r11
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -120],	r10
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -128],	r10
+		mov	r10,	qword [rbp + -120]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -128]
+		imul	r10
+		mov	qword [rbp + -136],	rax
+		mov	r10,	qword [rbp + -112]
+		mov	qword [rbp + -144],	r10
+		mov	r10,	qword [rbp + -136]
+		mov	r11,	qword [rbp + -144]
+		add	r11,	r10
+		mov	qword [rbp + -144],	r11
+		mov	r10,	qword [rbp + -144]
+		mov	rax,	r10
+		jmp	___exit_sqrLen
+___exit_sqrLen:
+		add	rsp,	152
 		pop	r15
 		pop	r14
 		pop	r13
@@ -61,7 +433,7 @@ ___exit_point___constructor_point:
 		pop	rbx
 		pop	rbp
 		ret
-_void_set:
+_sqrDis:
 		push	rbp
 		mov	rbp,	rsp
 		add	rbp,	8
@@ -70,14 +442,114 @@ _void_set:
 		push	r13
 		push	r14
 		push	r15
-		sub	rsp,	72
+		sub	rsp,	264
 		mov	qword [rbp + -56],	rdi
 		mov	qword [rbp + -64],	rsi
-		mov	rsi,	qword [rbp + -64]
+;==========Return==========:
 		mov	r10,	qword [rbp + -56]
-		mov	qword [r10 + 8],	rsi
-___exit_void_set:
-		add	rsp,	72
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -72],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -80],	r10
+		mov	r10,	qword [rbp + -72]
+		mov	qword [rbp + -88],	r10
+		mov	r10,	qword [rbp + -80]
+		mov	r11,	qword [rbp + -88]
+		sub	r11,	r10
+		mov	qword [rbp + -88],	r11
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -96],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -104],	r10
+		mov	r10,	qword [rbp + -96]
+		mov	qword [rbp + -112],	r10
+		mov	r10,	qword [rbp + -104]
+		mov	r11,	qword [rbp + -112]
+		sub	r11,	r10
+		mov	qword [rbp + -112],	r11
+		mov	r10,	qword [rbp + -88]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -112]
+		imul	r10
+		mov	qword [rbp + -120],	rax
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -128],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -136],	r10
+		mov	r10,	qword [rbp + -128]
+		mov	qword [rbp + -144],	r10
+		mov	r10,	qword [rbp + -136]
+		mov	r11,	qword [rbp + -144]
+		sub	r11,	r10
+		mov	qword [rbp + -144],	r11
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -152],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -160],	r10
+		mov	r10,	qword [rbp + -152]
+		mov	qword [rbp + -168],	r10
+		mov	r10,	qword [rbp + -160]
+		mov	r11,	qword [rbp + -168]
+		sub	r11,	r10
+		mov	qword [rbp + -168],	r11
+		mov	r10,	qword [rbp + -144]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -168]
+		imul	r10
+		mov	qword [rbp + -176],	rax
+		mov	r10,	qword [rbp + -120]
+		mov	qword [rbp + -184],	r10
+		mov	r10,	qword [rbp + -176]
+		mov	r11,	qword [rbp + -184]
+		add	r11,	r10
+		mov	qword [rbp + -184],	r11
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -192],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -200],	r10
+		mov	r10,	qword [rbp + -192]
+		mov	qword [rbp + -208],	r10
+		mov	r10,	qword [rbp + -200]
+		mov	r11,	qword [rbp + -208]
+		sub	r11,	r10
+		mov	qword [rbp + -208],	r11
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -216],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -224],	r10
+		mov	r10,	qword [rbp + -216]
+		mov	qword [rbp + -232],	r10
+		mov	r10,	qword [rbp + -224]
+		mov	r11,	qword [rbp + -232]
+		sub	r11,	r10
+		mov	qword [rbp + -232],	r11
+		mov	r10,	qword [rbp + -208]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -232]
+		imul	r10
+		mov	qword [rbp + -240],	rax
+		mov	r10,	qword [rbp + -184]
+		mov	qword [rbp + -248],	r10
+		mov	r10,	qword [rbp + -240]
+		mov	r11,	qword [rbp + -248]
+		add	r11,	r10
+		mov	qword [rbp + -248],	r11
+		mov	r10,	qword [rbp + -248]
+		mov	rax,	r10
+		jmp	___exit_sqrDis
+___exit_sqrDis:
+		add	rsp,	264
 		pop	r15
 		pop	r14
 		pop	r13
@@ -85,7 +557,7 @@ ___exit_void_set:
 		pop	rbx
 		pop	rbp
 		ret
-_point___constructor_point:
+_dot:
 		push	rbp
 		mov	rbp,	rsp
 		add	rbp,	8
@@ -94,12 +566,406 @@ _point___constructor_point:
 		push	r13
 		push	r14
 		push	r15
-		sub	rsp,	72
+		sub	rsp,	168
+		mov	qword [rbp + -56],	rdi
+		mov	qword [rbp + -64],	rsi
+;==========Return==========:
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -72],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -80],	r10
+		mov	r10,	qword [rbp + -72]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -80]
+		imul	r10
+		mov	qword [rbp + -88],	rax
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -96],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -104],	r10
+		mov	r10,	qword [rbp + -96]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -104]
+		imul	r10
+		mov	qword [rbp + -112],	rax
+		mov	r10,	qword [rbp + -88]
+		mov	qword [rbp + -120],	r10
+		mov	r10,	qword [rbp + -112]
+		mov	r11,	qword [rbp + -120]
+		add	r11,	r10
+		mov	qword [rbp + -120],	r11
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -128],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -136],	r10
+		mov	r10,	qword [rbp + -128]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -136]
+		imul	r10
+		mov	qword [rbp + -144],	rax
+		mov	r10,	qword [rbp + -120]
+		mov	qword [rbp + -152],	r10
+		mov	r10,	qword [rbp + -144]
+		mov	r11,	qword [rbp + -152]
+		add	r11,	r10
+		mov	qword [rbp + -152],	r11
+		mov	r10,	qword [rbp + -152]
+		mov	rax,	r10
+		jmp	___exit_dot
+___exit_dot:
+		add	rsp,	168
+		pop	r15
+		pop	r14
+		pop	r13
+		pop	r12
+		pop	rbx
+		pop	rbp
+		ret
+_cross:
+		push	rbp
+		mov	rbp,	rsp
+		add	rbp,	8
+		push	rbx
+		push	r12
+		push	r13
+		push	r14
+		push	r15
+		sub	rsp,	264
+		mov	qword [rbp + -56],	rdi
+		mov	qword [rbp + -64],	rsi
+;==========CreatorNodeBegin============:
+		mov	rdi,	32
+		call	malloc
+		mov	qword [rbp + -72],	rax
+		mov	r10,	qword [rbp + -72]
+		mov	rdi,	r10
+		call	__point_point
+;==========CreatorNodeEnd============:
+		mov	r10,	qword [rbp + -72]
+		mov	qword [rbp + -80],	r10
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -88],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -96],	r10
+		mov	r10,	qword [rbp + -88]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -96]
+		imul	r10
+		mov	qword [rbp + -104],	rax
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -112],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -120],	r10
+		mov	r10,	qword [rbp + -112]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -120]
+		imul	r10
+		mov	qword [rbp + -128],	rax
+		mov	r10,	qword [rbp + -104]
+		mov	qword [rbp + -136],	r10
+		mov	r10,	qword [rbp + -128]
+		mov	r11,	qword [rbp + -136]
+		sub	r11,	r10
+		mov	qword [rbp + -136],	r11
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -144],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -152],	r10
+		mov	r10,	qword [rbp + -144]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -152]
+		imul	r10
+		mov	qword [rbp + -160],	rax
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -168],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -176],	r10
+		mov	r10,	qword [rbp + -168]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -176]
+		imul	r10
+		mov	qword [rbp + -184],	rax
+		mov	r10,	qword [rbp + -160]
+		mov	qword [rbp + -192],	r10
+		mov	r10,	qword [rbp + -184]
+		mov	r11,	qword [rbp + -192]
+		sub	r11,	r10
+		mov	qword [rbp + -192],	r11
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -200],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -208],	r10
+		mov	r10,	qword [rbp + -200]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -208]
+		imul	r10
+		mov	qword [rbp + -216],	rax
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -224],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -232],	r10
+		mov	r10,	qword [rbp + -224]
+		mov	rax,	r10
+		mov	r10,	qword [rbp + -232]
+		imul	r10
+		mov	qword [rbp + -240],	rax
+		mov	r10,	qword [rbp + -216]
+		mov	qword [rbp + -248],	r10
+		mov	r10,	qword [rbp + -240]
+		mov	r11,	qword [rbp + -248]
+		sub	r11,	r10
+		mov	qword [rbp + -248],	r11
+		mov	r10,	qword [rbp + -80]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -136]
+		mov	rsi,	r10
+		mov	r10,	qword [rbp + -192]
+		mov	rdx,	r10
+		mov	r10,	qword [rbp + -248]
+		mov	rcx,	r10
+		call	_set
+		mov	qword [rbp + -256],	rax
+;==========Return==========:
+		mov	r10,	qword [rbp + -80]
+		mov	rax,	r10
+		jmp	___exit_cross
+___exit_cross:
+		add	rsp,	264
+		pop	r15
+		pop	r14
+		pop	r13
+		pop	r12
+		pop	rbx
+		pop	rbp
+		ret
+_add:
+		push	rbp
+		mov	rbp,	rsp
+		add	rbp,	8
+		push	rbx
+		push	r12
+		push	r13
+		push	r14
+		push	r15
+		sub	rsp,	152
+		mov	qword [rbp + -56],	rdi
+		mov	qword [rbp + -64],	rsi
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -72],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -80],	r10
+		mov	r10,	qword [rbp + -72]
+		mov	qword [rbp + -88],	r10
+		mov	r10,	qword [rbp + -80]
+		mov	r11,	qword [rbp + -88]
+		add	r11,	r10
+		mov	qword [rbp + -88],	r11
+		mov	rsi,	qword [rbp + -88]
+		mov	r10,	qword [rbp + -56]
+		mov	qword [r10 + 8],	rsi
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -96],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -104],	r10
+		mov	r10,	qword [rbp + -96]
+		mov	qword [rbp + -112],	r10
+		mov	r10,	qword [rbp + -104]
+		mov	r11,	qword [rbp + -112]
+		add	r11,	r10
+		mov	qword [rbp + -112],	r11
+		mov	rsi,	qword [rbp + -112]
+		mov	r10,	qword [rbp + -56]
+		mov	qword [r10 + 16],	rsi
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -120],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -128],	r10
+		mov	r10,	qword [rbp + -120]
+		mov	qword [rbp + -136],	r10
+		mov	r10,	qword [rbp + -128]
+		mov	r11,	qword [rbp + -136]
+		add	r11,	r10
+		mov	qword [rbp + -136],	r11
+		mov	rsi,	qword [rbp + -136]
+		mov	r10,	qword [rbp + -56]
+		mov	qword [r10 + 24],	rsi
+;==========Return==========:
+		mov	r10,	qword [rbp + -56]
+		mov	rax,	r10
+		jmp	___exit_add
+___exit_add:
+		add	rsp,	152
+		pop	r15
+		pop	r14
+		pop	r13
+		pop	r12
+		pop	rbx
+		pop	rbp
+		ret
+_sub:
+		push	rbp
+		mov	rbp,	rsp
+		add	rbp,	8
+		push	rbx
+		push	r12
+		push	r13
+		push	r14
+		push	r15
+		sub	rsp,	152
+		mov	qword [rbp + -56],	rdi
+		mov	qword [rbp + -64],	rsi
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -72],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -80],	r10
+		mov	r10,	qword [rbp + -72]
+		mov	qword [rbp + -88],	r10
+		mov	r10,	qword [rbp + -80]
+		mov	r11,	qword [rbp + -88]
+		sub	r11,	r10
+		mov	qword [rbp + -88],	r11
+		mov	rsi,	qword [rbp + -88]
+		mov	r10,	qword [rbp + -56]
+		mov	qword [r10 + 8],	rsi
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -96],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -104],	r10
+		mov	r10,	qword [rbp + -96]
+		mov	qword [rbp + -112],	r10
+		mov	r10,	qword [rbp + -104]
+		mov	r11,	qword [rbp + -112]
+		sub	r11,	r10
+		mov	qword [rbp + -112],	r11
+		mov	rsi,	qword [rbp + -112]
+		mov	r10,	qword [rbp + -56]
+		mov	qword [r10 + 16],	rsi
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -120],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -128],	r10
+		mov	r10,	qword [rbp + -120]
+		mov	qword [rbp + -136],	r10
+		mov	r10,	qword [rbp + -128]
+		mov	r11,	qword [rbp + -136]
+		sub	r11,	r10
+		mov	qword [rbp + -136],	r11
+		mov	rsi,	qword [rbp + -136]
+		mov	r10,	qword [rbp + -56]
+		mov	qword [r10 + 24],	rsi
+;==========Return==========:
+		mov	r10,	qword [rbp + -56]
+		mov	rax,	r10
+		jmp	___exit_sub
+___exit_sub:
+		add	rsp,	152
+		pop	r15
+		pop	r14
+		pop	r13
+		pop	r12
+		pop	rbx
+		pop	rbp
+		ret
+_printPoint:
+		push	rbp
+		mov	rbp,	rsp
+		add	rbp,	8
+		push	rbx
+		push	r12
+		push	r13
+		push	r14
+		push	r15
+		sub	rsp,	168
 		mov	qword [rbp + -56],	rdi
 		mov	r10,	qword [rbp + -56]
-		mov	qword [r10 + 8],	0
-___exit_point___constructor_point:
-		add	rsp,	72
+		mov	r10,	qword [r10 + 8]
+		mov	qword [rbp + -64],	r10
+		mov	r10,	qword [rbp + -64]
+		mov	rdi,	r10
+		call	_toString
+		mov	qword [rbp + -72],	rax
+		mov	rdi,	STR_0
+		mov	r10,	qword [rbp + -72]
+		mov	rsi,	r10
+		call	__.string__plus
+		mov	qword [rbp + -80],	rax
+		mov	r10,	qword [rbp + -80]
+		mov	rdi,	r10
+		mov	rsi,	STR_1
+		call	__.string__plus
+		mov	qword [rbp + -88],	rax
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 16]
+		mov	qword [rbp + -96],	r10
+		mov	r10,	qword [rbp + -96]
+		mov	rdi,	r10
+		call	_toString
+		mov	qword [rbp + -104],	rax
+		mov	r10,	qword [rbp + -88]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -104]
+		mov	rsi,	r10
+		call	__.string__plus
+		mov	qword [rbp + -112],	rax
+		mov	r10,	qword [rbp + -112]
+		mov	rdi,	r10
+		mov	rsi,	STR_1
+		call	__.string__plus
+		mov	qword [rbp + -120],	rax
+		mov	r10,	qword [rbp + -56]
+		mov	r10,	qword [r10 + 24]
+		mov	qword [rbp + -128],	r10
+		mov	r10,	qword [rbp + -128]
+		mov	rdi,	r10
+		call	_toString
+		mov	qword [rbp + -136],	rax
+		mov	r10,	qword [rbp + -120]
+		mov	rdi,	r10
+		mov	r10,	qword [rbp + -136]
+		mov	rsi,	r10
+		call	__.string__plus
+		mov	qword [rbp + -144],	rax
+		mov	r10,	qword [rbp + -144]
+		mov	rdi,	r10
+		mov	rsi,	STR_2
+		call	__.string__plus
+		mov	qword [rbp + -152],	rax
+		mov	r10,	qword [rbp + -152]
+		mov	rdi,	r10
+		call	_println
+		mov	qword [rbp + -160],	rax
+___exit_printPoint:
+		add	rsp,	168
 		pop	r15
 		pop	r14
 		pop	r13
@@ -109,6 +975,15 @@ ___exit_point___constructor_point:
 		ret
 SECTION .bss
 SECTION .rodata
+	dd 1
+STR_0:
+	db "(", 0
+	dd 2
+STR_1:
+	db ", ", 0
+	dd 1
+STR_2:
+	db ")", 0
 ; ============Library============
 default rel
 

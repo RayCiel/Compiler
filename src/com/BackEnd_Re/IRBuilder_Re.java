@@ -350,15 +350,15 @@ public class IRBuilder_Re extends Visit
         for(FuncDefNode i: functions)
         {
             visit(i);
+            //out.println(i.labelName());
             lList.add((List<IRInst>) map.get(i));
         }
-        FuncDefNode funcDefNode = node.getEntity().getConstructNode();
+        /*FuncDefNode funcDefNode = node.getEntity().getConstructNode();
         if(funcDefNode != null)
         {
             visit(funcDefNode);
             lList.add((List<IRInst>) map.get(funcDefNode));
-        }
-
+        }*/
         map.put(node, lList);
         return null;
     }
@@ -826,14 +826,15 @@ public class IRBuilder_Re extends Visit
         List<IRInst> list = new LinkedList<>();
         List<IntValue> priList = new LinkedList<>();
         IntValue preVar = (IntValue) map.get(node.getExpression());
-        VarReg r0 = getNewReg(null);
+        //VarReg r0 = getNewReg(null);
         String funName;
 		if(node.getExpression() instanceof MemLHSNode)
             priList.add(preVar);
         else if(((FuncEntity)(((VarLHSNode)node.getExpression()).getEntity())).classEntity !=null)
         {
             //out.println("in");
-            priList.add(new VarReg(thisReg, (((VarLHSNode)node.getExpression()).getEntity()).getName()));
+            //out.println((((VarLHSNode)node.getExpression()).getEntity()).getName());
+            priList.add(new VarReg(thisReg, null));
             //out.println((((VarLHSNode)node.getExpression()).getEntity()).getName());
         }
         for(int i = 0; i < node.getArgs().size(); i++)
@@ -851,8 +852,9 @@ public class IRBuilder_Re extends Visit
             funName = "_.string_substring";
         else if (funName.equals("size"))
             funName = "_.array_size";
+        //out.println(funName);
         list.addAll(makeCall("_"+funName, priList));
-        r0 = getNewReg(null);
+        VarReg r0 = getNewReg(null);
         list.add(new Move(r0, new VarReg(0, "rax")));
         map.put(node, new VarReg(list, r0.getIndex(), null));
 
@@ -894,7 +896,7 @@ public class IRBuilder_Re extends Visit
     {
         super.visit(node);
         List<IRInst> list = new LinkedList<>();
-        list.add(new Label(";===============ArefLHSNodeBegin================"));
+        //list.add(new Label(";===============ArefLHSNodeBegin================"));
         IntValue expr = (IntValue) map.get(node.getExpression());
         IntValue index = (IntValue) map.get(node.getIndex());
         IntValue r0, r1;
@@ -907,13 +909,13 @@ public class IRBuilder_Re extends Visit
         {
             r2 = getNewReg(null);
             list.add(new Load(r2, r0, r1));
-            list.add(new Label(";===============ArefLHSNodeEnd1================"));
+            //list.add(new Label(";===============ArefLHSNodeEnd1================"));
             map.put(node, new VarReg(list, r2.getIndex(), null));
         }
         else
         {
             //out.println("in");
-            list.add(new Label(";===============ArefLHSNodeEnd2================"));
+            //list.add(new Label(";===============ArefLHSNodeEnd2================"));
             map.put(node, new VarMem(list, r0, r1));
         }
         return null;
@@ -1079,7 +1081,7 @@ public class IRBuilder_Re extends Visit
             {
                 //out.println("in");
                 priList.set(0, new VarReg(r0.getIndex(), null));
-                list.addAll(makeCall("__"+node.getType()+"_"+node.getType(), priList));
+                list.addAll(makeCall("__"+node.getType().getTypeName()+"_"+node.getType().getTypeName(), priList));
                 list.add(new Label(";==========CreatorNodeEnd============"));
             }
             else

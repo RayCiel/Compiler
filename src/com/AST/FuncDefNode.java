@@ -24,11 +24,12 @@ public class FuncDefNode extends DefinitionNode{
 
     public String labelName()
     {
-        if (entity.isMember)
-        {
-            return "_" + entity.getResult().getTypeName() + "_" + name;
-        }
-        else return "_" + name;
+        //if (entity.isMember)
+        //{
+        //    return "_" + entity.getResult().getTypeName() + "_" + name;
+        //}
+        //else
+            return "_" + name;
     }
 
     @Override

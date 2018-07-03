@@ -1,4 +1,5 @@
-/*class point {
+
+class point {
 	int x;
 	int y;
 	int z;
@@ -79,9 +80,9 @@ int main() {
 	return 0;
 }
 
-*/
 
-class point {
+
+/*class point {
 	int x;
 	point() {
 		x = 0;
@@ -95,7 +96,7 @@ int main() {
 	point a = new point;
 	a.set(849);
 	return 0;
-}
+}*/
 
 /*!! metadata:
 === comment ===

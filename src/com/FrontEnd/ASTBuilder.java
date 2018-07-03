@@ -160,6 +160,7 @@ public class ASTBuilder extends MxBaseListener {
         } else {
             //out.println(ctx.ret.getText());
             //out.println(param.size());
+            //out.println(ctx.name.getText());
             funcEntity = new FuncEntity(ctx.name.getText(), new Location(ctx.name),(Type) map.get(ctx.ret), (BlockNode) map.get(ctx.block()), param);
         }
         FuncDefNode node = new FuncDefNode(funcEntity);
