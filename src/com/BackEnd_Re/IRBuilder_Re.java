@@ -352,12 +352,13 @@ public class IRBuilder_Re extends Visit
             visit(i);
             lList.add((List<IRInst>) map.get(i));
         }
-        FuncDefNode cons = node.getEntity().getConstructNode();
-        if(cons != null)
+        FuncDefNode funcDefNode = node.getEntity().getConstructNode();
+        if(funcDefNode != null)
         {
-            visit(cons);
-            lList.add((List<IRInst>) map.get(cons));
+            visit(funcDefNode);
+            lList.add((List<IRInst>) map.get(funcDefNode));
         }
+
         map.put(node, lList);
         return null;
     }
@@ -831,15 +832,15 @@ public class IRBuilder_Re extends Visit
             priList.add(preVar);
         else if(((FuncEntity)(((VarLHSNode)node.getExpression()).getEntity())).classEntity !=null)
         {
-            priList.add(new VarReg(thisReg, null));
+            //out.println("in");
+            priList.add(new VarReg(thisReg, (((VarLHSNode)node.getExpression()).getEntity()).getName()));
+            //out.println((((VarLHSNode)node.getExpression()).getEntity()).getName());
         }
         for(int i = 0; i < node.getArgs().size(); i++)
         {
             priList.add((IntValue) map.get(node.getArgs().get(i)));
         }
         funName = ((VarLHSNode) node.getExpression()).getName();
-        //Call call = new Call("_" + funName,  0,  ((FuncEntity)((VarLHSNode) node.getExpression()).getEntity()).funcDefNode, priList, funName, r0);
-        //out.println(funName);
         if (funName.equals("length"))
             funName = "_.string_length";
         else if (funName.equals("ord"))
@@ -851,20 +852,8 @@ public class IRBuilder_Re extends Visit
         else if (funName.equals("size"))
             funName = "_.array_size";
         list.addAll(makeCall("_"+funName, priList));
-        /*for(IntValue intValue: priList)
-        {
-            list.addAll(intValue.getIrList());
-        }
-        for(int i=0; i < priList.size(); i++)
-        {
-            priList.set(i, priList.get(i).clone(new LinkedList<>()));
-        }
-
-        list.add(call);
-        map.put(node, r0.clone(list));*/
         r0 = getNewReg(null);
         list.add(new Move(r0, new VarReg(0, "rax")));
-        //list.add(new Move(new VarReg(0, "rax"), new VarInt(0)));
         map.put(node, new VarReg(list, r0.getIndex(), null));
 
         return null;
@@ -933,30 +922,68 @@ public class IRBuilder_Re extends Visit
     @Override
     public Void visit(VarLHSNode node)
     {
+        super.visit(node);
         List<IRInst> list = new LinkedList<>();
+        //out.println(((ParamEntity)node.getEntity()).getIsMember() + " " + node.getName());
         IntValue reg;
-        if(!(node.getType() instanceof FuncType))
+        //out.println(node.getEntity());
+
+        if (node.getEntity() instanceof ParamEntity && ((ParamEntity)node.getEntity()).getIsMember())
         {
-            if(node.getName().equals("null"))
+            IntValue parent = new VarReg(thisReg, null);
+            VarReg r1;
+
+            reg = parent;
+
+            if(!(node.getType() instanceof FuncType))
             {
-                map.put(node, new VarInt(new LinkedList<>(), 0));
-            }
-            else if(node.getName().equals("this"))
-            {
-                map.put(node, new VarReg(new LinkedList<>(), thisReg, node.getName()));
-            }
-            else {
-				reg = ((ParamEntity)node.getEntity()).getReg();
-                if(reg instanceof VarReg)
+		        VarInt indexOfMember = new VarInt(((ParamEntity)node.getEntity()).getRank());
+
+                if(!set.contains(node))
                 {
-                    reg = new VarReg(((VarReg)reg).getIndex(), node.getName());
+                    r1 = getNewReg(null);
+                    list.add(new Load(r1 ,reg, indexOfMember));
+                    map.put(node, new VarReg(list, r1.getIndex(), null));
                 }
+                else
+                {
+                    //out.println(node.getName());
+                    map.put(node, new VarMem(list, reg, indexOfMember));
+                }
+            }
+            else
+            {
                 map.put(node, reg.clone(list));
             }
         }
         else
         {
-		    map.put(node, new VarReg(list, -1, node.getName()));
+            if (!(node.getType() instanceof FuncType))
+            {
+                if (node.getName().equals("null"))
+                {
+                    map.put(node, new VarInt(new LinkedList<>(), 0));
+                }
+                else if (node.getName().equals("this"))
+                {
+                    map.put(node, new VarReg(new LinkedList<>(), thisReg, node.getName()));
+                }
+                else
+                {
+                    reg = ((ParamEntity) node.getEntity()).getReg();
+                    if (reg instanceof VarReg)
+                    {
+                        //out.println(reg);
+                        reg = new VarReg(((VarReg) reg).getIndex(), node.getName());
+                    }
+                    //out.println(node.getName());
+                    map.put(node, reg.clone(list));
+                }
+            }
+            else
+            {
+                map.put(node, new VarReg(list, -1, node.getName()));
+            }
         }
         return null;
     }
@@ -972,6 +999,7 @@ public class IRBuilder_Re extends Visit
         //out.println("in");
         if(!(node.getType() instanceof FuncType))
         {
+            //out.println("in");
             VarReg r0 = (VarReg)expr;
             VarInt MemberIdx = new VarInt(((ParamEntity)node.getEntity()).getRank());
             //out.println(MemberIdx.getVal());
@@ -988,7 +1016,10 @@ public class IRBuilder_Re extends Visit
         }
         else
         {
+            //out.println("in");
             IntValue r0 = expr;
+            //out.println(node.getExpression());
+            //out.println(r0.getIrList().size());
             map.put(node, r0.clone(list));
         }
         return null;
@@ -1046,6 +1077,7 @@ public class IRBuilder_Re extends Visit
             list.add(new Move(r0, new VarReg(0, "rax")));
             if(node.getType() instanceof ClassType && ((ClassType) node.getType()).getClassEntity().getConstructNode()!=null)
             {
+                //out.println("in");
                 priList.set(0, new VarReg(r0.getIndex(), null));
                 list.addAll(makeCall("__"+node.getType()+"_"+node.getType(), priList));
                 list.add(new Label(";==========CreatorNodeEnd============"));

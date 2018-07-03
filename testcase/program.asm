@@ -11,61 +11,27 @@ _main:
 		push	r13
 		push	r14
 		push	r15
-		sub	rsp,	152
+		sub	rsp,	88
 ;==========CreatorNodeBegin============:
-		mov	rdi,	1
-		call	__.array_.array
-		mov	qword [rbp + -64],	rax
-		mov	r10,	qword [rbp + -64]
-		mov	qword [r10 + 0],	100
+		mov	rdi,	32
+		call	malloc
+		mov	qword [rbp + -56],	rax
+		mov	r10,	qword [rbp + -56]
+		mov	rdi,	r10
+		call	__com.Type.ClassType@27f723_com.Type.ClassType@27f723
+;==========CreatorNodeEnd============:
+		mov	r10,	qword [rbp + -56]
+		mov	qword [rbp + -64],	r10
 		mov	r10,	qword [rbp + -64]
 		mov	rdi,	r10
-		mov	rsi,	1
-		mov	rdx,	32
-		mov	rcx,	0
-		call	__.array_new
-		mov	qword [rbp + -72],	rax
-;==========CreatorNodeEnd============:
-		mov	rsi,	qword [rbp + -72]
-		mov	qword [_table + 0],	rsi
-		mov	qword [rbp + -56],	0
-_L1_0:
-		mov	r10,	qword [rbp + -56]
-		cmp	r10,	100
-		setl	al
-		movzx	rsi,	al
-		mov	qword [rbp + -80],	rsi
-		mov	r10,	qword [rbp + -80]
-		cmp	r10,	0
-		je	_L1_1
-;===============ArefLHSNodeBegin================:
-;===============ArefLHSNodeEnd2================:
-		mov	r10,	qword [_table + 0]
-		mov	r11,	qword [rbp + -56]
-		mov	qword [r10 + r11*8],	0
-		mov	r10,	qword [rbp + -56]
-		mov	qword [rbp + -88],	r10
-		mov	r11,	qword [rbp + -56]
-		add	r11,	1
-		mov	qword [rbp + -56],	r11
-		jmp	_L1_0
-_L1_1:
-		mov	rdi,	0
-		mov	rsi,	0
-		call	_put
-		mov	qword [rbp + -104],	rax
-		mov	rdi,	1
-		mov	rsi,	1
-		call	_put
-		mov	qword [rbp + -120],	rax
-		mov	rdi,	STR_0
-		call	_print
-		mov	qword [rbp + -136],	rax
+		mov	rsi,	849
+		call	_set
+		mov	qword [rbp + -80],	rax
 ;==========Return==========:
 		mov	rax,	0
 		jmp	___exit_main
 ___exit_main:
-		add	rsp,	152
+		add	rsp,	88
 		pop	r15
 		pop	r14
 		pop	r13
@@ -73,7 +39,7 @@ ___exit_main:
 		pop	rbx
 		pop	rbp
 		ret
-_put:
+_point___constructor_point:
 		push	rbp
 		mov	rbp,	rsp
 		add	rbp,	8
@@ -82,45 +48,58 @@ _put:
 		push	r13
 		push	r14
 		push	r15
-		sub	rsp,	120
+		sub	rsp,	72
+		mov	qword [rbp + -56],	rdi
+		mov	r10,	qword [rbp + -56]
+		mov	qword [r10 + 8],	0
+___exit_point___constructor_point:
+		add	rsp,	72
+		pop	r15
+		pop	r14
+		pop	r13
+		pop	r12
+		pop	rbx
+		pop	rbp
+		ret
+_void_set:
+		push	rbp
+		mov	rbp,	rsp
+		add	rbp,	8
+		push	rbx
+		push	r12
+		push	r13
+		push	r14
+		push	r15
+		sub	rsp,	72
 		mov	qword [rbp + -56],	rdi
 		mov	qword [rbp + -64],	rsi
+		mov	rsi,	qword [rbp + -64]
 		mov	r10,	qword [rbp + -56]
-		mov	rax,	r10
-		mov	r10,	237
-		imul	r10
-		mov	qword [rbp + -80],	rax
-		mov	r10,	qword [rbp + -80]
-		mov	rax,	r10
-		mov	r10,	100
-		cqo
-		idiv	r10
-		mov	qword [rbp + -88],	rdx
-		mov	r10,	qword [rbp + -88]
-		mov	qword [rbp + -72],	r10
-;===============ArefLHSNodeBegin================:
-;===============ArefLHSNodeEnd2================:
-;==========CreatorNodeBegin============:
-		mov	rdi,	32
-		call	malloc
-		mov	qword [rbp + -96],	rax
-;==========CreatorNodeEnd============:
-		mov	rsi,	qword [rbp + -96]
-		mov	r10,	qword [_table + 0]
-		mov	r11,	qword [rbp + -72]
-		mov	qword [r10 + r11*8],	rsi
-;===============ArefLHSNodeBegin================:
-		mov	r10,	qword [_table + 0]
-		mov	r11,	qword [rbp + -72]
-		mov	r10,	qword [r10 + r11*8]
-		mov	qword [rbp + -104],	r10
-;===============ArefLHSNodeEnd1================:
-		mov	r10,	qword [rbp + -104]
-		mov	qword [r10 + 24],	0
-;==========Return==========:
-		jmp	___exit_put
-___exit_put:
-		add	rsp,	120
+		mov	qword [r10 + 8],	rsi
+___exit_void_set:
+		add	rsp,	72
+		pop	r15
+		pop	r14
+		pop	r13
+		pop	r12
+		pop	rbx
+		pop	rbp
+		ret
+_point___constructor_point:
+		push	rbp
+		mov	rbp,	rsp
+		add	rbp,	8
+		push	rbx
+		push	r12
+		push	r13
+		push	r14
+		push	r15
+		sub	rsp,	72
+		mov	qword [rbp + -56],	rdi
+		mov	r10,	qword [rbp + -56]
+		mov	qword [r10 + 8],	0
+___exit_point___constructor_point:
+		add	rsp,	72
 		pop	r15
 		pop	r14
 		pop	r13
@@ -129,11 +108,7 @@ ___exit_put:
 		pop	rbp
 		ret
 SECTION .bss
-_table:	resb	8
 SECTION .rodata
-	dd 5
-STR_0:
-	db "done2", 0
 ; ============Library============
 default rel
 

@@ -8,5 +8,9 @@ public class MemEntity extends VarEntity{
         super(entity.name, entity.location, entity.type, entity.expression);
     }
 
-
+    @Override
+    public boolean getIsMember()
+    {
+        return true;
+    }
 }

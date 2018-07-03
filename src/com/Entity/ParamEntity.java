@@ -7,6 +7,7 @@ import com.Type.Type;
 public class ParamEntity extends Entity{
     protected IntValue reg;
     private int rank;
+    protected boolean isMember = false;
     public ParamEntity(String _name, Location _location, Type _type) {
         super(_name, _location, _type);
         reg = null;
@@ -30,6 +31,16 @@ public class ParamEntity extends Entity{
     public void setRank(int rank)
     {
         this.rank = rank;
+    }
+
+    public boolean getIsMember()
+    {
+        return isMember;
+    }
+
+    public void setMember(boolean member)
+    {
+        isMember = member;
     }
 
     @Override
