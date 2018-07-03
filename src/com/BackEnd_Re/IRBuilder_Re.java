@@ -1081,7 +1081,8 @@ public class IRBuilder_Re extends Visit
             {
                 //out.println("in");
                 priList.set(0, new VarReg(r0.getIndex(), null));
-                list.addAll(makeCall("__"+node.getType().getTypeName()+"_"+node.getType().getTypeName(), priList));
+                list.addAll(makeCall(((ClassType) node.getType()).getClassEntity().getConstructNode().labelName(), priList));
+                //list.addAll(makeCall("__"+node.getType().getTypeName()+"_"+node.getType().getTypeName(), priList));
                 list.add(new Label(";==========CreatorNodeEnd============"));
             }
             else

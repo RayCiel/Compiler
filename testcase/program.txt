@@ -1,4 +1,5 @@
 
+
 class point {
 	int x;
 	int y;
@@ -79,7 +80,6 @@ int main() {
 	d.printPoint();
 	return 0;
 }
-
 
 
 /*class point {

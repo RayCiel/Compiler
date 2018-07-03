@@ -18,7 +18,7 @@ _main:
 		mov	qword [rbp + -56],	rax
 		mov	r10,	qword [rbp + -56]
 		mov	rdi,	r10
-		call	__point_point
+		call	___constructor_point
 ;==========CreatorNodeEnd============:
 		mov	r10,	qword [rbp + -56]
 		mov	qword [rbp + -64],	r10
@@ -28,7 +28,7 @@ _main:
 		mov	qword [rbp + -72],	rax
 		mov	r10,	qword [rbp + -72]
 		mov	rdi,	r10
-		call	__point_point
+		call	___constructor_point
 ;==========CreatorNodeEnd============:
 		mov	r10,	qword [rbp + -72]
 		mov	qword [rbp + -80],	r10
@@ -38,7 +38,7 @@ _main:
 		mov	qword [rbp + -88],	rax
 		mov	r10,	qword [rbp + -88]
 		mov	rdi,	r10
-		call	__point_point
+		call	___constructor_point
 ;==========CreatorNodeEnd============:
 		mov	r10,	qword [rbp + -88]
 		mov	qword [rbp + -96],	r10
@@ -48,7 +48,7 @@ _main:
 		mov	qword [rbp + -104],	rax
 		mov	r10,	qword [rbp + -104]
 		mov	rdi,	r10
-		call	__point_point
+		call	___constructor_point
 ;==========CreatorNodeEnd============:
 		mov	r10,	qword [rbp + -104]
 		mov	qword [rbp + -112],	r10
@@ -645,7 +645,7 @@ _cross:
 		mov	qword [rbp + -72],	rax
 		mov	r10,	qword [rbp + -72]
 		mov	rdi,	r10
-		call	__point_point
+		call	___constructor_point
 ;==========CreatorNodeEnd============:
 		mov	r10,	qword [rbp + -72]
 		mov	qword [rbp + -80],	r10
