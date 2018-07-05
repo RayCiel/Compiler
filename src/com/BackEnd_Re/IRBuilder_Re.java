@@ -226,10 +226,10 @@ public class IRBuilder_Re extends Visit
     public Void visit(ForNode node)
     {
         int block = blockNumber++;
-        VarLabel contiueLabel, exitLabel;
-        contiueLabel =  getNewLabel(block);
+        VarLabel continueLabel, exitLabel;
+        continueLabel =  getNewLabel(block);
         exitLabel =  getNewLabel(block);
-        node.setLabels(contiueLabel, exitLabel);
+        node.setLabels(continueLabel, exitLabel);
         Global.IRBuilder_loopDeepth++;
         super.visit(node);
         Global.IRBuilder_loopDeepth--;
@@ -237,7 +237,7 @@ public class IRBuilder_Re extends Visit
         List<IRInst> body = (List<IRInst>) map.get(node.getBody());
         VarLabel l0, l1;
         List<IRInst> list = new LinkedList<>();
-        l0 = contiueLabel;
+        l0 = continueLabel;
         l1 = exitLabel;
 
         if(firstExpr != null)

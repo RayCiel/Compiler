@@ -36,6 +36,11 @@ abstract public class UnaryNode extends ExpressionNode {
         return expression;
     }
 
+    public void setExpression(ExpressionNode expression)
+    {
+        this.expression = expression;
+    }
+
     @Override
     public Type getType()
     {

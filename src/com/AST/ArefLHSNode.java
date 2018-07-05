@@ -40,6 +40,12 @@ public class ArefLHSNode extends LHSNode {
         return super.getType();
     }
 
+    public void setIndex(ExpressionNode index)
+    {
+        this.index = index;
+    }
+
+
     //@Override
     //public Type type()
     //{

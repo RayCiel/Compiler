@@ -28,6 +28,20 @@ public class ForNode extends LoopNode{
         return thirdExpr;
     }
 
+    public void setFirstExpr(ExpressionNode firstExpr)
+    {
+        this.firstExpr = firstExpr;
+    }
+
+    public void setSecondExpr(ExpressionNode secondExpr)
+    {
+        this.secondExpr = secondExpr;
+    }
+
+    public void setThirdExpr(ExpressionNode thirdExpr)
+    {
+        this.thirdExpr = thirdExpr;
+    }
 
     @Override
     public <S, E> S accept(ASTVisitor<S, E> visitor)

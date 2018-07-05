@@ -16,6 +16,10 @@ public class WhileNode extends LoopNode{
         return whileExpr;
     }
 
+    public void setWhileExpr(ExpressionNode whileExpr)
+    {
+        this.whileExpr = whileExpr;
+    }
 
     @Override
     public <S, E> S accept(ASTVisitor<S, E> visitor)

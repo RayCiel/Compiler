@@ -32,6 +32,8 @@ public class ReturnNode extends StatementNode{
         this.function = function;
     }
 
+
+
     @Override
     public <S, E> S accept(ASTVisitor<S, E> visitor)
     {

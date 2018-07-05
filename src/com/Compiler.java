@@ -94,6 +94,9 @@ public class Compiler {
         astree.TypeChecker();
         System.err.println("TypeChecker Done..");
 
+        ConstFold constFold = new ConstFold(astree);
+        constFold.ConstFolder();
+
         IRBuilder_Re irBuilder_re = new IRBuilder_Re(astree);
         System.err.println("IRBuilder Done..");
         List<List<IRInst>> irLists = irBuilder_re.getIrList();

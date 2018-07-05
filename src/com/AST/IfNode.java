@@ -28,6 +28,11 @@ public class IfNode extends StatementNode{
         return thenBody;
     }
 
+    public void setIfExpr(ExpressionNode ifExpr)
+    {
+        this.ifExpr = ifExpr;
+    }
+
     @Override
     public <S, E> S accept(ASTVisitor<S, E> visitor)
     {

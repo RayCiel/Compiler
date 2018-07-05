@@ -66,6 +66,16 @@ public class BinaryExprNode extends ExpressionNode{
         return right;
     }
 
+    public void setLeft(ExpressionNode left)
+    {
+        this.left = left;
+    }
+
+    public void setRight(ExpressionNode right)
+    {
+        this.right = right;
+    }
+
     @Override
     public Location getLocation()
     {
