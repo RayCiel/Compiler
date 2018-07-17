@@ -1,5 +1,6 @@
 package com.IR_Re;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -9,6 +10,7 @@ public class BasicBlock
     protected List<IRInst> irList = null;
     protected BasicBlock next0 = null, next1 = null;
     protected boolean isJump = false;
+    public Set<Integer>VarKill = new HashSet<>(), UEVar = new HashSet<>(), LiveOut = new HashSet<>();
 
     public BasicBlock(int id)
     {

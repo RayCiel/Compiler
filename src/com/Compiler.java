@@ -94,8 +94,8 @@ public class Compiler {
         astree.TypeChecker();
         System.err.println("TypeChecker Done..");
 
-        ConstFold constFold = new ConstFold(astree);
-        constFold.ConstFolder();
+        //ConstFold constFold = new ConstFold(astree);
+        //constFold.ConstFolder();
 
         IRBuilder_Re irBuilder_re = new IRBuilder_Re(astree);
         System.err.println("IRBuilder Done..");
@@ -108,9 +108,10 @@ public class Compiler {
         CFGBuilder cfgBuilder = new CFGBuilder(irLists);
         System.err.println("CFGBuilder Done..");
         List<BasicBlock> basicBlockList = cfgBuilder.getCFG();
+        //output.println(basicBlockList.size());
         System.err.println("getBasicBlockList Done..");
-        ConflictGraph conflictGraph = new ConflictGraph(irBuilder_re.regNumber);
-        System.err.println("conflictGraph Done..");
+        //ConflictGraph conflictGraph = new ConflictGraph(irBuilder_re.regNumber);
+        //System.err.println("conflictGraph Done..");
 
         BlockToList blockToList = new BlockToList(basicBlockList);
         System.err.println("BlockToList Done..");
@@ -127,15 +128,22 @@ public class Compiler {
         }
 
 
-        NaiveRegAlloc naiveRegAlloc = new NaiveRegAlloc(null);
+        //NaiveRegAlloc naiveRegAlloc = new NaiveRegAlloc(null);
         System.err.println("NaiveRegAlloc Done..");
-        List<List<Integer>> colorList = naiveRegAlloc.colors(irBuilder_re.funcNum);
+        //List<List<Integer>> colorList = naiveRegAlloc.colors(irBuilder_re.funcNum);
+        ActivityAnalysis activityAnalysis = new ActivityAnalysis(basicBlockList);
+        List<ConflictGraph> conflictGraphs = activityAnalysis.getConflictGraphs();
+        List<List<Integer>> weights = activityAnalysis.getWeights();
+        FinalRegAlloc finalRegAlloc = new FinalRegAlloc(conflictGraphs, weights);
+        List<List<Integer>> colorList = finalRegAlloc.colors();
         System.err.println("colors Done..");
+
         IRResolver irResolver = new IRResolver(colorList, basicBlockList);
         System.err.println("IRResolver Done..");
 
         irResolver.ResolveIR();
         System.err.println("ResolveIR Done..");
+
         BlockToList blockToList_final = new BlockToList(basicBlockList);
         System.err.println("BlockToList Done..");
         List<IRInst> irList_final = blockToList_final.toList();

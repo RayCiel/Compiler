@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static java.lang.System.out;
+
 
 public class CFGBuilder extends Object
 {
@@ -25,6 +27,7 @@ public class CFGBuilder extends Object
         //err.println(irLists.get(0).size());
         List<BasicBlock> funList = new ArrayList<BasicBlock>(irLists.size());
         int idx = 0;
+        //out.println(irLists.get(0).size());
         //err.println(irLists.get(0));
         for(List<IRInst> irList: irLists)
         {
@@ -38,10 +41,12 @@ public class CFGBuilder extends Object
                 //err.println(ir.getClass());
                 if(i > 0)
                     pir = irList.get(i-1);
+
                 if(ir instanceof Label)
                 {
-                    counter += 1;
-                    nextBlock = new BasicBlock(counter);
+                    //rout.println(((Label) ir).getLabel() + " " + counter);
+                    //counter += 1;
+                    nextBlock = new BasicBlock(counter++);
                     if(i != 0)
                     {
                         nowBlock.setNext0(nextBlock);
@@ -57,6 +62,7 @@ public class CFGBuilder extends Object
                 }
                 else if(pir instanceof Jump || pir instanceof CJump)
                 {
+                    //out.println("in");
                     nextBlock = new BasicBlock(counter++);
                     nowBlock.setNext0(nextBlock);
                     nowBlock.setIrList(irList.subList(start, i));

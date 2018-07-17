@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
+import static java.lang.System.out;
+
 public class ConflictGraph
 {
     public ArrayList<Set<Integer>>graph;
@@ -17,6 +19,7 @@ public class ConflictGraph
     }
     public void addEdge(int a, int b)
     {
+        //out.println(a + " " + b);
         if(a == b)
             return;
         Set<Integer> node;

@@ -300,7 +300,7 @@ public class IRBuilder_Re extends Visit
     {
         super.visit(node);
         List<IRInst> list = new LinkedList<>();
-        list.add(new Label(";==========Return=========="));
+        //list.add(new Label(";==========Return=========="));
         IntValue r0 = (IntValue) map.get(node.getExpression());
         //out.println(r0.getIrList());
         if(node.getExpression() != null)
@@ -1033,7 +1033,7 @@ public class IRBuilder_Re extends Visit
         super.visit(node);
         List<IntValue> priList = new LinkedList<>();
         List<IRInst> list = new LinkedList<>();
-        list.add(new Label(";==========CreatorNodeBegin============"));
+        //list.add(new Label(";==========CreatorNodeBegin============"));
         VarReg r0, r1;
         if(node.getType() instanceof ArrayType)
         {
@@ -1068,7 +1068,7 @@ public class IRBuilder_Re extends Visit
             list.addAll(makeCall("__.array_new", priList));
             r1 = getNewReg(null);
             list.add(new Move(r1, new VarReg(0, "rax")));
-            list.add(new Label(";==========CreatorNodeEnd============"));
+            //list.add(new Label(";==========CreatorNodeEnd============"));
             map.put(node, r1.clone(list));
         }
         else
@@ -1083,10 +1083,10 @@ public class IRBuilder_Re extends Visit
                 priList.set(0, new VarReg(r0.getIndex(), null));
                 list.addAll(makeCall(((ClassType) node.getType()).getClassEntity().getConstructNode().labelName(), priList));
                 //list.addAll(makeCall("__"+node.getType().getTypeName()+"_"+node.getType().getTypeName(), priList));
-                list.add(new Label(";==========CreatorNodeEnd============"));
+                //list.add(new Label(";==========CreatorNodeEnd============"));
             }
             else
-                list.add(new Label(";==========CreatorNodeEnd============"));
+                //list.add(new Label(";==========CreatorNodeEnd============"));
 
             map.put(node, r0.clone(list));
         }
