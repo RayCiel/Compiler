@@ -243,7 +243,7 @@ public class IRResolver implements IRVisitor
     {
         //newIRList.add(new Label("; ============SpecialBegin============"));
 
-        //int []callerNum = {1,9};
+        //int []callerNum = {1, 9};
 
         //int []calleeNum = {3, 12, 13, 14, 15};
         int []callerNum = {7, 6, 2, 1, 8, 9};
@@ -254,12 +254,12 @@ public class IRResolver implements IRVisitor
         switch (node.getType())
         {
             case CALLER_SAVE:
-                //for(int i = 0; i < 6; i++)
-                //    newIRList.add(new Push(new VarReg(callerNum[i], caller[i])));
+                for(int i = 0; i < callerNum.length; i++)
+                    newIRList.add(new Push(new VarReg(callerNum[i], caller[i])));
                 break;
             case CALLER_RECOVER:
-                //for(int i = 5; i >= 0; i--)
-                //    newIRList.add(new Pop(new VarReg(callerNum[i], caller[i])));
+                for(int i = callerNum.length - 1; i >= 0; i--)
+                    newIRList.add(new Pop(new VarReg(callerNum[i], caller[i])));
                 break;
 
             case CALLEE_SAVE:

@@ -451,7 +451,7 @@ public class IRBuilder_Re extends Visit
             node.getEntity().setExitLabel(new VarLabel("___exit"+node.labelName()));
             super.visit(node);
             List<IRInst> list = new LinkedList<>();
-           int[] callee_num = {5, 3, 12, 13, 14, 15};
+            int[] callee_num = {5, 3, 12, 13, 14, 15};
             String[] callee = {"rbp", "rbx", "r12", "r13", "r14", "r15"};
             list.add(new Label(node.labelName()));
             list.add(new Push(new VarReg(5, "rbp")));
@@ -504,6 +504,7 @@ public class IRBuilder_Re extends Visit
         if (node.getEntity().getExpression() != null)
         {
             IntValue expr = (IntValue)map.get(node.getEntity().getExpression());
+            //out.println(node.getEntity().getExpression());
             list.addAll(expr.getIrList());
             list.add(new Move(reg, expr));
         }
@@ -1073,6 +1074,7 @@ public class IRBuilder_Re extends Visit
         }
         else
         {
+            //out.println("in");
             r0 = getNewReg(null);
             priList.add(new VarInt(node.getType().getRegisterSize()*4));
             list.addAll(makeCall("malloc", priList));
@@ -1087,7 +1089,7 @@ public class IRBuilder_Re extends Visit
             }
             else
                 //list.add(new Label(";==========CreatorNodeEnd============"));
-
+            r0.clone(list);
             map.put(node, r0.clone(list));
         }
 
