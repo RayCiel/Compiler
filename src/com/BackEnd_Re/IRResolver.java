@@ -6,6 +6,7 @@ import com.IR_Re.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.System.err;
 import static java.lang.System.out;
 
 public class IRResolver implements IRVisitor
@@ -33,6 +34,12 @@ public class IRResolver implements IRVisitor
             BasicBlock now = blkLists.get(i);
             regNumber = Global.regNumber.get(i);
             nowColor = colors.get(i);
+            err.println("NowColor"+i);
+            for (int j : nowColor)
+            {
+                err.print(nowColor.get(j)+" ");
+            }
+            err.println();
             while(now != null)
             {
                 newIRList = new ArrayList<IRInst>();

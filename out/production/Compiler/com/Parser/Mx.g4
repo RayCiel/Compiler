@@ -120,8 +120,9 @@ expression:       primaryExpression                                             
 
                   | expression operation = (Mul | Div | Mod) expression                                #BinaryOperation
                   | expression operation = (Plus | Minus) expression                                   #BinaryOperation
-                  | expression operation = (And | Xor | Or) expression                                 #BinaryOperation
                   | expression operation = (LeftShift | RightShift) expression                         #BinaryOperation
+                  | expression operation = (And | Xor | Or) expression                                 #BinaryOperation
+
                   | expression operation = (Less | Greater | LessEqual | GreaterEqual) expression      #BinaryOperation
                   | expression operation = (Equal | NotEqual) expression                               #BinaryOperation
                   | expression operation = AndAnd expression                                           #AndandOperation

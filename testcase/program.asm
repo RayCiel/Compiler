@@ -11,15 +11,14 @@ _main:
 		push	r13
 		push	r14
 		push	r15
-		sub	rsp,	504
+		sub	rsp,	120
 		push	rdi
 		push	rsi
 		push	rdx
 		push	rcx
 		push	r8
 		push	r9
-		mov	rdi,	32
-		call	malloc
+		call	_getInt
 		pop	r9
 		pop	r8
 		pop	rcx
@@ -27,996 +26,23 @@ _main:
 		pop	rsi
 		pop	rdi
 		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	___constructor_point
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	r15,	rbx
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	32
-		call	malloc
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	___constructor_point
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
 		mov	r12,	rbx
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	32
-		call	malloc
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	___constructor_point
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	r14,	rbx
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	32
-		call	malloc
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	___constructor_point
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	qword [rbp + -112],	rbx
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r15
-		call	_printPoint
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		mov	rbx,	463
-		neg	rbx
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r15
-		mov	rsi,	849
-		mov	rdx,	rbx
-		mov	rcx,	480
-		call	_set
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		mov	rbx,	208
-		neg	rbx
-		mov	r13,	150
-		neg	r13
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r12
-		mov	rsi,	rbx
-		mov	rdx,	585
-		mov	rcx,	r13
-		call	_set
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		mov	rbx,	670
-		neg	rbx
-		mov	r13,	742
-		neg	r13
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r14
-		mov	rsi,	360
-		mov	rdx,	rbx
-		mov	rcx,	r13
-		call	_set
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		mov	rbx,	29
-		neg	rbx
-		mov	r13,	591
-		neg	r13
-		mov	r9,	960
-		neg	r9
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	r10,	qword [rbp + -112]
-		mov	rdi,	r10
-		mov	rsi,	rbx
-		mov	rdx,	r13
-		mov	rcx,	r9
-		call	_set
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r15
-		mov	rsi,	r12
-		call	_add
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r12
-		mov	rsi,	r14
-		call	_add
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	r10,	qword [rbp + -112]
-		mov	rdi,	r10
-		mov	rsi,	r14
-		call	_add
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r14
-		mov	rsi,	r15
-		call	_sub
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r12
-		mov	r10,	qword [rbp + -112]
-		mov	rsi,	r10
-		call	_sub
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	r10,	qword [rbp + -112]
-		mov	rdi,	r10
-		mov	rsi,	r14
-		call	_sub
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r14
-		mov	rsi,	r12
-		call	_add
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r15
-		mov	rsi,	r12
-		call	_add
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r12
-		mov	rsi,	r12
-		call	_add
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r14
-		mov	rsi,	r14
-		call	_add
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r15
-		mov	r10,	qword [rbp + -112]
-		mov	rsi,	r10
-		call	_sub
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r15
-		mov	rsi,	r12
-		call	_add
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r12
-		mov	rsi,	r14
-		call	_sub
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r15
-		call	_sqrLen
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_toString
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_println
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r12
-		call	_sqrLen
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_toString
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_println
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r12
-		mov	rsi,	r14
-		call	_sqrDis
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_toString
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_println
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	r10,	qword [rbp + -112]
-		mov	rdi,	r10
-		mov	rsi,	r15
-		call	_sqrDis
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_toString
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_println
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r14
-		mov	rsi,	r15
-		call	_dot
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_toString
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_println
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r12
-		mov	r10,	qword [rbp + -112]
-		mov	rsi,	r10
-		call	_cross
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_printPoint
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r15
-		call	_printPoint
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r12
-		call	_printPoint
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r14
-		call	_printPoint
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	r10,	qword [rbp + -112]
-		mov	rdi,	r10
-		call	_printPoint
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		mov	rax,	0
-		jmp	___exit_main
-___exit_main:
-		add	rsp,	504
-		pop	r15
-		pop	r14
-		pop	r13
-		pop	r12
-		pop	rbx
-		pop	rbp
-		ret
-___constructor_point:
-		push	rbp
-		mov	rbp,	rsp
-		add	rbp,	8
-		push	rbx
-		push	r12
-		push	r13
-		push	r14
-		push	r15
-		sub	rsp,	72
-		mov	rbx,	rdi
-		mov	qword [rbx + 8],	0
-		mov	qword [rbx + 16],	0
-		mov	qword [rbx + 24],	0
-___exit___constructor_point:
-		add	rsp,	72
-		pop	r15
-		pop	r14
-		pop	r13
-		pop	r12
-		pop	rbx
-		pop	rbp
-		ret
-_set:
-		push	rbp
-		mov	rbp,	rsp
-		add	rbp,	8
-		push	rbx
-		push	r12
-		push	r13
-		push	r14
-		push	r15
-		sub	rsp,	88
-		mov	rbx,	rdi
-		mov	r14,	rsi
-		mov	r13,	rdx
-		mov	r12,	rcx
-		mov	qword [rbx + 8],	r14
-		mov	qword [rbx + 16],	r13
-		mov	qword [rbx + 24],	r12
-___exit_set:
-		add	rsp,	88
-		pop	r15
-		pop	r14
-		pop	r13
-		pop	r12
-		pop	rbx
-		pop	rbp
-		ret
-_sqrLen:
-		push	rbp
-		mov	rbp,	rsp
-		add	rbp,	8
-		push	rbx
-		push	r12
-		push	r13
-		push	r14
-		push	r15
-		sub	rsp,	152
-		mov	rbx,	rdi
-		mov	r10,	qword [rbx + 8]
-		mov	r13,	r10
-		mov	r10,	qword [rbx + 8]
-		mov	r12,	r10
-		mov	rax,	r13
-		imul	r12
-		mov	r14,	rax
-		mov	r10,	qword [rbx + 16]
-		mov	r13,	r10
-		mov	r10,	qword [rbx + 16]
-		mov	r12,	r10
-		mov	rax,	r13
-		imul	r12
-		mov	r13,	rax
-		mov	r12,	r14
-		add	r12,	r13
-		mov	r10,	qword [rbx + 24]
-		mov	r13,	r10
-		mov	r10,	qword [rbx + 24]
-		mov	rbx,	r10
-		mov	rax,	r13
-		imul	rbx
-		mov	r13,	rax
-		mov	rbx,	r12
-		add	rbx,	r13
-		mov	rax,	rbx
-		jmp	___exit_sqrLen
-___exit_sqrLen:
-		add	rsp,	152
-		pop	r15
-		pop	r14
-		pop	r13
-		pop	r12
-		pop	rbx
-		pop	rbp
-		ret
-_sqrDis:
-		push	rbp
-		mov	rbp,	rsp
-		add	rbp,	8
-		push	rbx
-		push	r12
-		push	r13
-		push	r14
-		push	r15
-		sub	rsp,	264
-		mov	r12,	rdi
+		mov	rbx,	1
+_L0_0:
+		cmp	rbx,	r12
+		setle	al
+		movzx	rsi,	al
 		mov	r13,	rsi
-		mov	r10,	qword [r12 + 8]
-		mov	r14,	r10
-		mov	r10,	qword [r13 + 8]
-		mov	rbx,	r10
-		mov	r15,	r14
-		sub	r15,	rbx
-		mov	r10,	qword [r12 + 8]
-		mov	rbx,	r10
-		mov	r10,	qword [r13 + 8]
-		mov	r14,	r10
-		mov	rbx,	rbx
-		sub	rbx,	r14
-		mov	rax,	r15
-		imul	rbx
-		mov	r14,	rax
-		mov	r10,	qword [r12 + 16]
-		mov	rbx,	r10
-		mov	r10,	qword [r13 + 16]
-		mov	r15,	r10
-		mov	rbx,	rbx
-		sub	rbx,	r15
-		mov	r10,	qword [r12 + 16]
-		mov	r15,	r10
-		mov	r10,	qword [r13 + 16]
-		mov	r9,	r10
-		mov	r15,	r15
-		sub	r15,	r9
-		mov	rax,	rbx
-		imul	r15
-		mov	rbx,	rax
-		mov	r14,	r14
-		add	r14,	rbx
-		mov	r10,	qword [r12 + 24]
-		mov	rbx,	r10
-		mov	r10,	qword [r13 + 24]
-		mov	r15,	r10
-		mov	rbx,	rbx
-		sub	rbx,	r15
-		mov	r10,	qword [r12 + 24]
-		mov	r12,	r10
-		mov	r10,	qword [r13 + 24]
-		mov	r13,	r10
-		mov	r12,	r12
-		sub	r12,	r13
-		mov	rax,	rbx
-		imul	r12
-		mov	r12,	rax
-		mov	rbx,	r14
-		add	rbx,	r12
-		mov	rax,	rbx
-		jmp	___exit_sqrDis
-___exit_sqrDis:
-		add	rsp,	264
-		pop	r15
-		pop	r14
-		pop	r13
-		pop	r12
-		pop	rbx
-		pop	rbp
-		ret
-_dot:
-		push	rbp
-		mov	rbp,	rsp
-		add	rbp,	8
-		push	rbx
-		push	r12
-		push	r13
-		push	r14
-		push	r15
-		sub	rsp,	168
-		mov	rbx,	rdi
-		mov	r12,	rsi
-		mov	r10,	qword [rbx + 8]
-		mov	r14,	r10
-		mov	r10,	qword [r12 + 8]
-		mov	r13,	r10
-		mov	rax,	r14
-		imul	r13
-		mov	r13,	rax
-		mov	r10,	qword [rbx + 16]
-		mov	r15,	r10
-		mov	r10,	qword [r12 + 16]
-		mov	r14,	r10
-		mov	rax,	r15
-		imul	r14
-		mov	r14,	rax
-		mov	r13,	r13
-		add	r13,	r14
-		mov	r10,	qword [rbx + 24]
-		mov	r14,	r10
-		mov	r10,	qword [r12 + 24]
-		mov	rbx,	r10
-		mov	rax,	r14
-		imul	rbx
-		mov	r12,	rax
-		mov	rbx,	r13
-		add	rbx,	r12
-		mov	rax,	rbx
-		jmp	___exit_dot
-___exit_dot:
-		add	rsp,	168
-		pop	r15
-		pop	r14
-		pop	r13
-		pop	r12
-		pop	rbx
-		pop	rbp
-		ret
-_cross:
-		push	rbp
-		mov	rbp,	rsp
-		add	rbp,	8
-		push	rbx
-		push	r12
-		push	r13
-		push	r14
-		push	r15
-		sub	rsp,	264
-		mov	rbx,	rdi
-		mov	r12,	rsi
+		cmp	r13,	0
+		je	_L0_1
 		push	rdi
 		push	rsi
 		push	rdx
 		push	rcx
 		push	r8
 		push	r9
-		mov	rdi,	32
-		call	malloc
+		mov	rdi,	rbx
+		call	_dp
 		pop	r9
 		pop	r8
 		pop	rcx
@@ -1031,87 +57,37 @@ _cross:
 		push	r8
 		push	r9
 		mov	rdi,	r13
-		call	___constructor_point
+		call	_toString
 		pop	r9
 		pop	r8
 		pop	rcx
 		pop	rdx
 		pop	rsi
 		pop	rdi
-		mov	r9,	r13
-		mov	r10,	qword [rbx + 16]
-		mov	r14,	r10
-		mov	r10,	qword [r12 + 24]
-		mov	r13,	r10
-		mov	rax,	r14
-		imul	r13
 		mov	r13,	rax
-		mov	r10,	qword [rbx + 24]
-		mov	r15,	r10
-		mov	r10,	qword [r12 + 16]
-		mov	r14,	r10
-		mov	rax,	r15
-		imul	r14
-		mov	r14,	rax
-		mov	r15,	r13
-		sub	r15,	r14
-		mov	r10,	qword [rbx + 24]
-		mov	r14,	r10
-		mov	r10,	qword [r12 + 8]
-		mov	r13,	r10
-		mov	rax,	r14
-		imul	r13
-		mov	r14,	rax
-		mov	r10,	qword [rbx + 8]
-		mov	qword [rbp + -168],	r10
-		mov	r10,	qword [r12 + 24]
-		mov	r13,	r10
-		mov	r10,	qword [rbp + -168]
-		mov	rax,	r10
-		imul	r13
-		mov	r13,	rax
-		mov	r14,	r14
-		sub	r14,	r13
-		mov	r10,	qword [rbx + 8]
-		mov	qword [rbp + -200],	r10
-		mov	r10,	qword [r12 + 16]
-		mov	r13,	r10
-		mov	r10,	qword [rbp + -200]
-		mov	rax,	r10
-		imul	r13
-		mov	r13,	rax
-		mov	r10,	qword [rbx + 16]
-		mov	qword [rbp + -224],	r10
-		mov	r10,	qword [r12 + 8]
-		mov	rbx,	r10
-		mov	r10,	qword [rbp + -224]
-		mov	rax,	r10
-		imul	rbx
-		mov	r12,	rax
-		mov	rbx,	r13
-		sub	rbx,	r12
 		push	rdi
 		push	rsi
 		push	rdx
 		push	rcx
 		push	r8
 		push	r9
-		mov	rdi,	r9
-		mov	rsi,	r15
-		mov	rdx,	r14
-		mov	rcx,	rbx
-		call	_set
+		mov	rdi,	r13
+		call	_println
 		pop	r9
 		pop	r8
 		pop	rcx
 		pop	rdx
 		pop	rsi
 		pop	rdi
-		mov	rbx,	rax
-		mov	rax,	r9
-		jmp	___exit_cross
-___exit_cross:
-		add	rsp,	264
+		mov	r13,	rax
+		mov	r13,	rbx
+		add	rbx,	1
+		jmp	_L0_0
+_L0_1:
+		mov	rax,	0
+		jmp	___exit_main
+___exit_main:
+		add	rsp,	120
 		pop	r15
 		pop	r14
 		pop	r13
@@ -1128,34 +104,20 @@ _add:
 		push	r13
 		push	r14
 		push	r15
-		sub	rsp,	152
+		sub	rsp,	88
 		mov	rbx,	rdi
 		mov	r12,	rsi
-		mov	r10,	qword [rbx + 8]
-		mov	r13,	r10
-		mov	r10,	qword [r12 + 8]
-		mov	r14,	r10
-		mov	r13,	r13
-		add	r13,	r14
-		mov	qword [rbx + 8],	r13
-		mov	r10,	qword [rbx + 16]
-		mov	r13,	r10
-		mov	r10,	qword [r12 + 16]
-		mov	r14,	r10
-		mov	r13,	r13
-		add	r13,	r14
-		mov	qword [rbx + 16],	r13
-		mov	r10,	qword [rbx + 24]
-		mov	r14,	r10
-		mov	r10,	qword [r12 + 24]
-		mov	r13,	r10
-		mov	r12,	r14
-		add	r12,	r13
-		mov	qword [rbx + 24],	r12
+		mov	rbx,	rbx
+		add	rbx,	r12
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
 		mov	rax,	rbx
 		jmp	___exit_add
 ___exit_add:
-		add	rsp,	152
+		add	rsp,	88
 		pop	r15
 		pop	r14
 		pop	r13
@@ -1163,7 +125,7 @@ ___exit_add:
 		pop	rbx
 		pop	rbp
 		ret
-_sub:
+_dp:
 		push	rbp
 		mov	rbp,	rsp
 		add	rbp,	8
@@ -1172,118 +134,543 @@ _sub:
 		push	r13
 		push	r14
 		push	r15
-		sub	rsp,	152
-		mov	rbx,	rdi
-		mov	r12,	rsi
-		mov	r10,	qword [rbx + 8]
-		mov	r13,	r10
-		mov	r10,	qword [r12 + 8]
-		mov	r14,	r10
-		mov	r13,	r13
-		sub	r13,	r14
-		mov	qword [rbx + 8],	r13
-		mov	r10,	qword [rbx + 16]
-		mov	r13,	r10
-		mov	r10,	qword [r12 + 16]
-		mov	r14,	r10
-		mov	r13,	r13
-		sub	r13,	r14
-		mov	qword [rbx + 16],	r13
-		mov	r10,	qword [rbx + 24]
-		mov	r14,	r10
-		mov	r10,	qword [r12 + 24]
-		mov	r13,	r10
-		mov	r12,	r14
-		sub	r12,	r13
-		mov	qword [rbx + 24],	r12
+		sub	rsp,	1032
+		mov	r12,	rdi
+		cmp	r12,	1
+		setle	al
+		movzx	rsi,	al
+		mov	rbx,	rsi
+		cmp	rbx,	0
+		je	_L115_2
+		mov	rax,	7
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
 		mov	rax,	rbx
-		jmp	___exit_sub
-___exit_sub:
-		add	rsp,	152
-		pop	r15
-		pop	r14
-		pop	r13
-		pop	r12
-		pop	rbx
-		pop	rbp
-		ret
-_printPoint:
-		push	rbp
-		mov	rbp,	rsp
-		add	rbp,	8
-		push	rbx
-		push	r12
-		push	r13
-		push	r14
-		push	r15
-		sub	rsp,	168
-		mov	rbx,	rdi
-		mov	r10,	qword [rbx + 8]
-		mov	r12,	r10
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rax,	rbx
+		mov	r10,	7
+		imul	r10
+		mov	rbx,	rax
+		mov	rax,	rbx
+		mov	r10,	233
+		cqo
+		idiv	r10
+		mov	rbx,	rdx
+		mov	rbx,	rbx
+		mov	rax,	rbx
+		jmp	___exit_dp
+_L115_2:
+		mov	r13,	0
+		mov	rbx,	2
+_L116_4:
+		cmp	rbx,	r12
+		setle	al
+		movzx	rsi,	al
+		mov	r14,	rsi
+		cmp	r14,	0
+		je	_L116_5
+		mov	r14,	r12
+		xor	r14,	rbx
+		cmp	r14,	r12
+		setl	al
+		movzx	rsi,	al
+		mov	r14,	rsi
+		cmp	r14,	0
+		je	_L123_6
+		mov	r14,	r12
+		xor	r14,	rbx
 		push	rdi
 		push	rsi
 		push	rdx
 		push	rcx
 		push	r8
 		push	r9
-		mov	rdi,	r12
-		call	_toString
+		mov	rdi,	r14
+		call	_dp
 		pop	r9
 		pop	r8
 		pop	rcx
 		pop	rdx
 		pop	rsi
 		pop	rdi
-		mov	r12,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	STR_0
-		mov	rsi,	r12
-		call	__.string__plus
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	r12,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r12
-		mov	rsi,	STR_1
-		call	__.string__plus
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	r13,	rax
-		mov	r10,	qword [rbx + 16]
-		mov	r12,	r10
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r12
-		call	_toString
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	r12,	rax
+		mov	r14,	rax
 		push	rdi
 		push	rsi
 		push	rdx
@@ -1291,97 +678,25 @@ _printPoint:
 		push	r8
 		push	r9
 		mov	rdi,	r13
-		mov	rsi,	r12
-		call	__.string__plus
+		mov	rsi,	r14
+		call	_add
 		pop	r9
 		pop	r8
 		pop	rcx
 		pop	rdx
 		pop	rsi
 		pop	rdi
-		mov	r12,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r12
-		mov	rsi,	STR_1
-		call	__.string__plus
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	r12,	rax
-		mov	r10,	qword [rbx + 24]
-		mov	rbx,	r10
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_toString
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	r12
-		mov	rsi,	rbx
-		call	__.string__plus
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		mov	rsi,	STR_2
-		call	__.string__plus
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_println
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-___exit_printPoint:
-		add	rsp,	168
+		mov	r13,	rax
+		mov	r13,	r13
+_L123_6:
+		mov	r14,	rbx
+		add	rbx,	1
+		jmp	_L116_4
+_L116_5:
+		mov	rax,	r13
+		jmp	___exit_dp
+___exit_dp:
+		add	rsp,	1032
 		pop	r15
 		pop	r14
 		pop	r13
@@ -1391,15 +706,6 @@ ___exit_printPoint:
 		ret
 SECTION .bss
 SECTION .rodata
-	dd 1
-STR_0:
-	db "(", 0
-	dd 2
-STR_1:
-	db ", ", 0
-	dd 1
-STR_2:
-	db ")", 0
 ; ============Library============
 default rel
 

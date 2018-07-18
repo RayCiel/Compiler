@@ -8,4 +8,5 @@ cd ./testcase
 nasm -felf64 program.asm
 gcc program.o -no-pie 
 echo "===============Runing================"
-./a.out < program.in
+./a.out > ./out.txt
+echo exitcode$?

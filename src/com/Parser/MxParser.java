@@ -1287,11 +1287,11 @@ public class MxParser extends Parser {
 		public TerminalNode Mod() { return getToken(MxParser.Mod, 0); }
 		public TerminalNode Plus() { return getToken(MxParser.Plus, 0); }
 		public TerminalNode Minus() { return getToken(MxParser.Minus, 0); }
+		public TerminalNode LeftShift() { return getToken(MxParser.LeftShift, 0); }
+		public TerminalNode RightShift() { return getToken(MxParser.RightShift, 0); }
 		public TerminalNode And() { return getToken(MxParser.And, 0); }
 		public TerminalNode Xor() { return getToken(MxParser.Xor, 0); }
 		public TerminalNode Or() { return getToken(MxParser.Or, 0); }
-		public TerminalNode LeftShift() { return getToken(MxParser.LeftShift, 0); }
-		public TerminalNode RightShift() { return getToken(MxParser.RightShift, 0); }
 		public TerminalNode Less() { return getToken(MxParser.Less, 0); }
 		public TerminalNode Greater() { return getToken(MxParser.Greater, 0); }
 		public TerminalNode LessEqual() { return getToken(MxParser.LessEqual, 0); }
@@ -1649,7 +1649,7 @@ public class MxParser extends Parser {
 						setState(193);
 						((BinaryOperationContext)_localctx).operation = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << And) | (1L << Or) | (1L << Xor))) != 0)) ) {
+						if ( !(_la==LeftShift || _la==RightShift) ) {
 							((BinaryOperationContext)_localctx).operation = (Token)_errHandler.recoverInline(this);
 						}
 						else {
@@ -1670,7 +1670,7 @@ public class MxParser extends Parser {
 						setState(196);
 						((BinaryOperationContext)_localctx).operation = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !(_la==LeftShift || _la==RightShift) ) {
+						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << And) | (1L << Or) | (1L << Xor))) != 0)) ) {
 							((BinaryOperationContext)_localctx).operation = (Token)_errHandler.recoverInline(this);
 						}
 						else {
@@ -2366,7 +2366,7 @@ public class MxParser extends Parser {
 		"\20\3\21\3\21\3\21\3\21\5\21\u0125\n\21\3\22\5\22\u0128\n\22\3\22\3\22"+
 		"\7\22\u012c\n\22\f\22\16\22\u012f\13\22\3\22\2\3\34\23\2\4\6\b\n\f\16"+
 		"\20\22\24\26\30\32\34\36 \"\2\n\3\2\r\20\3\2\35\36\3\2\22\23\3\2\24\26"+
-		"\4\2#$&&\3\2\'(\4\2\27\30\33\34\3\2\31\32\2\u0160\2)\3\2\2\2\4.\3\2\2"+
+		"\3\2\'(\4\2#$&&\4\2\27\30\33\34\3\2\31\32\2\u0160\2)\3\2\2\2\4.\3\2\2"+
 		"\2\6;\3\2\2\2\bL\3\2\2\2\na\3\2\2\2\fc\3\2\2\2\16g\3\2\2\2\20p\3\2\2\2"+
 		"\22w\3\2\2\2\24\u0087\3\2\2\2\26\u008b\3\2\2\2\30\u00a0\3\2\2\2\32\u00a9"+
 		"\3\2\2\2\34\u00ba\3\2\2\2\36\u011e\3\2\2\2 \u0124\3\2\2\2\"\u0127\3\2"+

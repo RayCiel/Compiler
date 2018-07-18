@@ -1035,7 +1035,7 @@ public class IRBuilder_Re extends Visit
         List<IntValue> priList = new LinkedList<>();
         List<IRInst> list = new LinkedList<>();
         //list.add(new Label(";==========CreatorNodeBegin============"));
-        VarReg r0, r1;
+        VarReg r0, r1, reg = null;
         if(node.getType() instanceof ArrayType)
         {
             Type rootType = ((ArrayType) node.getType()).getBaseType();
