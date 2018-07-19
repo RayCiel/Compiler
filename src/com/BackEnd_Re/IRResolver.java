@@ -286,7 +286,7 @@ public class IRResolver implements IRVisitor
                     //offset += 8;
                     //newIRList.add(new Push(new VarReg(calleeNum[i], callee[i])));
 
-                    if ((usedReg&(1<<calleeNum[i]))!=0)
+                    if ((usedReg & (1 << calleeNum[i])) != 0)
                     {
                         newIRList.add(new Push(new VarReg(calleeNum[i], callee[i])));
                         //cot++;
@@ -308,7 +308,7 @@ public class IRResolver implements IRVisitor
                 for(int i = calleeNum.length - 1; i >= 0; i--)
                 {
                     //offset += 8;
-                    if((usedReg&(1<<calleeNum[i]))==0)
+                    if((usedReg & (1 << calleeNum[i])) == 0)
                         offset += 8;
                 }
                 //out.println(offset);
@@ -317,7 +317,7 @@ public class IRResolver implements IRVisitor
                 for(int i = calleeNum.length - 1; i >= 0; i--)
                 {
                     //newIRList.add(new Pop(new VarReg(calleeNum[i], callee[i])));
-                    if((usedReg&(1<<calleeNum[i]))!=0)
+                    if((usedReg & (1 << calleeNum[i])) != 0)
                     {
                         newIRList.add(new Pop(new VarReg(calleeNum[i], callee[i])));
                     }

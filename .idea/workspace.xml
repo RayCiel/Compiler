@@ -12,16 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRResolver$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRResolver$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/BackEnd_Re/IRResolver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRResolver$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRResolver$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/com/BackEnd_Re/IRResolver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/a.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/program.asm" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/program.o" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -117,8 +108,8 @@
       <file leaf-file-name="IRResolver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="253" column="8" lean-forward="true" selection-start-line="253" selection-start-column="8" selection-end-line="253" selection-end-column="8" />
+            <state relative-caret-position="-323">
+              <caret line="38" column="36" lean-forward="true" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
               <folding>
                 <element signature="e#1711#1712#0" expanded="true" />
                 <element signature="e#1774#1775#0" expanded="true" />
@@ -921,8 +912,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="253" column="8" lean-forward="true" selection-start-line="253" selection-start-column="8" selection-end-line="253" selection-end-column="8" />
+        <state relative-caret-position="-323">
+          <caret line="38" column="36" lean-forward="true" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
           <folding>
             <element signature="e#1711#1712#0" expanded="true" />
             <element signature="e#1774#1775#0" expanded="true" />
