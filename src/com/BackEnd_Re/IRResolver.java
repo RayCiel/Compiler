@@ -34,12 +34,12 @@ public class IRResolver implements IRVisitor
             BasicBlock now = blkLists.get(i);
             regNumber = Global.regNumber.get(i);
             nowColor = colors.get(i);
-            err.println("NowColor"+i);
-            for (int j : nowColor)
-            {
-                err.print(nowColor.get(j)+" ");
-            }
-            err.println();
+            //err.println("NowColor"+i);
+            //for (int j : nowColor)
+            //{
+            //    err.print(nowColor.get(j)+" ");
+            //}
+            //err.println();
             while(now != null)
             {
                 newIRList = new ArrayList<IRInst>();
