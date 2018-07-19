@@ -13,8 +13,12 @@
   <component name="ChangeListManager">
     <list default="true" id="04a4d4ee-bab7-4eae-b27e-97e4ff0ce058" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/BackEnd_Re/ActivityAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BackEnd_Re/ActivityAnalysis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testcase/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/program.asm" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testcase/program.o" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/program.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/testcase_947.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/testcase_947.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,13 +30,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ActivityAnalysis.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ActivityAnalysis.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/ActivityAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5054">
-              <caret line="281" column="42" selection-start-line="281" selection-start-column="42" selection-end-line="281" selection-end-column="42" />
+            <state relative-caret-position="651">
+              <caret line="255" column="47" selection-start-line="255" selection-start-column="47" selection-end-line="255" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#9756#9757#0" expanded="true" />
+                <element signature="e#9804#9805#0" expanded="true" />
+                <element signature="e#9860#9861#0" expanded="true" />
+                <element signature="e#9939#9940#0" expanded="true" />
+                <element signature="e#10305#10306#0" expanded="true" />
+                <element signature="e#10374#10375#0" expanded="true" />
+                <element signature="e#10431#10432#0" expanded="true" />
+                <element signature="e#10509#10510#0" expanded="true" />
+                <element signature="e#10564#10565#0" expanded="true" />
+                <element signature="e#10612#10613#0" expanded="true" />
+                <element signature="e#10668#10669#0" expanded="true" />
+                <element signature="e#10732#10733#0" expanded="true" />
+                <element signature="e#10786#10787#0" expanded="true" />
+                <element signature="e#10834#10835#0" expanded="true" />
+                <element signature="e#10952#10953#0" expanded="true" />
+                <element signature="e#11019#11020#0" expanded="true" />
+                <element signature="e#11074#11075#0" expanded="true" />
+                <element signature="e#11141#11142#0" expanded="true" />
+                <element signature="e#11533#11534#0" expanded="true" />
+                <element signature="e#11591#11592#0" expanded="true" />
+                <element signature="e#11645#11646#0" expanded="true" />
+                <element signature="e#11703#11704#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,13 +116,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Compiler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Compiler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="130" column="10" selection-start-line="130" selection-start-column="10" selection-end-line="130" selection-end-column="10" />
+            <state relative-caret-position="469">
+              <caret line="141" column="48" selection-start-line="141" selection-start-column="48" selection-end-line="141" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#6599#6607#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,8 +132,8 @@
       <file leaf-file-name="IRResolver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            <state relative-caret-position="437">
+              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -250,12 +277,12 @@
         <option value="$PROJECT_DIR$/src/com/IR_Re/BasicBlock.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/CFGBuilder.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/ConflictGraph.java" />
-        <option value="$PROJECT_DIR$/src/com/BackEnd_Re/ActivityAnalysis.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/IRBuilder_Re.java" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/FinalRegAlloc.java" />
         <option value="$PROJECT_DIR$/src/com/Parser/Mx.g4" />
         <option value="$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java" />
         <option value="$PROJECT_DIR$/src/com/Compiler.java" />
+        <option value="$PROJECT_DIR$/src/com/BackEnd_Re/ActivityAnalysis.java" />
       </list>
     </option>
   </component>
@@ -451,18 +478,17 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" auto_hide="true" id="Tool Output" order="7" sideWeight="0.675" weight="0.22258772" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.48072916" weight="0.2598684" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.3234375" side_tool="true" weight="0.20064378" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.32894737" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6765625" visible="true" weight="0.24122807" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6765625" weight="0.24122807" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32894737" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16720085" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1693376" />
       <window_info anchor="bottom" id="ANTLR Preview" order="12" sideWeight="0.8432292" weight="0.29495615" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -476,6 +502,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4984375" weight="0.17872807" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.48072916" weight="0.2598684" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -793,16 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/ActivityAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5054">
-          <caret line="281" column="42" selection-start-line="281" selection-start-column="42" selection-end-line="281" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/FrontEnd/TypeCheck.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -861,17 +878,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/IRResolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        <state relative-caret-position="437">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Compiler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="130" column="10" selection-start-line="130" selection-start-column="10" selection-end-line="130" selection-end-column="10" />
+        <state relative-caret-position="469">
+          <caret line="141" column="48" selection-start-line="141" selection-start-column="48" selection-end-line="141" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#6599#6607#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/BackEnd_Re/ActivityAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="255" column="47" selection-start-line="255" selection-start-column="47" selection-end-line="255" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9756#9757#0" expanded="true" />
+            <element signature="e#9804#9805#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9939#9940#0" expanded="true" />
+            <element signature="e#10305#10306#0" expanded="true" />
+            <element signature="e#10374#10375#0" expanded="true" />
+            <element signature="e#10431#10432#0" expanded="true" />
+            <element signature="e#10509#10510#0" expanded="true" />
+            <element signature="e#10564#10565#0" expanded="true" />
+            <element signature="e#10612#10613#0" expanded="true" />
+            <element signature="e#10668#10669#0" expanded="true" />
+            <element signature="e#10732#10733#0" expanded="true" />
+            <element signature="e#10786#10787#0" expanded="true" />
+            <element signature="e#10834#10835#0" expanded="true" />
+            <element signature="e#10952#10953#0" expanded="true" />
+            <element signature="e#11019#11020#0" expanded="true" />
+            <element signature="e#11074#11075#0" expanded="true" />
+            <element signature="e#11141#11142#0" expanded="true" />
+            <element signature="e#11533#11534#0" expanded="true" />
+            <element signature="e#11591#11592#0" expanded="true" />
+            <element signature="e#11645#11646#0" expanded="true" />
+            <element signature="e#11703#11704#0" expanded="true" />
           </folding>
         </state>
       </provider>

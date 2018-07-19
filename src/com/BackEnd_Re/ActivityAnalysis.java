@@ -22,6 +22,7 @@ public class ActivityAnalysis implements IRVisitor
     protected int size;
     protected int usedReg;
     protected int loopWeight = 0;
+    protected boolean useless;
     public List<List<BasicBlock>> preBB;
     class Block
     {
@@ -248,7 +249,12 @@ public class ActivityAnalysis implements IRVisitor
             for(int i = list.size() - 1; i >= 0; i--)
             {
                 //out.println(i);
+                useless = false;
                 list.get(i).accept(this);
+                if (useless)
+                {
+                    list.get(i).useless = true;
+                }
             }
 
             nowBlock = nowBlock.getNext();
@@ -281,8 +287,15 @@ public class ActivityAnalysis implements IRVisitor
         {
             //out.println(nowLive.size());
             //out.println(varReg.getIndex());
-            nowLive.remove(varReg.getIndex());
-            addEdges(varReg.getIndex(), nowLive);
+            if (nowLive.contains(varReg.getIndex()) || varReg.getIndex() < 16)
+            {
+                nowLive.remove(varReg.getIndex());
+                addEdges(varReg.getIndex(), nowLive);
+            }
+            else
+            {
+                useless = true;
+            }
 
         }
 
@@ -319,6 +332,7 @@ public class ActivityAnalysis implements IRVisitor
 
     private void VisitReg(IntValue dest0, IntValue dest1, IntValue src0, IntValue src1)
     {
+        useless = false;
         VisitDest(dest0);
         VisitDest(dest1);
         VisitSrc(src0);
@@ -400,6 +414,10 @@ public class ActivityAnalysis implements IRVisitor
     public void visit(Move node)
     {
         VisitReg(node.getLeft(), null, node.getRight(), null);
+        if(node.getLeft() instanceof VarReg && node.getRight() instanceof VarReg)
+        {
+            useless = useless || (((VarReg) node.getLeft()).getIndex() == ((VarReg) node.getRight()).getIndex());
+        }
     }
 
     @Override

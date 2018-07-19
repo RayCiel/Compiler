@@ -1,10 +1,7 @@
 int main() {
-   //string a = "\"\nbda\\\"\ndbd\\c\"\\\"c\\c\"";
-   //string b = "\\ab\nac\"\"add\n\"\nac\ndb\"";
-   //string c = "\nabbdbdd\\\\\"d\"c\\adc\"c";
-   string a = "a";
-   string b = "b";
-   string c = "c";
+   string a = "\"\nbda\\\"\ndbd\\c\"\\\"c\\c\"";
+   string b = "\\ab\nac\"\"add\n\"\nac\ndb\"";
+   string c = "\nabbdbdd\\\\\"d\"c\\adc\"c";
    print(c + b + b + c + c + a + c + b + c + b);
    print(c + c + a + a + a + c + c + b + b + b);
    print(b + a + c + b + c + c + b + b + a + c);
