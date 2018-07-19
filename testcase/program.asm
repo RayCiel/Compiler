@@ -6,60 +6,11 @@ _main:
 		push	rbp
 		mov	rbp,	rsp
 		add	rbp,	8
-		push	rbx
-		push	r12
-		push	r13
-		push	r14
-		push	r15
-		sub	rsp,	104
-		mov	rax,	1002
-		mov	r10,	23
-		cqo
-		idiv	r10
-		mov	rbx,	rdx
-		mov	rax,	rbx
-		mov	r10,	8
-		imul	r10
-		mov	rbx,	rax
-		mov	rbx,	rbx
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_toString
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
-		mov	rbx,	rax
-		push	rdi
-		push	rsi
-		push	rdx
-		push	rcx
-		push	r8
-		push	r9
-		mov	rdi,	rbx
-		call	_println
-		pop	r9
-		pop	r8
-		pop	rcx
-		pop	rdx
-		pop	rsi
-		pop	rdi
+		sub	rsp,	56
 		mov	rax,	0
 		jmp	___exit_main
 ___exit_main:
-		add	rsp,	104
-		pop	r15
-		pop	r14
-		pop	r13
-		pop	r12
-		pop	rbx
+		add	rsp,	56
 		pop	rbp
 		ret
 SECTION .bss

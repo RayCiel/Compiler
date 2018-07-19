@@ -1,5 +1,5 @@
 int main() {
-   int a = 1002%23*8;
-   println(toString(a));
+   //int a = 1002%23*8;
+   //println(toString(a));
    return 0;
 }

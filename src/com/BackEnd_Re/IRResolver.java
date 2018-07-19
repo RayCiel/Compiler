@@ -19,7 +19,7 @@ public class IRResolver implements IRVisitor
 
     private List<IRInst> newIRList;
 
-    private int regNumber;
+    private int regNumber, usedReg;
 
     public IRResolver(List<List<Integer>> colors, List<BasicBlock> blkLists)
     {
@@ -33,6 +33,7 @@ public class IRResolver implements IRVisitor
         {
             BasicBlock now = blkLists.get(i);
             regNumber = Global.regNumber.get(i);
+            usedReg = Global.usedRegs.get(i);
             nowColor = colors.get(i);
             //err.println("NowColor"+i);
             //for (int j : nowColor)
@@ -250,14 +251,14 @@ public class IRResolver implements IRVisitor
     {
         //newIRList.add(new Label("; ============SpecialBegin============"));
 
-        //int []callerNum = {1, 9};
+        int []callerNum = {1, 9};
 
         //int []calleeNum = {3, 12, 13, 14, 15};
-        int []callerNum = {7, 6, 2, 1, 8, 9};
+        //int []callerNum = {7, 6, 2, 1, 8, 9};
         String[] caller = {"rdi", "rsi", "rdx", "rcx", "r8", "r9"};
-        int []calleeNum = {5, 3, 12, 13, 14, 15};
-        String[] callee = {"rbp", "rbx", "r12", "r13", "r14", "r15"};
-        int offset;
+        int []calleeNum = {3, 12, 13, 14, 15};
+        String[] callee = {"rbx", "r12", "r13", "r14", "r15"};
+        int offset, cot = 0;
         switch (node.getType())
         {
             case CALLER_SAVE:
@@ -280,10 +281,19 @@ public class IRResolver implements IRVisitor
                     offset = 8*(regNumber - 16 + 2);
                 //out.println(offset);
                 offset += 8;
-                for(int i = 1;i < calleeNum.length; i++)
+                for(int i = 0;i < calleeNum.length; i++)
                 {
-                    offset += 8;
-                    newIRList.add(new Push(new VarReg(calleeNum[i], callee[i])));
+                    //offset += 8;
+                    //newIRList.add(new Push(new VarReg(calleeNum[i], callee[i])));
+
+                    if ((usedReg&(1<<calleeNum[i]))!=0)
+                    {
+                        newIRList.add(new Push(new VarReg(calleeNum[i], callee[i])));
+                        //cot++;
+                    }
+                    else
+                        offset += 8;
+
                 }
                 //out.println(offset);
                 newIRList.add(new Binary(Binary.Op.Sub, new VarReg(4, "rsp"), new VarInt(offset)));
@@ -295,16 +305,22 @@ public class IRResolver implements IRVisitor
                 else
                     offset = 8*(regNumber - 16 + 2);
                 offset += 8;
-                for(int i = 5; i >= 1; i--)
+                for(int i = calleeNum.length - 1; i >= 0; i--)
                 {
-                    offset += 8;
+                    //offset += 8;
+                    if((usedReg&(1<<calleeNum[i]))==0)
+                        offset += 8;
                 }
                 //out.println(offset);
 
                 newIRList.add(new Binary(Binary.Op.Add, new VarReg(4, "rsp"), new VarInt(offset)));
-                for(int i = calleeNum.length - 1; i >= 1; i--)
+                for(int i = calleeNum.length - 1; i >= 0; i--)
                 {
-                    newIRList.add(new Pop(new VarReg(calleeNum[i], callee[i])));
+                    //newIRList.add(new Pop(new VarReg(calleeNum[i], callee[i])));
+                    if((usedReg&(1<<calleeNum[i]))!=0)
+                    {
+                        newIRList.add(new Pop(new VarReg(calleeNum[i], callee[i])));
+                    }
                 }
                 break;
             default:
