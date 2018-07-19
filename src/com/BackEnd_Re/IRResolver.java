@@ -251,10 +251,10 @@ public class IRResolver implements IRVisitor
     {
         //newIRList.add(new Label("; ============SpecialBegin============"));
 
-        int []callerNum = {1, 9};
+        //int []callerNum = {1, 9};
 
         //int []calleeNum = {3, 12, 13, 14, 15};
-        //int []callerNum = {7, 6, 2, 1, 8, 9};
+        int []callerNum = {7, 6, 2, 1, 8, 9};
         String[] caller = {"rdi", "rsi", "rdx", "rcx", "r8", "r9"};
         int []calleeNum = {3, 12, 13, 14, 15};
         String[] callee = {"rbx", "r12", "r13", "r14", "r15"};
